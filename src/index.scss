@@ -514,7 +514,7 @@ html, body {
 		}
 
 		.about-me-section {
-			width: 100vw;
+			width: 80vw;
 			height: 150px;
 			background-color: transparent;
 			display: flex;
@@ -651,9 +651,9 @@ html, body {
 			}
 
 			.fa-question-circle {
-				font-size: 80px;
-				margin-top: 60px;
-				margin-left: 60px;
+				font-size: 50px;
+				margin-top: 30px;
+				margin-left: 30px;
 				text-align: left;
 				color: black;
 			}
@@ -667,7 +667,7 @@ html, body {
 				flex-direction: column;
 				justify-content: space-around;
 				align-items: center;
-				margin: 30px 0;
+				margin: 30px auto;
 
 				.collapse {
 					width: 75vw;
@@ -724,161 +724,7 @@ html, body {
 		}
 	}
 
-	.request-form {
-		width: 40vh;
-		height:350px;
-		align-self: center;
-		display: flex;
-		flex-wrap: nowrap;
-		flex-direction: column;
-		justify-content: center;
-
-		&.dark {
-
-			form {
 	
-				label {
-					color: white;
-				}
-	
-				.fa-user-circle,
-				.fa-envelope {
-					color: black;
-				}
-
-				input[type=text], select {
-					border: 1px solid rgb(255, 255, 255);
-					background-color: white;
-					color: black;
-	
-					&:focus {
-						box-shadow: 0 0 5px rgb(255, 255, 255);
-						border: 1px solid rgb(255, 255, 255);
-					}
-				}
-	
-				input[type=email], select {
-					border: 1px solid rgb(255, 255, 255);
-					background-color: white;
-					color: black;
-	
-					&:focus {
-						box-shadow: 0 0 5px rgb(255, 255, 255);
-						border: 1px solid rgb(255, 255, 255);
-					}
-				}
-	
-				.submit-form {
-					background-color: transparent;
-					border: .5px solid white;
-					color: white;
-	
-					&:hover {
-						background-color: transparent;
-					}
-				}
-			}
-		}
-
-		form {
-			display: flex;
-			flex-wrap: nowrap;
-			flex-direction: column;
-			justify-content: space-between;
-
-			label {
-				margin-left: 2px;
-				font: bold 16px/1.5 'Roboto', sans-serif;
-			}
-
-			.fa-user-circle,
-			.fa-envelope {
-				position: relative;
-				color: black;
-				top: 55px;
-				left: 11px;
-			}
-
-			input[type=text], select {
-				width: 100%;
-				padding: 12px 20px;
-				display: inline-block;
-				border: 1px solid #ccc;
-				border-radius: 4px;
-				box-sizing: border-box;
-				background-color: white;
-				padding: 12px 20px 12px 40px;
-				outline: none;
-				margin-top: 0;
-				margin-bottom: 12px;
-
-				&:focus {
-					box-shadow: 0 0 5px grey;
-  					border: 1px solid grey;
-				}
-			}
-
-			input[type=email], select {
-				width: 100%;
-				padding: 12px 20px;
-				display: inline-block;
-				border: 1px solid #ccc;
-				border-radius: 4px;
-				box-sizing: border-box;
-				background-color: white;
-				padding: 12px 20px 12px 40px;
-				outline: none;
-				margin-top: 0;
-				margin-bottom: 12px;
-
-				&:focus {
-					box-shadow: 0 0 5px grey;
-  					border: 1px solid grey;
-				}
-			}
-
-			
-
-			.email-success {
-				position: relative;
-				left: 10px;
-				font: bold 16px/1.5 'Roboto', sans-serif;
-				text-align: center;
-				display:flex;
-				flex-wrap: nowrap;
-				flex-direction: row;
-				justify-content: center;
-				align-items: center;
-
-				.fa-check-circle {
-					position: relative;
-					width: 22px;
-					height: 22px;
-					top: 0;
-					left: -10px;
-					color: green;
-				}
-
-			}
-
-			.submit-form {
-				width: 50%;
-				background-color: grey;
-				color: white;
-				font: normal 16px/1.5 'Roboto', sans-serif;
-				padding: 14px 20px;
-				margin-top: 25px;
-				border: none;
-				border-radius: 34px;
-				cursor: pointer;
-				align-self: center;
-
-				&:hover {
-					background-color: rgb(99, 99, 99);
-				}
-			}
-		}
-	}
 }
 
 .about-footer {
@@ -995,7 +841,6 @@ html, body {
 				height: 300px;
 			}
 		}
-		
 		.footer {
 			height: 75px;
 			display: flex;
