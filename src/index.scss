@@ -660,7 +660,7 @@ html, body {
 
 			.buttons {
 				position: relative;
-				width: 100%;
+				width: 75vw;
 				height: auto;
 				display: flex;
 				flex-wrap: nowrap;
@@ -670,7 +670,7 @@ html, body {
 				margin: 30px 0;
 
 				.collapse {
-					width: 80vh;
+					width: 75vw;
 					cursor: pointer;
 					background-color: rgb(255, 255, 255);
 					color: black;
