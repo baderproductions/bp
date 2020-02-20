@@ -549,7 +549,7 @@ html, body {
 			}
 
 			.collapse {
-				width: 80vh;
+				width: 80vw;
 				height: 50px;
 				cursor: pointer;
 				background-color: rgb(214, 214, 214);
@@ -561,6 +561,7 @@ html, body {
 				font-size: 15px;
 				border-radius: 2px;
 				font: bold 16px/1.5 'Roboto', sans-serif;
+                                align-self: center;
 
 				&.active {
 					margin-bottom: 0;
@@ -572,7 +573,7 @@ html, body {
 			}
 
 			.about-me {
-				width: 80vh;
+				width: 80vw;
 				margin-bottom: 10px;
 				padding: 0;
 				background-color: #ebebeb;
@@ -580,6 +581,7 @@ html, body {
 				max-height: 0;
   				overflow: hidden;
 				transition: max-height 0.2s ease-in-out;
+                                align-self: center;
 	
 				p {
 					font: $roboto-ligth;
