@@ -561,7 +561,8 @@ html, body {
 				font-size: 15px;
 				border-radius: 2px;
 				font: bold 16px/1.5 'Roboto', sans-serif;
-                                align-self: center;
+                                margin-left: auto;
+				margin-right: auto;
 
 				&.active {
 					margin-bottom: 0;
@@ -581,7 +582,8 @@ html, body {
 				max-height: 0;
   				overflow: hidden;
 				transition: max-height 0.2s ease-in-out;
-                                align-self: center;
+                                margin-left: auto;
+				margin-right: auto;
 	
 				p {
 					font: $roboto-ligth;
