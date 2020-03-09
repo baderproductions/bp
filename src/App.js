@@ -1,9 +1,9 @@
 import React from "react";
 import { Route, BrowserRouter, Switch } from "react-router-dom";
-import "./index.scss";
+// Pages
 import Home from "./components/Pages/Home";
-import About from "./components/Pages/About";
 import NotFound from "./components/Pages/NotFound";
+import "./index.scss";
 
 class App extends React.Component {
   render() {
@@ -11,7 +11,6 @@ class App extends React.Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
