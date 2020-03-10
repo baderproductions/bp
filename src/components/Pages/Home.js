@@ -118,6 +118,7 @@ class About extends React.Component {
             </div>
             <div className="questions">
               <i className="far fa-question-circle"></i>
+              {/*
               <div className="buttons">
                 <button type="button" className="collapse">
                   Tell me a little about yourself.
@@ -202,6 +203,7 @@ class About extends React.Component {
                   </p>
                 </div>
               </div>
+              */}
             </div>
           </div>
           <div className="main-footer">

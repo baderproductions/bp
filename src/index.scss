@@ -11,7 +11,7 @@ body {
 }
 
 .about-page {
-  width: 100vw;
+  width: 100%;
   height: 300vh;
   background-color: transparent;
   display: flex;
@@ -22,13 +22,13 @@ body {
   .darken-layer {
     position: absolute;
     height: 300vh;
-    width: 100%;
+    width: 100vw;
     background-color: rgba($color: #000000, $alpha: 0.5);
   }
 
   img {
-    height: 100%;
-    width: 100%;
+    height: 300vh;
+    width: 100vw;
     object-fit: cover;
   }
 
@@ -36,7 +36,7 @@ body {
     z-index: 5;
     position: fixed;
     height: 8vh;
-    width: 100%;
+    width: 100vw;
     background: transparent;
     border-bottom: 1px solid rgb(255, 255, 255);
     display: flex;
@@ -60,7 +60,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 
     .info {
@@ -95,7 +95,7 @@ body {
   .main-projects {
     position: absolute;
     top: 100vh;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: transparent;
     display: flex;
@@ -110,7 +110,7 @@ body {
     }
 
     .project-section {
-      width: 100%;
+      width: 90%;
       height: auto;
       display: flex;
       flex-wrap: wrap;
@@ -187,7 +187,7 @@ body {
   }
 
   .main-me-sect {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     position: absolute;
     top: 200vh;
@@ -381,7 +381,7 @@ body {
     position: absolute;
     bottom: -197vh;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 8vh;
     background: transparent;
     display: flex;
