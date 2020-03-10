@@ -1,9 +1,8 @@
 import React from "react";
 import Helmet from "react-helmet";
-import { Controller, Scene } from "react-scrollmagic";
 import "../../index.scss";
-import vid from "../../bg.mp4";
 import profilePic from "../../profile.jpg";
+import bg from "../../bg.jpg";
 
 // import { useSelector, useDispatch } from "react-redux";
 // import { increment, decrement, logged } from "../../actions";
@@ -22,10 +21,8 @@ class About extends React.Component {
   }
 
   handleScroll() {
-    let video = document.querySelector("video");
-    let scroll = window.pageYOffset / 1000;
-    //console.log(scroll);
-    video.currentTime = scroll;
+    let scrollPos = window.pageYOffset;
+    console.log(scrollPos);
   }
 
   render() {
@@ -36,9 +33,8 @@ class About extends React.Component {
           <title>{page_title}</title>
         </Helmet>
         <div className="about-page">
-          <div className="about-nav">
-            <div id="brand" />
-          </div>
+          <div className="darken-layer"></div>
+          <img src={bg} alt="Optic Fiber Background Art" />
           <div className="intro">
             <div className="info">
               <h2>Kevin Brian</h2>
@@ -46,9 +42,8 @@ class About extends React.Component {
               <i className="fas fa-map-marker-alt"></i>
               <p>London, England</p>
             </div>
-            <div className="darken"></div>
           </div>
-          <div className="about-projects">
+          <div className="main-projects">
             <h1>Projects</h1>
             <section className="project-section">
               <div className="project-1">
@@ -86,7 +81,7 @@ class About extends React.Component {
               </div>
             </section>
           </div>
-          <div className="about-me-sect">
+          <div className="main-me-sect">
             <div className="me-container">
               <div className="profile">
                 <img
@@ -101,7 +96,7 @@ class About extends React.Component {
                       className="fas fa-globe-europe"
                     ></i>
                     <p title="Country of origin" className="country">
-                      Romania
+                      Romanian
                     </p>
                   </div>
                   <div className="birth-div">
@@ -112,7 +107,7 @@ class About extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className="about-me">
+              <div className="main-me">
                 <p>
                   Disciplined, detail attentive and a problem-solver.
                   <br />
@@ -209,19 +204,7 @@ class About extends React.Component {
               </div>
             </div>
           </div>
-          <Controller>
-            <Scene duration={6000} triggerHook="onLeave" indicators={false} pin>
-              <video src={vid}></video>
-            </Scene>
-          </Controller>
-          {/*
-        <h1>Counter: {counter}</h1>
-        <button onClick={() => dispatch(increment())}>Add</button>
-        <button onClick={() => dispatch(decrement())}>Subtract</button>
-        <button onClick={() => dispatch(logged())}>Subtract</button>
-        {isLogged ? <h3>Valuable info I shouldn't see</h3> : ""}
-        */}
-          <div className="about-footer">
+          <div className="main-footer">
             <a
               href="https://github.com/baderproductions"
               title="GitHub Account"
@@ -238,9 +221,16 @@ class About extends React.Component {
               href="https://www.linkedin.com/in/kevin-bader-2137541a2/"
               title="LinkedIn Account"
             >
-              <i class="fab fa-linkedin"></i>
+              <i className="fab fa-linkedin"></i>
             </a>
           </div>
+          {/*
+        <h1>Counter: {counter}</h1>
+        <button onClick={() => dispatch(increment())}>Add</button>
+        <button onClick={() => dispatch(decrement())}>Subtract</button>
+        <button onClick={() => dispatch(logged())}>Subtract</button>
+        {isLogged ? <h3>Valuable info I shouldn't see</h3> : ""}
+        */}
         </div>
       </>
     );
