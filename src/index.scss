@@ -8,6 +8,7 @@ html,
 body {
   font-family: "Hammersmith One", sans-serif;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .about-page {
@@ -23,7 +24,7 @@ body {
     position: absolute;
     height: 300vh;
     width: 100vw;
-    background-color: rgba($color: #000000, $alpha: 0.5);
+    background-color: rgba($color: #000, $alpha: 0.35);
   }
 
   img {
@@ -32,27 +33,77 @@ body {
     object-fit: cover;
   }
 
-  .about-nav {
+  .intro-scroll {
     z-index: 5;
+    width: 50px;
+    height: 50px;
     position: fixed;
-    height: 8vh;
-    width: 100vw;
+    top: 40.5%;
+    right: 4%;
     background: transparent;
-    border-bottom: 1px solid rgb(255, 255, 255);
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: flex-start;
+    color: white;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
 
-    #brand {
-      width: 60px;
-      height: 60px;
-      background: url(./logo.png) no-repeat center center;
-      background-size: cover;
+    &:before {
+      content: "\A";
+      width: 100%;
+      height: 100%;
       border-radius: 50%;
-      margin-left: 10%;
-      border: 1px solid black;
-      align-self: center;
+      background: transparent;
+      border: 0.5px solid white;
+      display: inline-flex;
+    }
+  }
+
+  .project-scroll {
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 47.5%;
+    right: 4%;
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+
+    &:before {
+      content: "\A";
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: transparent;
+      border: 0.5px solid white;
+      display: inline-flex;
+    }
+  }
+  .about-scroll {
+    z-index: 5;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 54.5%;
+    right: 4%;
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+
+    &:before {
+      content: "\A";
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: transparent;
+      border: 0.5px solid white;
+      display: inline-flex;
     }
   }
 
@@ -65,29 +116,47 @@ body {
 
     .info {
       position: absolute;
+      width: auto;
+      height: auto;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       color: white;
       text-align: center;
+      background-color: rgba($color: #fff, $alpha: 0.2);
+      border-radius: 3px;
+      padding: 2vw;
+
+      h2,
+      h1,
+      p {
+        padding: 0.5vw;
+      }
 
       h2 {
-        font-size: 35px;
-        padding-bottom: 10px;
+        font-size: 4.5vw;
+        margin: 0;
+        filter: drop-shadow(1.5px 1.5px 0 #000);
       }
 
       h1 {
-        font-size: 40px;
-        padding-bottom: 12px;
+        font-size: 6vw;
+        margin: 0;
+        filter: drop-shadow(1.5px 1.5px 0 #000);
+        white-space: nowrap;
       }
 
       p {
+        font-size: 2vw;
         display: inline-flex;
-        margin-left: 5px;
+        margin-left: 1vw;
+        filter: drop-shadow(1.5px 1.5px 0 #000);
       }
 
       .fa-map-marker-alt {
+        font-size: 2vw;
         display: inline-flex;
+        filter: drop-shadow(1.5px 1.5px 0 #000);
       }
     }
   }
@@ -101,87 +170,66 @@ body {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
 
     h1 {
       color: white;
-      font-size: 80px;
+      font-size: 10vw;
       text-align: center;
+      margin: 0;
+      filter: drop-shadow(2px 2px 0 #000);
     }
 
     .project-section {
-      width: 90%;
+      width: 100%;
       height: auto;
       display: flex;
       flex-wrap: wrap;
       flex-direction: row;
       justify-content: space-evenly;
+      align-self: center;
 
-      .project-1,
-      .project-2,
-      .project-3 {
-        width: 200px;
-        height: 300px;
-        padding: 10px;
-        align-self: center;
-      }
+      .card {
+        width: 250px;
+        height: 360px;
+        margin: 15px 0;
 
-      .project-front,
-      .project-back {
-        cursor: pointer;
-        width: 200px;
-        height: 300px;
-        color: black;
-        text-align: center;
-        overflow: hidden;
-        backface-visibility: hidden;
-        position: absolute;
-        transition: transform 0.3s linear;
-
-        .project-one-img,
-        .project-two-img,
-        .project-three-img {
-          content: "";
-          width: 200px;
-          height: 300px;
-          border-radius: 20px;
-          border: 1px solid white;
-          object-fit: cover;
-          box-sizing: border-box;
-        }
-      }
-
-      .project-front {
-        transform: perspective(600px) rotateY(0deg);
-      }
-
-      .project-back {
-        background: white;
-        border-radius: 20px;
-        border: 1px solid black;
-        transform: perspective(600px) rotateY(180deg);
-
-        h2 {
-          margin-top: 85px;
+        .card-img-top {
+          height: 35%;
+          width: 100%;
+          object-fit: scale-down;
+          cursor: pointer;
         }
 
-        .fa-github {
-          color: black;
-          margin-top: 35px;
-          font-size: 50px;
+        #lsp {
+          background: radial-gradient(
+            ellipse at center,
+            rgb(26, 26, 26) 30%,
+            rgb(0, 0, 0)
+          );
         }
-      }
+        #spleeter {
+          background: radial-gradient(
+            ellipse at center,
+            rgb(235, 235, 235) 30%,
+            rgb(151, 151, 151)
+          );
+        }
 
-      .project-1:hover > .project-front,
-      .project-2:hover > .project-front,
-      .project-3:hover > .project-front {
-        transform: perspective(600px) rotateY(-180deg);
-      }
+        .card-body {
+          .fa-globe-europe,
+          .fa-github {
+            color: black;
+          }
+        }
 
-      .project-1:hover > .project-back,
-      .project-2:hover > .project-back,
-      .project-3:hover > .project-back {
-        transform: perspective(600px) rotateY(0deg);
+        .list-group {
+          .django-img {
+            width: 18px;
+            height: 18px;
+            margin-bottom: 3px;
+          }
+        }
       }
     }
   }
@@ -195,8 +243,17 @@ body {
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-self: center;
+
+    h1 {
+      color: white;
+      font-size: 10vw;
+      text-align: center;
+      margin: 0;
+      margin-bottom: 10px !important;
+      filter: drop-shadow(2px 2px 0 #000);
+    }
 
     .me-container {
       width: 80vw;
@@ -208,104 +265,115 @@ body {
       flex-direction: row;
       justify-content: space-between;
 
-      .profile {
-        height: 20vh;
-        width: 200px;
-        background-color: transparent;
-        border: 0.5px solid white;
+      .profile-sect {
+        height: 30vh;
+        width: 100%;
+        background-color: rgba($color: #fff, $alpha: 0.2);
         border-radius: 2px;
-        text-align: center;
-        align-self: flex-start;
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
+        justify-content: space-evenly;
 
-        .profile-pic {
-          height: 100px;
-          width: 100px;
-          border-radius: 50%;
-          border: 1px solid black;
-          background-size: cover;
-        }
-
-        .information {
-          width: 80%;
+        .profile {
           height: auto;
+          width: 100%;
           display: flex;
           flex-wrap: nowrap;
-          flex-direction: column;
-          justify-content: center;
+          flex-direction: row;
+          justify-content: space-evenly;
+          align-items: center;
 
-          .country-div {
-            width: 100%;
-            height: auto;
-            display: flex;
-            flex-wrap: nowrap;
-            flex-direction: row;
-            justify-content: left;
-
-            .fa-globe-europe {
-              align-self: flex-start;
-              flex-basis: content;
-              color: white;
-            }
-
-            .country {
-              align-self: flex-end;
-              font: normal 14px/1.5 "Hammersmith One", sans-serif;
-              padding-left: 10px;
-              margin-bottom: 5px !important;
-              color: white;
-              word-wrap: break-word;
-            }
+          .profile-pic {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            border: 1px solid black;
+            background-size: cover;
+            align-self: center;
           }
 
-          .birth-div {
-            width: 100%;
+          .information {
+            width: auto;
             height: auto;
             display: flex;
             flex-wrap: nowrap;
-            flex-direction: row;
-            justify-content: left;
-            color: white;
+            flex-direction: column;
+            justify-content: center;
+            align-self: center;
 
-            .fa-baby {
-              align-self: flex-start;
-              flex-basis: content;
-              padding-left: 2px;
-              color: white;
+            .country-div {
+              width: 100%;
+              height: auto;
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: row;
+              justify-content: left;
+
+              .fa-globe-europe {
+                align-self: flex-start;
+                flex-basis: content;
+                color: white;
+                filter: drop-shadow(1.5px 1.5px 0 #000);
+              }
+
+              .country {
+                align-self: flex-end;
+                font: normal 14px/1.5 "Hammersmith One", sans-serif;
+                padding-left: 10px;
+                margin-bottom: 5px !important;
+                color: white;
+                word-wrap: break-word;
+                filter: drop-shadow(1.5px 1.5px 0 #000);
+              }
             }
 
-            .birth {
-              align-self: flex-end;
-              font: "Hammersmith One", sans-serif;
-              flex-basis: content;
-              padding-left: 12px;
-              margin-bottom: 0 !important;
-              font: normal 14px/1.5 "Hammersmith One", sans-serif;
-              word-wrap: break-word;
+            .birth-div {
+              width: 100%;
+              height: auto;
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: row;
+              justify-content: left;
+              color: white;
+
+              .fa-baby {
+                align-self: flex-start;
+                flex-basis: content;
+                padding-left: 2px;
+                color: white;
+                filter: drop-shadow(1.5px 1.5px 0 #000);
+              }
+
+              .birth {
+                align-self: flex-end;
+                font: "Hammersmith One", sans-serif;
+                flex-basis: content;
+                padding-left: 12px;
+                margin-bottom: 0 !important;
+                font: normal 14px/1.5 "Hammersmith One", sans-serif;
+                word-wrap: break-word;
+                filter: drop-shadow(1.5px 1.5px 0 #000);
+              }
             }
           }
         }
       }
 
-      .main-me {
-        height: 20vh;
-        width: auto;
-        max-width: 50vw;
-        background-color: transparent;
-        border: 0.5px solid white;
+      .personal-info {
+        height: auto;
+        width: 100%;
         text-align: center;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
 
         p {
           font: "Hammersmith One", sans-serif;
           padding: 15px;
+          margin: 0;
           color: white;
+          filter: drop-shadow(1.5px 1.5px 0 #000);
         }
       }
     }
@@ -318,9 +386,8 @@ body {
       display: flex;
       flex-wrap: nowrap;
       flex-direction: column;
-      background-color: transparent;
+      background-color: rgba($color: #fff, $alpha: 0.2);
       border-radius: 2px;
-      border: 0.5px solid white;
 
       .fa-question-circle {
         font-size: 60px;
@@ -328,58 +395,14 @@ body {
         margin-left: 2vw;
         text-align: left;
         color: white;
-      }
-
-      .buttons {
-        position: relative;
-        top: -2vh;
-        width: 70vw;
-        height: 30vh;
-        align-self: center;
-        display: flex;
-        flex-wrap: nowrap;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: center;
-
-        .collapse {
-          width: 80%;
-          cursor: pointer;
-          border: 0.5px solid white;
-          background-color: transparent;
-          color: white;
-          padding: 15px;
-          outline: none;
-          text-align: left;
-          font-size: 15px;
-          border-radius: 2px;
-        }
-
-        .answer1,
-        .answer2,
-        .answer3,
-        .answer4,
-        .answer5 {
-          width: 80%;
-          margin-bottom: 10px;
-          padding: 0;
-          max-height: 0;
-          overflow: hidden;
-          color: white;
-
-          p {
-            font: "Hammersmith One", sans-serif;
-            padding: 30px;
-            color: white !important;
-          }
-        }
+        filter: drop-shadow(1.5px 1.5px 0 #000);
       }
     }
   }
 
   .main-footer {
     position: absolute;
-    bottom: -197vh;
+    bottom: -200vh;
     left: 0;
     width: 100vw;
     height: 8vh;
@@ -391,10 +414,17 @@ body {
     align-items: center;
 
     a {
-      width: 32px;
-      height: 32px;
+      width: 50px;
+      height: 50px;
+      background-color: rgba($color: #fff, $alpha: 0.2);
+      border-radius: 50%;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
 
       .fa-github,
       .fa-linkedin,
@@ -402,6 +432,7 @@ body {
         color: white;
         font-size: 32px;
         padding: 0;
+        filter: drop-shadow(1.5px 1.5px 0 #000);
       }
     }
   }

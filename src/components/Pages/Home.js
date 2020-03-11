@@ -2,7 +2,12 @@ import React from "react";
 import Helmet from "react-helmet";
 import "../../index.scss";
 import profilePic from "../../profile.jpg";
+import lsLogo from "../../lslogo.png";
+import spleeterLogo from "../../spleeter.png";
 import bg from "../../bg.jpg";
+import Modal from "react-modal";
+
+Modal.setAppElement("#root");
 
 // import { useSelector, useDispatch } from "react-redux";
 // import { increment, decrement, logged } from "../../actions";
@@ -11,28 +16,67 @@ class About extends React.Component {
   // const counter = useSelector(state => state.counter);
   // const isLogged = useSelector(state => state.isLogged);
   // const dispatch = useDispatch();
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false
+    };
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
+    this.handleOpenModal = this.handleOpenModal.bind(this);
+    this.handleCloseModal = this.handleCloseModal.bind(this);
+
+    this.introRef = React.createRef();
+    this.projectsRef = React.createRef();
+    this.aboutRef = React.createRef();
   }
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.handleScroll);
+  handleOpenModal() {
+    this.setState({ showModal: true });
   }
 
-  handleScroll() {
-    let scrollPos = window.pageYOffset;
-    console.log(scrollPos);
+  handleCloseModal() {
+    this.setState({ showModal: false });
   }
 
   render() {
     const page_title = "BADERproductions - Home";
+
+    const customStyles = {
+      content: {
+        height: "80%",
+        width: "80%",
+        top: "50%",
+        left: "50%",
+        right: "auto",
+        bottom: "auto",
+        transform: "translate(-50%, -50%)",
+        borderRadius: "2px"
+      },
+      overlay: {
+        backgroundColor: "transparent"
+      }
+    };
+
     return (
       <>
         <Helmet>
           <title>{page_title}</title>
         </Helmet>
-        <div className="about-page">
+        <div ref={this.introRef} className="about-page">
+          <button
+            className="intro-scroll"
+            onClick={() => window.scrollTo(0, this.introRef.current.offsetTop)}
+          ></button>
+          <button
+            className="project-scroll"
+            onClick={() =>
+              window.scrollTo(0, this.projectsRef.current.offsetTop)
+            }
+          ></button>
+          <button
+            className="about-scroll"
+            onClick={() => window.scrollTo(0, this.aboutRef.current.offsetTop)}
+          ></button>
           <div className="darken-layer"></div>
           <img src={bg} alt="Optic Fiber Background Art" />
           <div className="intro">
@@ -43,77 +87,133 @@ class About extends React.Component {
               <p>London, England</p>
             </div>
           </div>
-          <div className="main-projects">
+          <div ref={this.projectsRef} className="main-projects">
             <h1>Projects</h1>
             <section className="project-section">
-              <div className="project-1">
-                <div className="project-front">
-                  <div className="project-one-img"></div>
+              <div className="card">
+                <img
+                  onClick={this.handleOpenModal}
+                  src={lsLogo}
+                  id="lsp"
+                  className="card-img-top"
+                  alt="Project Display"
+                />
+                <Modal
+                  style={customStyles}
+                  isOpen={this.state.showModal}
+                  contentLabel="onRequestClose Example"
+                  onRequestClose={this.handleCloseModal}
+                >
+                  <p>Modal text!</p>
+                  <button onClick={this.handleCloseModal}>Close Modal</button>
+                </Modal>
+                <div className="card-body">
+                  <h5 className="card-title">Lazăr Sergiu Photographer</h5>
+                  <p className="card-text">
+                    React based website builded for a hobbyist photographer.
+                    Logo design included.
+                  </p>
                 </div>
-                <div className="project-back">
-                  <h2>Project One</h2>
-                  <a href="https://github.com/1" title="GitHub Project Link">
-                    <i className="fab fa-github"></i>
+                <ul className="list-group list-group-flush"></ul>
+                <div className="card-body">
+                  <a
+                    className="card-link"
+                    href="https://lazarsergiuphotographer.com/"
+                    title="Website Link"
+                  >
+                    <i title="Website Link" className="fas fa-globe-europe"></i>
+                    &nbsp; Website Link
+                  </a>
+                  <a
+                    className="card-link"
+                    href="https://github.com/baderproductions/lsp"
+                    title="Github Source"
+                  >
+                    <i className="fab fa-github"></i>&nbsp; Source
                   </a>
                 </div>
               </div>
-              <div className="project-2">
-                <div className="project-front">
-                  <div className="project-two-img"></div>
+              <div className="card">
+                <img
+                  onClick={this.handleOpenModal}
+                  src={spleeterLogo}
+                  id="spleeter"
+                  className="card-img-top"
+                  alt="Project Display"
+                />
+                <Modal
+                  style={customStyles}
+                  isOpen={this.state.showModal}
+                  contentLabel="onRequestClose Example"
+                  onRequestClose={this.handleCloseModal}
+                >
+                  <p>Modal text!</p>
+                  <button onClick={this.handleCloseModal}>Close Modal</button>
+                </Modal>
+                <div className="card-body">
+                  <h5 className="card-title">Django Spleeter by Deezer</h5>
+                  <p className="card-text">
+                    Spleeter by Deezer uses Tensorflow to separate vocals and
+                    accompaniment from a song.
+                  </p>
                 </div>
-                <div className="project-back">
-                  <h2>Project Two</h2>
-                  <a href="https://github.com/2" title="GitHub Project Link">
-                    <i className="fab fa-github"></i>
+                <ul className="list-group list-group-flush"></ul>
+                <div className="card-body">
+                  <a
+                    className="card-link"
+                    href="https://lazarsergiuphotographer.com/"
+                    title="Website Link"
+                  >
+                    <i title="Website Link" className="fas fa-globe-europe"></i>
+                    &nbsp; Website Link
                   </a>
-                </div>
-              </div>
-              <div className="project-3">
-                <div className="project-front">
-                  <div className="project-three-img"></div>
-                </div>
-                <div className="project-back">
-                  <h2>Project Three</h2>
-                  <a href="https://github.com/3" title="GitHub Project Link">
-                    <i className="fab fa-github"></i>
+                  <a
+                    className="card-link"
+                    href="https://github.com/baderproductions/lsp"
+                    title="Github Source"
+                  >
+                    <i className="fab fa-github"></i>&nbsp; Source
                   </a>
                 </div>
               </div>
             </section>
           </div>
-          <div className="main-me-sect">
+          <div ref={this.aboutRef} className="main-me-sect">
+            <h1>About me</h1>
             <div className="me-container">
-              <div className="profile">
-                <img
-                  className="profile-pic"
-                  src={profilePic}
-                  alt="Profile Circle"
-                />
-                <div className="information">
-                  <div className="country-div">
-                    <i
-                      title="Country of origin"
-                      className="fas fa-globe-europe"
-                    ></i>
-                    <p title="Country of origin" className="country">
-                      Romanian
-                    </p>
-                  </div>
-                  <div className="birth-div">
-                    <i title="Date of birth" className="fas fa-baby"></i>
-                    <p title="Date of birth" className="birth">
-                      23
-                    </p>
+              <div className="profile-sect">
+                <div className="profile">
+                  <img
+                    className="profile-pic"
+                    src={profilePic}
+                    alt="Profile Circle"
+                  />
+                  <div className="information">
+                    <div className="country-div">
+                      <i
+                        title="Country of origin"
+                        className="fas fa-globe-europe"
+                      ></i>
+                      <p title="Country of origin" className="country">
+                        Romanian
+                      </p>
+                    </div>
+                    <div className="birth-div">
+                      <i title="Date of birth" className="fas fa-baby"></i>
+                      <p title="Date of birth" className="birth">
+                        23
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="main-me">
-                <p>
-                  Disciplined, detail attentive and a problem-solver.
-                  <br />
-                  Can easily blend in and adapt to working either as a team
-                  member or individually and always get the job done on time.
-                </p>
+                <div className="personal-info">
+                  <p>
+                    Disciplined, detail attentive and a problem-solver.
+                    <br />
+                    Can easily blend in and adapt to working either as a team
+                    member or individually and always get the job done on time.
+                  </p>
+                </div>
               </div>
             </div>
             <div className="questions">
