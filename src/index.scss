@@ -3557,10 +3557,28 @@ body {
   }
 
   .about-page {
+    #resume-btn {
+      z-index: 8;
+      width: 160px !important;
+      height: 50px !important;
+      position: absolute;
+      top: 80% !important;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 2px !important;
+      outline: none !important;
+
+      .fa-angle-down {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
     .intro-scroll {
       width: 40px;
       height: 40px;
-      top: 1%;
+      top: 2% !important;
       right: 1%;
 
       .fa-circle {
@@ -3571,7 +3589,7 @@ body {
     .project-scroll {
       width: 40px;
       height: 40px;
-      top: 8%;
+      top: 11% !important;
       right: 1%;
 
       .fa-angle-up {
@@ -3585,7 +3603,7 @@ body {
     .about-scroll {
       width: 40px;
       height: 40px;
-      top: 15%;
+      top: 20% !important;
       right: 1%;
 
       .fa-angle-double-down {
@@ -4603,7 +4621,7 @@ body {
       width: 160px !important;
       height: 50px !important;
       position: absolute;
-      top: 90%;
+      top: 98%;
       left: 50%;
       transform: translate(-50%, -50%);
       border-radius: 2px !important;
