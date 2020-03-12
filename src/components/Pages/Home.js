@@ -251,7 +251,6 @@ class Home extends React.Component {
                   </p>
                 </div>
                 <ul className="list-group list-group-flush">
-                  <li className="list-group-item"></li>
                   <li className="list-group-item">React, Frontend</li>
                 </ul>
                 <div className="card-body">
@@ -294,10 +293,11 @@ class Home extends React.Component {
                   </p>
                 </div>
                 <ul className="list-group list-group-flush">
-                  <li className="list-group-item"></li>
                   <li className="list-group-item">Django, Backend</li>
                 </ul>
                 <div className="card-body">
+                  <label>Work in progress...</label>
+                  {/*                   
                   <a
                     className="card-link"
                     href="https://lazarsergiuphotographer.com/"
@@ -313,6 +313,7 @@ class Home extends React.Component {
                   >
                     <i className="fab fa-github"></i>&nbsp; Source
                   </a>
+                  */}
                 </div>
               </div>
             </section>
