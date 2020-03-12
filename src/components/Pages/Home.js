@@ -1,10 +1,14 @@
 import React from "react";
+// Dynamic title
 import Helmet from "react-helmet";
+// Facebook messenger customer chat
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import "../../index.scss";
 import profilePic from "../../profile.jpg";
 import lsLogo from "../../lslogo.png";
 import spleeterLogo from "../../spleeter.png";
 import bg from "../../bg.jpg";
+import cv from "../../cv.pdf";
 
 // import { useSelector, useDispatch } from "react-redux";
 // import { increment, decrement, logged } from "../../actions";
@@ -160,6 +164,10 @@ class About extends React.Component {
         <Helmet>
           <title>{page_title}</title>
         </Helmet>
+        <MessengerCustomerChat
+          pageId="106105690995533"
+          appId="3127150517308819"
+        />
         <div style={{ ...st.def, ...st.soHide }} className="about-modal">
           <h3>
             {this.state.t1 || this.state.t2 || this.state.t3 || this.state.t4}
@@ -178,6 +186,15 @@ class About extends React.Component {
           <p id="close-touch">Tap outside to close</p>
         </div>
         <div ref={this.introRef} className="about-page">
+          <a
+            href={cv}
+            target="_blank"
+            rel="noopener noreferrer"
+            id="resume-btn"
+            className="btn btn-danger"
+          >
+            Download resume
+          </a>
           <button
             className="intro-scroll"
             onClick={() => window.scrollTo(0, this.introRef.current.offsetTop)}

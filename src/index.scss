@@ -72,6 +72,18 @@ body {
   flex-direction: column;
   justify-content: space-between;
 
+  #resume-btn {
+    z-index: 8;
+    width: 20vw;
+    height: 4vh;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 2px !important;
+    outline: none !important;
+  }
+
   .darken-layer {
     position: absolute;
     height: 300vh;
