@@ -186,7 +186,7 @@ class Home extends React.Component {
           <p id="close-touch">Tap outside to close</p>
         </div>
         <div ref={this.introRef} className="about-page">
-          <a
+          {/* <a
             href={cv}
             target="_blank"
             rel="noopener noreferrer"
@@ -195,7 +195,7 @@ class Home extends React.Component {
           >
             Download resume
             <i className="fas fa-angle-down"></i>
-          </a>
+          </a> */}
           <button
             className="intro-scroll"
             onClick={() => window.scrollTo(0, this.introRef.current.offsetTop)}
@@ -296,7 +296,12 @@ class Home extends React.Component {
                   <li className="list-group-item">Django, Backend</li>
                 </ul>
                 <div className="card-body">
-                  <label>Work in progress...</label>
+                  <label>
+                    Working on it... <br /> In the mean time check out the{" "}
+                    <a href="https://github.com/deezer/spleeter/wiki/4.-API-Reference">
+                      API
+                    </a>
+                  </label>
                   {/*                   
                   <a
                     className="card-link"
