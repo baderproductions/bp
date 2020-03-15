@@ -8,7 +8,7 @@ import profilePic from "../../profile.jpg";
 import lsLogo from "../../lslogo.png";
 import spleeterLogo from "../../spleeter.png";
 import bg from "../../bg.jpg";
-import cv from "../../cv.pdf";
+//import cv from "../../cv.pdf";
 
 // import { useSelector, useDispatch } from "react-redux";
 // import { increment, decrement, logged } from "../../actions";

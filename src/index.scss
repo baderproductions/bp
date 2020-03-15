@@ -319,6 +319,9 @@ body {
         }
 
         .card-body {
+          label {
+            font-size: 1vw;
+          }
           #lsp-body,
           #spleeter-body {
             display: none;
