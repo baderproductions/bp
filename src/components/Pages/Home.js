@@ -298,7 +298,7 @@ class Home extends React.Component {
                 <div className="card-body">
                   <label>
                     Working on it... <br />
-                    Check out the
+                    Check out the{" "}
                     <a href="https://github.com/deezer/spleeter/wiki/4.-API-Reference">
                       API
                     </a>
