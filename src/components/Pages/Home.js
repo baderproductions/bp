@@ -167,6 +167,7 @@ class Home extends React.Component {
         <MessengerCustomerChat
           pageId="106105690995533"
           appId="3127150517308819"
+          themeColor="default"
         />
         <div style={{ ...st.def, ...st.soHide }} className="about-modal">
           <h3>
