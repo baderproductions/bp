@@ -347,10 +347,12 @@ body {
             font-size: 14px;
             color: white;
             margin: 0;
+            filter: drop-shadow(1px 1px 0 black);
 
             a {
               color: white;
               text-decoration: underline;
+              filter: drop-shadow(1px 1px 0 black);
             }
           }
           #lsp-body,
@@ -360,10 +362,12 @@ body {
           .fa-globe-europe {
             color: white;
             margin-right: 8px;
+            filter: drop-shadow(1px 1px 0 black);
           }
           .fa-github {
             color: white;
             margin: 0 8px;
+            filter: drop-shadow(1px 1px 0 black);
           }
         }
 
