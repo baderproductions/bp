@@ -41,7 +41,7 @@ body {
 
     p {
       padding: 15px;
-      font-size: 20px;
+      font-size: 1.5vw;
       text-align: left;
     }
   }
@@ -95,7 +95,7 @@ body {
     position: absolute;
     height: 300vh;
     width: 100vw;
-    background-color: rgba($color: #000, $alpha: 0.35);
+    background-color: rgba($color: #000, $alpha: 0.2);
   }
 
   img {
@@ -111,7 +111,8 @@ body {
     position: fixed;
     top: 3%;
     right: 4%;
-    background: transparent;
+    background-color: rgba($color: #000, $alpha: 0.3);
+    border-radius: 50%;
     color: white;
     border: none;
     padding: 0;
@@ -124,7 +125,7 @@ body {
       height: 100%;
       border-radius: 50%;
       background: transparent;
-      border: 0.5px solid white;
+      border: 0.5px solid rgba($color: black, $alpha: 0.8);
       display: inline-flex;
     }
 
@@ -144,7 +145,8 @@ body {
     position: fixed;
     top: 10%;
     right: 4%;
-    background: transparent;
+    background-color: rgba($color: #000, $alpha: 0.3);
+    border-radius: 50%;
     color: white;
     border: none;
     padding: 0;
@@ -157,7 +159,7 @@ body {
       height: 100%;
       border-radius: 50%;
       background: transparent;
-      border: 0.5px solid white;
+      border: 0.5px solid rgba($color: black, $alpha: 0.8);
       display: inline-flex;
     }
 
@@ -184,7 +186,8 @@ body {
     position: fixed;
     top: 17%;
     right: 4%;
-    background: transparent;
+    background-color: rgba($color: #000, $alpha: 0.3);
+    border-radius: 50%;
     color: white;
     border: none;
     padding: 0;
@@ -197,7 +200,7 @@ body {
       height: 100%;
       border-radius: 50%;
       background: transparent;
-      border: 0.5px solid white;
+      border: 0.5px solid rgba($color: black, $alpha: 0.8);
       display: inline-flex;
     }
 
@@ -226,8 +229,9 @@ body {
       transform: translate(-50%, -50%);
       color: white;
       text-align: center;
-      background-color: rgba($color: #fff, $alpha: 0.2);
-      border-radius: 3px;
+      background-color: rgba($color: #000, $alpha: 0.3);
+      border: 0.5px solid rgba($color: black, $alpha: 0.8);
+      border-radius: 2px;
       padding: 2vw;
 
       h2,
@@ -296,11 +300,15 @@ body {
         width: 250px;
         height: 450px;
         margin: 15px 0;
+        background-color: rgba($color: #000, $alpha: 0.3);
+        border: 0.5px solid rgba($color: black, $alpha: 0.8);
+        border-radius: 2px;
 
         .card-img-top {
           height: 35%;
           width: 100%;
           object-fit: scale-down;
+          border-radius: 2px;
         }
 
         #lsp {
@@ -319,24 +327,52 @@ body {
         }
 
         .card-body {
+          .card-title {
+            color: white;
+            filter: drop-shadow(1px 1px 0 black);
+          }
+
+          .card-text {
+            color: white;
+            filter: drop-shadow(1px 1px 0 black);
+          }
+
+          .card-link {
+            color: white;
+            filter: drop-shadow(1px 1px 0 black);
+            text-decoration: underline;
+          }
+
           label {
             font-size: 14px;
+            color: white;
+            margin: 0;
+
+            a {
+              color: white;
+              text-decoration: underline;
+            }
           }
           #lsp-body,
           #spleeter-body {
             display: none;
           }
-          .fa-globe-europe,
+          .fa-globe-europe {
+            color: white;
+            margin-right: 8px;
+          }
           .fa-github {
-            color: black;
+            color: white;
+            margin: 0 8px;
           }
         }
 
         .list-group {
-          .django-img {
-            width: 18px;
-            height: 18px;
-            margin-bottom: 3px;
+          .list-group-item {
+            background-color: rgba($color: #000, $alpha: 0.3) !important;
+            color: white !important;
+            border-top: 0.5px solid rgba($color: black, $alpha: 0.8);
+            border-bottom: 0.5px solid rgba($color: black, $alpha: 0.8);
           }
         }
       }
@@ -377,7 +413,10 @@ body {
       .profile-sect {
         height: 30vh;
         width: 100%;
-        background-color: rgba($color: #fff, $alpha: 0.2);
+        background-color: rgba($color: #000, $alpha: 0.3);
+        border-top: 0.5px solid rgba($color: black, $alpha: 0.8);
+        border-left: 0.5px solid rgba($color: black, $alpha: 0.8);
+        border-right: 0.5px solid rgba($color: black, $alpha: 0.8);
         border-radius: 2px;
         display: flex;
         flex-wrap: nowrap;
@@ -478,6 +517,7 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-self: center;
 
         p {
           font: "Hammersmith One", sans-serif;
@@ -498,8 +538,15 @@ body {
       display: flex;
       flex-wrap: nowrap;
       flex-direction: column;
-      background-color: rgba($color: #fff, $alpha: 0.2);
+      background-color: rgba($color: #000, $alpha: 0.3);
+      border-bottom: 0.5px solid rgba($color: black, $alpha: 0.8);
+      border-left: 0.5px solid rgba($color: black, $alpha: 0.8);
+      border-right: 0.5px solid rgba($color: black, $alpha: 0.8);
       border-radius: 2px;
+
+      button {
+        cursor: pointer;
+      }
 
       .fa-question-circle {
         font-size: 80px;
@@ -606,7 +653,8 @@ body {
       a {
         width: 62px;
         height: 62px;
-        background-color: rgba($color: #fff, $alpha: 0.2);
+        background-color: rgba($color: #000, $alpha: 0.3);
+        border: 0.5px solid rgba($color: black, $alpha: 0.8);
         border-radius: 50%;
         margin: 0;
         padding: 0;
@@ -687,7 +735,7 @@ body {
 
       p {
         padding: 30px;
-        font-size: 1.5vw;
+        font-size: 1.6vw !important;
         text-align: left;
       }
     }
@@ -723,7 +771,6 @@ body {
       position: absolute;
       height: 300vh;
       width: 100vw;
-      background-color: rgba($color: #000, $alpha: 0.35);
     }
 
     img {
@@ -734,12 +781,11 @@ body {
 
     .intro-scroll {
       z-index: 5;
-      width: 180px !important;
-      height: 180px !important;
+      width: 250px !important;
+      height: 250px !important;
       position: fixed;
       top: 6% !important;
       right: 4.3% !important;
-      background: transparent;
       color: white;
       border: none;
       padding: 0;
@@ -751,8 +797,6 @@ body {
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background: transparent;
-        border: 2px solid white !important;
         display: inline-flex;
       }
 
@@ -761,18 +805,17 @@ body {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 1.5vw;
+        font-size: 2vw !important;
       }
     }
 
     .project-scroll {
       z-index: 5;
-      width: 180px !important;
-      height: 180px !important;
+      width: 250px !important;
+      height: 250px !important;
       position: fixed;
-      top: 16% !important;
+      top: 20% !important;
       right: 4.3% !important;
-      background: transparent;
       color: white;
       border: none;
       padding: 0;
@@ -784,8 +827,6 @@ body {
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background: transparent;
-        border: 2px solid white !important;
         display: inline-flex;
       }
 
@@ -794,7 +835,7 @@ body {
         top: 33%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 2.5vw;
+        font-size: 4vw !important;
       }
 
       .fa-angle-down {
@@ -802,17 +843,16 @@ body {
         top: 68%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 2.5vw;
+        font-size: 4vw !important;
       }
     }
     .about-scroll {
       z-index: 5;
-      width: 180px !important;
-      height: 180px !important;
+      width: 250px !important;
+      height: 250px !important;
       position: fixed;
-      top: 26% !important;
+      top: 34% !important;
       right: 4.3% !important;
-      background: transparent;
       color: white;
       border: none;
       padding: 0;
@@ -824,8 +864,6 @@ body {
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background: transparent;
-        border: 2px solid white !important;
         display: inline-flex;
       }
 
@@ -834,7 +872,7 @@ body {
         top: 54%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 2.5vw;
+        font-size: 4vw !important;
       }
     }
 
@@ -854,8 +892,6 @@ body {
         transform: translate(-50%, -50%);
         color: white;
         text-align: center;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 3px;
         padding: 2vw;
 
         h2,
@@ -905,7 +941,7 @@ body {
 
       h1 {
         color: white;
-        font-size: 8vw !important;
+        font-size: 7vw !important;
         text-align: center;
         margin: 0;
         filter: drop-shadow(2px 2px 0 #000);
@@ -921,8 +957,8 @@ body {
         align-self: center;
 
         .card {
-          width: 800px !important;
-          height: 1200px !important;
+          width: 1000px !important;
+          height: 1300px !important;
           margin: 15px 0;
 
           .card-title {
@@ -960,20 +996,24 @@ body {
             #spleeter-body {
               display: none;
             }
-            .fa-globe-europe,
+            .fa-globe-europe {
+              color: black;
+              margin-right: 1vw !important;
+            }
             .fa-github {
               color: black;
+              margin: 0 1vw !important;
             }
           }
 
           ul {
             li {
-              font-size: 1.5vw;
+              font-size: 2vw !important;
             }
           }
 
           .card-link {
-            font-size: 1.3vw;
+            font-size: 2vw !important;
           }
         }
       }
@@ -1013,8 +1053,6 @@ body {
         .profile-sect {
           height: 30vh;
           width: 100%;
-          background-color: rgba($color: #fff, $alpha: 0.2);
-          border-radius: 2px;
           display: flex;
           flex-wrap: nowrap;
           flex-direction: column;
@@ -1030,8 +1068,8 @@ body {
             align-items: center;
 
             .profile-pic {
-              height: 350px !important;
-              width: 350px !important;
+              height: 300px !important;
+              width: 300px !important;
               border-radius: 50%;
               border: 1px solid black;
               background-size: cover;
@@ -1134,8 +1172,6 @@ body {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 2px;
 
         .fa-question-circle {
           font-size: 5vw !important;
@@ -1240,9 +1276,8 @@ body {
         align-items: center;
 
         a {
-          width: 170px !important;
-          height: 170px !important;
-          background-color: rgba($color: #fff, $alpha: 0.2);
+          width: 200px !important;
+          height: 200px !important;
           border-radius: 50%;
           margin: 0;
           padding: 0;
@@ -1256,7 +1291,7 @@ body {
           .fa-linkedin,
           .fa-instagram {
             color: white;
-            font-size: 2.5vw !important;
+            font-size: 3vw !important;
             padding: 0;
             filter: drop-shadow(1.5px 1.5px 0 #000);
           }
@@ -1324,7 +1359,7 @@ body {
 
       p {
         padding: 30px;
-        font-size: 1.5vw;
+        font-size: 1.8vw;
         text-align: left;
       }
     }
@@ -1382,7 +1417,6 @@ body {
       position: absolute;
       height: 300vh;
       width: 100vw;
-      background-color: rgba($color: #000, $alpha: 0.35);
     }
 
     img {
@@ -1393,12 +1427,11 @@ body {
 
     .intro-scroll {
       z-index: 5;
-      width: 80px;
-      height: 80px;
+      width: 120px;
+      height: 120px;
       position: fixed;
       top: 5%;
       right: 5%;
-      background: transparent;
       color: white;
       border: none;
       padding: 0;
@@ -1411,7 +1444,6 @@ body {
         height: 100%;
         border-radius: 50%;
         background: transparent;
-        border: 0.5px solid white;
         display: inline-flex;
       }
 
@@ -1420,18 +1452,17 @@ body {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 1.5vw;
+        font-size: 2vw;
       }
     }
 
     .project-scroll {
       z-index: 5;
-      width: 80px;
-      height: 80px;
+      width: 120px;
+      height: 120px;
       position: fixed;
       top: 15%;
       right: 5%;
-      background: transparent;
       color: white;
       border: none;
       padding: 0;
@@ -1444,7 +1475,6 @@ body {
         height: 100%;
         border-radius: 50%;
         background: transparent;
-        border: 0.5px solid white;
         display: inline-flex;
       }
 
@@ -1453,7 +1483,7 @@ body {
         top: 33%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 2.5vw;
+        font-size: 3.5vw;
       }
 
       .fa-angle-down {
@@ -1461,17 +1491,16 @@ body {
         top: 68%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 2.5vw;
+        font-size: 3.5vw;
       }
     }
     .about-scroll {
       z-index: 5;
-      width: 80px;
-      height: 80px;
+      width: 120px;
+      height: 120px;
       position: fixed;
       top: 25%;
       right: 5%;
-      background: transparent;
       color: white;
       border: none;
       padding: 0;
@@ -1483,8 +1512,6 @@ body {
         width: 100%;
         height: 100%;
         border-radius: 50%;
-        background: transparent;
-        border: 0.5px solid white;
         display: inline-flex;
       }
 
@@ -1493,7 +1520,7 @@ body {
         top: 54%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 2.5vw;
+        font-size: 3.5vw;
       }
     }
 
@@ -1513,8 +1540,6 @@ body {
         transform: translate(-50%, -50%);
         color: white;
         text-align: center;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 3px;
         padding: 2vw;
 
         h2,
@@ -1564,7 +1589,7 @@ body {
 
       h1 {
         color: white;
-        font-size: 10vw;
+        font-size: 8vw;
         text-align: center;
         margin: 0;
         filter: drop-shadow(2px 2px 0 #000);
@@ -1580,16 +1605,16 @@ body {
         align-self: center;
 
         .card {
-          width: 350px;
-          height: 550px;
+          width: 500px;
+          height: 800px;
           margin: 15px 0;
 
           .card-title {
-            font-size: 1.5vw;
+            font-size: 2vw;
           }
 
           .card-text {
-            font-size: 1vw;
+            font-size: 1.5vw;
           }
 
           .card-img-top {
@@ -1620,15 +1645,22 @@ body {
             }
             .fa-globe-europe,
             .fa-github {
-              color: black;
+              font-size: 1.8vw;
+              color: white;
+            }
+
+            a {
+              font-size: 1.8vw;
+            }
+
+            label {
+              font-size: 1.5vw;
             }
           }
 
           .list-group {
-            .django-img {
-              width: 18px;
-              height: 18px;
-              margin-bottom: 3px;
+            .list-group-item {
+              font-size: 1.5vw;
             }
           }
         }
@@ -1669,8 +1701,6 @@ body {
         .profile-sect {
           height: 30vh;
           width: 100%;
-          background-color: rgba($color: #fff, $alpha: 0.2);
-          border-radius: 2px;
           display: flex;
           flex-wrap: nowrap;
           flex-direction: column;
@@ -1686,8 +1716,8 @@ body {
             align-items: center;
 
             .profile-pic {
-              height: 150px;
-              width: 150px;
+              height: 180px;
+              width: 180px;
               border-radius: 50%;
               border: 1px solid black;
               background-size: cover;
@@ -1774,7 +1804,7 @@ body {
 
           p {
             font: "Hammersmith One", sans-serif;
-            font-size: 1.4vw;
+            font-size: 1.5vw;
             padding: 15px;
             margin: 0;
             color: white;
@@ -1791,11 +1821,9 @@ body {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 2px;
 
         .fa-question-circle {
-          font-size: 80px;
+          font-size: 6vw;
           margin-top: 1.5vh;
           margin-left: 2vw;
           text-align: left;
@@ -1813,7 +1841,7 @@ body {
           color: black;
           border-radius: 34px;
           border: 0.5px solid white;
-          font-size: 20px;
+          font-size: 1.6vw;
           align-self: center;
           outline: none;
           filter: drop-shadow(1.5px 1.5px 0 #000);
@@ -1833,7 +1861,7 @@ body {
           color: black;
           border-radius: 34px;
           border: 0.5px solid white;
-          font-size: 20px;
+          font-size: 1.6vw;
           align-self: center;
           outline: none;
           filter: drop-shadow(1.5px 1.5px 0 #000);
@@ -1853,7 +1881,7 @@ body {
           color: black;
           border-radius: 34px;
           border: 0.5px solid white;
-          font-size: 20px;
+          font-size: 1.6vw;
           align-self: center;
           outline: none;
           filter: drop-shadow(1.5px 1.5px 0 #000);
@@ -1873,7 +1901,7 @@ body {
           color: black;
           border-radius: 34px;
           border: 0.5px solid white;
-          font-size: 20px;
+          font-size: 1.6vw;
           align-self: center;
           outline: none;
           filter: drop-shadow(1.5px 1.5px 0 #000);
@@ -1897,9 +1925,8 @@ body {
         align-items: center;
 
         a {
-          width: 62px;
-          height: 62px;
-          background-color: rgba($color: #fff, $alpha: 0.2);
+          width: 90px;
+          height: 90px;
           border-radius: 50%;
           margin: 0;
           padding: 0;
@@ -1913,7 +1940,7 @@ body {
           .fa-linkedin,
           .fa-instagram {
             color: white;
-            font-size: 36px;
+            font-size: 2.3vw;
             padding: 0;
             filter: drop-shadow(1.5px 1.5px 0 #000);
           }
@@ -1968,6 +1995,7 @@ body {
 
       p {
         padding: 15px;
+        font-size: 16px;
       }
     }
 
@@ -2053,8 +2081,6 @@ body {
         transform: translate(-50%, -50%);
         color: white;
         text-align: center;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 3px;
         padding: 2vw;
 
         h2,
@@ -2179,7 +2205,6 @@ body {
       .me-container {
         width: 80vw;
         height: auto;
-        background-color: transparent;
         align-self: center;
         display: flex;
         flex-wrap: wrap;
@@ -2189,8 +2214,6 @@ body {
         .profile-sect {
           height: 30vh;
           width: 100%;
-          background-color: rgba($color: #fff, $alpha: 0.2);
-          border-radius: 2px;
           display: flex;
           flex-wrap: nowrap;
           flex-direction: column;
@@ -2310,7 +2333,6 @@ body {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        background-color: rgba($color: #fff, $alpha: 0.2);
         border-radius: 2px;
 
         .fa-question-circle {
@@ -2418,7 +2440,6 @@ body {
         a {
           width: 50px;
           height: 50px;
-          background-color: rgba($color: #fff, $alpha: 0.2);
           border-radius: 50%;
           margin: 0;
           padding: 0;
@@ -2432,7 +2453,7 @@ body {
           .fa-linkedin,
           .fa-instagram {
             color: white;
-            font-size: 32px;
+            font-size: 30px;
             padding: 0;
             filter: drop-shadow(1.5px 1.5px 0 #000);
           }
@@ -2564,8 +2585,6 @@ body {
         transform: translate(-50%, -50%);
         color: white;
         text-align: center;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 3px;
         padding: 2vw;
 
         h2,
@@ -2708,8 +2727,6 @@ body {
         .profile-sect {
           height: 30vh;
           width: 100%;
-          background-color: rgba($color: #fff, $alpha: 0.2);
-          border-radius: 2px;
           display: flex;
           flex-wrap: nowrap;
           flex-direction: column;
@@ -2725,8 +2742,8 @@ body {
             align-items: center;
 
             .profile-pic {
-              height: 120px;
-              width: 120px;
+              height: 100px;
+              width: 100px;
               border-radius: 50%;
               border: 1px solid black;
               background-size: cover;
@@ -2812,7 +2829,7 @@ body {
 
           p {
             font: "Hammersmith One", sans-serif;
-            font-size: 18px;
+            font-size: 16px;
             padding: 15px;
             margin: 0;
             color: white;
@@ -2829,8 +2846,6 @@ body {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 2px;
 
         .fa-question-circle {
           font-size: 60px;
@@ -2937,7 +2952,6 @@ body {
         a {
           width: 50px;
           height: 50px;
-          background-color: rgba($color: #fff, $alpha: 0.2);
           border-radius: 50%;
           margin: 0;
           padding: 0;
@@ -2951,7 +2965,7 @@ body {
           .fa-linkedin,
           .fa-instagram {
             color: white;
-            font-size: 32px;
+            font-size: 30px;
             padding: 0;
             filter: drop-shadow(1.5px 1.5px 0 #000);
           }
@@ -3003,7 +3017,7 @@ body {
 
       p {
         padding: 15px;
-        font-size: 13px;
+        font-size: 3vw;
       }
     }
 
@@ -3072,8 +3086,6 @@ body {
         transform: translate(-50%, -50%);
         color: white;
         text-align: center;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 3px;
         padding: 2vw;
 
         h2,
@@ -3140,7 +3152,7 @@ body {
 
         .card {
           width: 250px;
-          height: 280px;
+          height: 260px;
           margin: 15px 0;
 
           .card-img-top {
@@ -3242,8 +3254,6 @@ body {
         .profile-sect {
           height: 30vh;
           width: 100%;
-          background-color: rgba($color: #fff, $alpha: 0.2);
-          border-radius: 2px;
           display: flex;
           flex-wrap: nowrap;
           flex-direction: column;
@@ -3259,8 +3269,8 @@ body {
             align-items: center;
 
             .profile-pic {
-              height: 80px;
-              width: 80px;
+              height: 70px;
+              width: 70px;
               border-radius: 50%;
               border: 1px solid black;
               background-size: cover;
@@ -3363,8 +3373,6 @@ body {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 2px;
 
         .fa-question-circle {
           font-size: 50px;
@@ -3469,9 +3477,8 @@ body {
         align-items: center;
 
         a {
-          width: 50px;
-          height: 50px;
-          background-color: rgba($color: #fff, $alpha: 0.2);
+          width: 60px;
+          height: 60px;
           border-radius: 50%;
           margin: 0;
           padding: 0;
@@ -3485,7 +3492,7 @@ body {
           .fa-linkedin,
           .fa-instagram {
             color: white;
-            font-size: 32px;
+            font-size: 8vw;
             padding: 0;
             filter: drop-shadow(1.5px 1.5px 0 #000);
           }
@@ -3624,8 +3631,6 @@ body {
         transform: translate(-50%, -50%);
         color: white;
         text-align: center;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 3px;
         padding: 2vw;
 
         h2,
@@ -3792,7 +3797,6 @@ body {
         .profile-sect {
           height: 30vh;
           width: 100%;
-          background-color: rgba($color: #fff, $alpha: 0.2);
           border-radius: 2px;
           display: flex;
           flex-wrap: nowrap;
@@ -3809,8 +3813,8 @@ body {
             align-items: center;
 
             .profile-pic {
-              height: 80px;
-              width: 80px;
+              height: 70px;
+              width: 70px;
               border-radius: 50%;
               border: 1px solid black;
               background-size: cover;
@@ -3913,8 +3917,6 @@ body {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 2px;
 
         .fa-question-circle {
           font-size: 40px;
@@ -4021,7 +4023,6 @@ body {
         a {
           width: 45px;
           height: 45px;
-          background-color: rgba($color: #fff, $alpha: 0.2);
           border-radius: 50%;
           margin: 0;
           padding: 0;
@@ -4035,7 +4036,7 @@ body {
           .fa-linkedin,
           .fa-instagram {
             color: white;
-            font-size: 28px;
+            font-size: 26px;
             padding: 0;
             filter: drop-shadow(1.5px 1.5px 0 #000);
           }
@@ -4071,7 +4072,7 @@ body {
 
       p {
         padding: 15px;
-        font-size: 11px;
+        font-size: 9px;
       }
     }
 
@@ -4112,7 +4113,7 @@ body {
       right: 1%;
 
       .fa-circle {
-        font-size: 14px;
+        font-size: 12px;
       }
     }
 
@@ -4123,11 +4124,11 @@ body {
       right: 1%;
 
       .fa-angle-up {
-        font-size: 22px;
+        font-size: 20px;
       }
 
       .fa-angle-down {
-        font-size: 22px;
+        font-size: 20px;
       }
     }
     .about-scroll {
@@ -4137,7 +4138,7 @@ body {
       right: 1%;
 
       .fa-angle-double-down {
-        font-size: 24px;
+        font-size: 22px;
       }
     }
 
@@ -4151,8 +4152,6 @@ body {
         transform: translate(-50%, -50%);
         color: white;
         text-align: center;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 3px;
         padding: 2vw;
 
         h2,
@@ -4323,8 +4322,6 @@ body {
         .profile-sect {
           height: 30vh;
           width: 100%;
-          background-color: rgba($color: #fff, $alpha: 0.2);
-          border-radius: 2px;
           display: flex;
           flex-wrap: nowrap;
           flex-direction: column;
@@ -4340,8 +4337,8 @@ body {
             align-items: center;
 
             .profile-pic {
-              height: 60px;
-              width: 60px;
+              height: 55px;
+              width: 55px;
               border-radius: 50%;
               border: 1px solid black;
               background-size: cover;
@@ -4444,8 +4441,6 @@ body {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 2px;
 
         .fa-question-circle {
           font-size: 35px;
@@ -4552,7 +4547,6 @@ body {
         a {
           width: 40px;
           height: 40px;
-          background-color: rgba($color: #fff, $alpha: 0.2);
           border-radius: 50%;
           margin: 0;
           padding: 0;
@@ -4566,7 +4560,7 @@ body {
           .fa-linkedin,
           .fa-instagram {
             color: white;
-            font-size: 26px;
+            font-size: 24px;
             padding: 0;
             filter: drop-shadow(1.5px 1.5px 0 #000);
           }
@@ -4683,8 +4677,6 @@ body {
         transform: translate(-50%, -50%);
         color: white;
         text-align: center;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 3px;
         padding: 2vw;
 
         h2,
@@ -4750,7 +4742,7 @@ body {
         align-self: center;
 
         .card {
-          width: 250px;
+          width: 280px;
           height: 450px;
           margin: 15px 0;
 
@@ -4831,8 +4823,6 @@ body {
         .profile-sect {
           height: 30vh;
           width: 100%;
-          background-color: rgba($color: #fff, $alpha: 0.2);
-          border-radius: 2px;
           display: flex;
           flex-wrap: nowrap;
           flex-direction: column;
@@ -4952,8 +4942,6 @@ body {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 2px;
 
         .fa-question-circle {
           font-size: 60px;
@@ -5060,7 +5048,6 @@ body {
         a {
           width: 50px;
           height: 50px;
-          background-color: rgba($color: #fff, $alpha: 0.2);
           border-radius: 50%;
           margin: 0;
           padding: 0;
@@ -5074,7 +5061,7 @@ body {
           .fa-linkedin,
           .fa-instagram {
             color: white;
-            font-size: 32px;
+            font-size: 30px;
             padding: 0;
             filter: drop-shadow(1.5px 1.5px 0 #000);
           }
@@ -5189,8 +5176,6 @@ body {
         transform: translate(-50%, -50%);
         color: white;
         text-align: center;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 3px;
         padding: 2vw;
 
         h2,
@@ -5240,7 +5225,7 @@ body {
 
       h1 {
         color: white;
-        font-size: 10vw;
+        font-size: 8vw;
         text-align: center;
         margin: 0;
         filter: drop-shadow(2px 2px 0 #000);
@@ -5256,7 +5241,7 @@ body {
         align-self: center;
 
         .card {
-          width: 250px;
+          width: 200px;
           height: 250px;
           margin: 15px 0;
 
@@ -5297,7 +5282,7 @@ body {
               width: 55px;
               position: absolute;
               top: 2%;
-              right: 12%;
+              right: 5%;
               background-color: black;
               border-radius: 50%;
             }
@@ -5363,8 +5348,6 @@ body {
         .profile-sect {
           height: 30vh;
           width: 100%;
-          background-color: rgba($color: #fff, $alpha: 0.2);
-          border-radius: 2px;
           display: flex;
           flex-wrap: nowrap;
           flex-direction: column;
@@ -5484,8 +5467,6 @@ body {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 2px;
 
         .fa-question-circle {
           font-size: 40px;
@@ -5592,7 +5573,6 @@ body {
         a {
           width: 40px;
           height: 40px;
-          background-color: rgba($color: #fff, $alpha: 0.2);
           border-radius: 50%;
           margin: 0;
           padding: 0;
@@ -5652,7 +5632,7 @@ body {
 
       p {
         padding: 10px;
-        font-size: 14px;
+        font-size: 11px;
       }
     }
 
@@ -5721,8 +5701,6 @@ body {
         transform: translate(-50%, -50%);
         color: white;
         text-align: center;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 3px;
         padding: 2vw;
 
         h2,
@@ -5895,8 +5873,6 @@ body {
         .profile-sect {
           height: 30vh;
           width: 100%;
-          background-color: rgba($color: #fff, $alpha: 0.2);
-          border-radius: 2px;
           display: flex;
           flex-wrap: nowrap;
           flex-direction: column;
@@ -6017,8 +5993,6 @@ body {
         display: flex;
         flex-wrap: nowrap;
         flex-direction: column;
-        background-color: rgba($color: #fff, $alpha: 0.2);
-        border-radius: 2px;
 
         .fa-question-circle {
           font-size: 40px;
@@ -6125,7 +6099,6 @@ body {
         a {
           width: 35px;
           height: 35px;
-          background-color: rgba($color: #fff, $alpha: 0.2);
           border-radius: 50%;
           margin: 0;
           padding: 0;
@@ -6139,7 +6112,7 @@ body {
           .fa-linkedin,
           .fa-instagram {
             color: white;
-            font-size: 22px;
+            font-size: 20px;
             padding: 0;
             filter: drop-shadow(1.5px 1.5px 0 #000);
           }

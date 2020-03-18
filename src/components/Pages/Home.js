@@ -7,7 +7,7 @@ import "../../index.scss";
 import profilePic from "../../profile.jpg";
 import lsLogo from "../../lslogo.png";
 import spleeterLogo from "../../spleeter.png";
-import bg from "../../bg.jpg";
+import bg from "../../12.jpg";
 //import cv from "../../cv.pdf";
 
 // import { useSelector, useDispatch } from "react-redux";
@@ -150,7 +150,7 @@ class Home extends React.Component {
   }
 
   render() {
-    const page_title = "BADERproductions - Frontend Web Developer, London";
+    const page_title = "BADERproductions - Junior Web Developer, London";
 
     const st = {
       def: {},
@@ -222,7 +222,7 @@ class Home extends React.Component {
           <div className="intro">
             <div className="info">
               <h2>Kevin Brian</h2>
-              <h1>Frontend Web Developer</h1>
+              <h1>Junior Web Developer</h1>
               <i className="fas fa-map-marker-alt"></i>
               <p>London, England</p>
             </div>
@@ -254,20 +254,21 @@ class Home extends React.Component {
                   <li className="list-group-item">React, Frontend</li>
                 </ul>
                 <div className="card-body">
+                  <i title="Website Link" className="fas fa-globe-europe"></i>
                   <a
                     className="card-link"
                     href="https://lazarsergiuphotographer.com/"
                     title="Website Link"
                   >
-                    <i title="Website Link" className="fas fa-globe-europe"></i>
-                    &nbsp; Website Link
+                    Website Link
                   </a>
+                  <i className="fab fa-github"></i>
                   <a
                     className="card-link"
                     href="https://github.com/baderproductions/lsp"
                     title="Github Source"
                   >
-                    <i className="fab fa-github"></i>&nbsp; Source
+                    Source
                   </a>
                 </div>
               </div>
@@ -289,7 +290,7 @@ class Home extends React.Component {
                   />
                   <p className="card-text">
                     Spleeter by Deezer uses Tensorflow to separate vocals and
-                    accompaniment from a song.
+                    accompaniment songs.
                   </p>
                 </div>
                 <ul className="list-group list-group-flush">
@@ -303,23 +304,6 @@ class Home extends React.Component {
                       API
                     </a>
                   </label>
-                  {/*                   
-                  <a
-                    className="card-link"
-                    href="https://lazarsergiuphotographer.com/"
-                    title="Website Link"
-                  >
-                    <i title="Website Link" className="fas fa-globe-europe"></i>
-                    &nbsp; Website Link
-                  </a>
-                  <a
-                    className="card-link"
-                    href="https://github.com/baderproductions/lsp"
-                    title="Github Source"
-                  >
-                    <i className="fab fa-github"></i>&nbsp; Source
-                  </a>
-                  */}
                 </div>
               </div>
             </section>
@@ -347,7 +331,7 @@ class Home extends React.Component {
                     <div className="birth-div">
                       <i title="Date of birth" className="fas fa-baby"></i>
                       <p title="Date of birth" className="birth">
-                        23
+                        23 Years old
                       </p>
                     </div>
                   </div>
