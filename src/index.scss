@@ -318,6 +318,7 @@ body {
             rgb(0, 0, 0)
           );
         }
+
         #spleeter {
           background: radial-gradient(
             ellipse at center,
@@ -343,18 +344,6 @@ body {
             text-decoration: underline;
           }
 
-          label {
-            font-size: 14px;
-            color: white;
-            margin: 0;
-            filter: drop-shadow(1px 1px 0 black);
-
-            a {
-              color: white;
-              text-decoration: underline;
-              filter: drop-shadow(1px 1px 0 black);
-            }
-          }
           #lsp-body,
           #spleeter-body {
             display: none;

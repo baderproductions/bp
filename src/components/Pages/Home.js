@@ -298,13 +298,22 @@ class Home extends React.Component {
                   <li className="list-group-item">Django, Backend</li>
                 </ul>
                 <div className="card-body">
-                  <label>
-                    Working on it... <br />
-                    Check out the{" "}
-                    <a href="https://github.com/deezer/spleeter/wiki/4.-API-Reference">
-                      API
-                    </a>
-                  </label>
+                  <i title="Website Link" className="fas fa-globe-europe"></i>
+                  <a
+                    className="card-link"
+                    href="https://spleeter.co.uk/"
+                    title="Website Link"
+                  >
+                    Website Link
+                  </a>
+                  <i className="fab fa-github"></i>
+                  <a
+                    className="card-link"
+                    href="https://github.com/baderproductions/django-spleeter"
+                    title="Github Source"
+                  >
+                    Source
+                  </a>
                 </div>
               </div>
             </section>
