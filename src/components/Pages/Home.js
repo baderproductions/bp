@@ -299,20 +299,15 @@ class Home extends React.Component {
                 </ul>
                 <div className="card-body">
                   <i title="Website Link" className="fas fa-globe-europe"></i>
+                  <label>Under development...</label>
+                  <br />
+                  <label>Check out the&nbsp;</label>
                   <a
                     className="card-link"
-                    href="https://spleeter.co.uk/"
                     title="Website Link"
+                    href="https://github.com/deezer/spleeter/wiki/4.-API-Reference"
                   >
-                    Website Link
-                  </a>
-                  <i className="fab fa-github"></i>
-                  <a
-                    className="card-link"
-                    href="https://github.com/baderproductions/django-spleeter"
-                    title="Github Source"
-                  >
-                    Source
+                    API
                   </a>
                 </div>
               </div>
