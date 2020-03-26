@@ -293,7 +293,7 @@ class Home extends React.Component {
                   <p className="card-text">
                     Spleeter by Deezer is the source separation library with
                     pretrained models written in Python using Tensorflow to
-                    separate vocals from accompaniment from audio files.
+                    separate vocals and accompaniment from audio files.
                   </p>
                 </div>
                 <ul className="list-group list-group-flush">
