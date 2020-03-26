@@ -1,8 +1,8 @@
 import React from "react";
-import logoBP from "../../logo.png";
 import Helmet from "react-helmet";
+import logoBP from "../../logo.png";
 
-class NotFound extends React.Component {
+export default class NotFound extends React.Component {
   render() {
     const page_title = "BADERproductions - Page not found";
     return (
@@ -19,5 +19,3 @@ class NotFound extends React.Component {
     );
   }
 }
-
-export default NotFound;

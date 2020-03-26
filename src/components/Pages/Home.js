@@ -197,11 +197,11 @@ class Home extends React.Component {
             Download resume
             <i className="fas fa-angle-down"></i>
           </a> */}
-          <button
+          {/* <button
             className="intro-scroll"
             onClick={() => window.scrollTo(0, this.introRef.current.offsetTop)}
           >
-            <i className="fas fa-circle"></i>
+            <i className="fas fa-angle-up"></i>
           </button>
           <button
             className="project-scroll"
@@ -217,7 +217,7 @@ class Home extends React.Component {
             onClick={() => window.scrollTo(0, this.aboutRef.current.offsetTop)}
           >
             <i className="fas fa-angle-double-down"></i>
-          </button>
+          </button> */}
           <div className="darken-layer"></div>
           <img src={bg} alt="Optic Fiber Background Art" />
           <div className="intro">
@@ -247,8 +247,9 @@ class Home extends React.Component {
                     alt="Project Display"
                   />
                   <p className="card-text">
-                    React based website builded for a hobbyist photographer.
-                    Logo design included.
+                    I builded this website for a photographer from my home town
+                    mainly for gaining experience, learning React and getting
+                    familiar with it's packages.
                   </p>
                 </div>
                 <ul className="list-group list-group-flush">
@@ -290,18 +291,33 @@ class Home extends React.Component {
                     alt="Project Display"
                   />
                   <p className="card-text">
-                    Spleeter by Deezer uses Tensorflow to separate vocals and
-                    accompaniment songs.
+                    Spleeter by Deezer is the source separation library with
+                    pretrained models written in Python using Tensorflow to
+                    separate vocals from accompaniment from audio files.
                   </p>
                 </div>
                 <ul className="list-group list-group-flush">
-                  <li className="list-group-item">Django, Backend</li>
+                  <li className="list-group-item">React - Django, Fullstack</li>
                 </ul>
                 <div className="card-body">
                   <i title="Website Link" className="fas fa-globe-europe"></i>
-                  <label>Under development...</label>
+                  <a
+                    className="card-link"
+                    href="https://spleeter.co.uk/"
+                    title="Website Link"
+                  >
+                    Website Link
+                  </a>
+                  <i className="fab fa-github"></i>
+                  <a
+                    className="card-link"
+                    href="https://github.com/baderproductions/react-django-spleeter"
+                    title="Github Source"
+                  >
+                    Source
+                  </a>
                   <br />
-                  <label>Check out the&nbsp;</label>
+                  <i className="fab fa-python"></i>
                   <a
                     className="card-link"
                     title="Website Link"
@@ -403,12 +419,12 @@ class Home extends React.Component {
               >
                 <i className="fab fa-github"></i>
               </a>
-              <a
+              {/* <a
                 href="https://www.instagram.com/baderproductions/"
                 title="Instagram Account"
               >
                 <i className="fab fa-instagram"></i>
-              </a>
+              </a> */}
               <a
                 href="https://www.linkedin.com/in/kevin-bader-2137541a2/"
                 title="LinkedIn Account"
