@@ -133,11 +133,10 @@ class Home extends React.Component {
   p4State() {
     this.setState({
       t4: "Why do you want to leave your current job ?",
-      p4: `My current part-time job as a waiter is just to cover the rent and other daily expenses while learning Web Development.
-      I've been learning Web Development and working part-time ever since I came to England 1.5 years ago and I'm ready to jump full-time into the career that I always wanted and I worked so hard to learn.
+      p4: `I've been learning Web Development and working part-time ever since I came to England 1.5 years ago and I'm ready to jump full-time into the career that I always wanted and I worked hard for.
       <br />
       <br />I feel I have to move forward in my career progression
-      as a Front-end Web Developer which I've been teaching myself
+      as a Web Developer which I've been teaching myself
       for some time now and I am ready to go for it, whatever it
       takes.`,
       t1: "",
