@@ -28,7 +28,7 @@ class Home extends React.Component {
       t1: "",
       t2: "",
       t3: "",
-      t4: ""
+      t4: "",
     };
 
     this.introRef = React.createRef();
@@ -48,7 +48,7 @@ class Home extends React.Component {
     this.setState({ open: true });
   }
 
-  closeBind = e => {
+  closeBind = (e) => {
     if (this.node.contains(e.target)) {
       return;
     }
@@ -77,7 +77,7 @@ class Home extends React.Component {
       t4: "",
       p2: "",
       p3: "",
-      p4: ""
+      p4: "",
     });
   }
 
@@ -100,7 +100,7 @@ class Home extends React.Component {
       t4: "",
       p1: "",
       p3: "",
-      p4: ""
+      p4: "",
     });
   }
 
@@ -126,7 +126,7 @@ class Home extends React.Component {
       t4: "",
       p1: "",
       p2: "",
-      p4: ""
+      p4: "",
     });
   }
 
@@ -145,7 +145,7 @@ class Home extends React.Component {
       t3: "",
       p1: "",
       p2: "",
-      p3: ""
+      p3: "",
     });
   }
 
@@ -155,8 +155,8 @@ class Home extends React.Component {
     const st = {
       def: {},
       soHide: {
-        display: this.state.open ? "block" : "none"
-      }
+        display: this.state.open ? "block" : "none",
+      },
     };
 
     return (
@@ -173,14 +173,14 @@ class Home extends React.Component {
           <h3>
             {this.state.t1 || this.state.t2 || this.state.t3 || this.state.t4}
           </h3>
-          <div ref={node => (this.node = node)} className="inner-modal">
+          <div ref={(node) => (this.node = node)} className="inner-modal">
             <p
               dangerouslySetInnerHTML={{
                 __html:
                   this.state.p1 ||
                   this.state.p2 ||
                   this.state.p3 ||
-                  this.state.p4
+                  this.state.p4,
               }}
             />
           </div>
@@ -300,21 +300,21 @@ class Home extends React.Component {
                   <li className="list-group-item">React - Django, Fullstack</li>
                 </ul>
                 <div className="card-body">
-                  <i title="Website Link" className="fas fa-globe-europe"></i>
+                  {/* <i title="Website Link" className="fas fa-globe-europe"></i>
                   <a
                     className="card-link"
                     href="https://spleeter.co.uk/"
                     title="Website Link"
                   >
                     Website Link
-                  </a>
+                  </a> */}
                   <i className="fab fa-github"></i>
                   <a
                     className="card-link"
                     href="https://github.com/baderproductions/react-django-spleeter"
                     title="Github Source"
                   >
-                    Source
+                    Source code
                   </a>
                   <br />
                   <i className="fab fa-python"></i>
