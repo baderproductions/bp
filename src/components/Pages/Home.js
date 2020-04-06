@@ -91,8 +91,7 @@ class Home extends React.Component {
       <br />
       <br />
       Another one would be the fact that I'm brutally honest with
-      people around me. Some people are finding this hard to
-      swallow but this is my way of making sure that I don't waste
+      people around me. This is my way of making sure that I don't waste
       anybody's time. Going straight to the problem's core and
       fixing it right away.`,
       t1: "",
@@ -133,12 +132,10 @@ class Home extends React.Component {
   p4State() {
     this.setState({
       t4: "Why do you want to leave your current job ?",
-      p4: `My current part-time job as a waiter is just to cover the rent and other daily expenses while learning Web Development.
-      I've been learning Web Development and working part-time ever since I came to England 1.5 years ago and I'm ready to jump full-time into the career that I always wanted and I worked so hard to learn.
+      p4: `I've been learning Web Development and working part-time ever since I came to England 1.5 years ago and I'm ready to jump full-time into the career that I always wanted and I worked hard for.
       <br />
-      <br />I feel I have to move forward in my career progression
-      as a Front-end Web Developer which I've been teaching myself
-      for some time now and I am ready to go for it, whatever it
+      <br />I decided it's about time to move forward in my career progression
+      towards a Web Developer role. I am ready to go for it, whatever it
       takes.`,
       t1: "",
       t2: "",
@@ -291,9 +288,8 @@ class Home extends React.Component {
                     alt="Project Display"
                   />
                   <p className="card-text">
-                    Spleeter by Deezer is the source separation library with
-                    pretrained models written in Python using Tensorflow to
-                    separate vocals from accompaniment from audio files.
+                    Spleeter by Deezer is the source separation library written in Python with
+                    pretrained Tensorflow models that separate vocals and accompaniment from audio files.
                   </p>
                 </div>
                 <ul className="list-group list-group-flush">
