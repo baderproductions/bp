@@ -315,7 +315,7 @@ class Home extends React.Component {
                     title="Github Source"
                   >
                     Source code
-                  </a>
+                  </a>&nbsp;
                   <i className="fab fa-python"></i>
                   <a
                     className="card-link"
