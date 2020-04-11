@@ -91,8 +91,7 @@ class Home extends React.Component {
       <br />
       <br />
       Another one would be the fact that I'm brutally honest with
-      people around me. Some people are finding this hard to
-      swallow but this is my way of making sure that I don't waste
+      people around me. This is my way of making sure that I don't waste
       anybody's time. Going straight to the problem's core and
       fixing it right away.`,
       t1: "",
