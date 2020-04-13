@@ -24,11 +24,9 @@ class Home extends React.Component {
       p1: "",
       p2: "",
       p3: "",
-      p4: "",
       t1: "",
       t2: "",
       t3: "",
-      t4: "",
     };
 
     this.introRef = React.createRef();
@@ -129,24 +127,6 @@ class Home extends React.Component {
     });
   }
 
-  p4State() {
-    this.setState({
-      t4: "Why do you want to leave your current job ?",
-      p4: `I've been learning Web Development and working part-time ever since I came to England 1.5 years ago and I'm ready to jump full-time into the career that I always wanted and I worked so hard to learn.
-      <br />
-      <br />I feel I have to move forward in my career progression
-      as a Front-end Web Developer which I've been teaching myself
-      for some time now and I am ready to go for it, whatever it
-      takes.`,
-      t1: "",
-      t2: "",
-      t3: "",
-      p1: "",
-      p2: "",
-      p3: "",
-    });
-  }
-
   render() {
     const page_title = "BADERproductions - Junior Web Developer, London";
 
@@ -217,7 +197,7 @@ class Home extends React.Component {
             <i className="fas fa-angle-double-down"></i>
           </button> */}
           <div className="darken-layer"></div>
-          <img src={bg} alt="Optic Fiber Background Art" />
+          <img id="bg-img" src={bg} alt="Optic Fiber Background Art" />
           <div className="intro">
             <div className="info">
               <h2>Kevin Brian</h2>
@@ -355,14 +335,6 @@ class Home extends React.Component {
                     </div>
                   </div>
                 </div>
-                <div className="personal-info">
-                  <p>
-                    Disciplined, detail attentive and a problem-solver.
-                    <br />
-                    Can easily blend in and adapt to working either as a team
-                    member or individually and always get the job done on time.
-                  </p>
-                </div>
               </div>
             </div>
             <div className="questions">
@@ -398,16 +370,6 @@ class Home extends React.Component {
                 className="b3"
               >
                 What is the toughest decision you had to make ?
-              </button>
-              <button
-                onClick={() => {
-                  this.handleBind();
-                  this.p4State();
-                }}
-                type="button"
-                className="b4"
-              >
-                Why do you want to leave your current job ?
               </button>
             </div>
             <div className="main-footer">
