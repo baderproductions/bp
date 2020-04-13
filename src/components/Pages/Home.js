@@ -379,17 +379,17 @@ class Home extends React.Component {
               >
                 <i className="fab fa-github"></i>
               </a>
-              {/* <a
-                href="https://www.instagram.com/baderproductions/"
-                title="Instagram Account"
-              >
-                <i className="fab fa-instagram"></i>
-              </a> */}
               <a
                 href="https://www.linkedin.com/in/kevin-bader-2137541a2/"
                 title="LinkedIn Account"
               >
                 <i className="fab fa-linkedin"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/baderproductions/"
+                title="Facebook Page"
+              >
+                <i className="fab fa-facebook"></i>
               </a>
             </div>
           </div>
