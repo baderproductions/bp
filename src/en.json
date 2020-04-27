@@ -1,0 +1,74 @@
+{
+  "nav": {
+    "git": "GitHub Page",
+    "li": "LinkedIn Profile",
+    "fb": "Facebook Page",
+    "en": "English",
+    "ro": "Romanian",
+    "back": "Back"
+  },
+  "home": {
+    "p1": "Hello there",
+    "p2": "! I'm Kevin Bader.",
+    "p3": "I'm a Junior Full-stack Developer",
+    "cookie": "I use Cookies to store the Language selector choice",
+    "accept": "Accept",
+    "decline": "Decline",
+    "pro": "Projects",
+    "stack": "Stack info",
+    "contact": "Contact me"
+  },
+  "lsp": {
+    "title": "Photography",
+    "subt": "Lazăr Sergiu Photographer",
+    "p1": "Builded for a hobbyist photographer from my home town with the goal of gaining development experience.",
+    "p2": "The backend server was necessary for the website's ",
+    "a": "admin page",
+    "p3": " where the photographer can manage the pictures shown on it's website.",
+    "web": "Website",
+    "source": "GitHub Source"
+  },
+  "spleeter": {
+    "title": "Machine learning",
+    "subt": "Spleeter by Deezer",
+    "p1": "I builded this project to get familiar with React and Django as a full-stack application.",
+    "p2": " is a source separation library written in Python using Tensorflow pretrained models to isolate vocals and accompaniment from music.",
+    "a": "Spleeter by Deezer",
+    "p3": " where the photographer can manage the pictures shown on it's website.",
+    "web": "* Website demo is down due to server costs",
+    "source": "GitHub Source"
+  },
+  "fb": {
+    "title": "Tutorial",
+    "subt": "Facebook - log in or sign up",
+    "p1": "A simple clone of Facebook's log in or sign up page for learning purposes demonstrated on my ",
+    "p2": " presented in romanian language.",
+    "a": "YouTube Channel",
+    "p3": "This was an exercise using basic HTML, CSS (SASS), Javascript and jQuery to build the frontend of the page.",
+    "web": "* Website demo is down due to server costs",
+    "demo": "Demo",
+    "source": "GitHub Source"
+  },
+  "tech": {
+    "title": "Technologies",
+    "sub1": "Frontend stack",
+    "sub2": "Backend stack"
+  },
+  "services": {
+    "title": "Services and server",
+    "sub1": "Services",
+    "sub2": "Server"
+  },
+  "contact": {
+    "name": "Name",
+    "pl1": "First name",
+    "email": "Email",
+    "pl2": "Email address",
+    "mess": "Message",
+    "pl3": "Your message",
+    "send": "Send"
+  },
+  "not": {
+    "text": "Page not found"
+  }
+}

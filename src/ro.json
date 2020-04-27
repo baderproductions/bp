@@ -1,0 +1,72 @@
+{
+  "nav": {
+    "git": "Pagină GitHub",
+    "li": "Profil LinkedIn",
+    "fb": "Pagină Facebook",
+    "en": "Engleză",
+    "ro": "Română",
+    "back": "Înapoi"
+  },
+  "home": {
+    "p1": "Salutare",
+    "p2": "! Mă numesc Kevin.",
+    "p3": "Sunt un Junior Full-stack Developer",
+    "cookie": "Folosesc Cookies pentru a stoca alegerea selectorului de limbă",
+    "accept": "Accept",
+    "decline": "Rafuz",
+    "pro": "Proiecte",
+    "stack": "Informaţii stack",
+    "contact": "Contactează-mă"
+  },
+  "lsp": {
+    "title": "Fotografie",
+    "subt": "Lazăr Sergiu Photographer",
+    "p1": "Construit pentru un fotograf hobbyist din oraşul natal cu scopul de a câştiga experienţă în Web Development.",
+    "p2": "Partea de backend a serverului a fost necesară pentru ",
+    "a": "pagina admin",
+    "p3": " unde fotograful are posibilitatea de a-şi administra pozele afişate pe website.",
+    "web": "Website",
+    "source": "Sursă GitHub"
+  },
+  "spleeter": {
+    "title": "Inteligenţă artificială",
+    "subt": "Spleeter by Deezer",
+    "p1": "Am construit acest proiect pentru a mă familiariza cu React şi Django ca aplicaţie full-stack.",
+    "p2": " este o librărie de separare sursă scrisă în Python folosind modele pre-antrenate Tensorflow pentru a izola vocalul şi instrumentalul dintr-o melodie.",
+    "a": "Spleeter by Deezer",
+    "web": "* Website-ul a fost închis din cauza costurilor serverului",
+    "source": "Sursă GitHub"
+  },
+  "fb": {
+    "title": "Tutorial",
+    "subt": "Facebook - log in or sign up",
+    "p1": "O simplă clonă a paginii Facebook de log in ori sign up creată cu scopul de a forma un tutorial pentru ",
+    "p2": ".",
+    "a": "canalul de YouTube",
+    "p3": "Acesta a fost un exerciţiu simplu folosind HTML, CSS (SASS), Javascript şi jQuery pentru a construi de la zero partea de frontend a paginii.",
+    "demo": "Demo",
+    "source": "Sursă GitHub"
+  },
+  "tech": {
+    "title": "Technologii",
+    "sub1": "Stack frontend",
+    "sub2": "Stack backend"
+  },
+  "services": {
+    "title": "Servicii şi server",
+    "sub1": "Servicii",
+    "sub2": "Server"
+  },
+  "contact": {
+    "name": "Nume",
+    "pl1": "Namele mic",
+    "email": "Email",
+    "pl2": "Adresă email",
+    "mess": "Mesaj",
+    "pl3": "Mesajul tau",
+    "send": "Trimite"
+  },
+  "not": {
+    "text": "Pagina nu a fost găsită"
+  }
+}

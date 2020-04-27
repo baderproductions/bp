@@ -5,10 +5,7 @@ Can be seen at https://baderproductions.net/
 
 # Packages used for this website
 
-- [react-helmet](https://www.npmjs.com/package/react-helmet) used for dynamic page title and SEO
-  depending on each page component
 - [react-messenger-customer-chat](https://www.npmjs.com/package/react-messenger-customer-chat) - Facebook Messenger's Customer Chat API
-- [redux](https://www.npmjs.com/package/redux) for state management (implemented but unused for time being)
 - [node-sass](https://www.npmjs.com/package/node-sass) for live hot-reloading SCSS directly from one file without CSS to SCSS conversion
 
 # Technologies used
