@@ -20,7 +20,7 @@ export default class Projects extends Component {
           <div className="body">
             <div className="darken"></div>
             <img src={bg} alt="Background Art" />
-            <div className="projects-container">
+            <div id="proj-cont" className="projects-container">
               <Carousel
                 showThumbs={false}
                 style={{

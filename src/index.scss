@@ -4,6 +4,54 @@
   text-decoration: none;
 }
 
+@media screen and (min-width: 360px) {
+  .body {
+    #proj-cont {
+      .carousel {
+        height: 70vh !important;
+      }
+    }
+
+    #stack-page {
+      .carousel {
+        height: 55vh !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 412px) {
+  .body {
+    #proj-cont {
+      .carousel {
+        height: 58vh !important;
+      }
+    }
+
+    #stack-page {
+      .carousel {
+        height: 40vh !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .body {
+    #proj-cont {
+      .carousel {
+        height: 72vh !important;
+      }
+    }
+
+    #stack-page {
+      .carousel {
+        height: 45vh !important;
+      }
+    }
+  }
+}
+
 html,
 body {
   width: 100%;
@@ -11,14 +59,15 @@ body {
   font-family: "Montserrat", sans-serif;
 
   .background {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
 
     .nav {
-      z-index: 1;
+      position: fixed;
+      z-index: 5;
       height: 6vh;
       width: 100%;
       display: flex;
@@ -28,6 +77,7 @@ body {
       align-items: center;
       background-color: black;
       padding: 0 3.5vw;
+      box-shadow: 0 0 3px 0 black;
 
       .go-back {
         height: auto;
@@ -116,9 +166,30 @@ body {
       align-items: center;
       background-color: black;
 
-      #stack-page {
+      .darken {
+        z-index: 1;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba($color: #000000, $alpha: 0.4);
+      }
+
+      img {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+      }
+
+      #proj-cont {
         .carousel {
           height: 85vh;
+        }
+      }
+
+      #stack-page {
+        .carousel {
+          height: 70vh;
         }
       }
 
@@ -325,21 +396,6 @@ body {
         }
       }
 
-      .darken {
-        z-index: 1;
-        position: absolute;
-        width: 100%;
-        height: 94%;
-        background-color: rgba($color: #000000, $alpha: 0.4);
-      }
-
-      img {
-        position: absolute;
-        width: 100%;
-        height: 94%;
-        object-fit: cover;
-      }
-
       .text-container {
         z-index: 1;
         height: auto;
@@ -349,7 +405,7 @@ body {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 12vh;
+        margin-top: 20vh;
 
         .hello {
           font-weight: bold;
