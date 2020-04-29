@@ -16,7 +16,6 @@ class Tech extends Component {
             <a href="https://reactjs.org/" className="badge badge-primary">
               React.js
             </a>
-
             <a
               style={{
                 backgroundColor: "#6610f2",
@@ -26,7 +25,6 @@ class Tech extends Component {
             >
               Bootstrap
             </a>
-
             <a
               style={{
                 backgroundColor: "#bf4080",
@@ -36,7 +34,6 @@ class Tech extends Component {
             >
               Sass
             </a>
-
             <a
               href="https://www.javascript.com/"
               style={{ backgroundColor: "gold" }}
@@ -44,11 +41,9 @@ class Tech extends Component {
             >
               Javascript
             </a>
-
             <a href="https://jquery.com/" className="badge badge-dark">
               jQuery
             </a>
-
             <span
               style={{
                 backgroundColor: "#FF4500	",
@@ -57,17 +52,14 @@ class Tech extends Component {
             >
               HTML
             </span>
-
             <span className="badge badge-primary">CSS</span>
             <p id="stack2">{t("tech.sub2")}</p>
             <a href="https://nodejs.org/" className="badge badge-success">
               Node.js
             </a>
-
             <a href="https://expressjs.com/" className="badge badge-dark">
               Express.js
             </a>
-
             <a
               href="https://www.djangoproject.com/"
               style={{
@@ -77,15 +69,6 @@ class Tech extends Component {
             >
               Django
             </a>
-
-            <a
-              href="https://docs.celeryproject.org/"
-              style={{ backgroundColor: "#348613" }}
-              className="badge badge-dark"
-            >
-              Celery
-            </a>
-
             <a
               href="https://www.php.net/"
               style={{ backgroundColor: "#7249AE" }}
