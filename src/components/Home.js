@@ -122,19 +122,34 @@ class Home extends Component {
             document.getElementById("email-box").classList.remove("ph");
             document.getElementById("mess-box").removeAttribute("placeholder");
             document.getElementById("mess-box").classList.remove("ph");
+
+            setTimeout(() => {
+              this.setState({
+                success: false,
+              });
+            }, 5000);
           } else {
             this.setState({
               error: true,
               loading: false,
             });
+            setTimeout(() => {
+              this.setState({
+                error: false,
+              });
+            }, 5000);
           }
         })
         .catch((err) => {
-          console.log(err);
           this.setState({
             error: true,
             loading: false,
           });
+          setTimeout(() => {
+            this.setState({
+              error: false,
+            });
+          }, 5000);
         });
     }
   };
