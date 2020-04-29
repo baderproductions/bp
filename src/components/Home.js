@@ -21,7 +21,7 @@ import { translate } from "react-switch-lang";
 import CookieConsent from "react-cookie-consent";
 
 // npm - react-messenger-customer-chat
-import MessengerCustomerChat from "react-messenger-customer-chat";
+// import MessengerCustomerChat from "react-messenger-customer-chat";
 
 class Home extends Component {
   constructor() {
@@ -182,11 +182,11 @@ class Home extends Component {
 
     return (
       <>
-        <MessengerCustomerChat
+        {/* <MessengerCustomerChat
           pageId="106105690995533"
           appId="3127150517308819"
           themeColor="#0084ff"
-        />
+        /> */}
         <CookieConsent
           acceptOnScroll={true}
           acceptOnScrollPercentage={25}
