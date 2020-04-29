@@ -16,7 +16,7 @@ class Tech extends Component {
             <a href="https://reactjs.org/" className="badge badge-primary">
               React.js
             </a>
-            &nbsp;&nbsp;
+
             <a
               style={{
                 backgroundColor: "#6610f2",
@@ -26,7 +26,7 @@ class Tech extends Component {
             >
               Bootstrap
             </a>
-            &nbsp;&nbsp;
+
             <a
               style={{
                 backgroundColor: "#bf4080",
@@ -36,7 +36,7 @@ class Tech extends Component {
             >
               Sass
             </a>
-            &nbsp;&nbsp;
+
             <a
               href="https://www.javascript.com/"
               style={{ backgroundColor: "gold" }}
@@ -44,11 +44,11 @@ class Tech extends Component {
             >
               Javascript
             </a>
-            &nbsp;&nbsp;
+
             <a href="https://jquery.com/" className="badge badge-dark">
               jQuery
             </a>
-            &nbsp;&nbsp;
+
             <span
               style={{
                 backgroundColor: "#FF4500	",
@@ -57,17 +57,17 @@ class Tech extends Component {
             >
               HTML
             </span>
-            &nbsp;&nbsp;
+
             <span className="badge badge-primary">CSS</span>
             <p id="stack2">{t("tech.sub2")}</p>
             <a href="https://nodejs.org/" className="badge badge-success">
               Node.js
             </a>
-            &nbsp;&nbsp;
+
             <a href="https://expressjs.com/" className="badge badge-dark">
               Express.js
             </a>
-            &nbsp;&nbsp;
+
             <a
               href="https://www.djangoproject.com/"
               style={{
@@ -77,7 +77,7 @@ class Tech extends Component {
             >
               Django
             </a>
-            &nbsp;&nbsp;
+
             <a
               href="https://docs.celeryproject.org/"
               style={{ backgroundColor: "#348613" }}
@@ -85,7 +85,7 @@ class Tech extends Component {
             >
               Celery
             </a>
-            &nbsp;&nbsp;
+
             <a
               href="https://www.php.net/"
               style={{ backgroundColor: "#7249AE" }}

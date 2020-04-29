@@ -20,16 +20,17 @@ class Spleeter extends Component {
               {t("spleeter.p1")}
               <br />
               <br />
-              <a href="https://github.com/deezer/spleeter">{t("spleeter.a")}</a>
+              <a id="x" href="https://github.com/deezer/spleeter">
+                {t("spleeter.a")}
+              </a>
               {t("spleeter.p2")}
             </p>
             <ul className="list-group list-group-flush">
               <li className="list-group-item p-0 pt-2 pb-2">
-                Stack:&nbsp;&nbsp;
+                Stack:
                 <a href="https://reactjs.org/" className="badge badge-primary">
                   React.js
                 </a>
-                &nbsp;&nbsp;
                 <a
                   href="https://www.djangoproject.com/"
                   style={{
@@ -39,7 +40,6 @@ class Spleeter extends Component {
                 >
                   Django
                 </a>
-                &nbsp;&nbsp;
                 <a
                   href="https://docs.celeryproject.org/"
                   style={{ backgroundColor: "#348613" }}
@@ -47,7 +47,6 @@ class Spleeter extends Component {
                 >
                   Celery
                 </a>
-                &nbsp;&nbsp;
                 <a
                   href="https://github.com/deezer/spleeter"
                   className="badge badge-dark"
@@ -56,25 +55,22 @@ class Spleeter extends Component {
                 </a>
               </li>
               <li className="list-group-item p-0 pt-2 pb-2">
-                Server:&nbsp;&nbsp;
+                Server:
                 <a
                   href="https://www.digitalocean.com/"
                   className="badge badge-primary"
                 >
                   DigitalOcean
                 </a>
-                &nbsp;&nbsp;
                 <a
                   href="https://www.nginx.com/"
                   className="badge badge-success"
                 >
                   NGINX
                 </a>
-                &nbsp;&nbsp;
                 <a href="http://supervisord.org/" className="badge badge-dark">
                   Supervisor
                 </a>
-                &nbsp;&nbsp;
                 <a
                   href="https://gunicorn.org/"
                   style={{ backgroundColor: "#1D692D" }}

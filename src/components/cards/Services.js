@@ -14,17 +14,17 @@ class Services extends Component {
           <div id="stack-card" className="card-body">
             <p id="stack">{t("services.sub1")}</p>
             <a href="https://cloud.google.com/" className="badge badge-danger">
-              Google Cloud
+              Google Cloud Computing
             </a>
-            &nbsp;&nbsp;
+
             <a href="https://azure.microsoft.com/" className="badge badge-dark">
               Microsoft Azure
             </a>
-            &nbsp;&nbsp;
+
             <a href="https://aws.amazon.com/" className="badge badge-warning">
               Amazon Web Services
             </a>
-            &nbsp;&nbsp;
+
             <a
               href="https://www.digitalocean.com/"
               className="badge badge-primary"
@@ -35,7 +35,7 @@ class Services extends Component {
             <a href="https://www.nginx.com/" className="badge badge-success">
               NGINX
             </a>
-            &nbsp;&nbsp;
+
             <a
               href="https://www.apache.org/"
               style={{ backgroundColor: "#282661" }}
@@ -43,11 +43,11 @@ class Services extends Component {
             >
               Apache
             </a>
-            &nbsp;&nbsp;
+
             <a href="http://supervisord.org/" className="badge badge-primary">
               Supervisor
             </a>
-            &nbsp;&nbsp;
+
             <a
               href="https://gunicorn.org/"
               style={{ backgroundColor: "#1D692D" }}

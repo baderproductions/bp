@@ -8,15 +8,16 @@
     "back": "Înapoi"
   },
   "home": {
-    "p1": "Salutare",
-    "p2": "! Mă numesc Kevin.",
+    "p1": "Salutare! Mă numesc ",
+    "p2": "Kevin",
     "p3": "Sunt un Junior Full-stack Developer",
     "cookie": "Folosesc Cookies pentru a stoca alegerea selectorului de limbă",
     "accept": "Accept",
     "decline": "Rafuz",
     "pro": "Proiecte",
-    "stack": "Informaţii stack",
-    "contact": "Contactează-mă"
+    "stack": "Stack",
+    "contact": "Contactează-mă",
+    "back": "Înapoi"
   },
   "lsp": {
     "title": "Fotografie",
@@ -64,7 +65,9 @@
     "pl2": "Adresă email",
     "mess": "Mesaj",
     "pl3": "Mesajul tau",
-    "send": "Trimite"
+    "send": "Trimite",
+    "success": "Mesajul a fost trimis",
+    "fail": "Eroare. Încearcă mai târziu"
   },
   "not": {
     "text": "Pagina nu a fost găsită"

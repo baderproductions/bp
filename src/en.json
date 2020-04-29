@@ -8,15 +8,16 @@
     "back": "Back"
   },
   "home": {
-    "p1": "Hello there",
-    "p2": "! I'm Kevin Bader.",
+    "p1": "Hello there! I'm ",
+    "p2": "Kevin Bader",
     "p3": "I'm a Junior Full-stack Developer",
     "cookie": "I use Cookies to store the Language selector choice",
     "accept": "Accept",
     "decline": "Decline",
     "pro": "Projects",
-    "stack": "Stack info",
-    "contact": "Contact me"
+    "stack": "Stack",
+    "contact": "Contact me",
+    "back": "Back up"
   },
   "lsp": {
     "title": "Photography",
@@ -66,7 +67,9 @@
     "pl2": "Email address",
     "mess": "Message",
     "pl3": "Your message",
-    "send": "Send"
+    "send": "Send",
+    "success": "Your message was sent",
+    "fail": "Error. Try again later"
   },
   "not": {
     "text": "Page not found"

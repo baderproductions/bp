@@ -20,43 +20,41 @@ class Lsp extends Component {
               <br />
               <br />
               {t("lsp.p2")}
-              <a href="https://lazarsergiuphotographer.com/lsp">{t("lsp.a")}</a>
+              <a id="x" href="https://lazarsergiuphotographer.com/lsp">
+                {t("lsp.a")}
+              </a>
               {t("lsp.p3")}
             </p>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                Stack:&nbsp;&nbsp;
+                Stack:
                 <a href="https://reactjs.org/" className="badge badge-primary">
                   React.js
                 </a>
-                &nbsp;&nbsp;
                 <a
                   href="https://www.npmjs.com/package/json-server"
                   className="badge badge-dark"
                 >
                   JSON Server
                 </a>
-                &nbsp;&nbsp;
                 <a href="https://nodejs.org/" className="badge badge-success">
                   Node.js
                 </a>
               </li>
               <li className="list-group-item">
-                Server:&nbsp;&nbsp;
+                Server:
                 <a
                   href="https://cloud.google.com/"
                   className="badge badge-danger"
                 >
-                  Google Cloud
+                  Google Cloud Computing
                 </a>
-                &nbsp;&nbsp;
                 <a
                   href="https://www.nginx.com/"
                   className="badge badge-success"
                 >
                   NGINX
                 </a>
-                &nbsp;&nbsp;
                 <a
                   href="http://supervisord.org/"
                   className="badge badge-primary"

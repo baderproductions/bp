@@ -18,7 +18,10 @@ class Fb extends Component {
           <div className="card-body">
             <p className="card-text">
               {t("fb.p1")}
-              <a href="https://www.youtube.com/channel/UC1UoY_OxSlPOoIhJA-YjLUQ">
+              <a
+                id="x"
+                href="https://www.youtube.com/channel/UC1UoY_OxSlPOoIhJA-YjLUQ"
+              >
                 {t("fb.a")}
               </a>
               {t("fb.p2")}
@@ -28,7 +31,7 @@ class Fb extends Component {
             </p>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">
-                Stack:&nbsp;&nbsp; &nbsp;&nbsp;
+                Stack:
                 <span
                   style={{
                     backgroundColor: "#FF4500	",
@@ -37,23 +40,19 @@ class Fb extends Component {
                 >
                   HTML
                 </span>
-                &nbsp;&nbsp;
                 <span className="badge badge-primary">CSS</span>
-                &nbsp;&nbsp;
                 <span
                   style={{ backgroundColor: "#bf4080" }}
                   className="badge badge-dark"
                 >
                   Sass
                 </span>
-                &nbsp;&nbsp;
                 <span
                   style={{ backgroundColor: "gold" }}
                   className="badge badge-warning"
                 >
                   Javascript
                 </span>
-                &nbsp;&nbsp;
                 <span className="badge badge-dark">jQuery</span>
               </li>
             </ul>
