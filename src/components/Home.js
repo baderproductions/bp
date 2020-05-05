@@ -338,6 +338,7 @@ class Home extends Component {
                         check: true, // Optional.[Bool].Default: true. To determin if you need to validate.
                         required: true, // Optional.[Bool].Default: true. To determin if it is a required field.
                         msgOnError: t("contact.messErr"),
+                      }}
                     />
                   </div>
                   <div className="contact-response">
