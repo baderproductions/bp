@@ -5,13 +5,14 @@ import bg from "../bg.jpg";
 import PropTypes from "prop-types";
 import axios from "axios";
 
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Tech from "./cards/Tech";
 import Services from "./cards/Services";
 import Lsp from "./cards/Lsp";
 import Spleeter from "./cards/Spleeter";
 import Fb from "./cards/Fb";
+
+import { Textbox, Textarea } from "react-inputs-validation";
+import "react-inputs-validation/lib/react-inputs-validation.min.css";
 
 import { css } from "@emotion/core";
 import SkewLoader from "react-spinners/SkewLoader";
@@ -30,6 +31,9 @@ class Home extends Component {
       name: "",
       email: "",
       mess: "",
+      nameValidation: false,
+      emailValidation: false,
+      messValidation: false,
       loading: false,
       success: false,
       error: false,
@@ -58,40 +62,20 @@ class Home extends Component {
 
     if (re.test(this.state.email) === false) {
       this.setState({
-        email: "",
+        loading: false,
       });
-      document.getElementById("email-box").style.border = "1.5px solid red";
-      document.getElementById("email-box").value = this.state.email;
-      document.getElementById("email-box").placeholder =
-        "Email address is incorrect";
-      document.getElementById("email-box").classList.add("ph");
+    } else if (this.state.nameValidation === false) {
       this.setState({
         loading: false,
       });
-    } else if (this.state.name === "") {
+    } else if (this.state.emailValidation === false) {
       this.setState({
-        name: "",
+        loading: false,
       });
-      document.getElementById("name-box").style.border = "1.5px solid red";
-      document.getElementById("name-box").value = this.state.name;
-      document.getElementById("name-box").placeholder = "Name is empty";
-      document.getElementById("name-box").classList.add("ph");
-    } else if (this.state.email === "") {
+    } else if (this.state.messValidation === false) {
       this.setState({
-        email: "",
+        loading: false,
       });
-      document.getElementById("email-box").style.border = "1.5px solid red";
-      document.getElementById("email-box").value = this.state.email;
-      document.getElementById("email-box").placeholder = "Email is empty";
-      document.getElementById("email-box").classList.add("ph");
-    } else if (this.state.mess === "") {
-      this.setState({
-        mess: "",
-      });
-      document.getElementById("mess-box").style.border = "1.5px solid red";
-      document.getElementById("mess-box").value = this.state.mess;
-      document.getElementById("mess-box").placeholder = "Message is empty";
-      document.getElementById("mess-box").classList.add("ph");
     } else {
       this.setState({
         loading: true,
@@ -99,10 +83,8 @@ class Home extends Component {
       let { name, email, mess } = this.state;
       axios
         .post("https://spleeter.co.uk/email", {
-          //make an object to be handled from req.body on the backend.
           email,
           name,
-          //change the name to represent text on the backend.
           text: mess,
         })
         .then((res) => {
@@ -116,13 +98,6 @@ class Home extends Component {
               success: true,
               loading: false,
             });
-            document.getElementById("name-box").removeAttribute("placeholder");
-            document.getElementById("name-box").classList.remove("ph");
-            document.getElementById("email-box").removeAttribute("placeholder");
-            document.getElementById("email-box").classList.remove("ph");
-            document.getElementById("mess-box").removeAttribute("placeholder");
-            document.getElementById("mess-box").classList.remove("ph");
-
             setTimeout(() => {
               this.setState({
                 success: false,
@@ -156,6 +131,7 @@ class Home extends Component {
 
   render() {
     const { t } = this.props;
+    let { name, email, mess } = this.state;
 
     const override = css`
       width: auto;
@@ -164,21 +140,7 @@ class Home extends Component {
       margin: 15px auto;
     `;
 
-    if (this.state.email.includes("@")) {
-      document.getElementById("email-box").style.border = "0";
-    }
-
-    if (this.state.name !== "") {
-      document.getElementById("name-box").style.border = "0";
-    }
-
-    if (this.state.email !== "") {
-      document.getElementById("email-box").style.border = "0";
-    }
-
-    if (this.state.mess !== "") {
-      document.getElementById("mess-box").style.border = "0";
-    }
+    let currentYear = new Date().getFullYear();
 
     return (
       <>
@@ -253,110 +215,179 @@ class Home extends Component {
               id="stack-page"
               className="projects-container"
             >
-              <Carousel
-                showThumbs={false}
-                style={{
-                  backgroundColor: "transparent",
-                }}
-              >
+              <div className="stack-container">
+                <p id="title">{t("home.stackCont")}</p>
                 <Tech />
                 <Services />
-              </Carousel>
+              </div>
             </div>
             <div
               ref={this.proRef}
               id="proj-cont"
               className="projects-container"
             >
-              <Carousel
-                showThumbs={false}
-                style={{
-                  backgroundColor: "transparent",
-                }}
-              >
+              <div className="proj-container">
+                <p id="title">{t("home.proCont")}</p>
                 <Lsp />
                 <Spleeter />
                 <Fb />
-              </Carousel>
+              </div>
             </div>
             <div
               ref={this.conRef}
               id="contact-page"
               className="projects-container"
             >
-              <form>
-                <div className="form-group">
-                  <label>{t("contact.name")}</label>
-                  <input
-                    type="text"
-                    id="name-box"
-                    className="form-control"
-                    placeholder={t("contact.pl1")}
-                    value={this.state.name}
-                    onChange={(e) => this.setState({ name: e.target.value })}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label>{t("contact.email")}</label>
-                  <input
-                    type="email"
-                    id="email-box"
-                    className="form-control"
-                    placeholder={t("contact.pl2")}
-                    value={this.state.email}
-                    onChange={(e) => this.setState({ email: e.target.value })}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <label>{t("contact.mess")}</label>
-                  <textarea
-                    type="text"
-                    rows="4"
-                    id="mess-box"
-                    className="form-control"
-                    placeholder={t("contact.pl3")}
-                    value={this.state.mess}
-                    onChange={(e) => this.setState({ mess: e.target.value })}
-                    required
-                  />
-                </div>
-                <div className="contact-response">
-                  {this.state.loading ? (
-                    <SkewLoader
-                      css={override}
-                      size={40}
-                      color={"white"}
-                      loading={true}
+              <div className="cont-container">
+                <p id="title">{t("home.contCont")}</p>
+                <form>
+                  <div className="form-group">
+                    <label>{t("contact.name")}</label>
+                    <Textbox
+                      attributesInput={{
+                        id: "Name",
+                        name: "Name",
+                        type: "text",
+                        placeholder: t("contact.pl1"),
+                      }}
+                      value={name} // Optional.[String].Default: "".
+                      onChange={(name, e) => {
+                        this.setState({ name });
+                      }} // Required.[Func].Default: () => {}. Will return the value.
+                      onBlur={(e) => {
+                        if (this.state.name === "") {
+                          this.setState({
+                            nameValidation: false,
+                          });
+                        } else {
+                          this.setState({
+                            nameValidation: true,
+                          });
+                        }
+                      }} // Optional.[Func].Default: none. In order to validate the value on blur, you MUST provide a function, even if it is an empty function. Missing this, the validation on blur will not work.
+                      validationOption={{
+                        check: true, // Optional.[Bool].Default: true. To determin if you need to validate.
+                        required: true, // Optional.[Bool].Default: true. To determin if it is a required field.
+                        msgOnError: t("contact.nameErr"),
+                        msgOnSuccess: t("contact.nameSucc"),
+                      }}
                     />
-                  ) : null}
-                  {this.state.success ? (
-                    <p>
-                      <i className="fas fa-check-circle"></i>
-                      {t("contact.success")}
-                    </p>
-                  ) : null}
-                  {this.state.error ? (
-                    <p>
-                      <i className="fas fa-exclamation-circle"></i>
-                      {t("contact.fail")}
-                    </p>
-                  ) : null}
-                </div>
-                <div onClick={this.handleSubmit} className="btn-10">
-                  {t("contact.send")}
-                </div>
-                <span
-                  onClick={() =>
-                    window.scrollTo(0, this.topRef.current.offsetTop)
-                  }
-                  className="btn-up"
-                >
-                  <i className="fas fa-caret-up"></i>
-                </span>
-                <label>{t("home.back")}</label>
-              </form>
+                  </div>
+                  <div className="form-group">
+                    <label>{t("contact.email")}</label>
+                    <Textbox
+                      attributesInput={{
+                        id: "email",
+                        placeholder: t("contact.pl2"),
+                        type: "text",
+                      }}
+                      value={email}
+                      onChange={(email, e) => {
+                        this.setState({ email });
+                      }}
+                      onBlur={(e) => {
+                        if (this.state.email === "") {
+                          this.setState({
+                            emailValidation: false,
+                          });
+                        } else {
+                          this.setState({
+                            emailValidation: true,
+                          });
+                        }
+                      }} //Optional.[Func].Default: none. In order to validate the value on blur, you MUST provide a function, even if it is an empty function. Missing this, the validation on blur will not work.
+                      validationOption={{
+                        check: true, //Optional.[Bool].Default: true. To determin if you need to validate.
+                        required: true, //Optional.[Bool].Default: true. To determin if it is a required field.
+                        msgOnError: t("contact.emailErr"),
+                        msgOnSuccess: t("contact.emailSucc"),
+                        customFunc: (email) => {
+                          const reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                          if (reg.test(String(email).toLowerCase())) {
+                            return true;
+                          } else {
+                            return t("contact.emailWrong");
+                          }
+                        },
+                      }}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label>{t("contact.mess")}</label>
+                    <Textarea
+                      attributesInput={{
+                        id: "mess",
+                        name: "Mess",
+                        type: "text",
+                        placeholder: t("contact.pl3"),
+                      }}
+                      value={mess} // Optional.[String].Default: "".
+                      onChange={(mess, e) => {
+                        this.setState({ mess });
+                      }} // Required.[Func].Default: () => {}. Will return the value.
+                      onBlur={(e) => {
+                        if (this.state.mess === "") {
+                          this.setState({
+                            messValidation: false,
+                          });
+                        } else {
+                          this.setState({
+                            messValidation: true,
+                          });
+                        }
+                      }} // Optional.[Func].Default: none. In order to validate the value on blur, you MUST provide a function, even if it is an empty function. Missing this, the validation on blur will not work.
+                      validationOption={{
+                        check: true, // Optional.[Bool].Default: true. To determin if you need to validate.
+                        required: true, // Optional.[Bool].Default: true. To determin if it is a required field.
+                        msgOnError: t("contact.messErr"),
+                        msgOnSuccess: t("contact.messSucc"),
+                      }}
+                    />
+                  </div>
+                  <div className="contact-response">
+                    {this.state.loading ? (
+                      <SkewLoader
+                        css={override}
+                        size={40}
+                        color={"white"}
+                        loading={true}
+                      />
+                    ) : null}
+                    {this.state.success ? (
+                      <p>
+                        <i className="fas fa-check-circle"></i>
+                        {t("contact.success")}
+                      </p>
+                    ) : null}
+                    {this.state.error ? (
+                      <p>
+                        <i className="fas fa-exclamation-circle"></i>
+                        {t("contact.fail")}
+                      </p>
+                    ) : null}
+                  </div>
+                  <div onClick={this.handleSubmit} className="btn-10">
+                    {t("contact.send")}
+                  </div>
+                  <div
+                    onClick={() =>
+                      window.scrollTo(0, this.topRef.current.offsetTop)
+                    }
+                    className="up-cont"
+                  >
+                    <span
+                      onClick={() =>
+                        window.scrollTo(0, this.topRef.current.offsetTop)
+                      }
+                      className="btn-up"
+                    >
+                      <i className="fas fa-caret-up"></i>
+                    </span>
+                    <label>{t("home.back")}</label>
+                  </div>
+                </form>
+              </div>
+              <div className="copy">{currentYear} &copy; BADERproductions</div>
             </div>
           </div>
         </div>

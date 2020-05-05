@@ -9,7 +9,7 @@ class Tech extends Component {
     const { t } = this.props;
     return (
       <>
-        <div className="card border-light m-4">
+        <div className="card border-light ml-5 mr-5 mt-0 mb-0">
           <div className="card-header">{t("tech.title")}</div>
           <div id="stack-card" className="card-body">
             <p id="stack">{t("tech.sub1")}</p>

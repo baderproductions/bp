@@ -1,30 +1,24 @@
 import React, { Component } from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import PropTypes from "prop-types";
+import { translate } from "react-switch-lang";
+
 import Tech from "./cards/Tech";
 import Services from "./cards/Services";
-import Nav from "./Nav";
 import bg from "../bg.jpg";
 
-export default class Stack extends Component {
+class Stack extends Component {
   render() {
+    const { t } = this.props;
     return (
       <>
         <div className="background">
-          <Nav />
           <div className="body">
             <div className="darken"></div>
             <img src={bg} alt="Background Art" />
             <div id="stack-page" className="projects-container">
-              <Carousel
-                showThumbs={false}
-                style={{
-                  backgroundColor: "transparent",
-                }}
-              >
-                <Tech />
-                <Services />
-              </Carousel>
+              <div className="stack-container">{t("home.stackCont")}</div>
+              <Tech />
+              <Services />
             </div>
           </div>
         </div>
@@ -32,3 +26,9 @@ export default class Stack extends Component {
     );
   }
 }
+
+Stack.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+
+export default translate(Stack);

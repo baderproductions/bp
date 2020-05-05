@@ -4,8 +4,6 @@ import Lsp from "./cards/Lsp";
 import Spleeter from "./cards/Spleeter";
 import Fb from "./cards/Fb";
 import bg from "../bg.jpg";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 export default class Projects extends Component {
   constructor(props) {
@@ -21,16 +19,9 @@ export default class Projects extends Component {
             <div className="darken"></div>
             <img src={bg} alt="Background Art" />
             <div id="proj-cont" className="projects-container">
-              <Carousel
-                showThumbs={false}
-                style={{
-                  backgroundColor: "transparent",
-                }}
-              >
-                <Lsp />
-                <Spleeter />
-                <Fb />
-              </Carousel>
+              <Lsp />
+              <Spleeter />
+              <Fb />
             </div>
           </div>
         </div>

@@ -11,10 +11,6 @@ body {
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 
-  .ph::placeholder {
-    color: red;
-  }
-
   .cookie-btn {
     color: white !important;
     text-shadow: 1px 1px black;
@@ -301,16 +297,100 @@ body {
       }
 
       #stack-page {
-        height: 100vh;
-        .carousel {
-          height: 110vw;
+        width: 100% !important;
+        height: 100% !important;
+        padding-top: 10vh !important;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .stack-container {
+          width: 90vw;
+          height: 100%;
+          background-color: transparent;
+          border: 0.5px solid rgba($color: #fff, $alpha: 0.5);
+          padding-top: 4vh;
+          padding-bottom: 10vh;
+
+          #title {
+            color: white;
+            font-size: 6vw;
+            text-align: center;
+            margin-bottom: 4vh;
+          }
         }
       }
 
       #proj-cont {
-        height: 100vh;
-        .carousel {
-          height: 125vw;
+        width: 100% !important;
+        height: 100% !important;
+        padding-top: 10vh !important;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .proj-container {
+          width: 90vw;
+          height: 100%;
+          background-color: transparent;
+          border: 0.5px solid rgba($color: #fff, $alpha: 0.5);
+          padding-top: 4vh;
+          padding-bottom: 10vh;
+
+          #title {
+            color: white;
+            font-size: 6vw;
+            text-align: center;
+            margin-bottom: 4vh;
+          }
+        }
+      }
+
+      #contact-page {
+        width: 100% !important;
+        height: auto !important;
+        padding-top: 10vh !important;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        .cont-container {
+          width: 90vw;
+          height: 100%;
+          background-color: transparent;
+          border: 0.5px solid rgba($color: #fff, $alpha: 0.5);
+          padding-top: 4vh;
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+
+          #title {
+            color: white;
+            font-size: 6vw;
+            text-align: center;
+            margin-bottom: 4vh;
+          }
+
+          form {
+            align-self: center !important;
+            justify-self: center !important;
+          }
+        }
+
+        .copy {
+          color: rgba($color: #fff, $alpha: 0.8);
+          font-size: 2.5vw;
+          text-align: center;
+          margin-top: 4.5vw;
+          margin-bottom: 4vw;
         }
       }
 
@@ -325,7 +405,7 @@ body {
 
         form {
           width: 80vw;
-          height: 120vw;
+          height: auto;
           align-self: center;
           display: flex;
           flex-wrap: nowrap;
@@ -366,85 +446,94 @@ body {
             }
           }
 
-          label {
-            color: white;
-            align-self: center;
-            text-shadow: 1px 1px black;
-            font-size: 4vw;
-            margin: 0;
-          }
-
-          .btn-up {
-            width: 10vw;
-            color: white;
-            transition: all 0.5s;
-            position: relative;
-            margin-top: 10vh;
-            margin-bottom: 0.5vh;
-            padding: 1.5vw 5vw;
-            cursor: pointer;
+          .up-cont {
+            height: 100%;
             display: flex;
             flex-wrap: nowrap;
             flex-direction: column;
-            justify-content: flex-end;
-            align-self: center;
+            justify-content: center;
+            align-items: center;
+            margin: 10vw auto;
 
-            .fa-caret-up {
-              justify-content: center;
-              align-self: center;
+            label {
               color: white;
+              align-self: center;
               text-shadow: 1px 1px black;
+              font-size: 4vw;
+              margin-top: 2vw;
             }
 
-            &:active {
+            .btn-up {
+              width: 10vw;
+              color: white;
+              transition: all 0.5s;
               position: relative;
-              top: 1px;
-            }
+              margin: 0;
+              padding: 1.5vw 5vw;
+              cursor: pointer;
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: column;
+              justify-content: flex-end;
+              align-self: center;
 
-            span {
-              text-shadow: 1px 1px black;
-            }
+              .fa-caret-up {
+                justify-content: center;
+                align-self: center;
+                color: white;
+                text-shadow: 1px 1px black;
+              }
 
-            a {
-              color: rgba(51, 51, 51, 1);
-              text-decoration: none;
-              display: block;
-            }
+              &:active {
+                position: relative;
+                top: 1px;
+              }
 
-            &:before {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              z-index: 1;
-              border: 1px solid rgba(255, 255, 255, 0.8);
-              transition: all 0.3s;
-            }
+              span {
+                text-shadow: 1px 1px black;
+              }
 
-            &:hover::before {
-              opacity: 0;
-              transform: scale(1.2, 1.2);
-            }
+              a {
+                color: rgba(51, 51, 51, 1);
+                text-decoration: none;
+                display: block;
+              }
 
-            &:after {
-              content: "";
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              z-index: 1;
-              opacity: 0;
-              background-color: rgba(255, 255, 255, 0.3);
-              transition: all 0.3s;
-              transform: scale(0.5, 0.5);
-            }
+              &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                border: 1px solid rgba(255, 255, 255, 0.8);
+                transition: all 0.3s;
+              }
 
-            &:hover::after {
-              opacity: 1;
-              transform: scale(1, 1);
+              &:hover::before {
+                opacity: 0;
+                transform: scale(1.2, 1.2);
+              }
+
+              &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                opacity: 0;
+                background-color: rgba(255, 255, 255, 0.3);
+                transition: all 0.3s;
+                transform: scale(0.5, 0.5);
+              }
+
+              &:hover::after {
+                opacity: 1;
+                transform: scale(1, 1);
+              }
             }
           }
 
@@ -535,29 +624,13 @@ body {
           }
         }
 
-        .slide {
-          background-color: transparent;
-        }
-
-        .dot,
-        .selected {
-          outline: none;
-        }
-
-        .control-arrow {
-          display: none;
-        }
-
-        .carousel-status {
-          display: none;
-        }
-
         .card {
           border-radius: 0;
 
           .card-header {
             text-align: left;
-            font-size: 6vw;
+            font-size: 4.5vw;
+            font-weight: bold;
 
             p {
               font-size: 3vw;
@@ -569,6 +642,7 @@ body {
           #stack-card {
             padding: 5vw;
             text-align: left;
+
             #stack {
               font-size: 3.5vw;
               font-weight: bold;
@@ -585,6 +659,7 @@ body {
 
             a,
             span {
+              font-size: 3vw;
               border-radius: 0;
               margin: 0.5vw 0.7vw !important;
             }
@@ -695,142 +770,6 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .cookie-container {
-    font-size: 2.5vw !important;
-  }
-  .cookie-btn {
-    font-size: 2.5vw !important;
-  }
-
-  .background {
-    .nav {
-      .media {
-        .fa-github-square,
-        .fa-linkedin,
-        .fa-facebook-square {
-          font-size: 5vw !important;
-        }
-      }
-    }
-
-    .body {
-      .intro {
-        .text-container {
-          .hello {
-            font-size: 4vw !important;
-          }
-        }
-        .refs {
-          .btn-4,
-          .btn-5,
-          .btn-6 {
-            font-size: 2.5vw !important;
-          }
-        }
-      }
-      #stack-page {
-        .carousel {
-          height: 70vw !important;
-        }
-      }
-      #proj-cont {
-        margin-top: 10vh !important;
-        .carousel {
-          height: 95vw !important;
-        }
-      }
-      .projects-container {
-        form {
-          height: 90vw !important;
-          label {
-            font-size: 3vw !important;
-          }
-          .btn-up {
-            width: 12vw !important;
-            margin-top: 20vh !important;
-            .fa-caret-up {
-              font-size: 4vw !important;
-            }
-          }
-          .btn-10 {
-            margin-top: 4vw !important;
-            font-size: 3vw !important;
-          }
-          .form-group {
-            input {
-              font-size: 3vw !important;
-            }
-
-            textarea {
-              font-size: 3vw !important;
-            }
-          }
-        }
-
-        .dot {
-          display: none !important;
-        }
-
-        .control-arrow {
-          display: block !important;
-          background-color: transparent !important;
-        }
-
-        .card {
-          width: 70vw !important;
-          margin: auto !important;
-
-          .card-header {
-            text-align: left;
-            font-size: 6vw;
-
-            p {
-              font-size: 3vw;
-              margin: 0;
-              margin-top: 2vw;
-            }
-          }
-
-          #stack-card {
-            #stack {
-              margin-bottom: 1vw !important;
-            }
-          }
-
-          .card-body {
-            padding: 3vw !important;
-            #spleeter {
-              justify-content: center !important;
-            }
-
-            a,
-            span {
-              margin: 0.5vw 1vw !important;
-              font-size: 2.5vw !important;
-            }
-
-            .card-text {
-              margin-bottom: 2vw !important;
-            }
-          }
-        }
-      }
-
-      .btn-7,
-      .btn-8 {
-        color: black;
-        transition: all 0.5s;
-        position: relative;
-        padding: 1.5vw 5vw;
-        cursor: pointer;
-        font-size: 2.5vw;
-        text-decoration: none;
-      }
-    }
-  }
-}
-
 @media screen and (min-width: 1024px) {
   .cookie-container {
     font-size: 2.3vw !important;
@@ -865,62 +804,164 @@ body {
           }
         }
       }
-      #stack-page {
-        .carousel {
-          margin-top: 15vh !important;
-          height: 50vw !important;
-        }
+
+      .copy {
+        color: rgba($color: #fff, $alpha: 0.8);
+        font-size: 1.5vw !important;
+        text-align: center;
+        margin-top: 4.5vw;
+        margin-bottom: 4vw;
       }
-      #proj-cont {
-        margin-top: 20vh !important;
-        .carousel {
-          height: 55vw !important;
-        }
+
+      #title {
+        font-size: 3vw !important;
       }
+
       .projects-container {
         form {
-          height: 50vw !important;
-          width: 60vw !important;
-          label {
-            font-size: 2vw !important;
-          }
-          .btn-up {
-            width: 8vw !important;
-            margin-top: 10vh !important;
-            padding: 1vw 1vw !important;
-            .fa-caret-up {
-              font-size: 2vw !important;
-            }
-          }
+          width: 50vw !important;
+
           .btn-10 {
-            width: 25vw !important;
+            width: 15vw !important;
             margin-top: 4vw !important;
             font-size: 2vw !important;
           }
           .form-group {
-            input {
-              font-size: 2vw !important;
+            input,
+            textarea {
+              font-size: 1.5vw !important;
+            }
+          }
+
+          .up-cont {
+            height: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5vw auto !important;
+
+            label {
+              color: white;
+              align-self: center;
+              text-shadow: 1px 1px black;
+              font-size: 2.5vw !important;
+              margin-top: 0.5vw !important;
             }
 
-            textarea {
-              font-size: 2vw !important;
+            .contact-response {
+              width: 100%;
+              height: auto;
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+
+              p {
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                font-weight: bold;
+                text-shadow: 1px 1px black;
+                font-size: 2vw !important;
+                margin: 0;
+
+                .fa-check-circle {
+                  margin-right: 10px;
+                  font-size: 28px;
+                  color: lime;
+                }
+
+                .fa-exclamation-circle {
+                  margin-right: 10px;
+                  font-size: 28px;
+                  color: crimson;
+                }
+              }
+            }
+
+            .btn-up {
+              width: 5vw !important;
+              color: white;
+              transition: all 0.5s;
+              position: relative;
+              margin: 0;
+              padding: 1vw 0 !important;
+              cursor: pointer;
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: column;
+              justify-content: flex-end;
+              align-self: center;
+
+              .fa-caret-up {
+                justify-content: center;
+                align-self: center;
+                color: white;
+                text-shadow: 1px 1px black;
+                font-size: 2vw;
+              }
+
+              &:active {
+                position: relative;
+                top: 1px;
+              }
+
+              span {
+                text-shadow: 1px 1px black;
+              }
+
+              a {
+                color: rgba(51, 51, 51, 1);
+                text-decoration: none;
+                display: block;
+              }
+
+              &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                border: 1px solid rgba(255, 255, 255, 0.8);
+                transition: all 0.3s;
+              }
+
+              &:hover::before {
+                opacity: 0;
+                transform: scale(1.2, 1.2);
+              }
+
+              &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                opacity: 0;
+                background-color: rgba(255, 255, 255, 0.3);
+                transition: all 0.3s;
+                transform: scale(0.5, 0.5);
+              }
+
+              &:hover::after {
+                opacity: 1;
+                transform: scale(1, 1);
+              }
             }
           }
         }
 
-        .dot {
-          display: none !important;
-        }
-
-        .control-arrow {
-          display: block !important;
-          background-color: transparent !important;
-        }
-
         .card {
-          width: 70vw !important;
-          margin: auto !important;
-
           .card-header {
             text-align: left;
             font-size: 3.5vw !important;
@@ -929,12 +970,6 @@ body {
               font-size: 2vw !important;
               margin: 0;
               margin-top: 1vw !important;
-            }
-          }
-
-          #stack-card {
-            #stack {
-              margin-bottom: 1vw !important;
             }
           }
 
@@ -987,6 +1022,7 @@ body {
     }
   }
 }
+
 @media screen and (min-width: 1920px) {
   .cookie-container {
     font-size: 2.3vw !important;
@@ -1022,104 +1058,190 @@ body {
           }
         }
       }
-      #stack-page {
-        .carousel {
-          margin-top: 45vh !important;
-          height: 50vw !important;
-        }
+
+      .copy {
+        color: rgba($color: #fff, $alpha: 0.8);
+        font-size: 1.5vw !important;
+        text-align: center;
+        margin-top: 4.5vw;
+        margin-bottom: 4vw;
       }
-      #proj-cont {
-        margin-top: 45vh !important;
-        .carousel {
-          height: 55vw !important;
-        }
+
+      #title {
+        font-size: 3vw !important;
       }
+
       .projects-container {
         form {
-          height: 40vw !important;
           width: 50vw !important;
-          label {
-            font-size: 1.6vw !important;
-          }
-          .btn-up {
-            width: 8vw !important;
-            margin-top: 6vh !important;
-            padding: 1vw 1vw !important;
-            .fa-caret-up {
-              font-size: 2vw !important;
-            }
-          }
+
           .btn-10 {
-            width: 25vw !important;
-            margin-top: 2vw !important;
+            width: 12vw !important;
+            margin-top: 4vw !important;
             font-size: 2vw !important;
           }
           .form-group {
-            input {
-              font-size: 1.6vw !important;
-            }
-
+            input,
             textarea {
-              font-size: 1.6vw !important;
+              font-size: 1.5vw !important;
             }
           }
-        }
 
-        .dot {
-          display: none !important;
-        }
+          .contact-response {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-        .control-arrow {
-          display: block !important;
-          background-color: transparent !important;
-        }
+            p {
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              color: white;
+              font-weight: bold;
+              text-shadow: 1px 1px black;
+              font-size: 2vw !important;
+              margin: 0;
 
-        .control-next,
-        .control-prev {
-          height: 55% !important;
+              .fa-check-circle {
+                margin-right: 10px;
+                font-size: 3.5vw !important;
+                color: lime;
+              }
 
-          &::before {
-            width: 100px !important;
-            height: 100px !important;
+              .fa-exclamation-circle {
+                margin-right: 10px;
+                font-size: 3.5vw !important;
+                color: crimson;
+              }
+            }
+          }
+
+          .up-cont {
+            height: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5vw auto !important;
+
+            label {
+              color: white;
+              align-self: center;
+              text-shadow: 1px 1px black;
+              font-size: 1.5vw !important;
+              margin-top: 0.5vw !important;
+            }
+
+            .btn-up {
+              width: 5vw !important;
+              color: white;
+              transition: all 0.5s;
+              position: relative;
+              margin: 0;
+              padding: 1vw 0 !important;
+              cursor: pointer;
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: column;
+              justify-content: flex-end;
+              align-self: center;
+
+              .fa-caret-up {
+                justify-content: center;
+                align-self: center;
+                color: white;
+                text-shadow: 1px 1px black;
+                font-size: 2vw;
+              }
+
+              &:active {
+                position: relative;
+                top: 1px;
+              }
+
+              span {
+                text-shadow: 1px 1px black;
+              }
+
+              a {
+                color: rgba(51, 51, 51, 1);
+                text-decoration: none;
+                display: block;
+              }
+
+              &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                border: 1px solid rgba(255, 255, 255, 0.8);
+                transition: all 0.3s;
+              }
+
+              &:hover::before {
+                opacity: 0;
+                transform: scale(1.2, 1.2);
+              }
+
+              &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                opacity: 0;
+                background-color: rgba(255, 255, 255, 0.3);
+                transition: all 0.3s;
+                transform: scale(0.5, 0.5);
+              }
+
+              &:hover::after {
+                opacity: 1;
+                transform: scale(1, 1);
+              }
+            }
           }
         }
 
         .card {
-          width: 75vw !important;
-          margin: auto !important;
-
           .card-header {
             text-align: left;
-            font-size: 3vw !important;
+            font-size: 3.5vw !important;
 
             p {
-              font-size: 1.8vw !important;
+              font-size: 2vw !important;
               margin: 0;
               margin-top: 1vw !important;
             }
           }
 
-          #stack-card {
-            #stack {
-              margin-bottom: 1vw !important;
-            }
-          }
-
           .card-body {
-            padding: 1.5vw !important;
+            padding: 2vw !important;
             #spleeter {
               justify-content: center !important;
             }
 
             p {
               margin-top: 1.5vh !important;
-              font-size: 1.4vw !important;
+              font-size: 1.6vw !important;
             }
 
             ul {
               li {
                 padding: 0.5vh 0 !important;
-                font-size: 1.5vw !important;
+                font-size: 2vw !important;
               }
             }
 
@@ -1130,12 +1252,12 @@ body {
             a,
             span {
               margin: 0.5vw 0.5vw !important;
-              font-size: 1.4vw !important;
+              font-size: 1.6vw !important;
             }
 
             .card-text {
               margin-bottom: 2vw !important;
-              font-size: 1.5vw !important;
+              font-size: 1.7vw !important;
             }
           }
         }
@@ -1154,6 +1276,7 @@ body {
     }
   }
 }
+
 @media screen and (min-width: 2048px) {
   .cookie-container {
     font-size: 2.3vw !important;
@@ -1189,104 +1312,194 @@ body {
           }
         }
       }
-      #stack-page {
-        .carousel {
-          margin-top: 45vh !important;
-          height: 50vw !important;
-        }
+
+      .copy {
+        color: rgba($color: #fff, $alpha: 0.8);
+        font-size: 1.2vw !important;
+        text-align: center;
+        margin-top: 4.5vw;
+        margin-bottom: 4vw;
       }
-      #proj-cont {
-        margin-top: 25vh !important;
-        .carousel {
-          height: 45vw !important;
-        }
+
+      #title {
+        font-size: 3vw !important;
       }
+
       .projects-container {
         form {
-          height: 40vw !important;
           width: 50vw !important;
+
           label {
-            font-size: 1.6vw !important;
+            font-size: 1.5vw !important;
           }
-          .btn-up {
-            width: 8vw !important;
-            margin-top: 6vh !important;
-            padding: 1vw 1vw !important;
-            .fa-caret-up {
-              font-size: 2vw !important;
-            }
-          }
+
           .btn-10 {
-            width: 25vw !important;
-            margin-top: 2vw !important;
+            width: 12vw !important;
+            margin-top: 4vw !important;
             font-size: 2vw !important;
           }
           .form-group {
-            input {
-              font-size: 1.6vw !important;
-            }
-
+            input,
             textarea {
-              font-size: 1.6vw !important;
+              font-size: 1.5vw !important;
             }
           }
-        }
 
-        .dot {
-          display: none !important;
-        }
+          .contact-response {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
 
-        .control-arrow {
-          display: block !important;
-          background-color: transparent !important;
-        }
+            p {
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: row;
+              justify-content: center;
+              align-items: center;
+              color: white;
+              font-weight: bold;
+              text-shadow: 1px 1px black;
+              font-size: 1.5vw !important;
+              margin: 0;
 
-        .control-next,
-        .control-prev {
-          height: 55% !important;
+              .fa-check-circle {
+                margin-right: 10px;
+                font-size: 3vw !important;
+                color: lime;
+              }
 
-          &::before {
-            width: 100px !important;
-            height: 100px !important;
+              .fa-exclamation-circle {
+                margin-right: 10px;
+                font-size: 3.5vw !important;
+                color: crimson;
+              }
+            }
+          }
+
+          .up-cont {
+            height: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 5vw auto !important;
+
+            label {
+              color: white;
+              align-self: center;
+              text-shadow: 1px 1px black;
+              font-size: 1.5vw !important;
+              margin-top: 0.5vw !important;
+            }
+
+            .btn-up {
+              width: 5vw !important;
+              color: white;
+              transition: all 0.5s;
+              position: relative;
+              margin: 0;
+              padding: 1vw 0 !important;
+              cursor: pointer;
+              display: flex;
+              flex-wrap: nowrap;
+              flex-direction: column;
+              justify-content: flex-end;
+              align-self: center;
+
+              .fa-caret-up {
+                justify-content: center;
+                align-self: center;
+                color: white;
+                text-shadow: 1px 1px black;
+                font-size: 2vw;
+              }
+
+              &:active {
+                position: relative;
+                top: 1px;
+              }
+
+              span {
+                text-shadow: 1px 1px black;
+              }
+
+              a {
+                color: rgba(51, 51, 51, 1);
+                text-decoration: none;
+                display: block;
+              }
+
+              &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                border: 1px solid rgba(255, 255, 255, 0.8);
+                transition: all 0.3s;
+              }
+
+              &:hover::before {
+                opacity: 0;
+                transform: scale(1.2, 1.2);
+              }
+
+              &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+                opacity: 0;
+                background-color: rgba(255, 255, 255, 0.3);
+                transition: all 0.3s;
+                transform: scale(0.5, 0.5);
+              }
+
+              &:hover::after {
+                opacity: 1;
+                transform: scale(1, 1);
+              }
+            }
           }
         }
 
         .card {
-          width: 75vw !important;
-          margin: auto !important;
-
           .card-header {
             text-align: left;
-            font-size: 3vw !important;
+            font-size: 3.5vw !important;
 
             p {
-              font-size: 1.8vw !important;
+              font-size: 2vw !important;
               margin: 0;
               margin-top: 1vw !important;
             }
           }
 
-          #stack-card {
-            #stack {
-              margin-bottom: 1vw !important;
-            }
-          }
-
           .card-body {
-            padding: 1.5vw !important;
+            padding: 2vw !important;
             #spleeter {
               justify-content: center !important;
             }
 
             p {
               margin-top: 1.5vh !important;
-              font-size: 1.4vw !important;
+              font-size: 1.6vw !important;
             }
 
             ul {
               li {
                 padding: 0.5vh 0 !important;
-                font-size: 1.5vw !important;
+                font-size: 2vw !important;
               }
             }
 
@@ -1297,12 +1510,12 @@ body {
             a,
             span {
               margin: 0.5vw 0.5vw !important;
-              font-size: 1.4vw !important;
+              font-size: 1.6vw !important;
             }
 
             .card-text {
               margin-bottom: 2vw !important;
-              font-size: 1.5vw !important;
+              font-size: 1.7vw !important;
             }
           }
         }

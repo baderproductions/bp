@@ -17,7 +17,10 @@
     "pro": "Projects",
     "stack": "Stack",
     "contact": "Contact me",
-    "back": "Back up"
+    "back": "Back up",
+    "stackCont": "Stack",
+    "proCont": "Projects",
+    "contCont": "Contact me"
   },
   "lsp": {
     "title": "Photography",
@@ -62,10 +65,17 @@
   },
   "contact": {
     "name": "Name",
+    "nameErr": "Error. Name is required.",
+    "nameSucc": "Accepted. You can move forward.",
     "pl1": "First name",
     "email": "Email",
+    "emailErr": "Error. Email is required.",
+    "emailSucc": "Accepted. You can move forward.",
+    "emailWrong": "Error. Email is not correct.",
     "pl2": "Email address",
     "mess": "Message",
+    "messErr": "Error. Message is required.",
+    "messSucc": "Accepted. You can move forward.",
     "pl3": "Your message",
     "send": "Send",
     "success": "Your message was sent",

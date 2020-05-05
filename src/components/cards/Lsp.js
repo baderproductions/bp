@@ -9,7 +9,7 @@ class Lsp extends Component {
     const { t } = this.props;
     return (
       <>
-        <div className="card border-light m-5">
+        <div className="card border-light ml-5 mr-5 mt-0 mb-0">
           <div className="card-header">
             {t("lsp.title")}
             <p>{t("lsp.subt")}</p>

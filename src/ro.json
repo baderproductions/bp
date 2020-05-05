@@ -17,7 +17,10 @@
     "pro": "Proiecte",
     "stack": "Stack",
     "contact": "Contactează-mă",
-    "back": "Înapoi"
+    "back": "Înapoi",
+    "stackCont": "Stack",
+    "proCont": "Proiecte",
+    "contCont": "Contactează-mă"
   },
   "lsp": {
     "title": "Fotografie",
@@ -60,10 +63,17 @@
   },
   "contact": {
     "name": "Nume",
+    "nameErr": "Eroare. Numele este necesar.",
+    "nameSucc": "Acceptat. Poţi continua.",
     "pl1": "Namele mic",
     "email": "Email",
+    "emailErr": "Eroare. Emailul este necesar.",
+    "emailSucc": "Acceptat. Poţi continua.",
+    "emailWrong": "Eroare. Emailul nu este corect.",
     "pl2": "Adresă email",
     "mess": "Mesaj",
+    "messErr": "Eroare. Mesajul este necesar.",
+    "messSucc": "Acceptat. Poţi continua.",
     "pl3": "Mesajul tau",
     "send": "Trimite",
     "success": "Mesajul a fost trimis",
