@@ -24,13 +24,6 @@ class Services extends Component {
             <a href="https://aws.amazon.com/" className="badge badge-warning">
               Amazon Web Services
             </a>
-
-            <a
-              href="https://www.digitalocean.com/"
-              className="badge badge-primary"
-            >
-              DigitalOcean
-            </a>
             <p id="stack2">{t("services.sub2")}</p>
             <a href="https://www.nginx.com/" className="badge badge-success">
               NGINX

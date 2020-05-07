@@ -69,13 +69,6 @@ class Tech extends Component {
             >
               Django
             </a>
-            <a
-              href="https://www.php.net/"
-              style={{ backgroundColor: "#7249AE" }}
-              className="badge badge-secondary"
-            >
-              PHP
-            </a>
           </div>
         </div>
       </>
