@@ -269,7 +269,6 @@ class Home extends Component {
                         check: true, // Optional.[Bool].Default: true. To determin if you need to validate.
                         required: true, // Optional.[Bool].Default: true. To determin if it is a required field.
                         msgOnError: t("contact.nameErr"),
-                        msgOnSuccess: t("contact.nameSucc"),
                       }}
                     />
                   </div>
@@ -300,7 +299,6 @@ class Home extends Component {
                         check: true, //Optional.[Bool].Default: true. To determin if you need to validate.
                         required: true, //Optional.[Bool].Default: true. To determin if it is a required field.
                         msgOnError: t("contact.emailErr"),
-                        msgOnSuccess: t("contact.emailSucc"),
                         customFunc: (email) => {
                           const reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                           if (reg.test(String(email).toLowerCase())) {
@@ -340,7 +338,6 @@ class Home extends Component {
                         check: true, // Optional.[Bool].Default: true. To determin if you need to validate.
                         required: true, // Optional.[Bool].Default: true. To determin if it is a required field.
                         msgOnError: t("contact.messErr"),
-                        msgOnSuccess: t("contact.messSucc"),
                       }}
                     />
                   </div>
@@ -348,7 +345,7 @@ class Home extends Component {
                     {this.state.loading ? (
                       <SkewLoader
                         css={override}
-                        size={40}
+                        size={50}
                         color={"white"}
                         loading={true}
                       />

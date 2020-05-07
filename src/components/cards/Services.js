@@ -16,11 +16,9 @@ class Services extends Component {
             <a href="https://cloud.google.com/" className="badge badge-danger">
               Google Cloud Computing
             </a>
-
             <a href="https://azure.microsoft.com/" className="badge badge-dark">
               Microsoft Azure
             </a>
-
             <a href="https://aws.amazon.com/" className="badge badge-warning">
               Amazon Web Services
             </a>
@@ -28,7 +26,6 @@ class Services extends Component {
             <a href="https://www.nginx.com/" className="badge badge-success">
               NGINX
             </a>
-
             <a
               href="https://www.apache.org/"
               style={{ backgroundColor: "#282661" }}
@@ -36,11 +33,9 @@ class Services extends Component {
             >
               Apache
             </a>
-
             <a href="http://supervisord.org/" className="badge badge-primary">
               Supervisor
             </a>
-
             <a
               href="https://gunicorn.org/"
               style={{ backgroundColor: "#1D692D" }}
