@@ -51,6 +51,16 @@
     "demo": "Demo",
     "source": "Sursă GitHub"
   },
+  "rv": {
+    "title": "Catering",
+    "subt": "Raul Vidican - Bucătar Şef",
+    "p1": " Website fullstack construit pentru bucătar şef,",
+    "p2": " prezentat în limba română.",
+    "p3": "Am folosit Node în backend cu JSON Server pentru a încărca pozele şi a facilita formularul de contact.",
+    "web": "* Website demo is down due to server costs",
+    "demo": "Website",
+    "source": "GitHub Source"
+  },
   "tech": {
     "title": "Technologii",
     "sub1": "Stack frontend",

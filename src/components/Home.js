@@ -10,6 +10,7 @@ import Services from "./cards/Services";
 import Lsp from "./cards/Lsp";
 import Spleeter from "./cards/Spleeter";
 import Fb from "./cards/Fb";
+import Rv from "./cards/Rv";
 
 import { Textbox, Textarea } from "react-inputs-validation";
 import "react-inputs-validation/lib/react-inputs-validation.min.css";
@@ -231,6 +232,7 @@ class Home extends Component {
                 <Lsp />
                 <Spleeter />
                 <Fb />
+                <Rv />
               </div>
             </div>
             <div

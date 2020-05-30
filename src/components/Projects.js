@@ -3,6 +3,7 @@ import Nav from "./Nav";
 import Lsp from "./cards/Lsp";
 import Spleeter from "./cards/Spleeter";
 import Fb from "./cards/Fb";
+import Rv from "./cards/Rv";
 import bg from "../bg.jpg";
 
 export default class Projects extends Component {
@@ -22,6 +23,7 @@ export default class Projects extends Component {
               <Lsp />
               <Spleeter />
               <Fb />
+              <Rv />
             </div>
           </div>
         </div>

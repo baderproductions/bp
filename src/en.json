@@ -53,6 +53,16 @@
     "demo": "Demo",
     "source": "GitHub Source"
   },
+  "rv": {
+    "title": "Catering",
+    "subt": "Raul Vidican - Head Chef",
+    "p1": "Fullstack website designed for a head chef",
+    "p2": " presented in romanian language.",
+    "p3": "Used Node in the backend with JSON Server to fetch the pictures and to enable the contact form.",
+    "web": "* Website demo is down due to server costs",
+    "demo": "Website",
+    "source": "GitHub Source"
+  },
   "tech": {
     "title": "Technologies",
     "sub1": "Frontend stack",
