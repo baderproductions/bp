@@ -11,10 +11,12 @@ class Rv extends Component {
       <>
         <div className="card border-light ml-5 mr-5 mt-5 mb-0">
           <div className="card-header">
-            {t("rv.title")}
+            {t("rv.title")}{" "}
+            <span href="https://reactjs.org/" className="badge badge-danger">
+              {t("rv.prog")}
+            </span>
             <p>{t("rv.subt")}</p>
           </div>
-
           <div className="card-body">
             <p className="card-text">
               {t("rv.p1")}
