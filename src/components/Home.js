@@ -157,10 +157,10 @@ class Home extends Component {
           buttonText={t("home.accept")}
           cookieName="cookie-consent"
           style={{
-            backgroundColor: "rgba(255, 255, 255, 0.3)",
+            backgroundColor: "grey",
             color: "white",
-            fontSize: "3.5vw",
-            textAlign: "center",
+            fontSize: "3vw",
+            textAlign: "left",
             textShadow: "1px 1px black",
           }}
           buttonClasses="cookie-btn"
