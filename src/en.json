@@ -1,6 +1,6 @@
 {
   "nav": {
-    "git": "GitHub Page",
+    "git": "Github Page",
     "li": "LinkedIn Profile",
     "fb": "Facebook Page",
     "en": "English",
@@ -9,18 +9,18 @@
   },
   "home": {
     "p1": "Hello there! I'm ",
-    "p2": "Kevin Bader",
+    "p2": "Kevin",
     "p3": "I'm a Junior Full-stack Developer",
     "cookie": "I use Cookies to store the Language selector choice",
     "accept": "Okay",
     "decline": "Decline",
     "pro": "Projects",
     "stack": "Stack",
-    "contact": "Contact me",
+    "contact": "Contact",
     "back": "Back up",
     "stackCont": "Stack",
     "proCont": "Projects",
-    "contCont": "Contact me"
+    "contCont": "Contact"
   },
   "lsp": {
     "title": "Photography",
@@ -30,7 +30,7 @@
     "a": "admin page",
     "p3": " where the photographer can manage the pictures shown on it's website.",
     "web": "Website",
-    "source": "GitHub Source"
+    "source": "Github Source"
   },
   "spleeter": {
     "title": "Machine learning",
@@ -40,7 +40,7 @@
     "a": "Spleeter by Deezer",
     "p3": " where the photographer can manage the pictures shown on it's website.",
     "web": "* Website demo is down due to server costs",
-    "source": "GitHub Source"
+    "source": "Github Source"
   },
   "fb": {
     "title": "Tutorial",
@@ -51,7 +51,7 @@
     "p3": "This was an exercise using basic HTML, CSS (SASS), Javascript and jQuery to build the frontend of the page.",
     "web": "* Website demo is down due to server costs",
     "demo": "Demo",
-    "source": "GitHub Source"
+    "source": "Github Source"
   },
   "rv": {
     "title": "Catering",
@@ -62,7 +62,7 @@
     "p3": "Used Node in the backend with JSON Server to fetch the pictures and to enable the contact form.",
     "web": "* Website demo is down due to server costs",
     "demo": "Website",
-    "source": "GitHub Source"
+    "source": "Github Source"
   },
   "tech": {
     "title": "Technologies",
@@ -76,17 +76,17 @@
   },
   "contact": {
     "name": "Name",
-    "nameErr": "Error. Name is required.",
-    "nameSucc": "Accepted. You can move forward.",
+    "nameErr": "Name is required",
+    "nameSucc": "Accepted. You can move forward",
     "pl1": "First name",
     "email": "Email",
-    "emailErr": "Error. Email is required.",
-    "emailSucc": "Accepted. You can move forward.",
-    "emailWrong": "Error. Email is not correct.",
+    "emailErr": "Email is required",
+    "emailSucc": "Accepted. You can move forward",
+    "emailWrong": "Email is incorrect",
     "pl2": "Email address",
     "mess": "Message",
-    "messErr": "Error. Message is required.",
-    "messSucc": "Accepted. You can move forward.",
+    "messErr": "Message is required",
+    "messSucc": "Accepted. You can move forward",
     "pl3": "Your message",
     "send": "Send",
     "success": "Your message was sent",

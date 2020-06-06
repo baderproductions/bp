@@ -7,9 +7,6 @@ import "../node_modules/flag-icon-css/sass/flag-icon.scss";
 
 // Pages
 import Home from "./components/Home";
-import Projects from "./components/Projects";
-import Stack from "./components/Stack";
-import Contact from "./components/Contact";
 import NotFound from "./components/NotFound";
 
 // Helmet Async
@@ -36,9 +33,6 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/projects" component={Projects} />
-            <Route path="/stack" component={Stack} />
-            <Route path="/contact" component={Contact} />
             <Route component={NotFound} />
           </Switch>
         </BrowserRouter>

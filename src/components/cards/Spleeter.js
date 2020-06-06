@@ -9,7 +9,7 @@ class Spleeter extends Component {
     const { t } = this.props;
     return (
       <>
-        <div className="card border-light ml-5 mr-5 mt-5 mb-0">
+        <div className="card border-light m-0">
           <div className="card-header">
             {t("spleeter.title")}
             <p>{t("spleeter.subt")}</p>

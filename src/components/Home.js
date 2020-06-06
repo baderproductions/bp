@@ -18,12 +18,15 @@ import "react-inputs-validation/lib/react-inputs-validation.min.css";
 import { css } from "@emotion/core";
 import SkewLoader from "react-spinners/SkewLoader";
 
+// React Transition
+import { CSSTransition } from "react-transition-group";
+
+// Carousel
+import Carousel from "@brainhubeu/react-carousel";
+import "@brainhubeu/react-carousel/lib/style.css";
+
 // npm - react-switch-lang
 import { translate } from "react-switch-lang";
-import CookieConsent from "react-cookie-consent";
-
-// npm - react-messenger-customer-chat
-// import MessengerCustomerChat from "react-messenger-customer-chat";
 
 class Home extends Component {
   constructor() {
@@ -38,6 +41,7 @@ class Home extends Component {
       loading: false,
       success: false,
       error: false,
+      isTop: false,
       status: undefined,
     };
 
@@ -47,8 +51,18 @@ class Home extends Component {
     this.conRef = React.createRef();
   }
 
-  componentDidMount() {}
-  componentWillUnmount() {}
+  componentDidMount() {
+    document.addEventListener("scroll", () => {
+      if (window.scrollY > 399) {
+        this.setState({ isTop: true });
+      } else {
+        this.setState({ isTop: false });
+      }
+    });
+  }
+  componentWillUnmount() {
+    document.removeEventListener("scroll");
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
@@ -145,32 +159,28 @@ class Home extends Component {
 
     return (
       <>
-        {/* <MessengerCustomerChat
-          pageId="106105690995533"
-          appId="3127150517308819"
-          themeColor="#0084ff"
-        /> */}
-        <CookieConsent
-          acceptOnScroll={true}
-          acceptOnScrollPercentage={25}
-          location="bottom"
-          buttonText={t("home.accept")}
-          cookieName="cookie-consent"
-          style={{
-            backgroundColor: "grey",
-            color: "white",
-            fontSize: "3vw",
-            textAlign: "left",
-            textShadow: "1px 1px black",
-          }}
-          buttonClasses="cookie-btn"
-          containerClasses="cookie-container"
-          expires={365}
-        >
-          {t("home.cookie")}
-        </CookieConsent>
         <div className="background">
           <Nav />
+          <CSSTransition
+            in={this.state.isTop}
+            timeout={1000}
+            classNames="up"
+            unmountOnExit
+          >
+            <div
+              onClick={() => window.scrollTo(0, this.topRef.current.offsetTop)}
+              className="up-cont"
+            >
+              <span
+                onClick={() =>
+                  window.scrollTo(0, this.topRef.current.offsetTop)
+                }
+                className="btn-up"
+              >
+                <i className="fas fa-caret-up"></i>
+              </span>
+            </div>
+          </CSSTransition>
           <div className="body">
             <div className="darken"></div>
             <img src={bg} alt="Background Art" />
@@ -187,19 +197,19 @@ class Home extends Component {
               <div className="refs">
                 <span
                   onClick={() =>
-                    window.scrollTo(0, this.stackRef.current.offsetTop)
-                  }
-                  className="btn-5"
-                >
-                  <span>{t("home.stack")}</span>
-                </span>
-                <span
-                  onClick={() =>
                     window.scrollTo(0, this.proRef.current.offsetTop)
                   }
                   className="btn-4"
                 >
                   <span>{t("home.pro")}</span>
+                </span>
+                <span
+                  onClick={() =>
+                    window.scrollTo(0, this.stackRef.current.offsetTop)
+                  }
+                  className="btn-5"
+                >
+                  <span>{t("home.stack")}</span>
                 </span>
                 <span
                   onClick={() =>
@@ -212,27 +222,49 @@ class Home extends Component {
               </div>
             </div>
             <div
-              ref={this.stackRef}
-              id="stack-page"
-              className="projects-container"
-            >
-              <div className="stack-container">
-                <p id="title">{t("home.stackCont")}</p>
-                <Tech />
-                <Services />
-              </div>
-            </div>
-            <div
               ref={this.proRef}
               id="proj-cont"
               className="projects-container"
             >
               <div className="proj-container">
                 <p id="title">{t("home.proCont")}</p>
-                <Lsp />
-                <Spleeter />
-                <Fb />
-                <Rv />
+                <Carousel
+                  animationSpeed={1000}
+                  stopAutoPlayOnHover={true}
+                  keepDirectionWhenDragging={true}
+                  arrows={false}
+                  dots={true}
+                  centered
+                  autoPlay={500000}
+                  infinite={true}
+                >
+                  <Lsp />
+                  <Spleeter />
+                  <Fb />
+                  <Rv />
+                </Carousel>
+              </div>
+            </div>
+            <div
+              ref={this.stackRef}
+              id="stack-page"
+              className="projects-container"
+            >
+              <div className="stack-container">
+                <p id="title">{t("home.stackCont")}</p>
+                <Carousel
+                  animationSpeed={1000}
+                  stopAutoPlayOnHover={true}
+                  keepDirectionWhenDragging={true}
+                  arrows={false}
+                  dots={true}
+                  centered
+                  autoPlay={500000}
+                  infinite={true}
+                >
+                  <Tech />
+                  <Services />
+                </Carousel>
               </div>
             </div>
             <div
@@ -367,22 +399,6 @@ class Home extends Component {
                   </div>
                   <div onClick={this.handleSubmit} className="btn-10">
                     {t("contact.send")}
-                  </div>
-                  <div
-                    onClick={() =>
-                      window.scrollTo(0, this.topRef.current.offsetTop)
-                    }
-                    className="up-cont"
-                  >
-                    <span
-                      onClick={() =>
-                        window.scrollTo(0, this.topRef.current.offsetTop)
-                      }
-                      className="btn-up"
-                    >
-                      <i className="fas fa-caret-up"></i>
-                    </span>
-                    <label>{t("home.back")}</label>
                   </div>
                 </form>
               </div>

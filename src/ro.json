@@ -1,6 +1,6 @@
 {
   "nav": {
-    "git": "Pagină GitHub",
+    "git": "Pagină Github",
     "li": "Profil LinkedIn",
     "fb": "Pagină Facebook",
     "en": "Engleză",
@@ -16,11 +16,11 @@
     "decline": "Rafuz",
     "pro": "Proiecte",
     "stack": "Stack",
-    "contact": "Contactează-mă",
+    "contact": "Contact",
     "back": "Înapoi",
     "stackCont": "Stack",
     "proCont": "Proiecte",
-    "contCont": "Contactează-mă"
+    "contCont": "Contact"
   },
   "lsp": {
     "title": "Fotografie",
@@ -30,7 +30,7 @@
     "a": "pagina admin",
     "p3": " unde fotograful are posibilitatea de a-şi administra pozele afişate pe website.",
     "web": "Website",
-    "source": "Sursă GitHub"
+    "source": "Sursă Github"
   },
   "spleeter": {
     "title": "Inteligenţă artificială",
@@ -39,7 +39,7 @@
     "p2": " este o librărie de separare sursă scrisă în Python folosind modele pre-antrenate Tensorflow pentru a izola vocalul şi instrumentalul dintr-o melodie.",
     "a": "Spleeter by Deezer",
     "web": "* Website-ul a fost închis din cauza costurilor serverului",
-    "source": "Sursă GitHub"
+    "source": "Sursă Github"
   },
   "fb": {
     "title": "Tutorial",
@@ -49,7 +49,7 @@
     "a": "canalul de YouTube",
     "p3": "Acesta a fost un exerciţiu simplu folosind HTML, CSS (SASS), Javascript şi jQuery pentru a construi de la zero partea de frontend a paginii.",
     "demo": "Demo",
-    "source": "Sursă GitHub"
+    "source": "Sursă Github"
   },
   "rv": {
     "title": "Catering",
@@ -60,7 +60,7 @@
     "p3": "Am folosit Node în backend cu JSON Server pentru a încărca pozele şi a facilita formularul de contact.",
     "web": "* Website demo is down due to server costs",
     "demo": "Website",
-    "source": "GitHub Source"
+    "source": "Github Source"
   },
   "tech": {
     "title": "Technologii",
@@ -74,17 +74,17 @@
   },
   "contact": {
     "name": "Nume",
-    "nameErr": "Eroare. Numele este necesar.",
-    "nameSucc": "Acceptat. Poţi continua.",
+    "nameErr": "Numele este necesar",
+    "nameSucc": "Acceptat. Poţi continua",
     "pl1": "Namele mic",
     "email": "Email",
-    "emailErr": "Eroare. Emailul este necesar.",
-    "emailSucc": "Acceptat. Poţi continua.",
-    "emailWrong": "Eroare. Emailul nu este corect.",
+    "emailErr": "Emailul este necesar",
+    "emailSucc": "Acceptat. Poţi continua",
+    "emailWrong": "Adresa nu este corectă",
     "pl2": "Adresă email",
     "mess": "Mesaj",
-    "messErr": "Eroare. Mesajul este necesar.",
-    "messSucc": "Acceptat. Poţi continua.",
+    "messErr": "Mesajul este necesar",
+    "messSucc": "Acceptat. Poţi continua",
     "pl3": "Mesajul tau",
     "send": "Trimite",
     "success": "Mesajul a fost trimis",
