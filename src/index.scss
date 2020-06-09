@@ -11,6 +11,184 @@ body {
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
 
+  // Stripe
+
+  .donate-container {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .darken {
+      z-index: -1;
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba($color: #000000, $alpha: 0.5);
+    }
+
+    #bg {
+      position: fixed;
+      z-index: -2;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    .logo-wrapper {
+      margin-top: 100px;
+      margin-bottom: 50px;
+
+      img {
+        border-radius: 100%;
+        animation: 2s infinite rotate;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    .donate-form {
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0;
+
+      form {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .card-section {
+          width: 300px;
+          height: auto;
+          display: flex;
+          flex-wrap: nowrap;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          label {
+            color: white;
+            font-weight: bold;
+            margin-bottom: 5px;
+          }
+
+          input {
+            margin-bottom: 20px;
+            height: 40px;
+            padding: 10px 12px;
+            width: 100%;
+            color: #32325d;
+            background-color: white;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px 0 #e6ebf1;
+            transition: box-shadow 150ms ease;
+
+            &:focus {
+              outline: none;
+            }
+          }
+
+          #donation-label {
+            align-self: center;
+            margin-top: 20px;
+            margin-bottom: 5px;
+          }
+
+          #donation {
+            align-self: center;
+            margin-top: 20px;
+            margin-bottom: 0;
+          }
+
+          input[type="number"] {
+            -moz-appearance: textfield;
+            width: 50%;
+            background-image: url("../src/pound.svg");
+            background-size: 13px;
+            background-position: left;
+            background-position-x: 5px;
+            background-position-y: 7px;
+            padding: 0 26px;
+            align-self: center;
+            margin-top: 0 !important;
+          }
+
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+
+          .StripeElement {
+            height: 40px;
+            padding: 10px 12px;
+            width: 100%;
+            color: #32325d;
+            background-color: white;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px 0 #e6ebf1;
+            transition: box-shadow 150ms ease;
+            margin-bottom: 10px;
+          }
+
+          .StripeElement--focus {
+            box-shadow: 0 1px 3px 0 #cfd7df;
+          }
+
+          .StripeElement--invalid {
+            border-color: #ff0000;
+          }
+
+          .StripeElement--webkit-autofill {
+            background-color: #fefde5 !important;
+          }
+
+          .alert {
+            margin-top: 5px !important;
+            margin: 0;
+            align-self: center;
+          }
+        }
+
+        button {
+          width: 100%;
+          margin-top: 15px;
+          font-weight: bold;
+          box-shadow: none;
+
+          &:focus,
+          :active {
+            outline: none !important;
+            box-shadow: none !important;
+          }
+        }
+      }
+    }
+  }
+
+  // Stripe End
+
   .BrainhubCarousel__dots {
     margin: 35px 0;
 
@@ -1381,6 +1559,17 @@ body {
     &:hover::after {
       opacity: 1;
       transform: scale(1, 1);
+    }
+  }
+}
+
+// Stripe CardElement
+@media all and (min-width: 414px) {
+  .donate-form {
+    form {
+      .card-section {
+        width: 350px !important;
+      }
     }
   }
 }
