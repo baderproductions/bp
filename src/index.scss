@@ -44,16 +44,6 @@ body {
 
       img {
         border-radius: 100%;
-        animation: 2s infinite rotate;
-      }
-
-      @keyframes rotate {
-        0% {
-          transform: rotate(0);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
       }
     }
 

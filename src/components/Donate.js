@@ -47,6 +47,9 @@ export default function Donate() {
     setNoLoader(false);
     setLoader(true);
 
+    // https://spleeter.co.uk/pay
+    // http://localhost:3005/pay
+
     const res = await axios.post("https://spleeter.co.uk/pay", {
       name,
       email,
@@ -170,15 +173,16 @@ export default function Donate() {
             <div className="alert">
               {err ? (
                 <Alert variant="danger">
-                  <b>Error!</b>
-                  <br />
+                  <b>Error!</b>&nbsp;
                   {noFunds ? "Insufficient funds on your card." : null}
                   {invalidCard ? "Your card number is incomplete." : null}
                   {authErr ? "Unable to authenticate payment method." : null}
                 </Alert>
               ) : null}
               {succ ? (
-                <Alert variant="success">Payment successful. Thank you!</Alert>
+                <Alert variant="success">
+                  <b>Payment successful.</b>&nbsp;Thank you!
+                </Alert>
               ) : null}
             </div>
           </div>
