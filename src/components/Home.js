@@ -18,6 +18,9 @@ import "react-inputs-validation/lib/react-inputs-validation.min.css";
 import { css } from "@emotion/core";
 import SkewLoader from "react-spinners/SkewLoader";
 
+// Google Analitics
+import ReactGA from "react-ga";
+
 // React Transition
 import { CSSTransition } from "react-transition-group";
 
@@ -27,6 +30,9 @@ import "@brainhubeu/react-carousel/lib/style.css";
 
 // npm - react-switch-lang
 import { translate } from "react-switch-lang";
+
+// Google Analitics
+ReactGA.initialize("G-EQS56EEFH3");
 
 class Home extends Component {
   constructor() {
@@ -60,8 +66,17 @@ class Home extends Component {
       }
     });
   }
+
   componentWillUnmount() {
     document.removeEventListener("scroll");
+  }
+
+  componentDidUpdate() {
+    // Google Analitics
+    this.history.listen((location) => {
+      ReactGA.set({ page: location.pathname });
+      ReactGA.pageview(location.pathname);
+    });
   }
 
   handleSubmit = (e) => {
