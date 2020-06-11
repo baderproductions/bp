@@ -14,9 +14,6 @@ import Home from "./components/Home";
 import Donate from "./components/Donate";
 import NotFound from "./components/NotFound";
 
-// Helmet Async
-import { HelmetProvider } from "react-helmet-async";
-
 // React Language Switch
 import {
   setTranslations,
@@ -39,17 +36,15 @@ setLanguageCookie("lang", { path: "/", maxAge: 31540000 });
 class App extends React.Component {
   render() {
     return (
-      <HelmetProvider>
-        <BrowserRouter>
-          <Elements stripe={stripePromise}>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/donate" component={Donate} />
-              <Route component={NotFound} />
-            </Switch>
-          </Elements>
-        </BrowserRouter>
-      </HelmetProvider>
+      <BrowserRouter>
+        <Elements stripe={stripePromise}>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/donate" component={Donate} />
+            <Route component={NotFound} />
+          </Switch>
+        </Elements>
+      </BrowserRouter>
     );
   }
 }
