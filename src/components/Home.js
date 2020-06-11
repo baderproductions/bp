@@ -19,7 +19,7 @@ import { css } from "@emotion/core";
 import SkewLoader from "react-spinners/SkewLoader";
 
 // Google Analitics
-import ReactGA from "react-ga";
+import TagManager from "react-gtm-module";
 
 // React Transition
 import { CSSTransition } from "react-transition-group";
@@ -32,7 +32,11 @@ import "@brainhubeu/react-carousel/lib/style.css";
 import { translate } from "react-switch-lang";
 
 // Google Analitics
-ReactGA.initialize("G-EQS56EEFH3");
+const tagManagerArgs = {
+  gtmId: "GTM-KLC4WCB",
+};
+
+TagManager.initialize(tagManagerArgs);
 
 class Home extends Component {
   constructor() {
@@ -69,14 +73,6 @@ class Home extends Component {
 
   componentWillUnmount() {
     document.removeEventListener("scroll");
-  }
-
-  componentDidUpdate() {
-    // Google Analitics
-    this.history.listen((location) => {
-      ReactGA.set({ page: location.pathname });
-      ReactGA.pageview(location.pathname);
-    });
   }
 
   handleSubmit = (e) => {
