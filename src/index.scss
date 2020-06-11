@@ -14,7 +14,7 @@ body {
   // Stripe
 
   .donate-container {
-    width: 100vw;
+    width: 100%;
     height: auto;
     display: flex;
     flex-wrap: nowrap;
@@ -38,9 +38,32 @@ body {
       object-fit: cover;
     }
 
+    .btn-secondary {
+      position: absolute;
+      top: 4%;
+      left: 5%;
+      font-weight: bold;
+
+      &:focus,
+      :active {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+
+      .fa-chevron-left {
+        margin-right: 5px;
+      }
+    }
+
     .logo-wrapper {
+      width: 100%;
       margin-top: 100px;
-      margin-bottom: 50px;
+      margin-bottom: 25px;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
 
       img {
         border-radius: 100%;
@@ -67,7 +90,7 @@ body {
         align-items: center;
 
         .card-section {
-          width: 300px;
+          width: 280px;
           height: auto;
           display: flex;
           flex-wrap: nowrap;
@@ -153,17 +176,16 @@ body {
           .StripeElement--webkit-autofill {
             background-color: #fefde5 !important;
           }
+        }
 
-          .alert {
-            margin-top: 5px !important;
-            margin: 0;
-            align-self: center;
-          }
+        .alert {
+          margin: 15px 0;
+          align-self: center;
+          text-align: center !important;
         }
 
         button {
           width: 100%;
-          margin-top: 15px;
           font-weight: bold;
           box-shadow: none;
 

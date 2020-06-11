@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 
+import { NavLink } from "react-router-dom";
+
 // Stripe
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 
@@ -11,7 +13,7 @@ import logo from "../bplogo.png";
 import bg from "../bg.jpg";
 
 // React Bootstrap
-import { Button, Spinner, Alert } from "react-bootstrap";
+import { Card, Spinner, Alert } from "react-bootstrap";
 
 export default function Donate() {
   const stripe = useStripe();
@@ -25,9 +27,8 @@ export default function Donate() {
   const [loader, setLoader] = useState(false);
   const [err, setErr] = useState(false);
   const [succ, setSucc] = useState(false);
-  const [invalidCard, setInvalidCard] = useState(false);
-  const [noFunds, setNoFunds] = useState(false);
-  const [authErr, setAuthErr] = useState(false);
+  const [otherErr, setOtherErr] = useState("");
+  const [declineCode, setDeclineCode] = useState("");
 
   // Refs
   const myForm = useRef(null);
@@ -50,7 +51,7 @@ export default function Donate() {
     // https://spleeter.co.uk/pay
     // http://localhost:3005/pay
 
-    const res = await axios.post("https://spleeter.co.uk/pay", {
+    const res = await axios.post("http://localhost:3005/pay", {
       name,
       email,
       amount,
@@ -68,40 +69,32 @@ export default function Donate() {
 
     if (result.error) {
       // Show error to your customer (e.g., insufficient funds)
+      console.log(
+        "Code: " + result.error.code + " || Message: " + result.error.message
+      );
       setErr(true);
+      setOtherErr(result.error.message);
+      setDeclineCode(result.error.decline_code);
       setNoLoader(false);
-      setLoader(true);
+      setLoader(false);
       setTimeout(() => {
         setErr(false);
         myForm.current.reset();
         elements.getElement(CardElement).clear();
         setNoLoader(true);
-        setLoader(false);
       }, 5000);
-      if (result.error.code === "card_declined") {
-        // Insufficient funds
-        setNoFunds(true);
-      } else if (result.error.code === "incomplete_number") {
-        // Your card number is incomplete.
-        setInvalidCard(true);
-      } else if (
-        result.error.code === "payment_intent_authentication_failure"
-      ) {
-        // Unable to authenticate payment method
-        setAuthErr(true);
-      }
     } else {
-      // The payment has been processed!
+      // The payment has been processed
+      // Display success message
       if (result.paymentIntent.status === "succeeded") {
         setSucc(true);
         setNoLoader(false);
-        setLoader(true);
+        setLoader(false);
         setTimeout(() => {
           setSucc(false);
           myForm.current.reset();
           elements.getElement(CardElement).clear();
           setNoLoader(true);
-          setLoader(false);
         }, 5000);
         // Show a success message to your customer
         // There's a risk of the customer closing the window before callback
@@ -116,6 +109,9 @@ export default function Donate() {
     <div className="donate-container">
       <div className="darken"></div>
       <img id="bg" src={bg} alt="Background Art" />
+      <NavLink to="/" activeClassName="btn btn-secondary">
+        <i className="fas fa-chevron-left"></i>Back
+      </NavLink>
       <div className="logo-wrapper">
         <img src={logo} alt="BADERproductions Logo" />
       </div>
@@ -165,26 +161,31 @@ export default function Donate() {
               id="donation"
               name="donation"
               min="1"
+              step="0.5"
               max="100"
               placeholder="5"
               onChange={(event) => setAmount(event.target.value * 100)}
               required
             />
-            <div className="alert">
-              {err ? (
-                <Alert variant="danger">
-                  <b>Error!</b>&nbsp;
-                  {noFunds ? "Insufficient funds on your card." : null}
-                  {invalidCard ? "Your card number is incomplete." : null}
-                  {authErr ? "Unable to authenticate payment method." : null}
-                </Alert>
-              ) : null}
-              {succ ? (
-                <Alert variant="success">
-                  <b>Payment successful.</b>&nbsp;Thank you!
-                </Alert>
-              ) : null}
-            </div>
+          </div>
+          <div className="alert">
+            {err ? (
+              <Alert variant="danger">
+                <b>Error</b>
+                <br />
+                {otherErr}
+                <br />
+                <b>{"Reason: " + declineCode}</b>
+              </Alert>
+            ) : null}
+
+            {succ ? (
+              <Alert variant="success">
+                <b>Payment successful</b>
+                <br />
+                Thank you!
+              </Alert>
+            ) : null}
           </div>
           {noLoader ? (
             <button
@@ -195,20 +196,54 @@ export default function Donate() {
               Donate {"£" + amount / 100}
             </button>
           ) : null}
-          {loader ? (
-            <Button variant="primary" style={{ cursor: "default" }} disabled>
-              <Spinner
-                as="span"
-                animation="border"
-                size="sm"
-                role="status"
-                aria-hidden="true"
-              />
-              &nbsp; Loading...
-            </Button>
-          ) : null}
+          {loader ? <Spinner animation="border" variant="light" /> : null}
         </form>
       </div>
+      <Card style={{ width: "280px", marginBottom: "15px" }}>
+        <Card.Header as="h5">Testing card #1</Card.Header>
+        <Card.Body>
+          <Card.Title>
+            <b>4242 4242 4242 4242</b>
+          </Card.Title>
+          <Card.Text>No authentication required.</Card.Text>
+        </Card.Body>
+      </Card>
+      <Card style={{ width: "280px", margin: "15px 0" }}>
+        <Card.Header as="h5">Testing card #2</Card.Header>
+        <Card.Body>
+          <Card.Title>
+            <b>4000 0027 6000 3184</b>
+          </Card.Title>
+          <Card.Text>Authentication required.</Card.Text>
+        </Card.Body>
+      </Card>
+      <Card style={{ width: "280px", margin: "15px 0" }}>
+        <Card.Header as="h5">Testing card #3</Card.Header>
+        <Card.Body>
+          <Card.Title>
+            <b>4000 0082 6000 3178</b>
+          </Card.Title>
+          <Card.Text>
+            Requires authentication.
+            <br />
+            All payments will be declined with an{" "}
+            <mark>insufficient_funds</mark> code.
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      <Card style={{ width: "280px", marginTop: "20px", marginBottom: "50px" }}>
+        <Card.Header as="h5">Testing card #4</Card.Header>
+        <Card.Body>
+          <Card.Title>
+            <b>4000 0000 0000 9979</b>
+          </Card.Title>
+          <Card.Text>
+            Charge is declined with a <mark>card_declined</mark> code.
+            <br />
+            The <mark>decline_code</mark> attribute is <mark>stolen_card</mark>.
+          </Card.Text>
+        </Card.Body>
+      </Card>
     </div>
   );
 }
