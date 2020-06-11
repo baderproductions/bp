@@ -16,6 +16,7 @@
     "node-sass": "^4.14.1",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.1",
+    "react-cookie-consent": "^5.0.1",
     "react-dom": "^16.12.0",
     "react-ga": "^3.0.0",
     "react-inputs-validation": "^4.4.1",
