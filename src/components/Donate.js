@@ -51,7 +51,7 @@ export default function Donate() {
     // https://spleeter.co.uk/pay
     // http://localhost:3005/pay
 
-    const res = await axios.post("http://localhost:3005/pay", {
+    const res = await axios.post("https://spleeter.co.uk/pay", {
       name,
       email,
       amount,
