@@ -10,36 +10,12 @@ class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      extra: false,
       langSwitch: false,
     };
     this.handleSwitch = this.handleSwitch.bind(this);
   }
 
   componentDidMount() {
-    // Detect page and add Back button
-    let href = window.location.href;
-    let locationIndex = href.lastIndexOf("/");
-    let location = href.substring(locationIndex);
-
-    if (location === "/projects") {
-      this.setState({
-        extra: true,
-      });
-    } else if (location === "/stack") {
-      this.setState({
-        extra: true,
-      });
-    } else if (location === "/contact") {
-      this.setState({
-        extra: true,
-      });
-    } else {
-      this.setState({
-        extra: false,
-      });
-    }
-
     // Lang switch buttons
     if (Cookies.get("lang") === "ro") {
       this.setState({
@@ -70,12 +46,6 @@ class Nav extends Component {
     return (
       <>
         <div className="nav">
-          {this.state.extra ? (
-            <NavLink className="go-back" to="/">
-              <i className="fas fa-chevron-circle-left"></i>
-              <p>{t("nav.back")}</p>
-            </NavLink>
-          ) : null}
           <div className="media">
             <a title={t("nav.git")} href="https://github.com/baderproductions">
               <i className="fab fa-github-square"></i>
@@ -92,6 +62,12 @@ class Nav extends Component {
             >
               <i className="fab fa-facebook-square"></i>
             </a>
+          </div>
+          <div className="str">
+            <NavLink to="/donate" className="stripe">
+              <i className="fab fa-cc-stripe"></i>
+            </NavLink>
+            <p>{t("nav.stripe")}</p>
           </div>
           <div className="lang">
             {this.state.langSwitch ? (

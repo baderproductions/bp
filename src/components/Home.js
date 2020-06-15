@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import { NavLink } from "react-router-dom";
 import Nav from "./Nav";
 import bg from "../bg.jpg";
 import PropTypes from "prop-types";
@@ -72,7 +71,13 @@ class Home extends Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener("scroll");
+    document.removeEventListener("scroll", () => {
+      if (window.scrollY > 399) {
+        this.setState({ isTop: true });
+      } else {
+        this.setState({ isTop: false });
+      }
+    });
   }
 
   handleSubmit = (e) => {

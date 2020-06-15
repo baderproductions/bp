@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 
 // Stripe
@@ -15,7 +15,10 @@ import bg from "../bg.jpg";
 // React Bootstrap
 import { Card, Spinner, Alert } from "react-bootstrap";
 
-export default function Donate() {
+// npm - react-switch-lang
+import { translate } from "react-switch-lang";
+
+function Donate(props) {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -105,12 +108,15 @@ export default function Donate() {
     }
   };
 
+  const { t } = props;
+
   return (
     <div className="donate-container">
       <div className="darken"></div>
       <img id="bg" src={bg} alt="Background Art" />
       <NavLink to="/" activeClassName="btn btn-secondary">
-        <i className="fas fa-chevron-left"></i>Back
+        <i className="fas fa-chevron-left"></i>
+        {t("donate.back")}
       </NavLink>
       <div className="logo-wrapper">
         <img src={logo} alt="BADERproductions Logo" />
@@ -118,7 +124,7 @@ export default function Donate() {
       <div className="donate-form">
         <form ref={myForm} onSubmit={handleSubmit}>
           <div className="card-section">
-            <label>Name</label>
+            <label>{t("donate.name")}</label>
             <input
               onChange={(event) => setName(event.target.value)}
               name="name"
@@ -126,7 +132,7 @@ export default function Donate() {
               placeholder="John Doe"
               required
             />
-            <label>Email</label>
+            <label>{t("donate.email")}</label>
             <input
               onChange={(event) => setEmail(event.target.value)}
               name="email"
@@ -134,7 +140,7 @@ export default function Donate() {
               placeholder="john.doe@example.com"
               required
             />
-            <label>Card details</label>
+            <label>{t("donate.card")}</label>
             <CardElement
               options={{
                 hidePostalCode: true,
@@ -155,7 +161,7 @@ export default function Donate() {
                 },
               }}
             />
-            <label id="donation-label">Amount: ( 1 - 100 )</label>
+            <label id="donation-label">{t("donate.amount")}</label>
             <input
               type="number"
               id="donation"
@@ -171,19 +177,19 @@ export default function Donate() {
           <div className="alert">
             {err ? (
               <Alert variant="danger">
-                <b>Error</b>
+                <b>{t("donate.error")}</b>
                 <br />
                 {otherErr}
                 <br />
-                <b>{"Reason: " + declineCode}</b>
+                <b>{t("donate.reason") + declineCode}</b>
               </Alert>
             ) : null}
 
             {succ ? (
               <Alert variant="success">
-                <b>Payment successful</b>
+                <b>{t("donate.succ")}</b>
                 <br />
-                Thank you!
+                {t("donate.thx")}
               </Alert>
             ) : null}
           </div>
@@ -193,57 +199,64 @@ export default function Donate() {
               type="submit"
               className="btn btn-primary"
             >
-              Donate {"£" + amount / 100}
+              {t("donate.button")} {"£" + amount / 100}
             </button>
           ) : null}
           {loader ? <Spinner animation="border" variant="light" /> : null}
         </form>
       </div>
       <Card style={{ width: "280px", marginBottom: "15px" }}>
-        <Card.Header as="h5">Testing card #1</Card.Header>
+        <Card.Header as="h5">{t("donate.test")} #1</Card.Header>
         <Card.Body>
           <Card.Title>
             <b>4242 4242 4242 4242</b>
           </Card.Title>
-          <Card.Text>No authentication required.</Card.Text>
+          <Card.Text>{t("donate.noAuth")}</Card.Text>
         </Card.Body>
       </Card>
       <Card style={{ width: "280px", margin: "15px 0" }}>
-        <Card.Header as="h5">Testing card #2</Card.Header>
+        <Card.Header as="h5">{t("donate.test")} #2</Card.Header>
         <Card.Body>
           <Card.Title>
             <b>4000 0027 6000 3184</b>
           </Card.Title>
-          <Card.Text>Authentication required.</Card.Text>
+          <Card.Text>{t("donate.auth")}</Card.Text>
         </Card.Body>
       </Card>
       <Card style={{ width: "280px", margin: "15px 0" }}>
-        <Card.Header as="h5">Testing card #3</Card.Header>
+        <Card.Header as="h5">{t("donate.test")} #3</Card.Header>
         <Card.Body>
           <Card.Title>
             <b>4000 0082 6000 3178</b>
           </Card.Title>
           <Card.Text>
-            Requires authentication.
+            {t("donate.funds1")}
             <br />
-            All payments will be declined with an{" "}
-            <mark>insufficient_funds</mark> code.
+            {t("donate.funds2")} <mark>{t("donate.funds3")}</mark>
+            {t("donate.funds4")}
           </Card.Text>
         </Card.Body>
       </Card>
       <Card style={{ width: "280px", marginTop: "20px", marginBottom: "50px" }}>
-        <Card.Header as="h5">Testing card #4</Card.Header>
+        <Card.Header as="h5">{t("donate.test")} #4</Card.Header>
         <Card.Body>
           <Card.Title>
             <b>4000 0000 0000 9979</b>
           </Card.Title>
           <Card.Text>
-            Charge is declined with a <mark>card_declined</mark> code.
+            {t("donate.stolen1")} <mark>{t("donate.stolen2")}</mark>
             <br />
-            The <mark>decline_code</mark> attribute is <mark>stolen_card</mark>.
+            {t("donate.stolen3")} <mark>{t("donate.stolen4")}</mark>{" "}
+            {t("donate.stolen5")} <mark>{t("donate.stolen6")}</mark>
           </Card.Text>
         </Card.Body>
       </Card>
     </div>
   );
 }
+
+Donate.propTypes = {
+  t: PropTypes.func.isRequired,
+};
+
+export default translate(Donate);
