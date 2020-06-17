@@ -192,7 +192,11 @@ class Home extends Component {
     return (
       <>
         <div className="background">
-          <LoadingBar progress={percent} height={2} color="rgb(0, 153, 255)" />
+          <LoadingBar
+            progress={percent + 2}
+            height={2}
+            color="rgb(0, 153, 255)"
+          />
           <Nav />
           <CSSTransition
             in={this.state.isTop}
