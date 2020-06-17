@@ -187,16 +187,12 @@ class Home extends Component {
       sh = "scrollHeight";
 
     let percent =
-      ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
+      ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 103;
 
     return (
       <>
         <div className="background">
-          <LoadingBar
-            progress={percent + 2}
-            height={2}
-            color="rgb(0, 153, 255)"
-          />
+          <LoadingBar progress={percent} height={2} color="rgb(0, 153, 255)" />
           <Nav />
           <CSSTransition
             in={this.state.isTop}
