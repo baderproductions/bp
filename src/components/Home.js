@@ -11,9 +11,11 @@ import Spleeter from "./cards/Spleeter";
 import Fb from "./cards/Fb";
 import Rv from "./cards/Rv";
 
+// Input validation
 import { Textbox, Textarea } from "react-inputs-validation";
 import "react-inputs-validation/lib/react-inputs-validation.min.css";
 
+// CSS & Loader
 import { css } from "@emotion/core";
 import SkewLoader from "react-spinners/SkewLoader";
 
@@ -29,6 +31,9 @@ import "@brainhubeu/react-carousel/lib/style.css";
 
 // npm - react-switch-lang
 import { translate } from "react-switch-lang";
+
+// Top progress bar
+import LoadingBar from "react-top-loading-bar";
 
 // Google Analitics
 const tagManagerArgs = {
@@ -52,6 +57,7 @@ class Home extends Component {
       error: false,
       isTop: false,
       status: undefined,
+      loadingBarProgress: 0,
     };
 
     this.topRef = React.createRef();
@@ -173,9 +179,20 @@ class Home extends Component {
 
     let currentYear = new Date().getFullYear();
 
+    // ScrollY progress (0 - 100)
+
+    let h = document.documentElement,
+      b = document.body,
+      st = "scrollTop",
+      sh = "scrollHeight";
+
+    let percent =
+      ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
+
     return (
       <>
         <div className="background">
+          <LoadingBar progress={percent} height={2} color="rgb(0, 153, 255)" />
           <Nav />
           <CSSTransition
             in={this.state.isTop}
@@ -201,6 +218,7 @@ class Home extends Component {
             <div className="darken"></div>
             <img src={bg} alt="Background Art" />
             <span ref={this.topRef}></span>
+
             <div className="intro">
               <div className="text-container">
                 <p className="hello">
