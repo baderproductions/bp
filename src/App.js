@@ -4,6 +4,7 @@ import { Route, BrowserRouter, Switch } from "react-router-dom";
 // Styles
 import "./index.scss";
 import "../node_modules/flag-icon-css/sass/flag-icon.scss";
+import "@brainhubeu/react-carousel/lib/style.css";
 
 //Stripe
 // import { loadStripe } from "@stripe/stripe-js";

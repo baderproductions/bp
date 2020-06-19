@@ -27,7 +27,6 @@ import { CSSTransition } from "react-transition-group";
 
 // Carousel
 import Carousel from "@brainhubeu/react-carousel";
-import "@brainhubeu/react-carousel/lib/style.css";
 
 // npm - react-switch-lang
 import { translate } from "react-switch-lang";

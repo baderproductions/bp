@@ -8,6 +8,9 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 // AXIOS
 import axios from "axios";
 
+// Carousel
+import Carousel from "@brainhubeu/react-carousel";
+
 // Logo
 import logo from "../bplogo.png";
 import bg from "../bg.jpg";
@@ -114,7 +117,7 @@ function Donate(props) {
     <div className="donate-container">
       <div className="darken"></div>
       <img id="bg" src={bg} alt="Background Art" />
-      <NavLink to="/" activeClassName="btn btn-secondary">
+      <NavLink to="/" activeClassName="btn btn-light">
         <i className="fas fa-chevron-left"></i>
         {t("donate.back")}
       </NavLink>
@@ -205,52 +208,68 @@ function Donate(props) {
           {loader ? <Spinner animation="border" variant="light" /> : null}
         </form>
       </div>
-      <Card style={{ width: "280px", marginBottom: "15px" }}>
-        <Card.Header as="h5">{t("donate.test")} #1</Card.Header>
-        <Card.Body>
-          <Card.Title>
-            <b>4242 4242 4242 4242</b>
-          </Card.Title>
-          <Card.Text>{t("donate.noAuth")}</Card.Text>
-        </Card.Body>
-      </Card>
-      <Card style={{ width: "280px", margin: "15px 0" }}>
-        <Card.Header as="h5">{t("donate.test")} #2</Card.Header>
-        <Card.Body>
-          <Card.Title>
-            <b>4000 0027 6000 3184</b>
-          </Card.Title>
-          <Card.Text>{t("donate.auth")}</Card.Text>
-        </Card.Body>
-      </Card>
-      <Card style={{ width: "280px", margin: "15px 0" }}>
-        <Card.Header as="h5">{t("donate.test")} #3</Card.Header>
-        <Card.Body>
-          <Card.Title>
-            <b>4000 0082 6000 3178</b>
-          </Card.Title>
-          <Card.Text>
-            {t("donate.funds1")}
-            <br />
-            {t("donate.funds2")} <mark>{t("donate.funds3")}</mark>
-            {t("donate.funds4")}
-          </Card.Text>
-        </Card.Body>
-      </Card>
-      <Card style={{ width: "280px", marginTop: "20px", marginBottom: "50px" }}>
-        <Card.Header as="h5">{t("donate.test")} #4</Card.Header>
-        <Card.Body>
-          <Card.Title>
-            <b>4000 0000 0000 9979</b>
-          </Card.Title>
-          <Card.Text>
-            {t("donate.stolen1")} <mark>{t("donate.stolen2")}</mark>
-            <br />
-            {t("donate.stolen3")} <mark>{t("donate.stolen4")}</mark>{" "}
-            {t("donate.stolen5")} <mark>{t("donate.stolen6")}</mark>
-          </Card.Text>
-        </Card.Body>
-      </Card>
+      <Carousel
+        animationSpeed={1000}
+        stopAutoPlayOnHover={true}
+        keepDirectionWhenDragging={true}
+        arrows={false}
+        dots={true}
+        centered
+        autoPlay={500000}
+        infinite={true}
+      >
+        <Card style={{ width: "300px", height: "230px" }}>
+          <Card.Header as="h5">{t("donate.test")} #1</Card.Header>
+          <Card.Body>
+            <Card.Title>
+              <b>4242 4242 4242 4242</b>
+            </Card.Title>
+            <Card.Text>{t("donate.noAuth")}</Card.Text>
+          </Card.Body>
+        </Card>
+        <Card style={{ width: "280px", height: "230px" }}>
+          <Card.Header as="h5">{t("donate.test")} #2</Card.Header>
+          <Card.Body>
+            <Card.Title>
+              <b>4000 0027 6000 3184</b>
+            </Card.Title>
+            <Card.Text>{t("donate.auth")}</Card.Text>
+          </Card.Body>
+        </Card>
+        <Card style={{ width: "280px", height: "230px" }}>
+          <Card.Header as="h5">{t("donate.test")} #3</Card.Header>
+          <Card.Body>
+            <Card.Title>
+              <b>4000 0082 6000 3178</b>
+            </Card.Title>
+            <Card.Text>
+              {t("donate.funds1")}
+              <br />
+              {t("donate.funds2")} <mark>{t("donate.funds3")}</mark>
+              {t("donate.funds4")}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <Card
+          style={{
+            width: "280px",
+            height: "230px",
+          }}
+        >
+          <Card.Header as="h5">{t("donate.test")} #4</Card.Header>
+          <Card.Body>
+            <Card.Title>
+              <b>4000 0000 0000 9979</b>
+            </Card.Title>
+            <Card.Text>
+              {t("donate.stolen1")} <mark>{t("donate.stolen2")}</mark>
+              <br />
+              {t("donate.stolen3")} <mark>{t("donate.stolen4")}</mark>{" "}
+              {t("donate.stolen5")} <mark>{t("donate.stolen6")}</mark>
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </Carousel>
     </div>
   );
 }
