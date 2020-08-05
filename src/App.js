@@ -28,7 +28,7 @@ import ro from "./ro.json";
 // Stripe
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-const stripePromise = loadStripe("pk_test_VD6WoosFnepLY1L6i3qSioTZ00TbCIZaTD");
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_T);
 
 setTranslations({ en, ro });
 setDefaultLanguage("en");
