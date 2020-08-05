@@ -65,9 +65,9 @@ class Nav extends Component {
           </div>
           <div className="str">
             <NavLink to="/donate" className="stripe">
-              <i className="fab fa-cc-stripe"></i>
-            </NavLink>
+              <i className="fab fa-cc-stripe"/>
             <p>{t("nav.stripe")}</p>
+            </NavLink>
           </div>
           <div className="lang">
             {this.state.langSwitch ? (

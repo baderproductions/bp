@@ -278,21 +278,25 @@ body {
         .stripe {
           display: flex;
           flex-wrap: nowrap;
-          flex-direction: column;
+          flex-direction: row;
           justify-content: center;
           align-items: center;
+          text-decoration: none;
+
           .fa-cc-stripe {
             color: white;
             font-size: 45px;
           }
+
+          p {
+            color: white;
+            font-size: 12px;
+            margin: 0;
+            margin-left: 5px;
+          }
         }
 
-        p {
-          color: white;
-          font-size: 12px;
-          margin: 0;
-          margin-left: 5px;
-        }
+        
       }
 
       .lang {
@@ -2171,11 +2175,11 @@ body {
       .str {
         .stripe {
           .fa-cc-stripe {
-            font-size: 50px !important;
+            font-size: 35px !important;
           }
         }
         p {
-          font-size: 18px !important;
+          font-size: 14px !important;
         }
       }
     }
@@ -2222,7 +2226,7 @@ body {
           .fa-linkedin,
           .fa-facebook-square {
             color: white;
-            font-size: 50px !important;
+            font-size: 35px !important;
           }
         }
       }

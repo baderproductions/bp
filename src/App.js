@@ -24,7 +24,6 @@ import {
 
 import en from "./en.json";
 import ro from "./ro.json";
-
 // Stripe
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";

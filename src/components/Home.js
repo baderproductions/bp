@@ -31,9 +31,6 @@ import Carousel from "@brainhubeu/react-carousel";
 // npm - react-switch-lang
 import { translate } from "react-switch-lang";
 
-// Top progress bar
-import LoadingBar from "react-top-loading-bar";
-
 // Google Analitics
 const tagManagerArgs = {
   gtmId: "GTM-KLC4WCB",
@@ -56,7 +53,6 @@ class Home extends Component {
       error: false,
       isTop: false,
       status: undefined,
-      loadingBarProgress: 0,
     };
 
     this.topRef = React.createRef();
@@ -178,20 +174,9 @@ class Home extends Component {
 
     let currentYear = new Date().getFullYear();
 
-    // ScrollY progress (0 - 100)
-
-    let h = document.documentElement,
-      b = document.body,
-      st = "scrollTop",
-      sh = "scrollHeight";
-
-    let percent =
-      ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 103;
-
     return (
       <>
         <div className="background">
-          <LoadingBar progress={percent} height={2} color="rgb(0, 153, 255)" />
           <Nav />
           <CSSTransition
             in={this.state.isTop}
