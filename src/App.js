@@ -12,7 +12,8 @@ import "@brainhubeu/react-carousel/lib/style.css";
 
 // Pages
 import Home from "./components/Home";
-import Donate from "./components/Donate";
+//import Donate from "./components/Donate";
+import Privacy from "./components/Privacy";
 import NotFound from "./components/NotFound";
 
 // React Language Switch
@@ -40,7 +41,8 @@ class App extends React.Component {
         <Elements stripe={stripePromise}>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/donate" component={Donate} />
+            {/* <Route path="/donate" component={Donate} /> */}
+            <Route path="/privacy" component={Privacy} />
             <Route component={NotFound} />
           </Switch>
         </Elements>

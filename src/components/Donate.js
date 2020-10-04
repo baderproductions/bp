@@ -54,14 +54,17 @@ function Donate(props) {
     setNoLoader(false);
     setLoader(true);
 
-    // https://spleeter.co.uk/pay
+    // https://europe-west2-zapp-native.cloudfunctions.net/api/pay
     // http://localhost:3005/pay
 
-    const res = await axios.post("https://spleeter.co.uk/pay", {
-      name,
-      email,
-      amount,
-    });
+    const res = await axios.post(
+      "https://europe-west2-zapp-native.cloudfunctions.net/api/pay",
+      {
+        name,
+        email,
+        amount,
+      }
+    );
     const clientSecret = res.data["client_secret"];
     const result = await stripe.confirmCardPayment(clientSecret, {
       payment_method: {

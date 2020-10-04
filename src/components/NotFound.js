@@ -9,7 +9,16 @@ class NotFound extends Component {
     const { t } = this.props;
     return (
       <>
-        <div>
+        <div
+          style={{
+            height: "100vh",
+            width: "100vw",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <div>{t("not.text")}</div>
         </div>
       </>
