@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
 import PropTypes from "prop-types";
 
 // npm - react-switch-lang
@@ -62,12 +61,6 @@ class Nav extends Component {
             >
               <i className="fab fa-facebook-square"></i>
             </a>
-          </div>
-          <div className="str">
-            <NavLink to="/donate" className="stripe">
-              <i className="fab fa-cc-stripe"/>
-            <p>{t("nav.stripe")}</p>
-            </NavLink>
           </div>
           <div className="lang">
             {this.state.langSwitch ? (
