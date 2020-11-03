@@ -5,6 +5,8 @@ import ButtonGroup from "../elements/ButtonGroup";
 import Button from "../elements/Button";
 import Image from "../elements/Image";
 import Modal from "../elements/Modal";
+import ReactPlayer from "react-player";
+import videoImg from "../../assets/images/video-placeholder.jpg";
 
 const propTypes = {
   ...SectionProps.types,
@@ -99,15 +101,10 @@ const Hero = ({
             data-reveal-value="20px"
             data-reveal-delay="800"
           >
-            <a
-              data-video="https://player.vimeo.com/video/174002812"
-              href="#0"
-              aria-controls="video-modal"
-              onClick={openModal}
-            >
+            <a href="#0" aria-controls="video-modal" onClick={openModal}>
               <Image
                 className="has-shadow"
-                src={require("./../../assets/images/video-placeholder.jpg")}
+                src={videoImg}
                 alt="Hero"
                 width={896}
                 height={504}
@@ -118,9 +115,9 @@ const Hero = ({
             id="video-modal"
             show={videoModalActive}
             handleClose={closeModal}
-            video="https://player.vimeo.com/video/174002812"
-            videoTag="iframe"
-          />
+          >
+            <ReactPlayer url="https://youtu.be/3zURq7aNmOc" />
+          </Modal>
         </div>
       </div>
     </section>

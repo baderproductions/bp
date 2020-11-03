@@ -2,6 +2,8 @@ import React from "react";
 import classNames from "classnames";
 import { SectionTilesProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
+import Image from "../elements/Image";
+import img1 from "../../assets/images/features-split-image-01.png";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -49,7 +51,14 @@ const Testimonial = ({
       <div className="container">
         <div className={innerClasses}>
           <SectionHeader data={sectionHeader} className="center-content" />
-          <div className={tilesClasses}></div>
+          <div className={tilesClasses}>
+            <Image
+              src={img1}
+              alt="Features split 03"
+              width={528}
+              height={396}
+            />
+          </div>
         </div>
       </div>
     </section>
