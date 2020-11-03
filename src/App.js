@@ -1,54 +1,42 @@
-import React from "react";
-import { Route, BrowserRouter, Switch } from "react-router-dom";
+import React, { useRef, useEffect } from "react";
+import { useLocation, Switch } from "react-router-dom";
+import AppRoute from "./utils/AppRoute";
+import ScrollReveal from "./utils/ScrollReveal";
+import TagManager from "react-gtm-module";
 
-// Styles
-import "./index.scss";
-import "../node_modules/flag-icon-css/sass/flag-icon.scss";
-import "@brainhubeu/react-carousel/lib/style.css";
+// Layouts
+import LayoutDefault from "./layouts/LayoutDefault";
 
-//Stripe
-// import { loadStripe } from "@stripe/stripe-js";
-// import { Elements } from "@stripe/react-stripe-js";
+// Views
+import Home from "./views/Home";
 
-// Pages
-import Home from "./components/Home";
-//import Donate from "./components/Donate";
-import Privacy from "./components/Privacy";
-import NotFound from "./components/NotFound";
+// Google Analitics
+const tagManagerArgs = {
+  gtmId: "GTM-KLC4WCB",
+};
 
-// React Language Switch
-import {
-  setTranslations,
-  setDefaultLanguage,
-  setLanguageCookie,
-} from "react-switch-lang";
+TagManager.initialize(tagManagerArgs);
 
-import en from "./en.json";
-import ro from "./ro.json";
-// Stripe
-import { Elements } from "@stripe/react-stripe-js";
-import { loadStripe } from "@stripe/stripe-js";
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_T);
+const App = () => {
+  const childRef = useRef();
+  let location = useLocation();
 
-setTranslations({ en, ro });
-setDefaultLanguage("en");
-setLanguageCookie("lang", { path: "/", maxAge: 31540000 });
+  useEffect(() => {
+    document.body.classList.add("is-loaded");
+    childRef.current.init();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location]);
 
-class App extends React.Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Elements stripe={stripePromise}>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            {/* <Route path="/donate" component={Donate} /> */}
-            <Route path="/privacy" component={Privacy} />
-            <Route component={NotFound} />
-          </Switch>
-        </Elements>
-      </BrowserRouter>
-    );
-  }
-}
+  return (
+    <ScrollReveal
+      ref={childRef}
+      children={() => (
+        <Switch>
+          <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+        </Switch>
+      )}
+    />
+  );
+};
 
 export default App;
