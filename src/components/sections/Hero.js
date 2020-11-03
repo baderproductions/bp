@@ -88,7 +88,7 @@ const Hero = ({
                     tag="a"
                     color="dark"
                     wideMobile
-                    href="https://github.com/baderproductions
+                    href="https://github.com/baderproductions"
                   >
                     GitHub
                   </Button>
