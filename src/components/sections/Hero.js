@@ -80,7 +80,7 @@ const Hero = ({
                     tag="a"
                     color="primary"
                     wideMobile
-                    href="https://cruip.com/"
+                    href="https://github.com/baderproductions"
                   >
                     Work
                   </Button>
@@ -88,7 +88,7 @@ const Hero = ({
                     tag="a"
                     color="dark"
                     wideMobile
-                    href="https://github.com/cruip/open-react-template/"
+                    href="https://github.com/baderproductions
                   >
                     GitHub
                   </Button>
