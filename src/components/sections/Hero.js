@@ -85,13 +85,6 @@ const Hero = ({
               </div>
             </div>
           </div>
-          <div
-            className="hero-figure reveal-from-bottom illustration-element-01"
-            data-reveal-value="20px"
-            data-reveal-delay="800"
-          >
-            <div style={{ width: 896, height: 254 }}></div>
-          </div>
         </div>
       </div>
     </section>

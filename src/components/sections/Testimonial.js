@@ -73,20 +73,25 @@ const Testimonial = ({
               centered
               draggable={false}
               stopAutoPlayOnHover={false}
-              slidesPerPage={4}
-              offset={100}
-              animationSpeed={2000}
-              autoPlay={3000}
+              slidesPerPage={10}
+              offset={80}
+              animationSpeed={1500}
+              autoPlay={2000}
             >
-              <Image src={ap} alt="Apache Logo" width={64} height={64} />
+              <Image src={ap} alt="Apache Logo" width={48} height={48} />
+              <Image
+                src={go}
+                alt="Google Cloud Logo"
+                width={128}
+                height={128}
+              />
+              <Image src={no} alt="Node.js Logo" width={128} height={128} />
+              <Image src={ub} alt="Ubuntu Logo" width={256} height={256} />
+              <Image src={ms} alt="Microsoft Logo" width={128} height={128} />
+              <Image src={fu} alt="Flutter Logo" width={512} height={512} />
+              <Image src={li} alt="Linux Logo" width={48} height={48} />
+              <Image src={ru} alt="Redux Logo" width={128} height={128} />
               <Image src={ng} alt="NGINX Logo" width={64} height={64} />
-              <Image src={go} alt="Google Cloud Logo" width={64} height={64} />
-              <Image src={no} alt="Node.js Logo" width={64} height={64} />
-              <Image src={ub} alt="Ubuntu Logo" width={64} height={64} />
-              <Image src={ms} alt="Microsoft Logo" width={64} height={64} />
-              <Image src={fu} alt="Flutter Logo" width={64} height={64} />
-              <Image src={li} alt="Linux Logo" width={64} height={64} />
-              <Image src={ru} alt="Redux Logo" width={64} height={64} />
               <Image src={py} alt="Python Logo" width={64} height={64} />
               <Image src={re} alt="React Logo" width={64} height={64} />
             </Carousel>

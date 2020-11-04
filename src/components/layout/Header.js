@@ -107,6 +107,7 @@ const Header = ({
                       "list-reset text-xs",
                       navPosition && `header-nav-${navPosition}`
                     )}
+                    style={{ margin: "0.5rem 0" }}
                   >
                     <li>
                       <div
@@ -118,7 +119,10 @@ const Header = ({
                     </li>
                   </ul>
                   {!hideSignin && (
-                    <ul className="list-reset header-nav-right">
+                    <ul
+                      style={{ margin: "0.5rem 0" }}
+                      className="list-reset header-nav-right"
+                    >
                       <li>
                         <div
                           style={{ color: "#151719" }}

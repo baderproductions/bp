@@ -70,7 +70,7 @@ const Modal = ({
       {show && (
         <div {...props} className={classes} onClick={handleClose}>
           <div className="modal-inner" onClick={stopProgagation}>
-            <div className="responsive-video">{children}</div>
+            {children}
           </div>
         </div>
       )}

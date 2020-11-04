@@ -1,4 +1,8 @@
 .hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .section-inner {
     padding-top: $hero--padding-t__mobile;
     padding-bottom: $hero--padding-b__mobile;
@@ -24,6 +28,10 @@
 
 @include media("<=medium") {
   .hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .split-wrap {
       .split-item {
         .split-item-content {
@@ -44,6 +52,10 @@
 
 @include media(">medium") {
   .hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .section-inner {
       padding-top: $hero--padding-t__desktop;
       padding-bottom: $hero--padding-b__desktop;
