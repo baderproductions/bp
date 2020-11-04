@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { Link } from "react-router-dom";
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -110,21 +109,24 @@ const Header = ({
                     )}
                   >
                     <li>
-                      <Link to="#0" onClick={closeMenu}>
+                      <div
+                        style={{ margin: "0 1.5rem", cursor: "pointer" }}
+                        onClick={() => alert("About coming soon")}
+                      >
                         About
-                      </Link>
+                      </div>
                     </li>
                   </ul>
                   {!hideSignin && (
                     <ul className="list-reset header-nav-right">
                       <li>
-                        <Link
-                          to="#0"
+                        <div
+                          style={{ color: "#151719" }}
                           className="button button-primary button-wide-mobile button-sm"
-                          onClick={closeMenu}
+                          onClick={() => alert("Contact form coming soon")}
                         >
                           Contact
-                        </Link>
+                        </div>
                       </li>
                     </ul>
                   )}

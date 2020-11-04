@@ -3,7 +3,18 @@ import classNames from "classnames";
 import { SectionTilesProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
 import Image from "../elements/Image";
-import img1 from "../../assets/images/features-split-image-01.png";
+import re from "../../assets/images/re.png";
+import ng from "../../assets/images/ng.png";
+import go from "../../assets/images/go.png";
+import fu from "../../assets/images/fu.png";
+import ru from "../../assets/images/ru.png";
+import py from "../../assets/images/py.png";
+import ms from "../../assets/images/ms.png";
+import ap from "../../assets/images/ap.png";
+import li from "../../assets/images/li.png";
+import ub from "../../assets/images/ub.png";
+import no from "../../assets/images/no.png";
+import Carousel from "@brainhubeu/react-carousel";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -49,15 +60,36 @@ const Testimonial = ({
   return (
     <section {...props} className={outerClasses}>
       <div className="container">
-        <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" />
+        <div style={{ paddingBottom: "7rem" }} className={innerClasses}>
+          <SectionHeader
+            style={{ paddingBottom: "5rem" }}
+            data={sectionHeader}
+            className="center-content"
+          />
           <div className={tilesClasses}>
-            <Image
-              src={img1}
-              alt="Features split 03"
-              width={528}
-              height={396}
-            />
+            <Carousel
+              infinite
+              lazyLoad
+              centered
+              draggable={false}
+              stopAutoPlayOnHover={false}
+              slidesPerPage={4}
+              offset={100}
+              animationSpeed={2000}
+              autoPlay={3000}
+            >
+              <Image src={ap} alt="Apache Logo" width={64} height={64} />
+              <Image src={ng} alt="NGINX Logo" width={64} height={64} />
+              <Image src={go} alt="Google Cloud Logo" width={64} height={64} />
+              <Image src={no} alt="Node.js Logo" width={64} height={64} />
+              <Image src={ub} alt="Ubuntu Logo" width={64} height={64} />
+              <Image src={ms} alt="Microsoft Logo" width={64} height={64} />
+              <Image src={fu} alt="Flutter Logo" width={64} height={64} />
+              <Image src={li} alt="Linux Logo" width={64} height={64} />
+              <Image src={ru} alt="Redux Logo" width={64} height={64} />
+              <Image src={py} alt="Python Logo" width={64} height={64} />
+              <Image src={re} alt="React Logo" width={64} height={64} />
+            </Carousel>
           </div>
         </div>
       </div>

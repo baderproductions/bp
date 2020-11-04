@@ -1,12 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import classNames from "classnames";
 import { SectionProps } from "../../utils/SectionProps";
 import ButtonGroup from "../elements/ButtonGroup";
 import Button from "../elements/Button";
-import Image from "../elements/Image";
-import Modal from "../elements/Modal";
-import ReactPlayer from "react-player";
-import videoImg from "../../assets/images/video-placeholder.jpg";
+import { useDispatch } from "react-redux";
+import { AppConfigActions } from "../../redux/actions";
 
 const propTypes = {
   ...SectionProps.types,
@@ -26,17 +24,7 @@ const Hero = ({
   invertColor,
   ...props
 }) => {
-  const [videoModalActive, setVideomodalactive] = useState(false);
-
-  const openModal = (e) => {
-    e.preventDefault();
-    setVideomodalactive(true);
-  };
-
-  const closeModal = (e) => {
-    e.preventDefault();
-    setVideomodalactive(false);
-  };
+  const dispatch = useDispatch();
 
   const outerClasses = classNames(
     "hero section center-content",
@@ -71,16 +59,17 @@ const Hero = ({
               >
                 Lifelong learner mindset.
                 <br />
-                Always on the lookout for problems to solve and ideas to grow
+                Always on the lookout for problems to solve and ideas to build
                 into reality.
               </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
                   <Button
-                    tag="a"
+                    style={{ color: "#151719" }}
+                    tag="div"
                     color="primary"
                     wideMobile
-                    href="https://github.com/baderproductions"
+                    onClick={() => dispatch(AppConfigActions.toggleScroll())}
                   >
                     Work
                   </Button>
@@ -101,23 +90,8 @@ const Hero = ({
             data-reveal-value="20px"
             data-reveal-delay="800"
           >
-            <a href="#0" aria-controls="video-modal" onClick={openModal}>
-              <Image
-                className="has-shadow"
-                src={videoImg}
-                alt="Hero"
-                width={896}
-                height={504}
-              />
-            </a>
+            <div style={{ width: 896, height: 254 }}></div>
           </div>
-          <Modal
-            id="video-modal"
-            show={videoModalActive}
-            handleClose={closeModal}
-          >
-            <ReactPlayer url="https://youtu.be/3zURq7aNmOc" />
-          </Modal>
         </div>
       </div>
     </section>

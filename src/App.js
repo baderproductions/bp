@@ -3,6 +3,11 @@ import { useLocation, Switch } from "react-router-dom";
 import AppRoute from "./utils/AppRoute";
 import ScrollReveal from "./utils/ScrollReveal";
 import TagManager from "react-gtm-module";
+import "@brainhubeu/react-carousel/lib/style.css";
+
+// Redux
+import { Provider } from "react-redux";
+import { store } from "./redux/configureStore";
 
 // Layouts
 import LayoutDefault from "./layouts/LayoutDefault";
@@ -28,14 +33,16 @@ const App = () => {
   }, [location]);
 
   return (
-    <ScrollReveal
-      ref={childRef}
-      children={() => (
-        <Switch>
-          <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-        </Switch>
-      )}
-    />
+    <Provider store={store}>
+      <ScrollReveal
+        ref={childRef}
+        children={() => (
+          <Switch>
+            <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+          </Switch>
+        )}
+      />
+    </Provider>
   );
 };
 
