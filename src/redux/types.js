@@ -1,5 +1,7 @@
 export const types = {
   APP_CONFIG: {
     SCROLL: "APP_CONFIG/SCROLL",
+    ABOUT_MODAL: "APP_CONFIG/ABOUT_MODAL",
+    CONTACT_MODAL: "APP_CONFIG/CONTACT_MODAL",
   },
 };

@@ -75,7 +75,7 @@ const Testimonial = ({
               stopAutoPlayOnHover={false}
               slidesPerPage={10}
               offset={80}
-              animationSpeed={1500}
+              animationSpeed={4000}
               autoPlay={2000}
             >
               <Image src={ap} alt="Apache Logo" width={48} height={48} />

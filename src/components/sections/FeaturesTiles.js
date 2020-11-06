@@ -252,8 +252,7 @@ const FeaturesTiles = ({
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">Frontend</h4>
                   <p className="m-0 text-sm">
-                    Here you can see in detail all the frontend frameworks I
-                    currently work with or used in the past.
+                    See all the frontend frameworks and tools I work with.
                   </p>
                 </div>
               </div>
@@ -357,8 +356,7 @@ c-5 -165 -19 -210 -85 -269 -75 -68 23 -64 -1513 -64 -1536 0 -1438 -4 -1513
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">Backend</h4>
                   <p className="m-0 text-sm">
-                    Here you can see in detail all the backend frameworks I
-                    currently work with or used in the past.
+                    See all the backend frameworks and tools I work with.
                   </p>
                 </div>
               </div>
@@ -415,8 +413,8 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">Mobile</h4>
                   <p className="m-0 text-sm">
-                    Here you can see in detail all the mobile development tool
-                    and services I currently work with or used in the past.
+                    See all the mobile development frameworks, tools and
+                    services I work with.
                   </p>
                 </div>
               </div>
@@ -536,9 +534,8 @@ c142 -72 369 -133 627 -170 221 -31 376 -41 665 -41 289 0 444 10 665 41 258
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">Server administration</h4>
                   <p className="m-0 text-sm">
-                    Here you can see in detail all the server administration
-                    frameworks and tools I currently work with or used in the
-                    past.
+                    See all the server administration frameworks, tools and
+                    services I work with.
                   </p>
                 </div>
               </div>

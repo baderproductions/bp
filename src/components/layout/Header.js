@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import { useDispatch } from "react-redux";
+import { AppConfigActions } from "../../redux/actions";
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -27,8 +29,8 @@ const Header = ({
   bottomDivider,
   ...props
 }) => {
+  const dispatch = useDispatch();
   const [isActive, setIsactive] = useState(false);
-
   const nav = useRef(null);
   const hamburger = useRef(null);
 
@@ -76,6 +78,18 @@ const Header = ({
     className
   );
 
+  const openAboutModal = (e) => {
+    e.preventDefault();
+    document.getElementById("html").style.overflowY = "hidden";
+    dispatch(AppConfigActions.toggleAboutModal());
+  };
+
+  const openContactModal = (e) => {
+    e.preventDefault();
+    document.getElementById("html").style.overflowY = "hidden";
+    dispatch(AppConfigActions.toggleContactModal());
+  };
+
   return (
     <header {...props} className={classes}>
       <div className="container">
@@ -111,8 +125,12 @@ const Header = ({
                   >
                     <li>
                       <div
-                        style={{ margin: "0 1.5rem", cursor: "pointer" }}
-                        onClick={() => alert("About coming soon")}
+                        style={{
+                          margin: "0 1.5rem",
+                          cursor: "pointer",
+                          fontWeight: "bold",
+                        }}
+                        onClick={openAboutModal}
                       >
                         About
                       </div>
@@ -127,7 +145,7 @@ const Header = ({
                         <div
                           style={{ color: "#151719" }}
                           className="button button-primary button-wide-mobile button-sm"
-                          onClick={() => alert("Contact form coming soon")}
+                          onClick={openContactModal}
                         >
                           Contact
                         </div>
