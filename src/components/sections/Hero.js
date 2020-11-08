@@ -758,7 +758,7 @@ const Hero = ({
                   flexDirection: "column",
                   justifyContent: "flex-start",
                   alignItems: "center",
-                  margin: !success && !error && !isLoading ? "1.5rem 0" : "0",
+                  marginTop: !success && !error && !isLoading ? "1.5rem" : "0",
                 }}
               >
                 <div
