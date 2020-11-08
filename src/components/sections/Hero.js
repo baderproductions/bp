@@ -762,13 +762,26 @@ const Hero = ({
                 }}
               >
                 <div
-                  style={{ color: "#151719" }}
+                  style={{
+                    color: "#151719",
+                    pointerEvents: isLoading ? "none" : "all",
+                    backgroundColor: isLoading
+                      ? "rgba(255, 187, 0, 0.5)"
+                      : "#ffb400",
+                  }}
                   className="button button-send button-wide-mobile button-sm"
                   onClick={formik.handleSubmit}
                 >
                   {t("hero.send")}
                 </div>
-                <div className="closeButton" onClick={closeContactModal}>
+                <div
+                  style={{
+                    pointerEvents: isLoading ? "none" : "all",
+                    color: isLoading ? "rgba(255, 38, 38, 0.5)" : "red",
+                  }}
+                  className="closeButton"
+                  onClick={closeContactModal}
+                >
                   {t("hero.close")}
                 </div>
               </div>
