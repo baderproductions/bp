@@ -6,40 +6,96 @@
   top: 0;
 }
 
-.load-spinner {
-  animation-name: rotateIt;
-  animation-duration: 6s;
+.modal-body {
+  padding-bottom: 0 !important;
+}
 
-  @keyframes rotateIt {
-    0% {
-      transform: rotate(540deg);
-    }
-    100% {
-      transform: rotate(-540deg);
+.modal-body-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  .input-label {
+    @include font-size(xs);
+    color: #ffb400;
+    margin-top: 1rem;
+    margin-left: 0.1rem;
+    padding: 0;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    border: 1px solid #33363a;
+    -webkit-text-fill-color: #eceded;
+    -webkit-box-shadow: 0 0 0px 1000px #151719 inset;
+    box-shadow: 0 0 0px 1000px #151719 inset;
+    -webkit-transition-delay: 99999s;
+    transition-delay: 99999s;
+    caret-color: white !important;
+  }
+
+  .form-control {
+    padding-top: 0.5rem;
+    background-color: #151719;
+    border-color: #33363a;
+    color: #eceded;
+    resize: none;
+    transition: 0.5s ease;
+
+    &:focus,
+    :active {
+      color: #eceded;
+      outline: none !important;
+      box-shadow: none !important;
     }
   }
 }
 
+.text-error {
+  @include font-size(xxs);
+  color: red;
+  margin-top: 0.2rem;
+  margin-left: 0.1rem;
+}
+
+.text-succ {
+  @include font-size(xs);
+  color: #ffb400;
+  margin: 1.5rem 0;
+}
+
+.text-err {
+  @include font-size(xs);
+  color: red;
+  margin: 1.5rem 0;
+}
+
+.text-spin {
+  margin: 1.5rem 0;
+}
+
 .button-send {
-  background-color: limegreen;
+  width: 50% !important;
+  background-color: #ffb400;
 
   &:hover {
-    background-color: rgb(106, 233, 106);
+    background-color: #ffc350;
   }
 }
 
 .closeButton {
   @include font-size(xs);
-  position: absolute;
-  right: 0;
   font-weight: bold;
   cursor: pointer;
-  color: rgb(240, 0, 0);
+  color: red;
   background-color: transparent;
-  margin: 0 1.5rem;
+  margin-top: 1rem;
 
   &:hover {
-    color: rgb(255, 35, 35);
+    color: rgb(255, 38, 38);
   }
 }
 
@@ -50,7 +106,6 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding-bottom: 1rem;
 
   .modal-body-p-container {
     width: 100%;

@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 
 const propTypes = {
   topOuterDivider: PropTypes.bool,
@@ -19,6 +20,7 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
     className
   );
 
+  const { t } = useTranslation("common");
   const currentYear = new Date().getFullYear();
 
   return (
@@ -88,7 +90,7 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
               xmlns="http://www.w3.org/2000/svg"
               fill="#000"
             >
-              <title>Back to Top</title>
+              <title>{t("footer.top")}</title>
               <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
             </svg>
           </div>

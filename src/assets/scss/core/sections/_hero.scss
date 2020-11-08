@@ -3,7 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-bottom: 10vh;
+  padding-bottom: 15vh;
+  margin-bottom: 15vh;
   .section-inner {
     padding-top: $hero--padding-t__mobile;
     padding-bottom: $hero--padding-b__mobile;
@@ -11,6 +12,9 @@
 }
 
 .hero-inner {
+  p {
+    margin-bottom: 5vh;
+  }
   // Affects only hero full
   > .hero-content + .hero-figure,
   > .hero-figure + .hero-content {

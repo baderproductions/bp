@@ -10,6 +10,8 @@ import im from "../../assets/images/im.png";
 import rv from "../../assets/images/rv.png";
 import sp from "../../assets/images/sp.png";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
+import { useCookies } from "react-cookie";
 
 const propTypes = {
   ...SectionSplitProps.types,
@@ -33,6 +35,8 @@ const FeaturesSplit = ({
   imageFill,
   ...props
 }) => {
+  const [cookies] = useCookies(["lang"]);
+  const { t } = useTranslation("common");
   const { scrollBool } = useSelector((state) => state.appConfig);
   const workRef = useRef();
   const initialRender = useRef(true);
@@ -73,7 +77,7 @@ const FeaturesSplit = ({
 
   const sectionHeader = {
     title: "Work",
-    paragraph: "Freelancing and personal projects",
+    paragraph: t("work.sub"),
   };
 
   return (
@@ -90,13 +94,11 @@ const FeaturesSplit = ({
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                   One page website
                 </div>
-                <h3 className="mt-0 mb-12">Head Chef</h3>
+                <h3 className="mt-0 mb-12">{t("work.rv1")}</h3>
                 <p className="m-0">
-                  My first commission.
+                  {t("work.rv2")}
                   <br />
-                  Long story short, it took me one week to build it, have it
-                  indexed on Google Search and promoted with Google Ads. Great
-                  client-development experience overall.
+                  {t("work.rv3")}
                 </p>
               </div>
               <div
@@ -161,12 +163,7 @@ const FeaturesSplit = ({
                     </Button>
                   </div>
                 </div>
-                <Image
-                  src={rv}
-                  alt="Raul Vidican Template"
-                  width={528}
-                  height={396}
-                />
+                <Image src={rv} alt="Raul Vidican" width={528} height={396} />
               </div>
             </div>
             <div className="split-item">
@@ -175,16 +172,13 @@ const FeaturesSplit = ({
                 data-reveal-container=".split-item"
               >
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  React native APPLICATION
+                  React native Application
                 </div>
                 <h3 className="mt-0 mb-12">Filelist App</h3>
                 <p className="m-0">
-                  First android application released, based around Filelist's
-                  API which is a private romanian torrent tracker.
-                  <br />A one month build from scratch to current version
-                  (v3.0.1) on Google Play Store. Amazing cross-platform
-                  development experience learning to work with the Google Play
-                  Console as a developer.
+                  {t("work.fl1")}
+                  <br />
+                  {t("work.fl2")}
                 </p>
               </div>
               <div
@@ -249,12 +243,7 @@ const FeaturesSplit = ({
                     </Button>
                   </div>
                 </div>
-                <Image
-                  src={fl}
-                  alt="Filelist App Template"
-                  width={528}
-                  height={396}
-                />
+                <Image src={fl} alt="Filelist App" width={528} height={396} />
               </div>
             </div>
             <div className="split-item">
@@ -266,12 +255,7 @@ const FeaturesSplit = ({
                   Node.js / Express application
                 </div>
                 <h3 className="mt-0 mb-12">IMDb Scraper</h3>
-                <p className="m-0">
-                  A simple Node.js application used to scrape data from IMDb
-                  titles. I needed this application in order to display movie
-                  related data (poster, plot, duration, etc.) within the project
-                  Filelist App from above.
-                </p>
+                <p className="m-0">{t("work.im")}</p>
               </div>
               <div
                 className={classNames(
@@ -335,12 +319,7 @@ const FeaturesSplit = ({
                     </Button>
                   </div>
                 </div>
-                <Image
-                  src={im}
-                  alt="IMDb Scraper Template"
-                  width={528}
-                  height={396}
-                />
+                <Image src={im} alt="IMDb Scraper" width={528} height={396} />
               </div>
             </div>
             <div className="split-item">
@@ -353,14 +332,11 @@ const FeaturesSplit = ({
                 </div>
                 <h3 className="mt-0 mb-12">Spleeter by Deezer</h3>
                 <p className="m-0">
-                  Spleeter by Deezer is a source separation library with
-                  pretrained models written in Python and uses Tensorflow.
+                  {t("work.sp1")}
                   <br />
-                  First complex React / Django Full-stack website that I managed
-                  to get it working and output separation. The project got{" "}
-                  <span style={{ color: "crimson" }}>discontinued</span> because
-                  of the costly GPU power needed in order for the concurrent
-                  separations to work flawlessly.
+                  {t("work.sp2")}{" "}
+                  <span style={{ color: "crimson" }}>{t("work.sp3")}</span>{" "}
+                  {t("work.sp4")}
                 </p>
               </div>
               <div
@@ -418,7 +394,7 @@ const FeaturesSplit = ({
                 </div>
                 <Image
                   src={sp}
-                  alt="Spleeter by Deezer Template"
+                  alt="Spleeter by Deezer"
                   width={528}
                   height={396}
                 />
@@ -432,14 +408,19 @@ const FeaturesSplit = ({
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                   HTML, CSS, JAVASCRIPT
                 </div>
-                <h3 className="mt-0 mb-12">Facebook Sign Up</h3>
+                <h3 className="mt-0 mb-12">Facebook Sign-Up</h3>
                 <p className="m-0">
-                  A simple one page website that came into being trying to make
-                  a pixel-perfect replica of the Facebook Sign Up page for
-                  learning purposes.
-                  <br />I then posted it on one of my YouTube channels in case
-                  somebody else would want to learn how to build somethimg like
-                  this.
+                  {t("work.fb1")}
+                  <br />
+                  {t("work.fb2")}
+                  {cookies.lang === "ro" ? (
+                    <a
+                      className="fb-href"
+                      href="https://www.youtube.com/watch?v=3zURq7aNmOc"
+                    >
+                      Facebook - Clona pagina inregistrare | Ep.1 Practica
+                    </a>
+                  ) : null}
                 </p>
               </div>
               <div
@@ -506,7 +487,7 @@ const FeaturesSplit = ({
                 </div>
                 <Image
                   src={fb}
-                  alt="Facebook Sign Up Template"
+                  alt="Facebook Sign-Up"
                   width={528}
                   height={396}
                 />

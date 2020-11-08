@@ -3,6 +3,31 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { useDispatch } from "react-redux";
 import { AppConfigActions } from "../../redux/actions";
+import { useTranslation } from "react-i18next";
+import Switch from "@material-ui/core/Switch";
+import { withStyles } from "@material-ui/core/styles";
+import { useCookies } from "react-cookie";
+
+const AntSwitch = withStyles(() => ({
+  switchBase: {
+    color: "grey",
+    "&$checked": {
+      "& + $track": {
+        opacity: 1,
+        backgroundColor: "grey",
+      },
+    },
+  },
+  thumb: {
+    padding: 0,
+    color: "grey",
+    backgroundColor: "grey",
+  },
+  track: {
+    backgroundColor: "grey",
+  },
+  checked: {},
+}))(Switch);
 
 const propTypes = {
   navPosition: PropTypes.string,
@@ -30,11 +55,21 @@ const Header = ({
   ...props
 }) => {
   const dispatch = useDispatch();
+  const [langSwitch, setLang] = useState(false);
+  const [cookies, setCookie] = useCookies(["lang"]);
   const [isActive, setIsactive] = useState(false);
   const nav = useRef(null);
   const hamburger = useRef(null);
+  const { t, i18n } = useTranslation("common");
 
   useEffect(() => {
+    if (cookies.lang === "ro") {
+      i18n.changeLanguage("ro");
+      setLang(true);
+    } else {
+      i18n.changeLanguage("en");
+      setLang(false);
+    }
     isActive && openMenu();
     document.addEventListener("keydown", keyPress);
     document.addEventListener("click", clickOutside);
@@ -43,7 +78,7 @@ const Header = ({
       document.addEventListener("click", clickOutside);
       closeMenu();
     };
-  });
+  }, [cookies.lang]);
 
   const openMenu = () => {
     document.body.classList.add("off-nav-is-active");
@@ -90,6 +125,18 @@ const Header = ({
     dispatch(AppConfigActions.toggleContactModal());
   };
 
+  const handleSwitch = () => {
+    if (cookies.lang === "ro") {
+      i18n.changeLanguage("en");
+      setCookie("lang", "en", { path: "/", maxAge: 31540000 });
+      setLang(false);
+    } else {
+      i18n.changeLanguage("ro");
+      setCookie("lang", "ro", { path: "/", maxAge: 31540000 });
+      setLang(true);
+    }
+  };
+
   return (
     <header {...props} className={classes}>
       <div className="container">
@@ -121,6 +168,64 @@ const Header = ({
                       "list-reset text-xs",
                       navPosition && `header-nav-${navPosition}`
                     )}
+                    style={{ margin: "1rem 0" }}
+                  >
+                    <li>
+                      <div
+                        style={{
+                          margin: "0",
+                          position: "absolute",
+                          top: "0.5rem",
+                          left: "0.5rem",
+                        }}
+                      >
+                        <span
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                            alignItems: "center",
+                          }}
+                          title={t("header.lang")}
+                        >
+                          <AntSwitch
+                            icon={
+                              <span
+                                style={{
+                                  width: "19px",
+                                  height: "19px",
+                                  borderRadius: "100%",
+                                }}
+                                className="flag-icon flag-icon-gb"
+                              />
+                            }
+                            checkedIcon={
+                              <span
+                                style={{
+                                  width: "19px",
+                                  height: "19px",
+                                  borderRadius: "100%",
+                                }}
+                                className="flag-icon flag-icon-ro"
+                              />
+                            }
+                            color="default"
+                            inputProps={{
+                              "aria-label": "checkbox with default color",
+                            }}
+                            checked={langSwitch}
+                            onChange={handleSwitch}
+                          />
+                          EN/RO
+                        </span>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul
+                    className={classNames(
+                      "list-reset text-xs",
+                      navPosition && `header-nav-${navPosition}`
+                    )}
                     style={{ margin: "0.5rem 0" }}
                   >
                     <li>
@@ -132,10 +237,11 @@ const Header = ({
                         }}
                         onClick={openAboutModal}
                       >
-                        About
+                        {t("header.story")}
                       </div>
                     </li>
                   </ul>
+
                   {!hideSignin && (
                     <ul
                       style={{ margin: "0.5rem 0" }}

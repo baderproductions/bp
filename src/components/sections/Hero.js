@@ -4,9 +4,15 @@ import { SectionProps } from "../../utils/SectionProps";
 import ButtonGroup from "../elements/ButtonGroup";
 import Button from "../elements/Button";
 import Modal from "../elements/Modal";
+import Spinner from "react-bootstrap/Spinner";
 import bsModal from "react-bootstrap/Modal";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import Form from "react-bootstrap/Form";
+import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { AppConfigActions } from "../../redux/actions";
+import { useTranslation } from "react-i18next";
 
 const propTypes = {
   ...SectionProps.types,
@@ -27,6 +33,7 @@ const Hero = ({
   ...props
 }) => {
   const dispatch = useDispatch();
+  const { t } = useTranslation("common");
   const [who, setWho] = useState(false);
   const [first, setFirst] = useState(false);
   const [second, setSecond] = useState(false);
@@ -38,7 +45,9 @@ const Hero = ({
   // const [eight, setEight] = useState(false);
   // const [nine, setNine] = useState(false);
   // const [ten, setTen] = useState(false);
-  const [formLoad, setFormLoad] = useState(false);
+  const [isLoading, setLoad] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
   const { aboutModal, contactModal } = useSelector((state) => state.appConfig);
   const outerClasses = classNames(
     "hero section center-content",
@@ -78,14 +87,62 @@ const Hero = ({
     dispatch(AppConfigActions.toggleContactModal());
   };
 
-  const submitForm = (e) => {
-    e.preventDefault();
-    setFormLoad(true);
-    setTimeout(() => {
-      setFormLoad(false);
-      alert("Message was sent.");
-    }, 4000);
-  };
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      msg: "",
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().min(1).required(t("hero.requiredName")),
+      email: Yup.string()
+        .email(t("hero.emailValidation"))
+        .required(t("hero.requiredEmail")),
+    }),
+    onSubmit: (values, { setSubmitting, setErrors, setStatus, resetForm }) => {
+      setLoad(true);
+      axios
+        .post(process.env.REACT_APP_EMAIL, {
+          name: values.name,
+          email: values.email,
+          msg: values.msg,
+        })
+        .then((res) => {
+          if (res.data.status === "true") {
+            resetForm({});
+            setLoad(false);
+            setSuccess(true);
+            setTimeout(() => {
+              setSuccess(false);
+            }, 4000);
+          } else {
+            resetForm({});
+            setLoad(false);
+            setError(true);
+            setTimeout(() => {
+              setError(false);
+            }, 4000);
+          }
+        })
+        .catch(() => {
+          setLoad(false);
+          setError(true);
+          resetForm({});
+          setTimeout(() => {
+            setError(false);
+          }, 4000);
+        });
+      // const [{ data, loading, error }, refetch] = useAxios(
+      //   "http://localhost:6005/bp",
+      //   {
+      //     name: values.name,
+      //     email: values.email,
+      //     msg: values.msg,
+      //   }
+      // );
+      // alert(data.status);
+    },
+  });
 
   const currentYear = new Date().getFullYear();
 
@@ -94,17 +151,11 @@ const Hero = ({
       <div className="container-sm">
         <div className={innerClasses}>
           <div className="hero-content">
-            <h1
-              className="mt-0 mb-16 reveal-from-bottom"
-              data-reveal-delay="200"
-            >
+            <h1 className="reveal-from-bottom" data-reveal-delay="200">
               Kevin <span className="text-color-primary">Bader</span>
             </h1>
             <div className="container-xs">
-              <p
-                className="m-0 mb-32 reveal-from-bottom"
-                data-reveal-delay="400"
-              >
+              <p className="reveal-from-bottom" data-reveal-delay="400">
                 Lifelong learner mindset.
                 <br />
                 Always on the lookout for problems to solve and ideas to build
@@ -119,7 +170,7 @@ const Hero = ({
                     wideMobile
                     onClick={() => dispatch(AppConfigActions.toggleScroll())}
                   >
-                    Work
+                    {t("hero.work")}
                   </Button>
                   <Button
                     tag="a"
@@ -146,323 +197,397 @@ const Hero = ({
                 alignItems: "center",
               }}
             >
-              <bsModal.Title>📜 Story time</bsModal.Title>
+              <bsModal.Title>{t("modal.header")}</bsModal.Title>
             </bsModal.Header>
             <bsModal.Body>
               <div className="modal-body-container">
                 {who ? (
                   <div className="modal-body-p-container">
                     <div className="modal-body-p">
-                      <b>👦 Who am I ?</b>
+                      <b>{t("modal.who")}</b>
                       <br />
                       <br />
-                      Born in <b>Romania</b> in the summer of 1996, my full name
-                      is <b>Kevin Bria Bader</b>, currently{" "}
-                      <b>{currentYear - 1996} years old</b> and yes you read
-                      that right and you might be wondering two things:
+                      {t("modal.who1")}
+                      {currentYear - 1996}
+                      {t("modal.who2")}
                       <br />
                       <br />
-                      1.<b>What kind of name is Bria ?</b> Well, that was the
-                      nurse's mistake shortly after being born she asked my mom
-                      what she wants to name me and what my mom actually said
-                      was Brian but the nurse misheard and wrote down Bria
-                      instead. 😅
+                      {t("modal.who3")}
                       <br />
                       <br />
-                      2.<b>Are Kevin or Brian common names in Romania ?</b> Not
-                      at all, but I guess my parents had different plans when it
-                      came to naming me and I don't blame them. Their name
-                      choice influenced my life in a weirdly interesting way,
-                      that's all I can say when it comes to my name.
+                      {t("modal.who4")}
                       <br />
                       <br />
-                      When it came to school and school subjects I was doing
-                      great only at those who either I had a personal interest
-                      in or those at which had great teachers which always made
-                      me interested in the subject. When it came to the rest of
-                      the subjects I was good enough to pass them at the end of
-                      every semester.
+                      {t("modal.who5")}
                       <br />
                       <br />
-                      I followed the basic romanian education plan that ended
-                      with high-school which is equivalent to 12th grade.
+                      {t("modal.who6")}
                       <br />
                       <br />
-                      That's how far I my parents afforded to support me in
-                      terms of education and even if I was curious to learn
-                      more, I wouldn't afford it and also the options I had in
-                      my home town were basically zero, zip, none when it came
-                      to what I was actually interested in which was computer
-                      science.
-                      <br />
-                      <br />
-                      To be continued...
+                      {t("modal.tobe")}
                     </div>
-                    <div className="backButton" onClick={() => setWho(false)}>
-                      Go back
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      <div className="backButton" onClick={() => setWho(false)}>
+                        {t("modal.menu")}
+                      </div>
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setWho(false);
+                          setFirst(true);
+                        }}
+                      >
+                        {t("modal.next")}
+                      </div>
                     </div>
                   </div>
                 ) : first ? (
                   <div className="modal-body-p-container">
                     <div className="modal-body-p">
-                      <b>👶 Early curiosity</b>
+                      <b>{t("modal.first")}</b>
                       <br />
                       <br />
-                      I remember back in my preschool days parents buying me
-                      toys like remote control cars and other mechanical toys
-                      with which I'd play for a few hours then always
-                      disassemble them in order to find out how they work from
-                      the inside.
+                      {t("modal.first1")}
                       <br />
                       <br />
-                      At around 10 years old I was given my first computer, it
-                      was a Intel Pentium 4 processor and one day, out of
-                      curiosity just like I did with all my other toys I took it
-                      apart, wrote numbers on every component so I'd know how to
-                      put them back together and ever since that day I always
-                      assembled my own computers.
+                      {t("modal.first2")}
                       <br />
                       <br />
-                      As I grew up I learned by listening to other people in the
-                      industry that we have very similar stories in terms of
-                      curiosity and taking things apart to see how they work.
+                      {t("modal.first3")}
                       <br />
                       <br />
                       <a href="https://www.youtube.com/watch?v=ESd5Nt8sHE0">
                         How I Became a Software Developer @ GitHub - Brooks
-                        Swinnerton's
-                      </a>{" "}
-                      interview is a great example of that mindset. I couldn't
-                      have said it better myself in terms of <b>*my story*</b>.
+                        Swinnerton
+                      </a>
+                      {t("modal.first4")}
                       <br />
                       <br />
-                      To be continued...
+                      {t("modal.tobe")}
                     </div>
-                    <div className="backButton" onClick={() => setFirst(false)}>
-                      Go back
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setWho(false);
+                          setFirst(false);
+                          setSecond(false);
+                          setThird(false);
+                          setForth(false);
+                          setFifth(false);
+                        }}
+                      >
+                        {t("modal.menu")}
+                      </div>
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setFirst(false);
+                          setWho(true);
+                        }}
+                      >
+                        {t("modal.back")}
+                      </div>
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setFirst(false);
+                          setSecond(true);
+                        }}
+                      >
+                        {t("modal.next")}
+                      </div>
                     </div>
                   </div>
                 ) : second ? (
                   <div className="modal-body-p-container">
                     <div className="modal-body-p">
-                      <b>👣 First contact</b>
+                      <b>{t("modal.second")}</b>
                       <br />
                       <br />
-                      I used to play Metin2, a MMORPG game during high-school
-                      with a friend of mine. After a few good months of playing
-                      it I got bored even though most of the players (even my
-                      friend, to this day) stay addicted to that game, all I
-                      wanted was to find out how the game works from the inside,
-                      how the mechanics of the gameplay are programmed, the
-                      linking of the 3D models and how things get implemented in
-                      the game's C++ source code.
+                      {t("modal.second1")}
                       <br />
                       <br />
-                      So I opened my own private-server from open sourced files
-                      found on the internet and started messing around with the
-                      game's source code (server-side, client-side and
-                      database).
+                      {t("modal.second2")}
                       <br />
                       <br />
-                      After getting familiar with how the game works, it hit me
-                      one day that there's a player-related vulnerability that I
-                      can exploit. Because the Metin2 official servers are hard
-                      and take long time investment to get a decent character,
-                      players tend to go for the private server which are
-                      easier.
+                      {t("modal.second3")}
                       <br />
                       <br />
-                      The vulnerability was that players tend to use the same{" "}
-                      <b>username</b> and <b>password</b> for their accounts on
-                      the official servers as they do on the private servers. I
-                      then started to check if the vulnerability was in fact
-                      real and I was right.
+                      {t("modal.second4")}
                       <br />
                       <br />
-                      After exploiting the vulnerability for a few days by
-                      cross-checking accounts from private servers on the
-                      official servers with the <b>copy-paste</b> method I was
-                      thinking <b>How can I make this faster ?</b> and that's
-                      how I coded my first VB.Net application by copying pieces
-                      of code from{" "}
-                      <a href="https://stackoverflow.com/">Stack Overflow</a>{" "}
-                      and sticking them together in order to make my computer do
-                      the work for me.
+                      {t("modal.second5")}
+                      <a href="https://stackoverflow.com/">Stack Overflow</a>
+                      {t("modal.second6")}
                       <br />
                       <br />
-                      After getting familiar with <b>
-                        Microsoft Visual Studio
-                      </b>{" "}
-                      I decided to rewrite the application in C# because at that
-                      time I liked the syntax and structure of C# more than that
-                      of VB.NET (don't ask me why 😅).
+                      {t("modal.second7")}
                       <br />
-                      <br />[ <span>WARNING - bad code ahead</span> ]
+                      <br />[<span>{t("modal.second8")}</span>]
                       <br />
-                      The code can be seen on GitHub @{" "}
+                      {t("modal.second9")}
                       <a href="https://github.com/baderproductions/metin2verifyCont">
                         metin2verifyCont
                       </a>
-                      , even though I'm not proud of this code, it's a testament
-                      of my beginnings as a developer and for my first app I was
-                      surprised it actually worked and did what I wanted,
-                      sparing me countless hours of doing all that checking
-                      manually.
+                      {t("modal.second10")}
                       <br />
                       <br />
-                      To be continued...
+                      {t("modal.tobe")}
                     </div>
                     <div
-                      className="backButton"
-                      onClick={() => setSecond(false)}
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
                     >
-                      Go back
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setWho(false);
+                          setFirst(false);
+                          setSecond(false);
+                          setThird(false);
+                          setForth(false);
+                          setFifth(false);
+                        }}
+                      >
+                        {t("modal.menu")}
+                      </div>
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setSecond(false);
+                          setFirst(true);
+                        }}
+                      >
+                        {t("modal.back")}
+                      </div>
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setSecond(false);
+                          setThird(true);
+                        }}
+                      >
+                        {t("modal.next")}
+                      </div>
                     </div>
                   </div>
                 ) : third ? (
                   <div className="modal-body-p-container">
                     <div className="modal-body-p">
-                      <b>✈ Flying to United Kingdom</b>
+                      <b>{t("modal.third")}</b>
                       <br />
                       <br />
-                      After high-school I started working factory jobs in
-                      Romania that lasted about two years until one day when I
-                      felt that I'm wasting my life trapped there without any
-                      substantial progress, doing work I had no passion for just
-                      to be able to feed myself and keep being stuck.
-                      <br />
-                      <br />I had to make a change and having decent english
-                      understanding, speaking and writing level I decided to
-                      sell my computer and guitar and bought a plane ticked to{" "}
-                      <b>United Kingdom</b> where I arrived on{" "}
-                      <b>16th of October, 2018</b> and two weeks later I started
-                      working as a part-time <b>Chef</b> at <b>PizzaExpress</b>.
-                      <br />
-                      <br />I opted for part-time job because I wanted enough
-                      free time to be able to do what really interested me. This
-                      job was very easy-going, meet amazing people during my
-                      time there and it was just the right balance between free
-                      time, housing and living expenses.
+                      {t("modal.third1")}
                       <br />
                       <br />
-                      To be continued...
+                      {t("modal.third2")}
+                      <a href="https://www.pizzaexpress.com/">PizzaExpress</a>.
+                      <br />
+                      <br />
+                      {t("modal.third3")}
+                      <br />
+                      <br />
+                      {t("modal.tobe")}
                     </div>
-                    <div className="backButton" onClick={() => setThird(false)}>
-                      Go back
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setWho(false);
+                          setFirst(false);
+                          setSecond(false);
+                          setThird(false);
+                          setForth(false);
+                          setFifth(false);
+                        }}
+                      >
+                        {t("modal.menu")}
+                      </div>
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setThird(false);
+                          setSecond(true);
+                        }}
+                      >
+                        {t("modal.back")}
+                      </div>
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setThird(false);
+                          setForth(true);
+                        }}
+                      >
+                        Next
+                      </div>
                     </div>
                   </div>
                 ) : forth ? (
                   <div className="modal-body-p-container">
                     <div className="modal-body-p">
-                      <b>🌎 Web development</b>
+                      <b>{t("modal.forth")}</b>
                       <br />
                       <br />
-                      If you read the <b>✈ Flying to United Kingdom</b> chapter
-                      you know that on <b>November, 2018</b> I started working
-                      as a <b>Chef</b> at <b>PizzaExpress</b> which allowed me
-                      to buy the most powerful computer I ever had, which was a
-                      requirement for me to be able to do everything I wanted to
-                      do from gaming to video editing and the most important
-                      thing, after getting bored of all the games was{" "}
-                      <b>coding, building something with my own hands.</b>
+                      {t("modal.forth1")}
                       <br />
                       <br />
-                      As I didn't play games anymore (reference to the{" "}
-                      <b>👣 First contact</b> chapter), I didn't have any ideas
-                      of what I should build in order to learn a new programming
-                      language or improve the ones I started with, therefore
-                      searching for ideas I came across some{" "}
-                      <b>life changing people</b> and their YouTube channels, I
-                      will name a few in no particular order:
-                      <br />
-                      <b>
-                        Brad @{" "}
-                        <a href="https://www.youtube.com/user/TechGuyWeb">
-                          Traversy Media
-                        </a>
-                      </b>
-                      <br />
-                      <b>
-                        Ed @{" "}
-                        <a href="https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q">
-                          Dev Ed
-                        </a>{" "}
-                        (fellow romanian)
-                      </b>
-                      <br />
-                      <b>
-                        Kyle @{" "}
-                        <a href="https://www.youtube.com/c/WebDevSimplified">
-                          Web Dev Simplified
-                        </a>
-                      </b>
+                      {t("modal.forth2")}
                       <br />
                       <br />
-                      That's how I got <b>inspired</b> and started{" "}
-                      <b>learning web development</b> from scratch. Started with{" "}
-                      <b>HTML, CSS, JAVASCRIPT and jQuery</b> as most newbies do
-                      and after playing around with those for about one week I
-                      noticed a very interesting things that some websites did
-                      and I couldn't replicate with vanilla HTML, CSS and
-                      JAVASCRIPT.
+                      {t("modal.forth3")}
+                      <a href="https://www.youtube.com/user/TechGuyWeb">
+                        {t("modal.forth4")}
+                      </a>
+                      <br />
+                      {t("modal.forth5")}
+                      <a href="https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q">
+                        {t("modal.forth6")}
+                      </a>
+                      <br />
+                      {t("modal.forth7")}
+                      <a href="https://www.youtube.com/c/WebDevSimplified">
+                        {t("modal.forth8")}
+                      </a>
                       <br />
                       <br />
-                      To be continued...
+                      {t("modal.forth9")}
+                      <br />
+                      <br />
+                      {t("modal.tobe")}
                     </div>
-                    <div className="backButton" onClick={() => setForth(false)}>
-                      Go back
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setWho(false);
+                          setFirst(false);
+                          setSecond(false);
+                          setThird(false);
+                          setForth(false);
+                          setFifth(false);
+                        }}
+                      >
+                        {t("modal.menu")}
+                      </div>
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setForth(false);
+                          setThird(true);
+                        }}
+                      >
+                        {t("modal.back")}
+                      </div>
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setForth(false);
+                          setFifth(true);
+                        }}
+                      >
+                        {t("modal.next")}
+                      </div>
                     </div>
                   </div>
                 ) : fifth ? (
                   <div className="modal-body-p-container">
                     <div className="modal-body-p">
-                      <b>📘 React.js library</b>
+                      <b>{t("modal.fifth")}</b>
                       <br />
                       <br />
-                      As I said in the previous chapter, I noticed some
-                      interesting things that some websites did and I couldn't
-                      replicate the way I've seen with just vanilla{" "}
-                      <b>HTML, CSS and JAVASCRIPT</b>, for instance if I want to
-                      build a website with more than one pages, the website will{" "}
-                      <b>refresh</b> everytime I go to the other pages.
+                      {t("modal.fifth1")}
                       <br />
                       <br />
-                      After doing some research on{" "}
-                      <a href="https://stackoverflow.com/">Stack Overflow</a> I
-                      found out that the way you do what I was looking for is
-                      with a Javascript library and the first I stumbled upon
-                      was{" "}
-                      <b>
-                        <a href="https://reactjs.org/">React.js</a>
-                      </b>{" "}
-                      which has this object called{" "}
-                      <b>
-                        <a href="https://reactjs.org/docs/react-dom.html">
-                          ReactDOM
-                        </a>
-                      </b>{" "}
-                      that basically attaches itself to one HTML{" "}
-                      <b>"root" element</b> and from there on you build your
-                      HTML as components inside the <b>React app</b> with a
-                      specific syntax called{" "}
-                      <b>
-                        <a href="https://reactjs.org/docs/introducing-jsx.html">
-                          JSX
-                        </a>
-                      </b>
+                      {t("modal.fifth2")}
+                      <a href="https://stackoverflow.com/">Stack Overflow</a>
+                      {t("modal.fifth3")}
+                      <a href="https://reactjs.org/">React.js</a>
+                      {t("modal.fifth4")}
+                      <a href="https://reactjs.org/docs/react-dom.html">
+                        ReactDOM
+                      </a>
+                      {t("modal.fifth5")}
+                      <a href="https://reactjs.org/docs/introducing-jsx.html">
+                        JSX
+                      </a>
                       .
                       <br />
                       <br />
-                      After discovering <b>Javascript libraries</b> it felt like
-                      unlocking the level of a game, from here on the
-                      possibilities for building complex website structures were
-                      endless.
+                      {t("modal.fifth6")}
                       <br />
                       <br />
-                      To be continued...
+                      {t("modal.tobe")}
                     </div>
-                    <div className="backButton" onClick={() => setFifth(false)}>
-                      Go back
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                      }}
+                    >
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setWho(false);
+                          setFirst(false);
+                          setSecond(false);
+                          setThird(false);
+                          setForth(false);
+                          setFifth(false);
+                        }}
+                      >
+                        {t("modal.menu")}
+                      </div>
+                      <div
+                        className="backButton"
+                        onClick={() => {
+                          setFifth(false);
+                          setForth(true);
+                        }}
+                      >
+                        {t("modal.back")}
+                      </div>
                     </div>
                   </div>
                 ) : (
@@ -474,7 +599,8 @@ const Hero = ({
                           className="modal-body-dot"
                         ></div>
                       </div>
-                      <div className="modal-body-lower">👦 Who am I ?</div>
+
+                      <div className="modal-body-lower">{t("modal.who")}</div>
                     </div>
                     <div className="modal-body-item">
                       <div className="modal-body-upper">
@@ -483,7 +609,7 @@ const Hero = ({
                           className="modal-body-dot"
                         ></div>
                       </div>
-                      <div className="modal-body-lower">👶 Early curiosity</div>
+                      <div className="modal-body-lower">{t("modal.first")}</div>
                     </div>
                     <div className="modal-body-item">
                       <div className="modal-body-upper">
@@ -492,7 +618,9 @@ const Hero = ({
                           className="modal-body-dot"
                         ></div>
                       </div>
-                      <div className="modal-body-lower">👣 First contact</div>
+                      <div className="modal-body-lower">
+                        {t("modal.second")}
+                      </div>
                     </div>
                     <div className="modal-body-item">
                       <div className="modal-body-upper">
@@ -501,9 +629,7 @@ const Hero = ({
                           className="modal-body-dot"
                         ></div>
                       </div>
-                      <div className="modal-body-lower">
-                        ✈ Flying to United Kingdom
-                      </div>
+                      <div className="modal-body-lower">{t("modal.third")}</div>
                     </div>
                     <div className="modal-body-item">
                       <div className="modal-body-upper">
@@ -512,7 +638,7 @@ const Hero = ({
                           className="modal-body-dot"
                         ></div>
                       </div>
-                      <div className="modal-body-lower">🌎 Web development</div>
+                      <div className="modal-body-lower">{t("modal.forth")}</div>
                     </div>
                     <div className="modal-body-item">
                       <div className="modal-body-upper">
@@ -521,9 +647,7 @@ const Hero = ({
                           className="modal-body-dot"
                         ></div>
                       </div>
-                      <div className="modal-body-lower">
-                        📘 React.js library
-                      </div>
+                      <div className="modal-body-lower">{t("modal.fifth")}</div>
                     </div>
                   </>
                 )}
@@ -542,7 +666,7 @@ const Hero = ({
                 className="button button-primary button-wide-mobile button-sm"
                 onClick={closeAboutModal}
               >
-                Close
+                {t("modal.footer")}
               </Button>
             </bsModal.Footer>
           </Modal>
@@ -555,43 +679,99 @@ const Hero = ({
               style={{
                 borderBottom: "0.05rem solid #33363a",
                 display: "flex",
-                justifyContent: "center",
+                flexDirection: "column",
+                justifyContent: "flex-start",
                 alignItems: "center",
               }}
             >
-              <bsModal.Title>✉ Get in touch</bsModal.Title>
+              <bsModal.Title>{t("hero.contact")}</bsModal.Title>
             </bsModal.Header>
             <bsModal.Body>
-              <div className="modal-body-container">
-                <div className="modal-body-c-container">
-                  <div className="modal-body-c">Work in progress...</div>
-                </div>
+              <Form className="modal-body-form">
+                <Form.Label className="input-label">
+                  {t("hero.name")}
+                </Form.Label>
+                <Form.Control
+                  placeholder={t("hero.namePl")}
+                  type="text"
+                  {...formik.getFieldProps("name")}
+                />
+                {formik.touched.name && formik.errors.name ? (
+                  <span className="text-error">{formik.errors.name}</span>
+                ) : null}
+                <Form.Label className="input-label">
+                  {t("hero.email")}
+                </Form.Label>
+                <Form.Control
+                  placeholder={t("hero.emailPl")}
+                  type="email"
+                  {...formik.getFieldProps("email")}
+                />
+                {formik.touched.email && formik.errors.email ? (
+                  <span className="text-error">{formik.errors.email}</span>
+                ) : null}
+                <Form.Label className="input-label">{t("hero.msg")}</Form.Label>
+                <Form.Control
+                  placeholder={t("hero.msgPl")}
+                  as="textarea"
+                  rows={3}
+                  {...formik.getFieldProps("msg")}
+                />
+              </Form>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                {success ? (
+                  <span className="text-succ">{t("hero.success")}</span>
+                ) : null}
+                {error ? (
+                  <span className="text-err">{t("hero.error")}</span>
+                ) : null}
+                {isLoading ? (
+                  <Spinner
+                    className="text-spin"
+                    size="sm"
+                    animation="border"
+                    variant="warning"
+                  />
+                ) : null}
               </div>
             </bsModal.Body>
             <bsModal.Footer
               style={{
-                borderTop: "0.05rem solid #33363a",
+                border: 0,
+                paddingTop: 0,
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
               }}
             >
-              {formLoad ? (
-                <div className="load-spinner">❎</div>
-              ) : (
-                <>
-                  <div
-                    style={{ color: "#151719" }}
-                    className="button button-send button-wide-mobile button-sm"
-                    onClick={submitForm}
-                  >
-                    Send
-                  </div>
-                  <div className="closeButton" onClick={closeContactModal}>
-                    Close
-                  </div>
-                </>
-              )}
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "flex-start",
+                  alignItems: "center",
+                  margin: !success && !error && !isLoading ? "1.5rem 0" : "0",
+                }}
+              >
+                <div
+                  style={{ color: "#151719" }}
+                  className="button button-send button-wide-mobile button-sm"
+                  onClick={formik.handleSubmit}
+                >
+                  {t("hero.send")}
+                </div>
+                <div className="closeButton" onClick={closeContactModal}>
+                  {t("hero.close")}
+                </div>
+              </div>
             </bsModal.Footer>
           </Modal>
         </div>

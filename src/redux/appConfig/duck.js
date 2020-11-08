@@ -4,6 +4,7 @@ export const initState = {
   scrollBool: false,
   aboutModal: false,
   contactModal: false,
+  langSwitch: false,
 };
 
 export const actions = {
@@ -16,6 +17,9 @@ export const actions = {
   toggleContactModal: () => ({
     type: types.APP_CONFIG.CONTACT_MODAL,
   }),
+  toggleLang: () => ({
+    type: types.APP_CONFIG.LANG_SWITCH,
+  }),
 };
 
 export function reducer(state = initState, action) {
@@ -26,6 +30,8 @@ export function reducer(state = initState, action) {
       return { ...state, aboutModal: !state.aboutModal };
     case types.APP_CONFIG.CONTACT_MODAL:
       return { ...state, contactModal: !state.contactModal };
+    case types.APP_CONFIG.LANG_SWITCH:
+      return { ...state, langSwitch: !state.langSwitch };
     default:
       return state;
   }

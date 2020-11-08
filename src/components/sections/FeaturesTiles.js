@@ -2,6 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import { SectionTilesProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
+import { useTranslation } from "react-i18next";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -21,6 +22,8 @@ const FeaturesTiles = ({
   pushLeft,
   ...props
 }) => {
+  const { t } = useTranslation("common");
+
   const outerClasses = classNames(
     "features-tiles section",
     topOuterDivider && "has-top-divider",
@@ -251,9 +254,7 @@ const FeaturesTiles = ({
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">Frontend</h4>
-                  <p className="m-0 text-sm">
-                    See all the frontend frameworks and tools I work with.
-                  </p>
+                  <p className="m-0 text-sm">{t("dev.front")}</p>
                 </div>
               </div>
             </div>
@@ -355,9 +356,7 @@ c-5 -165 -19 -210 -85 -269 -75 -68 23 -64 -1513 -64 -1536 0 -1438 -4 -1513
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">Backend</h4>
-                  <p className="m-0 text-sm">
-                    See all the backend frameworks and tools I work with.
-                  </p>
+                  <p className="m-0 text-sm">{t("dev.back")}</p>
                 </div>
               </div>
             </div>
@@ -412,10 +411,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">Mobile</h4>
-                  <p className="m-0 text-sm">
-                    See all the mobile development frameworks, tools and
-                    services I work with.
-                  </p>
+                  <p className="m-0 text-sm">{t("dev.mobile")}</p>
                 </div>
               </div>
             </div>
@@ -533,10 +529,7 @@ c142 -72 369 -133 627 -170 221 -31 376 -41 665 -41 289 0 444 10 665 41 258
                 </div>
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">Server administration</h4>
-                  <p className="m-0 text-sm">
-                    See all the server administration frameworks, tools and
-                    services I work with.
-                  </p>
+                  <p className="m-0 text-sm">{t("dev.server")}</p>
                 </div>
               </div>
             </div>
