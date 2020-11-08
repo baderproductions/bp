@@ -120,6 +120,7 @@
     .modal-body-p {
       @include font-size(xxs);
       text-align: left;
+      margin-top: 1.5rem;
 
       a {
         color: #ffb400;

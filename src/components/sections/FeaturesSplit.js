@@ -147,6 +147,7 @@ const FeaturesSplit = ({
                       tag="a"
                       color="light"
                       wideMobile
+                      className="button-black"
                       href="https://raulvidican.ro"
                       style={{ margin: "0 1rem" }}
                     >
@@ -156,6 +157,7 @@ const FeaturesSplit = ({
                       tag="a"
                       color="light"
                       wideMobile
+                      className="button-black"
                       href="https://github.com/baderproductions/rv-chef"
                       style={{ margin: "0 1rem" }}
                     >
@@ -227,6 +229,7 @@ const FeaturesSplit = ({
                       tag="a"
                       color="light"
                       wideMobile
+                      className="button-black"
                       href="https://play.google.com/store/apps/details?id=com.baderproductions.fl"
                       style={{ margin: "0 1rem" }}
                     >
@@ -236,6 +239,7 @@ const FeaturesSplit = ({
                       tag="a"
                       color="light"
                       wideMobile
+                      className="button-black"
                       href="https://github.com/baderproductions/filelist-app"
                       style={{ margin: "0 1rem" }}
                     >
@@ -303,6 +307,7 @@ const FeaturesSplit = ({
                       tag="a"
                       color="light"
                       wideMobile
+                      className="button-black"
                       href="https://spleeter.co.uk"
                       style={{ margin: "0 1rem" }}
                     >
@@ -312,6 +317,7 @@ const FeaturesSplit = ({
                       tag="a"
                       color="light"
                       wideMobile
+                      className="button-black"
                       href="https://github.com/baderproductions/imdb-scraper"
                       style={{ margin: "0 1rem" }}
                     >
@@ -385,6 +391,7 @@ const FeaturesSplit = ({
                       tag="a"
                       color="light"
                       wideMobile
+                      className="button-black"
                       href="https://github.com/baderproductions/react-django-spleeter"
                       style={{ margin: "0 6rem" }}
                     >
@@ -469,6 +476,7 @@ const FeaturesSplit = ({
                       tag="a"
                       color="light"
                       wideMobile
+                      className="button-black"
                       href="https://baderproductions.github.io/facebook-sign-up/"
                       style={{ margin: "0 1rem" }}
                     >
@@ -478,6 +486,7 @@ const FeaturesSplit = ({
                       tag="a"
                       color="light"
                       wideMobile
+                      className="button-black"
                       href="https://github.com/baderproductions/facebook-sign-up"
                       style={{ margin: "0 1rem" }}
                     >
