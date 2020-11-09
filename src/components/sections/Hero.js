@@ -4,6 +4,7 @@ import { SectionProps } from "../../utils/SectionProps";
 import ButtonGroup from "../elements/ButtonGroup";
 import Button from "../elements/Button";
 import Modal from "../elements/Modal";
+import Badge from "react-bootstrap/Badge";
 import Spinner from "react-bootstrap/Spinner";
 import bsModal from "react-bootstrap/Modal";
 import { useFormik } from "formik";
@@ -48,7 +49,16 @@ const Hero = ({
   const [isLoading, setLoad] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
-  const { aboutModal, contactModal } = useSelector((state) => state.appConfig);
+  const {
+    aboutModal,
+    contactModal,
+    frontendModal,
+    backendModal,
+    databaseModal,
+    mobileModal,
+    serverModal,
+  } = useSelector((state) => state.appConfig);
+
   const outerClasses = classNames(
     "hero section center-content",
     topOuterDivider && "has-top-divider",
@@ -85,6 +95,36 @@ const Hero = ({
     e.preventDefault();
     document.getElementById("html").style.overflowY = "scroll";
     dispatch(AppConfigActions.toggleContactModal());
+  };
+
+  const closeFrontendModal = (e) => {
+    e.preventDefault();
+    document.getElementById("html").style.overflowY = "scroll";
+    dispatch(AppConfigActions.toggleFrontendModal());
+  };
+
+  const closeBackendModal = (e) => {
+    e.preventDefault();
+    document.getElementById("html").style.overflowY = "scroll";
+    dispatch(AppConfigActions.toggleBackendModal());
+  };
+
+  const closeDatabaseModal = (e) => {
+    e.preventDefault();
+    document.getElementById("html").style.overflowY = "scroll";
+    dispatch(AppConfigActions.toggleDatabaseModal());
+  };
+
+  const closeMobileModal = (e) => {
+    e.preventDefault();
+    document.getElementById("html").style.overflowY = "scroll";
+    dispatch(AppConfigActions.toggleMobileModal());
+  };
+
+  const closeServerModal = (e) => {
+    e.preventDefault();
+    document.getElementById("html").style.overflowY = "scroll";
+    dispatch(AppConfigActions.toggleServerModal());
   };
 
   const formik = useFormik({
@@ -132,15 +172,6 @@ const Hero = ({
             setError(false);
           }, 4000);
         });
-      // const [{ data, loading, error }, refetch] = useAxios(
-      //   "http://localhost:6005/bp",
-      //   {
-      //     name: values.name,
-      //     email: values.email,
-      //     msg: values.msg,
-      //   }
-      // );
-      // alert(data.status);
     },
   });
 
@@ -174,7 +205,7 @@ const Hero = ({
                   </Button>
                   <Button
                     tag="a"
-                    color="dark"
+                    color="light"
                     wideMobile
                     href="https://github.com/baderproductions"
                   >
@@ -222,9 +253,6 @@ const Hero = ({
                       <br />
                       <br />
                       {t("modal.who6")}
-                      <br />
-                      <br />
-                      {t("modal.tobe")}
                     </div>
                     <div
                       style={{
@@ -269,9 +297,6 @@ const Hero = ({
                         Swinnerton
                       </a>
                       {t("modal.first4")}
-                      <br />
-                      <br />
-                      {t("modal.tobe")}
                     </div>
                     <div
                       style={{
@@ -347,9 +372,6 @@ const Hero = ({
                         metin2verifyCont
                       </a>
                       {t("modal.second10")}
-                      <br />
-                      <br />
-                      {t("modal.tobe")}
                     </div>
                     <div
                       style={{
@@ -407,9 +429,6 @@ const Hero = ({
                       <br />
                       <br />
                       {t("modal.third3")}
-                      <br />
-                      <br />
-                      {t("modal.tobe")}
                     </div>
                     <div
                       style={{
@@ -465,26 +484,23 @@ const Hero = ({
                       {t("modal.forth2")}
                       <br />
                       <br />
-                      {t("modal.forth3")}
+                      Brad @{" "}
                       <a href="https://www.youtube.com/user/TechGuyWeb">
-                        {t("modal.forth4")}
+                        Traversy Media
                       </a>
                       <br />
-                      {t("modal.forth5")}
+                      Ed @{" "}
                       <a href="https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q">
-                        {t("modal.forth6")}
+                        Dev Ed
                       </a>
                       <br />
-                      {t("modal.forth7")}
+                      Kyle @{" "}
                       <a href="https://www.youtube.com/c/WebDevSimplified">
-                        {t("modal.forth8")}
+                        Web Dev Simplified
                       </a>
                       <br />
                       <br />
-                      {t("modal.forth9")}
-                      <br />
-                      <br />
-                      {t("modal.tobe")}
+                      {t("modal.forth3")}
                     </div>
                     <div
                       style={{
@@ -553,9 +569,6 @@ const Hero = ({
                       <br />
                       <br />
                       {t("modal.fifth6")}
-                      <br />
-                      <br />
-                      {t("modal.tobe")}
                     </div>
                     <div
                       style={{
@@ -599,7 +612,6 @@ const Hero = ({
                           className="modal-body-dot"
                         ></div>
                       </div>
-
                       <div className="modal-body-lower">{t("modal.who")}</div>
                     </div>
                     <div className="modal-body-item">
@@ -777,7 +789,7 @@ const Hero = ({
                 <div
                   style={{
                     pointerEvents: isLoading ? "none" : "all",
-                    color: isLoading ? "rgba(255, 38, 38, 0.5)" : "red",
+                    color: isLoading ? "rgba(128, 128, 128, 0.5)" : "#9ca9b3",
                   }}
                   className="closeButton"
                   onClick={closeContactModal}
@@ -785,6 +797,402 @@ const Hero = ({
                   {t("hero.close")}
                 </div>
               </div>
+            </bsModal.Footer>
+          </Modal>
+          <Modal
+            id="dev-modal"
+            show={frontendModal}
+            handleClose={closeFrontendModal}
+          >
+            <bsModal.Header
+              style={{
+                borderBottom: "0.05rem solid #33363a",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <bsModal.Title>{t("modal.frontend")}</bsModal.Title>
+            </bsModal.Header>
+            <bsModal.Body>
+              <div className="modal-body-container">
+                <div className="modal-body-devContainer">
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">React.js</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Library</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Material-UI</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">React components</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Bootstrap</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Framework</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Sass</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Styling extension</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Javascript</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Language</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">HTML</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Markup language</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">CSS</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Styling</Badge>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </bsModal.Body>
+            <bsModal.Footer
+              style={{
+                borderTop: "0.05rem solid #33363a",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Button
+                style={{ color: "#151719" }}
+                className="button button-primary button-wide-mobile button-sm"
+                onClick={closeFrontendModal}
+              >
+                {t("modal.devClose")}
+              </Button>
+            </bsModal.Footer>
+          </Modal>
+          <Modal
+            id="dev-modal"
+            show={backendModal}
+            handleClose={closeBackendModal}
+          >
+            <bsModal.Header
+              style={{
+                borderBottom: "0.05rem solid #33363a",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <bsModal.Title>{t("modal.backend")}</bsModal.Title>
+            </bsModal.Header>
+            <bsModal.Body>
+              <div className="modal-body-container">
+                <div className="modal-body-devContainer">
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Node.js</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Runtime environment</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Express.js</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Framework</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Django</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Framework</Badge>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </bsModal.Body>
+            <bsModal.Footer
+              style={{
+                borderTop: "0.05rem solid #33363a",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Button
+                style={{ color: "#151719" }}
+                className="button button-primary button-wide-mobile button-sm"
+                onClick={closeBackendModal}
+              >
+                {t("modal.devClose")}
+              </Button>
+            </bsModal.Footer>
+          </Modal>
+          <Modal
+            id="dev-modal"
+            show={databaseModal}
+            handleClose={closeDatabaseModal}
+          >
+            <bsModal.Header
+              style={{
+                borderBottom: "0.05rem solid #33363a",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <bsModal.Title>{t("modal.database")}</bsModal.Title>
+            </bsModal.Header>
+            <bsModal.Body>
+              <div className="modal-body-container">
+                <div className="modal-body-devContainer">
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">MongoDB</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">NoSQL database</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">SQLite</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Relational database</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Firebase Realtime</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">NoSQL database</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">PostgreSQL</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Relational database</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Cloud Firestore</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">NoSQL database</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">MySQL</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Relational database</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">JSON</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Data interchange</Badge>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </bsModal.Body>
+            <bsModal.Footer
+              style={{
+                borderTop: "0.05rem solid #33363a",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Button
+                style={{ color: "#151719" }}
+                className="button button-primary button-wide-mobile button-sm"
+                onClick={closeDatabaseModal}
+              >
+                {t("modal.devClose")}
+              </Button>
+            </bsModal.Footer>
+          </Modal>
+          <Modal
+            id="dev-modal"
+            show={serverModal}
+            handleClose={closeServerModal}
+          >
+            <bsModal.Header
+              style={{
+                borderBottom: "0.05rem solid #33363a",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <bsModal.Title>{t("modal.server")}</bsModal.Title>
+            </bsModal.Header>
+            <bsModal.Body>
+              <div className="modal-body-container">
+                <div className="modal-body-devContainer">
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">
+                      Google Cloud Platform
+                    </div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Computing services</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Amazon Web Services</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Computing services</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Microsoft Azure</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Computing services</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Apache</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Web server</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">NGINX</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Web server</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Stripe</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Payment system</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">PayU</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Payment system</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Shopify</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Ecommerce platform</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Paypal</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Payment system</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">macOS</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Operating system</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Linux</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Operating system</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Microsoft Windows</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Operating system</Badge>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </bsModal.Body>
+            <bsModal.Footer
+              style={{
+                borderTop: "0.05rem solid #33363a",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Button
+                style={{ color: "#151719" }}
+                className="button button-primary button-wide-mobile button-sm"
+                onClick={closeServerModal}
+              >
+                {t("modal.devClose")}
+              </Button>
+            </bsModal.Footer>
+          </Modal>
+          <Modal
+            id="dev-modal"
+            show={mobileModal}
+            handleClose={closeMobileModal}
+          >
+            <bsModal.Header
+              style={{
+                borderBottom: "0.05rem solid #33363a",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <bsModal.Title>{t("modal.mobile")}</bsModal.Title>
+            </bsModal.Header>
+            <bsModal.Body>
+              <div className="modal-body-container">
+                <div className="modal-body-devContainer">
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">React Native</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Framework</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Flutter</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Development toolkit</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Swift</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Programming language</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Android Studio</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Development environment</Badge>
+                    </div>
+                  </div>
+                  <div className="modal-body-devItem">
+                    <div className="modal-body-upper">Xcode</div>
+                    <div className="modal-body-lower">
+                      <Badge variant="warning">Development environment</Badge>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </bsModal.Body>
+            <bsModal.Footer
+              style={{
+                borderTop: "0.05rem solid #33363a",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Button
+                style={{ color: "#151719" }}
+                className="button button-primary button-wide-mobile button-sm"
+                onClick={closeMobileModal}
+              >
+                {t("modal.devClose")}
+              </Button>
             </bsModal.Footer>
           </Modal>
         </div>

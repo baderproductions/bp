@@ -81,10 +81,11 @@
 
 .button-send {
   width: 50% !important;
-  background-color: #ffb400;
+  color: #33363a !important;
+  background-color: #ffb400 !important;
 
   &:hover {
-    background-color: #ffc350;
+    background-color: #ffc350 !important;
   }
 }
 
@@ -92,13 +93,17 @@
   @include font-size(xs);
   font-weight: bold;
   cursor: pointer;
-  color: red;
+  color: #9ca9b3;
+  color: rgb(128, 128, 128);
   background-color: transparent;
   margin-top: 1rem;
 
   &:hover {
-    color: rgb(255, 38, 38);
+    color: #949697 !important;
   }
+}
+
+.modal-body-devContainer {
 }
 
 .modal-body-container {
@@ -109,6 +114,55 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
+
+  .modal-body-devContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+
+    .modal-body-devItem {
+      width: 150px;
+      height: 150px;
+      margin: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: #33363a;
+      transition: 0.4s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .modal-body-upper {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-body-lower {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .badge-warning {
+          border-radius: 2px;
+          transform: scale(0.65);
+        }
+      }
+    }
+  }
 
   .modal-body-p-container {
     width: 100%;

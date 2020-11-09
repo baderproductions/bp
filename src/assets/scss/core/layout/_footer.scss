@@ -61,6 +61,12 @@ footer .social-links li {
   margin: 0;
   padding: 0;
   margin-left: 42px;
+
+  a svg {
+    &:hover {
+      fill: #bec0c0;
+    }
+  }
 }
 
 footer .social-links li:first-child {

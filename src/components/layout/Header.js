@@ -185,6 +185,7 @@ const Header = ({
                             flexDirection: "column",
                             justifyContent: "center",
                             alignItems: "center",
+                            fontWeight: "bold",
                           }}
                           title={t("header.lang")}
                         >
@@ -229,14 +230,7 @@ const Header = ({
                     style={{ margin: "0.5rem 0" }}
                   >
                     <li>
-                      <div
-                        style={{
-                          margin: "0 1.5rem",
-                          cursor: "pointer",
-                          fontWeight: "bold",
-                        }}
-                        onClick={openAboutModal}
-                      >
+                      <div className="story-btn" onClick={openAboutModal}>
                         {t("header.story")}
                       </div>
                     </li>

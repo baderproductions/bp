@@ -1,7 +1,7 @@
 .button {
   display: inline-flex;
   @include font-size(button);
-  @include font-weight(button);
+
   padding: (
       (
           $button-form--height - get-line-height(button) -
@@ -24,15 +24,16 @@
   letter-spacing: inherit;
   white-space: nowrap;
   transition: background 0.15s ease;
+  font-weight: bold;
 
   &:active {
     outline: 0;
   }
 
   &:hover {
-    background-color: color-bg(button-light-hover);
+    background-color: #d9dbdb;
     border-color: color-border(button-light-hover);
-    color: #ffb400;
+    color: color(button-light);
   }
 
   &.is-loading {
@@ -98,7 +99,7 @@
 }
 
 .button-dark {
-  color: color(button-dark);
+  color: #ffb400;
   background-color: color-bg(button-dark);
   border-color: color-border(button-dark);
 
@@ -115,12 +116,13 @@
 }
 
 .button-primary {
-  color: color(button-primary);
+  color: #25282c;
   background-color: color-bg(button-primary);
   border-color: color-border(button-primary);
+  font-weight: bold;
 
   &:hover {
-    background-color: color-bg(button-primary-hover);
+    background-color: #ffc350;
     border-color: color-border(button-primary-hover);
   }
 

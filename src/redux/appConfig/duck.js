@@ -4,7 +4,11 @@ export const initState = {
   scrollBool: false,
   aboutModal: false,
   contactModal: false,
-  langSwitch: false,
+  frontendModal: false,
+  backendModal: false,
+  databaseModal: false,
+  mobileModal: false,
+  serverModal: false,
 };
 
 export const actions = {
@@ -17,8 +21,20 @@ export const actions = {
   toggleContactModal: () => ({
     type: types.APP_CONFIG.CONTACT_MODAL,
   }),
-  toggleLang: () => ({
-    type: types.APP_CONFIG.LANG_SWITCH,
+  toggleFrontendModal: () => ({
+    type: types.APP_CONFIG.FRONTEND_MODAL,
+  }),
+  toggleBackendModal: () => ({
+    type: types.APP_CONFIG.BACKEND_MODAL,
+  }),
+  toggleDatabaseModal: () => ({
+    type: types.APP_CONFIG.DATABASE_MODAL,
+  }),
+  toggleMobileModal: () => ({
+    type: types.APP_CONFIG.MOBILE_MODAL,
+  }),
+  toggleServerModal: () => ({
+    type: types.APP_CONFIG.SERVER_MODAL,
   }),
 };
 
@@ -30,8 +46,16 @@ export function reducer(state = initState, action) {
       return { ...state, aboutModal: !state.aboutModal };
     case types.APP_CONFIG.CONTACT_MODAL:
       return { ...state, contactModal: !state.contactModal };
-    case types.APP_CONFIG.LANG_SWITCH:
-      return { ...state, langSwitch: !state.langSwitch };
+    case types.APP_CONFIG.FRONTEND_MODAL:
+      return { ...state, frontendModal: !state.frontendModal };
+    case types.APP_CONFIG.BACKEND_MODAL:
+      return { ...state, backendModal: !state.backendModal };
+    case types.APP_CONFIG.DATABASE_MODAL:
+      return { ...state, databaseModal: !state.databaseModal };
+    case types.APP_CONFIG.MOBILE_MODAL:
+      return { ...state, mobileModal: !state.mobileModal };
+    case types.APP_CONFIG.SERVER_MODAL:
+      return { ...state, serverModal: !state.serverModal };
     default:
       return state;
   }
