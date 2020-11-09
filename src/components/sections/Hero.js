@@ -468,7 +468,7 @@ const Hero = ({
                           setForth(true);
                         }}
                       >
-                        Next
+                        {t("modal.next")}
                       </div>
                     </div>
                   </div>
@@ -821,12 +821,6 @@ const Hero = ({
                     <div className="modal-body-upper">React.js</div>
                     <div className="modal-body-lower">
                       <Badge variant="warning">Library</Badge>
-                    </div>
-                  </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Material-UI</div>
-                    <div className="modal-body-lower">
-                      <Badge variant="warning">React components</Badge>
                     </div>
                   </div>
                   <div className="modal-body-devItem">

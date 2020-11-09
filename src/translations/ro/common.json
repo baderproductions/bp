@@ -93,7 +93,7 @@
         "sp1": "Spleeter by Deezer este o librărie de separare cu modele preantrenate în Python care folosesc Tensorflow",
         "sp2": "Primul website complex Full-stack React / Django pe care l-am publicat şi a funcţionat exact cum voiam. Website-ul a fost",
         "sp3": "închis",
-        "sp4": "datorită costurilor uriaşe de putere GPU necesare pentru ca multimple separări să funcţioneze în acelaşi timp fără probleme.",
+        "sp4": "datorită costurilor uriaşe ale puterii GPU necesară pentru ca multimple separări să funcţioneze concomitent fără probleme.",
         "fb1": "O pagină simplă pe care a fost creată în idea de a obţine o copie exactă a paginii de înregistrare Facebook în scop didactic.",
         "fb2": "Am postat tutorialul unde prezint fiecare parte din construcţia acestei pagini pentru persoanele interesate: "
     }
