@@ -392,7 +392,7 @@ const FeaturesTiles = ({
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">Database</h4>
+                  <h4 className="mt-0 mb-8">{t("modal.database")}</h4>
                   <p className="m-0 text-sm">{t("dev.data")}</p>
                 </div>
               </div>
