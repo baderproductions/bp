@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import classNames from "classnames";
 import { SectionTilesProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
 import { useTranslation } from "react-i18next";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { AppConfigActions } from "../../redux/actions";
 
 const propTypes = {
@@ -26,6 +26,17 @@ const FeaturesTiles = ({
 }) => {
   const dispatch = useDispatch();
   const { t } = useTranslation("common");
+  const { scrollStack } = useSelector((state) => state.appConfig);
+  const stackRef = useRef();
+  const initialRender = useRef(true);
+
+  useEffect(() => {
+    if (initialRender.current === true) {
+      initialRender.current = false;
+    } else {
+      window.scrollTo(0, stackRef.current.offsetTop);
+    }
+  }, [scrollStack]);
 
   const outerClasses = classNames(
     "features-tiles section",
@@ -48,7 +59,7 @@ const FeaturesTiles = ({
 
   const sectionHeader = {
     title: "Development",
-    paragraph: "Stack, services and tools",
+    paragraph: "Stack, frameworks and services",
   };
 
   const openFrontendModal = (e) => {
@@ -82,7 +93,7 @@ const FeaturesTiles = ({
   };
 
   return (
-    <section {...props} className={outerClasses}>
+    <section ref={stackRef} {...props} className={outerClasses}>
       <div className="container">
         <div
           style={{ paddingBottom: "6rem", paddingTop: "6rem" }}
@@ -700,7 +711,7 @@ const FeaturesTiles = ({
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">Server</h4>
+                  <h4 className="mt-0 mb-8">{t("modal.server")}</h4>
                   <p className="m-0 text-sm">{t("dev.server")}</p>
                 </div>
               </div>

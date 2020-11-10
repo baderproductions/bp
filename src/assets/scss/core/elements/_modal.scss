@@ -82,7 +82,6 @@
 .button-send {
   width: 50% !important;
   color: #33363a !important;
-  background-color: #ffb400 !important;
 
   &:hover {
     background-color: #ffc350 !important;
@@ -101,9 +100,6 @@
   &:hover {
     color: #949697 !important;
   }
-}
-
-.modal-body-devContainer {
 }
 
 .modal-body-container {
@@ -134,6 +130,7 @@
       align-items: center;
       background-color: #33363a;
       transition: 0.4s ease;
+      cursor: pointer;
 
       &:hover {
         transform: scale(1.05);
@@ -146,6 +143,40 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        @include font-size(xs);
+        font-weight: bold;
+
+        .logo-img {
+          width: 45%;
+          height: 45%;
+          object-fit: contain;
+        }
+
+        .logo-img-l {
+          width: 55%;
+          height: 55%;
+          object-fit: contain;
+        }
+
+        .logo-img-xl {
+          width: 80%;
+          height: 80%;
+          object-fit: contain;
+        }
+
+        .logo-img-invert {
+          width: 45%;
+          height: 45%;
+          object-fit: contain;
+          filter: invert(100%);
+        }
+
+        .logo-img-invert-l {
+          width: 55%;
+          height: 55%;
+          object-fit: contain;
+          filter: invert(100%);
+        }
       }
 
       .modal-body-lower {

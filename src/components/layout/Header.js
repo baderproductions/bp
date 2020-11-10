@@ -175,8 +175,8 @@ const Header = ({
                         style={{
                           margin: "0",
                           position: "absolute",
-                          top: "0.5rem",
-                          left: "0.5rem",
+                          top: "13.5%",
+                          left: "3%",
                         }}
                       >
                         <span
@@ -193,8 +193,10 @@ const Header = ({
                             icon={
                               <span
                                 style={{
-                                  width: "19px",
-                                  height: "19px",
+                                  position: "relative",
+                                  top: "1px",
+                                  width: "18px",
+                                  height: "18px",
                                   borderRadius: "100%",
                                 }}
                                 className="flag-icon flag-icon-gb"
@@ -203,8 +205,10 @@ const Header = ({
                             checkedIcon={
                               <span
                                 style={{
-                                  width: "19px",
-                                  height: "19px",
+                                  position: "relative",
+                                  top: "1px",
+                                  width: "18px",
+                                  height: "18px",
                                   borderRadius: "100%",
                                 }}
                                 className="flag-icon flag-icon-ro"

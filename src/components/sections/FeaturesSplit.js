@@ -123,15 +123,14 @@ const FeaturesSplit = ({
                     justifyContent: "center",
                     alignItems: "center",
                     backgroundColor: isHovered
-                      ? "rgba(0,0,0,0.5)"
+                      ? "rgba(0,0,0,0.8)"
                       : "transparent",
                     transition: "0.5s ease",
                   }}
                 >
                   <div
                     style={{
-                      position: "relative",
-                      top: isHovered ? 0 : -100,
+                      transform: `scale(${isHovered ? 1 : 0})`,
                       opacity: isHovered ? 1 : 0,
                       width: "100%",
                       padding: "0 1rem",
@@ -203,15 +202,14 @@ const FeaturesSplit = ({
                     justifyContent: "center",
                     alignItems: "center",
                     backgroundColor: isHovered2
-                      ? "rgba(0,0,0,0.5)"
+                      ? "rgba(0,0,0,0.8)"
                       : "transparent",
                     transition: "0.5s ease",
                   }}
                 >
                   <div
                     style={{
-                      position: "relative",
-                      top: isHovered2 ? 0 : -100,
+                      transform: `scale(${isHovered2 ? 1 : 0})`,
                       opacity: isHovered2 ? 1 : 0,
                       width: "100%",
                       padding: "0 1rem",
@@ -279,15 +277,14 @@ const FeaturesSplit = ({
                     justifyContent: "center",
                     alignItems: "center",
                     backgroundColor: isHovered3
-                      ? "rgba(0,0,0,0.5)"
+                      ? "rgba(0,0,0,0.8)"
                       : "transparent",
                     transition: "0.5s ease",
                   }}
                 >
                   <div
                     style={{
-                      position: "relative",
-                      top: isHovered3 ? 0 : -100,
+                      transform: `scale(${isHovered3 ? 1 : 0})`,
                       opacity: isHovered3 ? 1 : 0,
                       width: "100%",
                       padding: "0 1rem",
@@ -361,15 +358,14 @@ const FeaturesSplit = ({
                     justifyContent: "center",
                     alignItems: "center",
                     backgroundColor: isHovered4
-                      ? "rgba(0,0,0,0.5)"
+                      ? "rgba(0,0,0,0.8)"
                       : "transparent",
                     transition: "0.5s ease",
                   }}
                 >
                   <div
                     style={{
-                      position: "relative",
-                      top: isHovered4 ? 0 : -100,
+                      transform: `scale(${isHovered4 ? 1 : 0})`,
                       opacity: isHovered4 ? 1 : 0,
                       width: "100%",
                       padding: "0 1rem",
@@ -445,15 +441,14 @@ const FeaturesSplit = ({
                     justifyContent: "center",
                     alignItems: "center",
                     backgroundColor: isHovered5
-                      ? "rgba(0,0,0,0.5)"
+                      ? "rgba(0,0,0,0.8)"
                       : "transparent",
                     transition: "0.5s ease",
                   }}
                 >
                   <div
                     style={{
-                      position: "relative",
-                      top: isHovered5 ? 0 : -100,
+                      transform: `scale(${isHovered5 ? 1 : 0})`,
                       opacity: isHovered5 ? 1 : 0,
                       width: "100%",
                       padding: "0 1rem",

@@ -14,6 +14,20 @@ import ap from "../../assets/images/ap.png";
 import li from "../../assets/images/li.png";
 import ub from "../../assets/images/ub.png";
 import no from "../../assets/images/no.png";
+import bo from "../../assets/images/bo.png";
+import sa from "../../assets/images/sa.png";
+import js from "../../assets/images/js.png";
+import ht from "../../assets/images/ht.png";
+import cs from "../../assets/images/cs.png";
+import ex from "../../assets/images/ex.png";
+import pg from "../../assets/images/pg.png";
+import fs from "../../assets/images/fs.png";
+import gp from "../../assets/images/gp.png";
+import az from "../../assets/images/az.png";
+import pp from "../../assets/images/pp.png";
+import sh from "../../assets/images/sh.png";
+import as from "../../assets/images/as.png";
+import xc from "../../assets/images/xc.png";
 import Carousel from "@brainhubeu/react-carousel";
 
 const propTypes = {
@@ -92,8 +106,42 @@ const Testimonial = ({
               <Image src={li} alt="Linux Logo" width={48} height={48} />
               <Image src={ru} alt="Redux Logo" width={128} height={128} />
               <Image src={ng} alt="NGINX Logo" width={64} height={64} />
-              <Image src={py} alt="Python Logo" width={64} height={64} />
+              <Image src={py} alt="Python Logo" width={128} height={128} />
               <Image src={re} alt="React Logo" width={64} height={64} />
+              <Image src={bo} alt="Bootstrap Logo" width={72} height={72} />
+              <Image src={sa} alt="Sass Logo" width={256} height={256} />
+              <Image src={js} alt="Javascript Logo" width={72} height={72} />
+              <Image src={ht} alt="HTML Logo" width={512} height={512} />
+              <Image src={cs} alt="CSS Logo" width={512} height={512} />
+              <Image src={ex} alt="Express.js Logo" width={128} height={128} />
+              <Image src={pg} alt="PostgreSQL Logo" width={128} height={128} />
+              <Image
+                src={fs}
+                alt="Firebase Firestore Logo"
+                width={128}
+                height={128}
+              />
+              <Image
+                src={gp}
+                alt="Google Cloud Logo"
+                width={128}
+                height={128}
+              />
+              <Image
+                src={az}
+                alt="Amazon Web Services Logo"
+                width={256}
+                height={256}
+              />
+              <Image src={pp} alt="PayPal Logo" width={128} height={128} />
+              <Image src={sh} alt="Shopify Logo" width={128} height={128} />
+              <Image
+                src={as}
+                alt="Android Studio Logo"
+                width={129}
+                height={129}
+              />
+              <Image src={xc} alt="Xcode Logo" width={64} height={64} />
             </Carousel>
           </div>
         </div>

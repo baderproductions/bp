@@ -14,6 +14,32 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { AppConfigActions } from "../../redux/actions";
 import { useTranslation } from "react-i18next";
+import re from "../../assets/images/re.png";
+import bo from "../../assets/images/bo.png";
+import sa from "../../assets/images/sa.png";
+import js from "../../assets/images/js.png";
+import ht from "../../assets/images/ht.png";
+import cs from "../../assets/images/cs.png";
+import no from "../../assets/images/no.png";
+import ex from "../../assets/images/ex.png";
+import dj from "../../assets/images/dj.png";
+import mo from "../../assets/images/mo.png";
+import pg from "../../assets/images/pg.png";
+import rd from "../../assets/images/rd.png";
+import my from "../../assets/images/my.png";
+import fs from "../../assets/images/fs.png";
+import jo from "../../assets/images/jo.png";
+import gp from "../../assets/images/gp.png";
+import az from "../../assets/images/az.png";
+import ma from "../../assets/images/ma.png";
+import ap from "../../assets/images/ap.png";
+import ng from "../../assets/images/ng.png";
+import st from "../../assets/images/st.png";
+import pp from "../../assets/images/pp.png";
+import sh from "../../assets/images/sh.png";
+import fu from "../../assets/images/fu.png";
+import as from "../../assets/images/as.png";
+import xc from "../../assets/images/xc.png";
 
 const propTypes = {
   ...SectionProps.types,
@@ -95,6 +121,9 @@ const Hero = ({
     e.preventDefault();
     document.getElementById("html").style.overflowY = "scroll";
     dispatch(AppConfigActions.toggleContactModal());
+  };
+  const disableCloseContactModal = (e) => {
+    e.preventDefault();
   };
 
   const closeFrontendModal = (e) => {
@@ -202,6 +231,17 @@ const Hero = ({
                     onClick={() => dispatch(AppConfigActions.toggleScroll())}
                   >
                     {t("hero.work")}
+                  </Button>
+                  <Button
+                    style={{ color: "#151719" }}
+                    tag="div"
+                    color="primary"
+                    wideMobile
+                    onClick={() =>
+                      dispatch(AppConfigActions.toggleScrollStack())
+                    }
+                  >
+                    Stack
                   </Button>
                   <Button
                     tag="a"
@@ -661,6 +701,12 @@ const Hero = ({
                       </div>
                       <div className="modal-body-lower">{t("modal.fifth")}</div>
                     </div>
+                    <div className="modal-body-item">
+                      <div className="modal-body-upper">
+                        <div className="modal-body-dot"></div>
+                      </div>
+                      <div className="modal-body-lower">{t("modal.tobe")}</div>
+                    </div>
                   </>
                 )}
               </div>
@@ -685,7 +731,9 @@ const Hero = ({
           <Modal
             id="contact-modal"
             show={contactModal}
-            handleClose={closeContactModal}
+            handleClose={
+              isLoading ? disableCloseContactModal : closeContactModal
+            }
           >
             <bsModal.Header
               style={{
@@ -789,7 +837,7 @@ const Hero = ({
                 <div
                   style={{
                     pointerEvents: isLoading ? "none" : "all",
-                    color: isLoading ? "rgba(128, 128, 128, 0.5)" : "#9ca9b3",
+                    color: isLoading ? "rgba(128, 128, 128, 0.3)" : "#9ca9b3",
                   }}
                   className="closeButton"
                   onClick={closeContactModal}
@@ -817,40 +865,88 @@ const Hero = ({
             <bsModal.Body>
               <div className="modal-body-container">
                 <div className="modal-body-devContainer">
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">React.js</div>
+                  <div
+                    onClick={() => (window.location = "https://reactjs.org/")}
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img-l" src={re} alt="React Logo" />
+                      React
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Library</Badge>
+                      <Badge variant="warning">{t("dev.lib")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Bootstrap</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://getbootstrap.com/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img" src={bo} alt="Bootstrap Logo" />
+                      Bootstrap
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Framework</Badge>
+                      <Badge variant="warning">{t("dev.fra")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Sass</div>
+                  <div
+                    onClick={() => (window.location = "https://sass-lang.com/")}
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img" src={sa} alt="Sass Logo" />
+                      Sass
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Styling extension</Badge>
+                      <Badge variant="warning">{t("dev.styEx")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Javascript</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://www.w3schools.com/js/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img
+                        className="logo-img"
+                        src={js}
+                        alt="Javascript Logo"
+                      />
+                      Javascript
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Language</Badge>
+                      <Badge variant="warning">{t("dev.lan")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">HTML</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://www.w3schools.com/css/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img" src={cs} alt="CSS Logo" />
+                      CSS
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Markup language</Badge>
+                      <Badge variant="warning">{t("dev.sty")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">CSS</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://www.w3schools.com/html/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img" src={ht} alt="HTML Logo" />
+                      HTML
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Styling</Badge>
+                      <Badge variant="warning">{t("dev.mar")}</Badge>
                     </div>
                   </div>
                 </div>
@@ -891,22 +987,46 @@ const Hero = ({
             <bsModal.Body>
               <div className="modal-body-container">
                 <div className="modal-body-devContainer">
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Node.js</div>
+                  <div
+                    onClick={() => (window.location = "https://nodejs.org/")}
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img-l" src={no} alt="Node.js Logo" />
+                      Node.js
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Runtime environment</Badge>
+                      <Badge variant="warning">{t("dev.rue")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Express.js</div>
+                  <div
+                    onClick={() => (window.location = "https://expressjs.com/")}
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img
+                        className="logo-img-invert-l"
+                        src={ex}
+                        alt="Express.js Logo"
+                      />
+                      Express.js
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Framework</Badge>
+                      <Badge variant="warning">{t("dev.fra")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Django</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://www.djangoproject.com/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img" src={dj} alt="Django Logo" />
+                      Django
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Framework</Badge>
+                      <Badge variant="warning">{t("dev.fra")}</Badge>
                     </div>
                   </div>
                 </div>
@@ -947,46 +1067,102 @@ const Hero = ({
             <bsModal.Body>
               <div className="modal-body-container">
                 <div className="modal-body-devContainer">
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">MongoDB</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://www.mongodb.com/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img" src={mo} alt="MongoDB Logo" />
+                      MongoDB
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">NoSQL database</Badge>
+                      <Badge variant="warning">{t("dev.nos")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">SQLite</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://www.postgresql.org/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img
+                        className="logo-img"
+                        src={pg}
+                        alt="PostgreSQL Logo"
+                      />
+                      PostgreSQL
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Relational database</Badge>
+                      <Badge variant="warning">{t("dev.sql")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Firebase Realtime</div>
+                  <div
+                    onClick={() =>
+                      (window.location =
+                        "https://firebase.google.com/docs/database")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img
+                        className="logo-img"
+                        src={rd}
+                        alt="Firebase Realtime Logo"
+                      />
+                      Firebase Realtime
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">NoSQL database</Badge>
+                      <Badge variant="warning">{t("dev.nos")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">PostgreSQL</div>
+                  <div
+                    onClick={() => (window.location = "https://www.mysql.com/")}
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img-l" src={my} alt="MySQL Logo" />
+                      MySQL
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Relational database</Badge>
+                      <Badge variant="warning">{t("dev.sql")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Cloud Firestore</div>
+                  <div
+                    onClick={() =>
+                      (window.location =
+                        "https://firebase.google.com/docs/firestore")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img
+                        className="logo-img"
+                        src={fs}
+                        alt="Cloud Firestore Logo"
+                      />
+                      Cloud Firestore
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">NoSQL database</Badge>
+                      <Badge variant="warning">{t("dev.nos")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">MySQL</div>
-                    <div className="modal-body-lower">
-                      <Badge variant="warning">Relational database</Badge>
+                  <div
+                    onClick={() => (window.location = "https://www.json.org/")}
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img
+                        className="logo-img-invert"
+                        src={jo}
+                        alt="JSON Logo"
+                      />
+                      JSON
                     </div>
-                  </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">JSON</div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Data interchange</Badge>
+                      <Badge variant="warning">{t("dev.jsn")}</Badge>
                     </div>
                   </div>
                 </div>
@@ -1027,78 +1203,121 @@ const Hero = ({
             <bsModal.Body>
               <div className="modal-body-container">
                 <div className="modal-body-devContainer">
-                  <div className="modal-body-devItem">
+                  <div
+                    onClick={() =>
+                      (window.location = "https://cloud.google.com/")
+                    }
+                    className="modal-body-devItem"
+                  >
                     <div className="modal-body-upper">
-                      Google Cloud Platform
+                      <img
+                        className="logo-img"
+                        src={gp}
+                        alt="Google Cloud Platform Logo"
+                      />
+                      Google Cloud
                     </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Computing services</Badge>
-                    </div>
-                  </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Amazon Web Services</div>
-                    <div className="modal-body-lower">
-                      <Badge variant="warning">Computing services</Badge>
-                    </div>
-                  </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Microsoft Azure</div>
-                    <div className="modal-body-lower">
-                      <Badge variant="warning">Computing services</Badge>
+                      <Badge variant="warning">{t("dev.csv")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Apache</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://aws.amazon.com/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img
+                        className="logo-img-l"
+                        src={az}
+                        alt="Amazon Web Services Logo"
+                      />
+                      AWS
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Web server</Badge>
+                      <Badge variant="warning">{t("dev.csv")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">NGINX</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://azure.microsoft.com/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img
+                        className="logo-img-l"
+                        src={ma}
+                        alt="Microsoft Azure Logo"
+                      />
+                      Microsoft Azure
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Web server</Badge>
+                      <Badge variant="warning">{t("dev.csv")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Stripe</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://httpd.apache.org/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img" src={ap} alt="Apache Logo" />
+                      Apache
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Payment system</Badge>
+                      <Badge variant="warning">{t("dev.wsv")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">PayU</div>
+                  <div
+                    onClick={() => (window.location = "https://www.nginx.com/")}
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img-l" src={ng} alt="NGINX Logo" />
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Payment system</Badge>
+                      <Badge variant="warning">{t("dev.wsv")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Shopify</div>
+                  <div
+                    onClick={() => (window.location = "https://stripe.com/")}
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img-xl" src={st} alt="Stripe Logo" />
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Ecommerce platform</Badge>
+                      <Badge variant="warning">{t("dev.psy")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Paypal</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://developers.shopify.com/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img" src={sh} alt="Shopify Logo" />
+                      Shopify
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Payment system</Badge>
+                      <Badge variant="warning">{t("dev.ecm")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">macOS</div>
-                    <div className="modal-body-lower">
-                      <Badge variant="warning">Operating system</Badge>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://developer.paypal.com/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img-xl" src={pp} alt="PayPal Logo" />
                     </div>
-                  </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Linux</div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Operating system</Badge>
-                    </div>
-                  </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Microsoft Windows</div>
-                    <div className="modal-body-lower">
-                      <Badge variant="warning">Operating system</Badge>
+                      <Badge variant="warning">{t("dev.psy")}</Badge>
                     </div>
                   </div>
                 </div>
@@ -1139,34 +1358,69 @@ const Hero = ({
             <bsModal.Body>
               <div className="modal-body-container">
                 <div className="modal-body-devContainer">
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">React Native</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://reactnative.dev/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img
+                        className="logo-img"
+                        src={re}
+                        alt="React Native Logo"
+                      />
+                      React Native
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Framework</Badge>
+                      <Badge variant="warning">{t("dev.fra")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Flutter</div>
+                  <div
+                    onClick={() => (window.location = "https://flutter.dev/")}
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img
+                        className="logo-img-xl"
+                        src={fu}
+                        alt="Flutter Logo"
+                      />
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Development toolkit</Badge>
+                      <Badge variant="warning">{t("dev.fra")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Swift</div>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://developer.android.com/studio")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img
+                        className="logo-img-l"
+                        src={as}
+                        alt="Android Studio Logo"
+                      />
+                      Android Studio
+                    </div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Programming language</Badge>
+                      <Badge variant="warning">{t("dev.rud")}</Badge>
                     </div>
                   </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Android Studio</div>
-                    <div className="modal-body-lower">
-                      <Badge variant="warning">Development environment</Badge>
+                  <div
+                    onClick={() =>
+                      (window.location = "https://developer.apple.com/xcode/")
+                    }
+                    className="modal-body-devItem"
+                  >
+                    <div className="modal-body-upper">
+                      <img className="logo-img" src={xc} alt="Xcode Logo" />
+                      Xcode
                     </div>
-                  </div>
-                  <div className="modal-body-devItem">
-                    <div className="modal-body-upper">Xcode</div>
                     <div className="modal-body-lower">
-                      <Badge variant="warning">Development environment</Badge>
+                      <Badge variant="warning">{t("dev.rud")}</Badge>
                     </div>
                   </div>
                 </div>
