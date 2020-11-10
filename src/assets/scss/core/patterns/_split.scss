@@ -10,14 +10,14 @@
   }
 
   .split-item {
-    padding-top: $split-item--padding-v__mobile / 2;
-    padding-bottom: $split-item--padding-v__mobile / 2;
+    padding-top: $split-item--padding-v__mobile;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 
     .split-item-content {
       p {
         @include font-size(xs);
+        margin-bottom: 2rem !important;
       }
     }
 

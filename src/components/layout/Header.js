@@ -175,7 +175,7 @@ const Header = ({
                         style={{
                           margin: "0",
                           position: "absolute",
-                          top: "13.5%",
+                          top: "12%",
                           left: "3%",
                         }}
                       >
