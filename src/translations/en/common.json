@@ -79,7 +79,7 @@
     "dev": {
         "front": "Libraries, languages, frameworks and styling stack",
         "back": "Environments and frameworks stack",
-        "data": "Relational, SQL and NoSQL databases stack",
+        "data": "SQL and NoSQL databases stack",
         "server": "Computing services, web servers and payment systems stack",
         "mobile": "Frameworks, environments and toolkit stack",
         "lib": "Library",
