@@ -90,7 +90,7 @@ const Testimonial = ({
               slidesPerPage={10}
               offset={80}
               animationSpeed={4000}
-              autoPlay={2000}
+              autoPlay={3000}
             >
               <Image src={ap} alt="Apache Logo" width={48} height={48} />
               <Image
@@ -113,7 +113,13 @@ const Testimonial = ({
               <Image src={js} alt="Javascript Logo" width={72} height={72} />
               <Image src={ht} alt="HTML Logo" width={512} height={512} />
               <Image src={cs} alt="CSS Logo" width={512} height={512} />
-              <Image src={ex} alt="Express.js Logo" width={128} height={128} />
+              <Image
+                style={{ filter: "invert(100%)" }}
+                src={ex}
+                alt="Express.js Logo"
+                width={128}
+                height={128}
+              />
               <Image src={pg} alt="PostgreSQL Logo" width={128} height={128} />
               <Image
                 src={fs}
@@ -141,7 +147,7 @@ const Testimonial = ({
                 width={129}
                 height={129}
               />
-              <Image src={xc} alt="Xcode Logo" width={64} height={64} />
+              <Image src={xc} alt="Xcode Logo" width={128} height={128} />
             </Carousel>
           </div>
         </div>

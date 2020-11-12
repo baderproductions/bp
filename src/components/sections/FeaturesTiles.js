@@ -3,8 +3,34 @@ import classNames from "classnames";
 import { SectionTilesProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
 import { useTranslation } from "react-i18next";
-import { useDispatch, useSelector } from "react-redux";
-import { AppConfigActions } from "../../redux/actions";
+import { useSelector } from "react-redux";
+import Badge from "react-bootstrap/Badge";
+import re from "../../assets/images/re.png";
+import bo from "../../assets/images/bo.png";
+import sa from "../../assets/images/sa.png";
+import js from "../../assets/images/js.png";
+import ht from "../../assets/images/ht.png";
+import cs from "../../assets/images/cs.png";
+import no from "../../assets/images/no.png";
+import ex from "../../assets/images/ex.png";
+import dj from "../../assets/images/dj.png";
+import mo from "../../assets/images/mo.png";
+import pg from "../../assets/images/pg.png";
+import rd from "../../assets/images/rd.png";
+import my from "../../assets/images/my.png";
+import fs from "../../assets/images/fs.png";
+import jo from "../../assets/images/jo.png";
+import gp from "../../assets/images/gp.png";
+import az from "../../assets/images/az.png";
+import ma from "../../assets/images/ma.png";
+import ap from "../../assets/images/ap.png";
+import ng from "../../assets/images/ng.png";
+import st from "../../assets/images/st.png";
+import pp from "../../assets/images/pp.png";
+import sh from "../../assets/images/sh.png";
+import fu from "../../assets/images/fu.png";
+import as from "../../assets/images/as.png";
+import xc from "../../assets/images/xc.png";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -24,7 +50,6 @@ const FeaturesTiles = ({
   pushLeft,
   ...props
 }) => {
-  const dispatch = useDispatch();
   const { t } = useTranslation("common");
   const { scrollStack } = useSelector((state) => state.appConfig);
   const stackRef = useRef();
@@ -58,38 +83,8 @@ const FeaturesTiles = ({
   );
 
   const sectionHeader = {
-    title: "Development",
-    paragraph: "Stack, frameworks and services",
-  };
-
-  const openFrontendModal = (e) => {
-    e.preventDefault();
-    document.getElementById("html").style.overflowY = "hidden";
-    dispatch(AppConfigActions.toggleFrontendModal());
-  };
-
-  const openBackendModal = (e) => {
-    e.preventDefault();
-    document.getElementById("html").style.overflowY = "hidden";
-    dispatch(AppConfigActions.toggleBackendModal());
-  };
-
-  const openDatabaseModal = (e) => {
-    e.preventDefault();
-    document.getElementById("html").style.overflowY = "hidden";
-    dispatch(AppConfigActions.toggleDatabaseModal());
-  };
-
-  const openMobileModal = (e) => {
-    e.preventDefault();
-    document.getElementById("html").style.overflowY = "hidden";
-    dispatch(AppConfigActions.toggleMobileModal());
-  };
-
-  const openServerModal = (e) => {
-    e.preventDefault();
-    document.getElementById("html").style.overflowY = "hidden";
-    dispatch(AppConfigActions.toggleServerModal());
+    title: "Stack",
+    paragraph: "Development stack, frameworks and services",
   };
 
   return (
@@ -101,10 +96,7 @@ const FeaturesTiles = ({
         >
           <SectionHeader data={sectionHeader} className="center-content" />
           <div className={tilesClasses}>
-            <div
-              className="tiles-item reveal-from-bottom"
-              onClick={openFrontendModal}
-            >
+            <div className="tiles-items">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -303,13 +295,105 @@ const FeaturesTiles = ({
                   <h4 className="mt-0 mb-8">Front-end</h4>
                   <p className="m-0 text-sm">{t("dev.front")}</p>
                 </div>
+                <div className="modal-body-container">
+                  <div className="modal-body-devContainer">
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://reactjs.org"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img className="logo-img-l" src={re} alt="React Logo" />
+                        React
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.lib")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://www.w3schools.com/html"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img className="logo-img" src={ht} alt="HTML Logo" />
+                        HTML
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.mar")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://www.w3schools.com/css"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img className="logo-img" src={cs} alt="CSS Logo" />
+                        CSS
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.sty")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://www.w3schools.com/js"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img"
+                          src={js}
+                          alt="Javascript Logo"
+                        />
+                        Javascript
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.lan")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://sass-lang.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img className="logo-img" src={sa} alt="Sass Logo" />
+                        Sass
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.styEx")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://getbootstrap.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img"
+                          src={bo}
+                          alt="Bootstrap Logo"
+                        />
+                        Bootstrap
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.fra")}</Badge>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-            <div
-              className="tiles-item reveal-from-bottom"
-              onClick={openBackendModal}
-              data-reveal-delay="200"
-            >
+            <div className="tiles-items" data-reveal-delay="200">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -347,13 +431,63 @@ const FeaturesTiles = ({
                   <h4 className="mt-0 mb-8">Back-end</h4>
                   <p className="m-0 text-sm">{t("dev.back")}</p>
                 </div>
+                <div className="modal-body-container">
+                  <div className="modal-body-devContainer">
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://nodejs.org"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img-l"
+                          src={no}
+                          alt="Node.js Logo"
+                        />
+                        Node.js
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.rue")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://expressjs.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img-invert-l"
+                          src={ex}
+                          alt="Express.js Logo"
+                        />
+                        Express.js
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.fra")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://www.djangoproject.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img className="logo-img" src={dj} alt="Django Logo" />
+                        Django
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.fra")}</Badge>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-            <div
-              className="tiles-item reveal-from-bottom"
-              onClick={openDatabaseModal}
-              data-reveal-delay="400"
-            >
+            <div className="tiles-items" data-reveal-delay="400">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -395,13 +529,113 @@ const FeaturesTiles = ({
                   <h4 className="mt-0 mb-8">{t("modal.database")}</h4>
                   <p className="m-0 text-sm">{t("dev.data")}</p>
                 </div>
+                <div className="modal-body-container">
+                  <div className="modal-body-devContainer">
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://www.mongodb.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img className="logo-img" src={mo} alt="MongoDB Logo" />
+                        MongoDB
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.nos")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://www.postgresql.org"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img"
+                          src={pg}
+                          alt="PostgreSQL Logo"
+                        />
+                        PostgreSQL
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.sql")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://firebase.google.com/docs/database"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img"
+                          src={rd}
+                          alt="Firebase Realtime Logo"
+                        />
+                        Realtime Database
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.nos")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://www.mysql.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img className="logo-img-l" src={my} alt="MySQL Logo" />
+                        MySQL
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.sql")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://firebase.google.com/docs/firestore"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img"
+                          src={fs}
+                          alt="Cloud Firestore Logo"
+                        />
+                        Cloud Firestore
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.nos")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://www.json.org"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img-invert"
+                          src={jo}
+                          alt="JSON Logo"
+                        />
+                        JSON
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.jsn")}</Badge>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <div
-              className="tiles-item reveal-from-bottom"
-              onClick={openServerModal}
-            >
+            <div className="tiles-items">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -714,13 +948,142 @@ const FeaturesTiles = ({
                   <h4 className="mt-0 mb-8">{t("modal.server")}</h4>
                   <p className="m-0 text-sm">{t("dev.server")}</p>
                 </div>
+                <div className="modal-body-container">
+                  <div className="modal-body-devContainer">
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://cloud.google.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img"
+                          src={gp}
+                          alt="Google Cloud Platform Logo"
+                        />
+                        Google Cloud
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.csv")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://aws.amazon.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img-l"
+                          src={az}
+                          alt="Amazon Web Services Logo"
+                        />
+                        AWS
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.csv")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://azure.microsoft.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img-l"
+                          src={ma}
+                          alt="Microsoft Azure Logo"
+                        />
+                        Microsoft Azure
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.csv")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://httpd.apache.org"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img className="logo-img" src={ap} alt="Apache Logo" />
+                        Apache
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.wsv")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://www.nginx.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img className="logo-img-l" src={ng} alt="NGINX Logo" />
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.wsv")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://stripe.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img-xl"
+                          src={st}
+                          alt="Stripe Logo"
+                        />
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.psy")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://developers.shopify.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img className="logo-img" src={sh} alt="Shopify Logo" />
+                        Shopify
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.ecm")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://developer.paypal.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img-xl"
+                          src={pp}
+                          alt="PayPal Logo"
+                        />
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.psy")}</Badge>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-            <div
-              className="tiles-item reveal-from-bottom"
-              onClick={openMobileModal}
-              data-reveal-delay="400"
-            >
+            <div className="tiles-items" data-reveal-delay="400">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -769,6 +1132,77 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                 <div className="features-tiles-item-content">
                   <h4 className="mt-0 mb-8">Mobile</h4>
                   <p className="m-0 text-sm">{t("dev.mobile")}</p>
+                </div>
+                <div className="modal-body-container">
+                  <div className="modal-body-devContainer">
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://reactnative.dev"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img"
+                          src={re}
+                          alt="React Native Logo"
+                        />
+                        React Native
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.fra")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://flutter.dev"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img-xl"
+                          src={fu}
+                          alt="Flutter Logo"
+                        />
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.fra")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://developer.android.com/studio"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img-l"
+                          src={as}
+                          alt="Android Studio Logo"
+                        />
+                        Android Studio
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.rud")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://developer.apple.com/xcode"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img className="logo-img" src={xc} alt="Xcode Logo" />
+                        Xcode
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.rud")}</Badge>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

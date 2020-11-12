@@ -52,16 +52,6 @@ export function reducer(state = initState, action) {
       return { ...state, aboutModal: !state.aboutModal };
     case types.APP_CONFIG.CONTACT_MODAL:
       return { ...state, contactModal: !state.contactModal };
-    case types.APP_CONFIG.FRONTEND_MODAL:
-      return { ...state, frontendModal: !state.frontendModal };
-    case types.APP_CONFIG.BACKEND_MODAL:
-      return { ...state, backendModal: !state.backendModal };
-    case types.APP_CONFIG.DATABASE_MODAL:
-      return { ...state, databaseModal: !state.databaseModal };
-    case types.APP_CONFIG.MOBILE_MODAL:
-      return { ...state, mobileModal: !state.mobileModal };
-    case types.APP_CONFIG.SERVER_MODAL:
-      return { ...state, serverModal: !state.serverModal };
     default:
       return state;
   }
