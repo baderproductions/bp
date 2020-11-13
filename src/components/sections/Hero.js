@@ -139,8 +139,6 @@ const Hero = ({
     },
   });
 
-  const currentYear = new Date().getFullYear();
-
   return (
     <section {...props} className={outerClasses}>
       <div className="container-sm">
@@ -214,7 +212,6 @@ const Hero = ({
                       <br />
                       <br />
                       {t("modal.who1")}
-                      {currentYear - 1996}
                       {t("modal.who2")}
                       <br />
                       <br />
