@@ -143,7 +143,7 @@ const Hero = ({
     <section {...props} className={outerClasses}>
       <div className="container-sm">
         <div className={innerClasses}>
-          <div data-aos="zoom-out" className="hero-content container-xs">
+          <div data-aos="zoom-in" className="hero-content container-xs">
             <h1>
               Kevin <span className="text-color-primary">Bader</span>
             </h1>

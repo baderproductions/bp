@@ -95,13 +95,9 @@ const FeaturesTiles = ({
           style={{ paddingBottom: "6rem", paddingTop: "6rem" }}
           className={innerClasses}
         >
-          <SectionHeader
-            data-aos="zoom-out"
-            data={sectionHeader}
-            className="center-content"
-          />
+          <SectionHeader data={sectionHeader} className="center-content" />
           <div className={tilesClasses}>
-            <div data-aos="zoom-in" className="tiles-items">
+            <div className="tiles-items">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -302,7 +298,7 @@ const FeaturesTiles = ({
                 </div>
                 <div className="modal-body-container">
                   <div className="modal-body-devContainer">
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://reactjs.org"
@@ -316,7 +312,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.lib")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.w3schools.com/html"
@@ -330,7 +326,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.mar")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.w3schools.com/css"
@@ -344,7 +340,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.sty")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.w3schools.com/js"
@@ -362,7 +358,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.lan")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://sass-lang.com"
@@ -376,7 +372,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.styEx")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://tailwindcss.com/"
@@ -394,7 +390,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.fra")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://getbootstrap.com"
@@ -416,7 +412,7 @@ const FeaturesTiles = ({
                 </div>
               </div>
             </div>
-            <div data-aos="zoom-in" className="tiles-items">
+            <div className="tiles-items">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -456,7 +452,7 @@ const FeaturesTiles = ({
                 </div>
                 <div className="modal-body-container">
                   <div className="modal-body-devContainer">
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://nodejs.org"
@@ -474,7 +470,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.rue")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://expressjs.com"
@@ -492,7 +488,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.fra")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.djangoproject.com"
@@ -510,7 +506,7 @@ const FeaturesTiles = ({
                 </div>
               </div>
             </div>
-            <div data-aos="zoom-in" className="tiles-items">
+            <div className="tiles-items">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -554,7 +550,7 @@ const FeaturesTiles = ({
                 </div>
                 <div className="modal-body-container">
                   <div className="modal-body-devContainer">
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.mongodb.com"
@@ -568,7 +564,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.nos")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.postgresql.org"
@@ -586,7 +582,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.sql")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://firebase.google.com/docs/database"
@@ -604,7 +600,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.nos")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.mysql.com"
@@ -618,7 +614,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.sql")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://firebase.google.com/docs/firestore"
@@ -636,7 +632,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.nos")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.json.org"
@@ -658,7 +654,7 @@ const FeaturesTiles = ({
                 </div>
               </div>
             </div>
-            <div data-aos="zoom-in" className="tiles-items">
+            <div className="tiles-items">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -973,7 +969,7 @@ const FeaturesTiles = ({
                 </div>
                 <div className="modal-body-container">
                   <div className="modal-body-devContainer">
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://cloud.google.com"
@@ -991,7 +987,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.csv")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://aws.amazon.com"
@@ -1009,7 +1005,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.csv")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://azure.microsoft.com"
@@ -1027,7 +1023,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.csv")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://httpd.apache.org"
@@ -1041,7 +1037,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.wsv")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.nginx.com"
@@ -1054,7 +1050,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.wsv")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://stripe.com"
@@ -1071,7 +1067,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.psy")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://developers.shopify.com"
@@ -1085,7 +1081,7 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.ecm")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://developer.paypal.com"
@@ -1106,7 +1102,7 @@ const FeaturesTiles = ({
                 </div>
               </div>
             </div>
-            <div data-aos="zoom-in" className="tiles-items">
+            <div className="tiles-items">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -1158,7 +1154,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                 </div>
                 <div className="modal-body-container">
                   <div className="modal-body-devContainer">
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://reactnative.dev"
@@ -1176,7 +1172,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                         <Badge variant="warning">{t("dev.fra")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://flutter.dev"
@@ -1193,7 +1189,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                         <Badge variant="warning">{t("dev.fra")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://developer.android.com/studio"
@@ -1211,7 +1207,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                         <Badge variant="warning">{t("dev.rud")}</Badge>
                       </div>
                     </a>
-                    <a
+                    <a data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://developer.apple.com/xcode"

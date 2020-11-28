@@ -195,7 +195,7 @@ const Header = ({
                               <span
                                 style={{
                                   position: "relative",
-                                  top: "0.5px",
+                                  top: "0.3px",
                                   width: "1rem",
                                   height: "1rem",
                                   borderRadius: "100%",
@@ -219,6 +219,7 @@ const Header = ({
                             inputProps={{
                               "aria-label": "checkbox with default color",
                             }}
+                            style={{fontSize: '0.5rem'}}
                             checked={langSwitch}
                             onChange={handleSwitch}
                           />

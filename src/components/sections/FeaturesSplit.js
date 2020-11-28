@@ -4,14 +4,12 @@ import { SectionSplitProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
 import Image from "../elements/Image";
 import Button from "../elements/Button";
-import fb from "../../assets/images/fb.png";
 import fl from "../../assets/images/fl.png";
 import im from "../../assets/images/im.png";
 import rv from "../../assets/images/rv.png";
 import sp from "../../assets/images/sp.png";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { useCookies } from "react-cookie";
 
 const propTypes = {
   ...SectionSplitProps.types,
@@ -35,7 +33,6 @@ const FeaturesSplit = ({
   imageFill,
   ...props
 }) => {
-  const [cookies] = useCookies(["lang"]);
   const { t } = useTranslation("common");
   const { scrollBool } = useSelector((state) => state.appConfig);
   const workRef = useRef();
@@ -44,7 +41,6 @@ const FeaturesSplit = ({
   const [isHovered2, setHover2] = useState(false);
   const [isHovered3, setHover3] = useState(false);
   const [isHovered4, setHover4] = useState(false);
-  const [isHovered5, setHover5] = useState(false);
 
   useEffect(() => {
     if (initialRender.current === true) {
@@ -84,13 +80,9 @@ const FeaturesSplit = ({
     <section ref={workRef} {...props} className={outerClasses}>
       <div className="container">
         <div className={innerClasses}>
-          <SectionHeader
-            data-aos="zoom-out"
-            data={sectionHeader}
-            className="center-content"
-          />
+          <SectionHeader data={sectionHeader} className="center-content" />
           <div className={splitClasses}>
-            <div data-aos="zoom-in" className="split-item">
+            <div data-aos="fade-up-left" className="split-item">
               <div className="split-item-content center-content-mobile">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                   One page website
@@ -165,7 +157,7 @@ const FeaturesSplit = ({
                 <Image src={rv} alt="Raul Vidican" width={528} height={396} />
               </div>
             </div>
-            <div data-aos="zoom-in" className="split-item">
+            <div data-aos="fade-up-right" className="split-item">
               <div className="split-item-content center-content-mobile">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                   React native Application
@@ -240,7 +232,7 @@ const FeaturesSplit = ({
                 <Image src={fl} alt="Filelist App" width={528} height={396} />
               </div>
             </div>
-            <div data-aos="zoom-in" className="split-item">
+            <div data-aos="fade-up-left" className="split-item">
               <div className="split-item-content center-content-mobile">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                   Node.js / Express application
@@ -311,7 +303,7 @@ const FeaturesSplit = ({
                 <Image src={im} alt="IMDb Scraper" width={528} height={396} />
               </div>
             </div>
-            <div data-aos="zoom-in" className="split-item">
+            <div data-aos="fade-up-right" className="split-item">
               <div className="split-item-content center-content-mobile">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                   Machine learning
@@ -379,94 +371,6 @@ const FeaturesSplit = ({
                 <Image
                   src={sp}
                   alt="Spleeter by Deezer"
-                  width={528}
-                  height={396}
-                />
-              </div>
-            </div>
-            <div data-aos="zoom-in" className="split-item">
-              <div className="split-item-content center-content-mobile">
-                <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  HTML, CSS, JAVASCRIPT
-                </div>
-                <h3 className="mt-0 mb-12">Facebook Sign-Up</h3>
-                <p className="m-0">
-                  {t("work.fb1")}
-                  <br />
-                  {t("work.fb2")}
-                  {cookies.lang === "ro" ? (
-                    <a
-                      className="fb-href"
-                      href="https://www.youtube.com/watch?v=3zURq7aNmOc"
-                    >
-                      Facebook - Clona pagina inregistrare | Ep.1 Practica
-                    </a>
-                  ) : null}
-                </p>
-              </div>
-              <div
-                className={classNames(
-                  "split-item-image center-content-mobile",
-                  imageFill && "split-item-image-fill"
-                )}
-                onMouseOver={() => setHover5(true)}
-                onMouseLeave={() => setHover5(false)}
-                style={{ cursor: "pointer" }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: isHovered5
-                      ? "rgba(0,0,0,0.8)"
-                      : "transparent",
-                    transition: "0.5s ease",
-                  }}
-                >
-                  <div
-                    style={{
-                      transform: `scale(${isHovered5 ? 1 : 0})`,
-                      opacity: isHovered5 ? 1 : 0,
-                      width: "100%",
-                      padding: "0 1rem",
-                      display: "flex",
-                      flexDirection: "row",
-                      justifyContent: "space-evenly",
-                      alignItems: "center",
-                      backgroundColor: "transparent",
-                      transition: "0.5s ease",
-                    }}
-                  >
-                    <Button
-                      tag="a"
-                      color="black"
-                      wideMobile
-                      href="https://baderproductions.github.io/facebook-sign-up/"
-                      style={{ margin: "0 1rem" }}
-                    >
-                      GitHub Pages
-                    </Button>
-                    <Button
-                      tag="a"
-                      color="black"
-                      wideMobile
-                      href="https://github.com/baderproductions/facebook-sign-up"
-                      style={{ margin: "0 1rem" }}
-                    >
-                      GitHub
-                    </Button>
-                  </div>
-                </div>
-                <Image
-                  src={fb}
-                  alt="Facebook Sign-Up"
                   width={528}
                   height={396}
                 />

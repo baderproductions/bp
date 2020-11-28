@@ -1,3 +1,18 @@
+.BrainhubCarousel__loader {
+  border: 4px solid #ffb400 !important;
+  border-left-color: transparent !important;
+  animation: loader 1s infinite linear !important;
+}
+
+@keyframes loader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .abcd-margin {
   @media (min-width: 641px) { margin-right: 1rem;}
 }
@@ -14,7 +29,7 @@
   height: $button-form--height;
   text-decoration: none !important;
   text-transform: $button--transform;
-  color: #ffb400 !important;
+  color: #33363a !important;
   background-color: 'transparent' !important;
   border-width: $button-form--border-width;
   border-style: $button-form--border-style;
@@ -33,9 +48,9 @@
   }
 
   &:hover {
-    background-color: #ffb400 !important;
+    background-color: #ffc350 !important;
     border-color: color-border(button-light-hover);
-    color: color(button-light) !important;
+    color: #151719 !important;
   }
 
   &.is-loading {
@@ -118,9 +133,9 @@
 }
 
 .button-primary {
-  color: color-bg(button-light);
-  background-color: 'transparent';
-  border-color: #ffb400;
+  color: #33363a;
+  background-color:  #ffb400;
+  border-color:color-border(button-dark);
   font-weight: bold;
 
   &:hover {

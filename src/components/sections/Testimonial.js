@@ -77,7 +77,6 @@ const Testimonial = ({
       <div className="container">
         <div style={{ paddingBottom: "7rem" }} className={innerClasses}>
           <SectionHeader
-            data-aos="zoom-out"
             style={{ paddingBottom: "5rem" }}
             data={sectionHeader}
             className="center-content"
