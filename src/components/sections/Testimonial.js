@@ -81,7 +81,7 @@ const Testimonial = ({
             data={sectionHeader}
             className="center-content"
           />
-          <div data-aos="zoom-in" className={tilesClasses}>
+          <div className={tilesClasses}>
             <Carousel
               infinite
               lazyLoad
