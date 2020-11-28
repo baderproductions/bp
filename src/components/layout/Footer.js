@@ -24,7 +24,10 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer {...props} className={classes}>
+    <footer
+      {...props}
+      className={classes}
+    >
       <div className="row">
         <div className="twelve columns">
           <ul className="social-links">

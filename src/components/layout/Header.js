@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
+import Button from "../elements/Button";
 import { useDispatch } from "react-redux";
 import { AppConfigActions } from "../../redux/actions";
 import { useTranslation } from "react-i18next";
@@ -78,7 +79,7 @@ const Header = ({
       document.addEventListener("click", clickOutside);
       closeMenu();
     };
-  }, [cookies.lang]);
+  }, [isActive, cookies.lang]);
 
   const openMenu = () => {
     document.body.classList.add("off-nav-is-active");
@@ -194,9 +195,9 @@ const Header = ({
                               <span
                                 style={{
                                   position: "relative",
-                                  top: "1px",
-                                  width: "18px",
-                                  height: "18px",
+                                  top: "0.5px",
+                                  width: "1rem",
+                                  height: "1rem",
                                   borderRadius: "100%",
                                 }}
                                 className="flag-icon flag-icon-gb"
@@ -206,9 +207,9 @@ const Header = ({
                               <span
                                 style={{
                                   position: "relative",
-                                  top: "1px",
-                                  width: "18px",
-                                  height: "18px",
+                                  top: "0.5px",
+                                  width: "1rem",
+                                  height: "1rem",
                                   borderRadius: "100%",
                                 }}
                                 className="flag-icon flag-icon-ro"
@@ -234,9 +235,15 @@ const Header = ({
                     style={{ margin: "0.5rem 0" }}
                   >
                     <li>
-                      <div className="story-btn" onClick={openAboutModal}>
+                      <Button
+                        tag="div"
+                        color="black"
+                        className="button-sm abcd-margin"
+                        wideMobile
+                        onClick={openAboutModal}
+                      >
                         {t("header.story")}
-                      </div>
+                      </Button>
                     </li>
                   </ul>
 

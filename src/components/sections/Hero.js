@@ -143,18 +143,18 @@ const Hero = ({
     <section {...props} className={outerClasses}>
       <div className="container-sm">
         <div className={innerClasses}>
-          <div className="hero-content">
-            <h1 className="reveal-from-bottom" data-reveal-delay="200">
+          <div data-aos="zoom-out" className="hero-content container-xs">
+            <h1>
               Kevin <span className="text-color-primary">Bader</span>
             </h1>
-            <div className="container-xs">
-              <p className="reveal-from-bottom" data-reveal-delay="400">
+            <div>
+              <p>
                 Lifelong learner mindset.
                 <br />
                 Always on the lookout for problems to solve and ideas to build
                 into reality.
               </p>
-              <div className="reveal-from-bottom" data-reveal-delay="600">
+              <div>
                 <ButtonGroup>
                   <Button
                     style={{ color: "#151719" }}
@@ -166,6 +166,14 @@ const Hero = ({
                     {t("hero.work")}
                   </Button>
                   <Button
+                    tag="a"
+                    color="black"
+                    wideMobile
+                    href="https://github.com/baderproductions"
+                  >
+                    GitHub
+                  </Button>
+                  <Button
                     style={{ color: "#151719" }}
                     tag="div"
                     color="primary"
@@ -175,14 +183,6 @@ const Hero = ({
                     }
                   >
                     Stack
-                  </Button>
-                  <Button
-                    tag="a"
-                    color="light"
-                    wideMobile
-                    href="https://github.com/baderproductions"
-                  >
-                    GitHub
                   </Button>
                 </ButtonGroup>
               </div>
@@ -653,7 +653,10 @@ const Hero = ({
             >
               <Button
                 style={{ color: "#151719" }}
-                className="button button-primary button-wide-mobile button-sm"
+                tag="div"
+                color="primary"
+                className="button-sm"
+                wideMobile
                 onClick={closeAboutModal}
               >
                 {t("modal.footer")}

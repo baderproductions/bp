@@ -4,6 +4,7 @@ import { SectionTilesProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
 import Image from "../elements/Image";
 import re from "../../assets/images/re.png";
+import tw from "../../assets/images/tw.png";
 import ng from "../../assets/images/ng.png";
 import go from "../../assets/images/go.png";
 import fu from "../../assets/images/fu.png";
@@ -76,11 +77,12 @@ const Testimonial = ({
       <div className="container">
         <div style={{ paddingBottom: "7rem" }} className={innerClasses}>
           <SectionHeader
+            data-aos="zoom-out"
             style={{ paddingBottom: "5rem" }}
             data={sectionHeader}
             className="center-content"
           />
-          <div className={tilesClasses}>
+          <div data-aos="zoom-in" className={tilesClasses}>
             <Carousel
               infinite
               lazyLoad
@@ -89,8 +91,8 @@ const Testimonial = ({
               stopAutoPlayOnHover={false}
               slidesPerPage={10}
               offset={80}
-              animationSpeed={4000}
-              autoPlay={3000}
+              animationSpeed={3000}
+              autoPlay={2100}
             >
               <Image src={ap} alt="Apache Logo" width={48} height={48} />
               <Image
@@ -110,6 +112,7 @@ const Testimonial = ({
               <Image src={re} alt="React Logo" width={64} height={64} />
               <Image src={bo} alt="Bootstrap Logo" width={72} height={72} />
               <Image src={sa} alt="Sass Logo" width={256} height={256} />
+              <Image src={tw} alt="Tailwind Logo" width={256} height={256} />
               <Image src={js} alt="Javascript Logo" width={72} height={72} />
               <Image src={ht} alt="HTML Logo" width={512} height={512} />
               <Image src={cs} alt="CSS Logo" width={512} height={512} />

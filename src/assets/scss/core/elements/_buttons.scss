@@ -1,7 +1,9 @@
+.abcd-margin {
+  @media (min-width: 641px) { margin-right: 1rem;}
+}
 .button {
   display: inline-flex;
   @include font-size(button);
-
   padding: (
       (
           $button-form--height - get-line-height(button) -
@@ -12,8 +14,8 @@
   height: $button-form--height;
   text-decoration: none !important;
   text-transform: $button--transform;
-  color: color(button-light);
-  background-color: color-bg(button-light);
+  color: #ffb400 !important;
+  background-color: 'transparent' !important;
   border-width: $button-form--border-width;
   border-style: $button-form--border-style;
   border-color: color-border(button-light);
@@ -23,7 +25,7 @@
   text-align: center;
   letter-spacing: inherit;
   white-space: nowrap;
-  transition: background 0.15s ease;
+  transition: background 0.25s ease;
   font-weight: bold;
 
   &:active {
@@ -31,9 +33,9 @@
   }
 
   &:hover {
-    background-color: #d9dbdb;
+    background-color: #ffb400 !important;
     border-color: color-border(button-light-hover);
-    color: color(button-light);
+    color: color(button-light) !important;
   }
 
   &.is-loading {
@@ -86,14 +88,14 @@
 }
 
 .button-black {
-  color: #33363a;
-  background-color: #ffb400;
+  color: #33363a !important;
+  background-color: #eceded;
   border-color: #5e5f61;
   font-weight: bold;
 
   &:hover {
-    color: #151719;
-    background-color: #ffb400;
+    color: #151719 !important;
+    background-color: #dddddd !important;
     border-color: #33363a;
   }
 }
@@ -116,13 +118,14 @@
 }
 
 .button-primary {
-  color: #25282c;
-  background-color: color-bg(button-primary);
-  border-color: color-border(button-primary);
+  color: color-bg(button-light);
+  background-color: 'transparent';
+  border-color: #ffb400;
   font-weight: bold;
 
   &:hover {
-    background-color: #ffc350;
+    color:#eceded;
+    background-color: #ffb400;
     border-color: color-border(button-primary-hover);
   }
 

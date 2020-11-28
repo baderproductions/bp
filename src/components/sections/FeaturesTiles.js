@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import Badge from "react-bootstrap/Badge";
 import re from "../../assets/images/re.png";
+import tw from "../../assets/images/tw.png";
 import bo from "../../assets/images/bo.png";
 import sa from "../../assets/images/sa.png";
 import js from "../../assets/images/js.png";
@@ -94,9 +95,13 @@ const FeaturesTiles = ({
           style={{ paddingBottom: "6rem", paddingTop: "6rem" }}
           className={innerClasses}
         >
-          <SectionHeader data={sectionHeader} className="center-content" />
+          <SectionHeader
+            data-aos="zoom-out"
+            data={sectionHeader}
+            className="center-content"
+          />
           <div className={tilesClasses}>
-            <div className="tiles-items">
+            <div data-aos="zoom-in" className="tiles-items">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -374,6 +379,24 @@ const FeaturesTiles = ({
                     <a
                       rel="noreferrer"
                       target="_blank"
+                      href="https://tailwindcss.com/"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img"
+                          src={tw}
+                          alt="Tailwind Logo"
+                        />
+                        Tailwind CSS
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.fra")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      rel="noreferrer"
+                      target="_blank"
                       href="https://getbootstrap.com"
                       className="modal-body-devItem"
                     >
@@ -393,7 +416,7 @@ const FeaturesTiles = ({
                 </div>
               </div>
             </div>
-            <div className="tiles-items" data-reveal-delay="200">
+            <div data-aos="zoom-in" className="tiles-items">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -487,7 +510,7 @@ const FeaturesTiles = ({
                 </div>
               </div>
             </div>
-            <div className="tiles-items" data-reveal-delay="400">
+            <div data-aos="zoom-in" className="tiles-items">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -635,7 +658,7 @@ const FeaturesTiles = ({
                 </div>
               </div>
             </div>
-            <div className="tiles-items">
+            <div data-aos="zoom-in" className="tiles-items">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">
@@ -1083,7 +1106,7 @@ const FeaturesTiles = ({
                 </div>
               </div>
             </div>
-            <div className="tiles-items" data-reveal-delay="400">
+            <div data-aos="zoom-in" className="tiles-items">
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-header">
                   <div className="features-tiles-item-image mb-16">

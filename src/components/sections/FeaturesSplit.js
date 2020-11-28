@@ -84,13 +84,14 @@ const FeaturesSplit = ({
     <section ref={workRef} {...props} className={outerClasses}>
       <div className="container">
         <div className={innerClasses}>
-          <SectionHeader data={sectionHeader} className="center-content" />
+          <SectionHeader
+            data-aos="zoom-out"
+            data={sectionHeader}
+            className="center-content"
+          />
           <div className={splitClasses}>
-            <div className="split-item">
-              <div
-                className="split-item-content center-content-mobile reveal-from-left"
-                data-reveal-container=".split-item"
-              >
+            <div data-aos="zoom-in" className="split-item">
+              <div className="split-item-content center-content-mobile">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                   One page website
                 </div>
@@ -103,10 +104,9 @@ const FeaturesSplit = ({
               </div>
               <div
                 className={classNames(
-                  "split-item-image center-content-mobile reveal-from-bottom",
+                  "split-item-image center-content-mobile",
                   imageFill && "split-item-image-fill"
                 )}
-                data-reveal-container=".split-item"
                 onMouseOver={() => setHover(true)}
                 onMouseLeave={() => setHover(false)}
                 style={{ cursor: "pointer" }}
@@ -144,7 +144,7 @@ const FeaturesSplit = ({
                   >
                     <Button
                       tag="a"
-                      color="light"
+                      color="black"
                       wideMobile
                       href="https://raulvidican.ro"
                       style={{ margin: "0 1rem" }}
@@ -153,7 +153,7 @@ const FeaturesSplit = ({
                     </Button>
                     <Button
                       tag="a"
-                      color="light"
+                      color="black"
                       wideMobile
                       href="https://github.com/baderproductions/rv-chef"
                       style={{ margin: "0 1rem" }}
@@ -165,11 +165,8 @@ const FeaturesSplit = ({
                 <Image src={rv} alt="Raul Vidican" width={528} height={396} />
               </div>
             </div>
-            <div className="split-item">
-              <div
-                className="split-item-content center-content-mobile reveal-from-right"
-                data-reveal-container=".split-item"
-              >
+            <div data-aos="zoom-in" className="split-item">
+              <div className="split-item-content center-content-mobile">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                   React native Application
                 </div>
@@ -182,10 +179,9 @@ const FeaturesSplit = ({
               </div>
               <div
                 className={classNames(
-                  "split-item-image center-content-mobile reveal-from-bottom",
+                  "split-item-image center-content-mobile ",
                   imageFill && "split-item-image-fill"
                 )}
-                data-reveal-container=".split-item"
                 onMouseOver={() => setHover2(true)}
                 onMouseLeave={() => setHover2(false)}
                 style={{ cursor: "pointer" }}
@@ -223,7 +219,7 @@ const FeaturesSplit = ({
                   >
                     <Button
                       tag="a"
-                      color="light"
+                      color="black"
                       wideMobile
                       href="https://play.google.com/store/apps/details?id=com.baderproductions.fl"
                       style={{ margin: "0 1rem" }}
@@ -232,7 +228,7 @@ const FeaturesSplit = ({
                     </Button>
                     <Button
                       tag="a"
-                      color="light"
+                      color="black"
                       wideMobile
                       href="https://github.com/baderproductions/filelist-app"
                       style={{ margin: "0 1rem" }}
@@ -244,11 +240,8 @@ const FeaturesSplit = ({
                 <Image src={fl} alt="Filelist App" width={528} height={396} />
               </div>
             </div>
-            <div className="split-item">
-              <div
-                className="split-item-content center-content-mobile reveal-from-left"
-                data-reveal-container=".split-item"
-              >
+            <div data-aos="zoom-in" className="split-item">
+              <div className="split-item-content center-content-mobile">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                   Node.js / Express application
                 </div>
@@ -257,10 +250,9 @@ const FeaturesSplit = ({
               </div>
               <div
                 className={classNames(
-                  "split-item-image center-content-mobile reveal-from-bottom",
+                  "split-item-image center-content-mobile",
                   imageFill && "split-item-image-fill"
                 )}
-                data-reveal-container=".split-item"
                 onMouseOver={() => setHover3(true)}
                 onMouseLeave={() => setHover3(false)}
                 style={{ cursor: "pointer" }}
@@ -298,7 +290,7 @@ const FeaturesSplit = ({
                   >
                     <Button
                       tag="a"
-                      color="light"
+                      color="black"
                       wideMobile
                       href="https://spleeter.co.uk"
                       style={{ margin: "0 1rem" }}
@@ -307,7 +299,7 @@ const FeaturesSplit = ({
                     </Button>
                     <Button
                       tag="a"
-                      color="light"
+                      color="black"
                       wideMobile
                       href="https://github.com/baderproductions/imdb-scraper"
                       style={{ margin: "0 1rem" }}
@@ -319,11 +311,8 @@ const FeaturesSplit = ({
                 <Image src={im} alt="IMDb Scraper" width={528} height={396} />
               </div>
             </div>
-            <div className="split-item">
-              <div
-                className="split-item-content center-content-mobile reveal-from-right"
-                data-reveal-container=".split-item"
-              >
+            <div data-aos="zoom-in" className="split-item">
+              <div className="split-item-content center-content-mobile">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                   Machine learning
                 </div>
@@ -338,10 +327,9 @@ const FeaturesSplit = ({
               </div>
               <div
                 className={classNames(
-                  "split-item-image center-content-mobile reveal-from-bottom",
+                  "split-item-image center-content-mobile",
                   imageFill && "split-item-image-fill"
                 )}
-                data-reveal-container=".split-item"
                 onMouseOver={() => setHover4(true)}
                 onMouseLeave={() => setHover4(false)}
                 style={{ cursor: "pointer" }}
@@ -379,7 +367,7 @@ const FeaturesSplit = ({
                   >
                     <Button
                       tag="a"
-                      color="light"
+                      color="black"
                       wideMobile
                       href="https://github.com/baderproductions/react-django-spleeter"
                       style={{ margin: "0 6rem" }}
@@ -396,11 +384,8 @@ const FeaturesSplit = ({
                 />
               </div>
             </div>
-            <div className="split-item">
-              <div
-                className="split-item-content center-content-mobile reveal-from-left"
-                data-reveal-container=".split-item"
-              >
+            <div data-aos="zoom-in" className="split-item">
+              <div className="split-item-content center-content-mobile">
                 <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
                   HTML, CSS, JAVASCRIPT
                 </div>
@@ -421,10 +406,9 @@ const FeaturesSplit = ({
               </div>
               <div
                 className={classNames(
-                  "split-item-image center-content-mobile reveal-from-bottom",
+                  "split-item-image center-content-mobile",
                   imageFill && "split-item-image-fill"
                 )}
-                data-reveal-container=".split-item"
                 onMouseOver={() => setHover5(true)}
                 onMouseLeave={() => setHover5(false)}
                 style={{ cursor: "pointer" }}
@@ -462,7 +446,7 @@ const FeaturesSplit = ({
                   >
                     <Button
                       tag="a"
-                      color="light"
+                      color="black"
                       wideMobile
                       href="https://baderproductions.github.io/facebook-sign-up/"
                       style={{ margin: "0 1rem" }}
@@ -471,7 +455,7 @@ const FeaturesSplit = ({
                     </Button>
                     <Button
                       tag="a"
-                      color="light"
+                      color="black"
                       wideMobile
                       href="https://github.com/baderproductions/facebook-sign-up"
                       style={{ margin: "0 1rem" }}

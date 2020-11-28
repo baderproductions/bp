@@ -3,10 +3,11 @@ import { useLocation, Switch, Route } from "react-router-dom";
 import AppRoute from "./utils/AppRoute";
 import ScrollReveal from "./utils/ScrollReveal";
 import TagManager from "react-gtm-module";
+import Aos from "aos";
 import "@brainhubeu/react-carousel/lib/style.css";
+import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/flag-icon-css/sass/flag-icon.scss";
-
 // Redux
 import { Provider } from "react-redux";
 import { store } from "./redux/configureStore";
@@ -28,11 +29,18 @@ const tagManagerArgs = {
 
 TagManager.initialize(tagManagerArgs);
 
+Aos.init({
+  delay: 100,
+  offset: 150,
+  once: false,
+  duration: 1000,
+});
+
 const App = () => {
   const [cookies, setCookie] = useCookies(["lang"]);
   const childRef = useRef();
   let location = useLocation();
-
+  
   useEffect(() => {
     if (cookies.lang === undefined) {
       setCookie("lang", "en", { path: "/", maxAge: 31540000 });
