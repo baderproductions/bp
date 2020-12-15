@@ -149,10 +149,7 @@ const Hero = ({
             </h1>
             <div>
               <p>
-                Lifelong learner mindset.
-                <br />
-                Always on the lookout for problems to solve and ideas to build
-                into reality.
+                Self-taught, lifelong learner always on the lookout for problems to solve and ideas to build into reality.
               </p>
               <div>
                 <ButtonGroup>
