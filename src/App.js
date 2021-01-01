@@ -21,7 +21,6 @@ import { useCookies } from "react-cookie";
 // Views
 import Home from "./views/Home";
 import Privacy from "./views/Privacy";
-import HLSPlayer from "./views/HLSPlayer";
 
 // Google Analitics
 const tagManagerArgs = {
@@ -58,7 +57,6 @@ const App = () => {
         children={() => (
           <Switch>
             <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
-            <Route path="/rnlive" component={HLSPlayer} />
             <Route path="/privacy" component={Privacy} />
           </Switch>
         )}
