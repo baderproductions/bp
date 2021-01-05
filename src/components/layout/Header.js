@@ -173,12 +173,7 @@ const Header = ({
                   >
                     <li>
                       <div
-                        style={{
-                          margin: "0",
-                          position: "absolute",
-                          top: "12%",
-                          left: "3%",
-                        }}
+                        className="roen-container"
                       >
                         <span
                           style={{

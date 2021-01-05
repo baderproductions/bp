@@ -137,6 +137,8 @@ const FeaturesSplit = ({
                     <Button
                       tag="a"
                       color="black"
+                      rel="noreferrer"
+                      target="_blank"
                       wideMobile
                       href="https://raulvidican.ro"
                       style={{ margin: "0 1rem" }}
@@ -146,6 +148,8 @@ const FeaturesSplit = ({
                     <Button
                       tag="a"
                       color="black"
+                      rel="noreferrer"
+                      target="_blank"
                       wideMobile
                       href="https://github.com/baderproductions/rv-chef"
                       style={{ margin: "0 1rem" }}
@@ -212,6 +216,8 @@ const FeaturesSplit = ({
                     <Button
                       tag="a"
                       color="black"
+                      rel="noreferrer"
+                      target="_blank"
                       wideMobile
                       href="https://play.google.com/store/apps/details?id=com.baderproductions.fl"
                       style={{ margin: "0 1rem" }}
@@ -221,6 +227,8 @@ const FeaturesSplit = ({
                     <Button
                       tag="a"
                       color="black"
+                      rel="noreferrer"
+                      target="_blank"
                       wideMobile
                       href="https://github.com/baderproductions/filelist-app"
                       style={{ margin: "0 1rem" }}
@@ -283,6 +291,8 @@ const FeaturesSplit = ({
                     <Button
                       tag="a"
                       color="black"
+                      rel="noreferrer"
+                      target="_blank"
                       wideMobile
                       href="https://spleeter.co.uk"
                       style={{ margin: "0 1rem" }}
@@ -292,6 +302,8 @@ const FeaturesSplit = ({
                     <Button
                       tag="a"
                       color="black"
+                      rel="noreferrer"
+                      target="_blank"
                       wideMobile
                       href="https://github.com/baderproductions/imdb-scraper"
                       style={{ margin: "0 1rem" }}
@@ -360,6 +372,8 @@ const FeaturesSplit = ({
                     <Button
                       tag="a"
                       color="black"
+                      rel="noreferrer"
+                      target="_blank"
                       wideMobile
                       href="https://github.com/baderproductions/react-django-spleeter"
                       style={{ margin: "0 6rem" }}

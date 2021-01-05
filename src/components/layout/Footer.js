@@ -24,15 +24,16 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer
-      {...props}
-      className={classes}
-    >
+    <footer {...props} className={classes}>
       <div className="row">
         <div className="twelve columns">
           <ul className="social-links">
             <li>
-              <a href="https://github.com/baderproductions">
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://github.com/baderproductions"
+              >
                 <svg
                   width="24"
                   height="24"
@@ -46,7 +47,11 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/BADERproductio1">
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://twitter.com/BADERproductio1"
+              >
                 <svg
                   width="24"
                   height="24"
@@ -60,7 +65,11 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/kevin-bader-2137541a2">
+              <a
+                rel="noreferrer"
+                target="_blank"
+                href="https://www.linkedin.com/in/kevin-bader-2137541a2"
+              >
                 <svg
                   width="24"
                   height="24"

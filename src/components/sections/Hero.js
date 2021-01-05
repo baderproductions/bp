@@ -149,7 +149,8 @@ const Hero = ({
             </h1>
             <div>
               <p>
-                Self-taught, lifelong learner always on the lookout for problems to solve and ideas to build into reality.
+                Self-taught, lifelong learner always on the lookout for problems
+                to solve and ideas to build into reality.
               </p>
               <div>
                 <ButtonGroup>
@@ -165,6 +166,8 @@ const Hero = ({
                   <Button
                     tag="a"
                     color="black"
+                    rel="noreferrer"
+                    target="_blank"
                     wideMobile
                     href="https://github.com/baderproductions"
                   >
@@ -261,7 +264,11 @@ const Hero = ({
                       {t("modal.first3")}
                       <br />
                       <br />
-                      <a href="https://www.youtube.com/watch?v=ESd5Nt8sHE0">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://www.youtube.com/watch?v=ESd5Nt8sHE0"
+                      >
                         How I Became a Software Developer @ GitHub - Brooks
                         Swinnerton
                       </a>
@@ -328,7 +335,13 @@ const Hero = ({
                       <br />
                       <br />
                       {t("modal.second5")}
-                      <a href="https://stackoverflow.com/">Stack Overflow</a>
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://stackoverflow.com/"
+                      >
+                        Stack Overflow
+                      </a>
                       {t("modal.second6")}
                       <br />
                       <br />
@@ -337,7 +350,11 @@ const Hero = ({
                       <br />[<span>{t("modal.second8")}</span>]
                       <br />
                       {t("modal.second9")}
-                      <a href="https://github.com/baderproductions/metin2verifyCont">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://github.com/baderproductions/metin2verifyCont"
+                      >
                         metin2verifyCont
                       </a>
                       {t("modal.second10")}
@@ -394,7 +411,14 @@ const Hero = ({
                       <br />
                       <br />
                       {t("modal.third2")}
-                      <a href="https://www.pizzaexpress.com/">PizzaExpress</a>.
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://www.pizzaexpress.com/"
+                      >
+                        PizzaExpress
+                      </a>
+                      .
                       <br />
                       <br />
                       {t("modal.third3")}
@@ -454,17 +478,29 @@ const Hero = ({
                       <br />
                       <br />
                       Brad @{" "}
-                      <a href="https://www.youtube.com/user/TechGuyWeb">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://www.youtube.com/user/TechGuyWeb"
+                      >
                         Traversy Media
                       </a>
                       <br />
                       Ed @{" "}
-                      <a href="https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q"
+                      >
                         Dev Ed
                       </a>
                       <br />
                       Kyle @{" "}
-                      <a href="https://www.youtube.com/c/WebDevSimplified">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://www.youtube.com/c/WebDevSimplified"
+                      >
                         Web Dev Simplified
                       </a>
                       <br />
@@ -523,15 +559,35 @@ const Hero = ({
                       <br />
                       <br />
                       {t("modal.fifth2")}
-                      <a href="https://stackoverflow.com/">Stack Overflow</a>
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://stackoverflow.com/"
+                      >
+                        Stack Overflow
+                      </a>
                       {t("modal.fifth3")}
-                      <a href="https://reactjs.org/">React.js</a>
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://reactjs.org/"
+                      >
+                        React.js
+                      </a>
                       {t("modal.fifth4")}
-                      <a href="https://reactjs.org/docs/react-dom.html">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://reactjs.org/docs/react-dom.html"
+                      >
                         ReactDOM
                       </a>
                       {t("modal.fifth5")}
-                      <a href="https://reactjs.org/docs/introducing-jsx.html">
+                      <a
+                        rel="noreferrer"
+                        target="_blank"
+                        href="https://reactjs.org/docs/introducing-jsx.html"
+                      >
                         JSX
                       </a>
                       .
