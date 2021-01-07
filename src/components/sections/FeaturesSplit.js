@@ -7,7 +7,6 @@ import Button from "../elements/Button";
 import fl from "../../assets/images/fl.png";
 import im from "../../assets/images/im.png";
 import rv from "../../assets/images/rv.png";
-import sp from "../../assets/images/sp.png";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
@@ -40,7 +39,6 @@ const FeaturesSplit = ({
   const [isHovered, setHover] = useState(false);
   const [isHovered2, setHover2] = useState(false);
   const [isHovered3, setHover3] = useState(false);
-  const [isHovered4, setHover4] = useState(false);
 
   useEffect(() => {
     if (initialRender.current === true) {
@@ -313,81 +311,6 @@ const FeaturesSplit = ({
                   </div>
                 </div>
                 <Image src={im} alt="IMDb Scraper" width={528} height={396} />
-              </div>
-            </div>
-            <div data-aos="fade-up-right" className="split-item">
-              <div className="split-item-content center-content-mobile">
-                <div className="text-xxs text-color-primary fw-600 tt-u mb-8">
-                  Machine learning
-                </div>
-                <h3 className="mt-0 mb-12">Spleeter by Deezer</h3>
-                <p className="m-0">
-                  {t("work.sp1")}
-                  <br />
-                  {t("work.sp2")}{" "}
-                  <span style={{ color: "crimson" }}>{t("work.sp3")}</span>{" "}
-                  {t("work.sp4")}
-                </p>
-              </div>
-              <div
-                className={classNames(
-                  "split-item-image center-content-mobile",
-                  imageFill && "split-item-image-fill"
-                )}
-                onMouseOver={() => setHover4(true)}
-                onMouseLeave={() => setHover4(false)}
-                style={{ cursor: "pointer" }}
-              >
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: isHovered4
-                      ? "rgba(0,0,0,0.8)"
-                      : "transparent",
-                    transition: "0.5s ease",
-                  }}
-                >
-                  <div
-                    style={{
-                      transform: `scale(${isHovered4 ? 1 : 0})`,
-                      opacity: isHovered4 ? 1 : 0,
-                      width: "100%",
-                      padding: "0 1rem",
-                      display: "flex",
-                      flexDirection: "row",
-                      justifyContent: "space-evenly",
-                      alignItems: "center",
-                      backgroundColor: "transparent",
-                      transition: "0.5s ease",
-                    }}
-                  >
-                    <Button
-                      tag="a"
-                      color="black"
-                      rel="noreferrer"
-                      target="_blank"
-                      wideMobile
-                      href="https://github.com/baderproductions/react-django-spleeter"
-                      style={{ margin: "0 6rem" }}
-                    >
-                      GitHub
-                    </Button>
-                  </div>
-                </div>
-                <Image
-                  src={sp}
-                  alt="Spleeter by Deezer"
-                  width={528}
-                  height={396}
-                />
               </div>
             </div>
           </div>

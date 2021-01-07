@@ -104,12 +104,6 @@
         "rv3": "Ca să scurtez povestea, a durat o săptămână să construiesc acest website, să-l indexez în motorul de căutare Google şi să-l promovez cu Google Ads. Un client cu care am avut o comunicare excelentă pe tot parcursul proiectului.",
         "fl1": "Prima aplicaţie android publicată în magazinul Google Play, bazată pe APIul Filelist care este un tracker de torrente privat.",
         "fl2": "Durata de construcţie a fost de o lună începând de la zero şi până la publicarea versiunii (v3.0.1) în magazinul Google Play. Aplicaţia este într-o continuă dezvoltare.",
-        "im": "O simplă aplicaţie Node.js folosită pentru a obţine informaţii din titluri IMDb. Am construit această aplicaţie pentru a afişa informaţii (poster, plot, durată, rating) în proiectul Filelist App de deasupra.",
-        "sp1": "Spleeter by Deezer este o librărie de separare cu modele preantrenate în Python care folosesc Tensorflow",
-        "sp2": "Primul website complex Full-stack React / Django pe care l-am publicat şi a funcţionat exact cum voiam. Website-ul a fost",
-        "sp3": "închis",
-        "sp4": "datorită costurilor uriaşe ale puterii GPU necesară pentru ca multimple separări să funcţioneze concomitent fără probleme.",
-        "fb1": "O pagină simplă pe care a fost creată în idea de a obţine o copie exactă a paginii de înregistrare Facebook în scop didactic.",
-        "fb2": "Am postat tutorialul unde prezint fiecare parte din construcţia acestei pagini pentru persoanele interesate: "
+        "im": "O simplă aplicaţie Node.js folosită pentru a obţine informaţii din titluri IMDb. Am construit această aplicaţie pentru a afişa informaţii (poster, plot, durată, rating) în proiectul Filelist App de deasupra."
     }
 }

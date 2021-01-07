@@ -105,12 +105,6 @@
         "rv3": "Long story short, it took me one week to build it, have it indexed on Google Search and promoted with Google Ads. Great client-development experience overall.",
         "fl1": "First android application released, based around Filelist's API which is a private romanian torrent tracker.",
         "fl2": "A one month build from scratch to publishing version (v3.0.1) on Google Play Store. Amazing cross-platform development experience learning to work with the Google Play Console as a developer.",
-        "im": "A simple Node.js application used to scrape data from IMDb titles. I needed this application in order to display movie related data (poster, plot, duration, rating) within the project Filelist App from above.",
-        "sp1": "Spleeter by Deezer is a source separation library with pretrained models written in Python and uses Tensorflow.",
-        "sp2": "First complex React / Django Full-stack website that I managed to get it working and output separation. The project got",
-        "sp3": "discontinued",
-        "sp4": "because of the costly GPU power needed in order for the concurrent separations to work flawlessly.",
-        "fb1": "A simple one page website that came into being trying to make a pixel-perfect replica of the Facebook Sign Up page for learning purposes.",
-        "fb2": "I then posted it on one of my YouTube channels in case somebody else would want to learn how to build somethimg like this."
+        "im": "A simple Node.js application used to scrape data from IMDb titles. I needed this application in order to display movie related data (poster, plot, duration, rating) within the project Filelist App from above."
     }
 }
