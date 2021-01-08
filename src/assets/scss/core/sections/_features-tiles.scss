@@ -1,5 +1,12 @@
 .features-tiles {
   padding-top: 4rem;
+
+  .h4-para {
+    font-size: 1.5rem;
+    color: #f8f9fa;
+    font-weight: bold;
+  }
+
   .section-inner {
     padding-top: $features-tiles--padding-t__mobile;
     padding-bottom: $features-tiles--padding-b__mobile;
@@ -38,8 +45,6 @@
 
   .tiles-item {
     width: 100vw !important;
-    //flex-basis: $features-tiles-item--width;
-    //max-width: $features-tiles-item--width;
     @if ($features-tiles-items--padding__mobile != null) {
       padding: $features-tiles-items--padding__mobile / 2;
     }
@@ -52,6 +57,7 @@
     padding-right: $features-tiles-item--inner-padding-h;
     border-radius: 0.1rem;
     transition: 0.5s ease;
+    width: 100vw !important;
 
     .modal-body-container {
       width: 100%;
@@ -146,12 +152,6 @@
         }
       }
     }
-    //cursor: pointer;
-
-    // &:hover {
-    //   background-color: #25282c;
-    //   transform: scale(1.05);
-    // }
   }
 }
 

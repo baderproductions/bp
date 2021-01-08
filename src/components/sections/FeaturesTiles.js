@@ -5,33 +5,33 @@ import SectionHeader from "./partials/SectionHeader";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import Badge from "react-bootstrap/Badge";
-import re from "../../assets/images/re.png";
-import tw from "../../assets/images/tw.png";
-import bo from "../../assets/images/bo.png";
-import sa from "../../assets/images/sa.png";
-import js from "../../assets/images/js.png";
-import ht from "../../assets/images/ht.png";
-import cs from "../../assets/images/cs.png";
-import no from "../../assets/images/no.png";
-import ex from "../../assets/images/ex.png";
-import dj from "../../assets/images/dj.png";
-import mo from "../../assets/images/mo.png";
-import pg from "../../assets/images/pg.png";
-import rd from "../../assets/images/rd.png";
-import my from "../../assets/images/my.png";
-import fs from "../../assets/images/fs.png";
-import jo from "../../assets/images/jo.png";
-import gp from "../../assets/images/gp.png";
-import az from "../../assets/images/az.png";
-import ma from "../../assets/images/ma.png";
-import ap from "../../assets/images/ap.png";
-import ng from "../../assets/images/ng.png";
-import st from "../../assets/images/st.png";
-import pp from "../../assets/images/pp.png";
-import sh from "../../assets/images/sh.png";
-import fu from "../../assets/images/fu.png";
-import as from "../../assets/images/as.png";
-import xc from "../../assets/images/xc.png";
+import re from "../../assets/images/re.webp";
+import tw from "../../assets/images/tw.webp";
+import bo from "../../assets/images/bo.webp";
+import sa from "../../assets/images/sa.webp";
+import js from "../../assets/images/js.webp";
+import ht from "../../assets/images/ht.webp";
+import cs from "../../assets/images/cs.webp";
+import no from "../../assets/images/no.webp";
+import ex from "../../assets/images/ex.webp";
+import dj from "../../assets/images/dj.webp";
+import mo from "../../assets/images/mo.webp";
+import pg from "../../assets/images/pg.webp";
+import rd from "../../assets/images/rd.webp";
+import my from "../../assets/images/my.webp";
+import fs from "../../assets/images/fs.webp";
+import jo from "../../assets/images/jo.webp";
+import gp from "../../assets/images/gp.webp";
+import az from "../../assets/images/az.webp";
+import ma from "../../assets/images/ma.webp";
+import ap from "../../assets/images/ap.webp";
+import ng from "../../assets/images/ng.webp";
+import st from "../../assets/images/st.webp";
+import pp from "../../assets/images/pp.webp";
+import sh from "../../assets/images/sh.webp";
+import fu from "../../assets/images/fu.webp";
+import as from "../../assets/images/as.webp";
+import xc from "../../assets/images/xc.webp";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -293,54 +293,76 @@ const FeaturesTiles = ({
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">Front-end</h4>
+                  <p className="mt-0 mb-8 h4-para">Front-end</p>
                   <p className="m-0 text-sm">{t("dev.front")}</p>
                 </div>
                 <div className="modal-body-container">
                   <div className="modal-body-devContainer">
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://reactjs.org"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img className="logo-img-l" src={re} alt="React Logo" />
+                        <img
+                          className="logo-img-l"
+                          src={re}
+                          width="64"
+                          height="64"
+                          alt="React Logo"
+                        />
                         React
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.lib")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.w3schools.com/html"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img className="logo-img" src={ht} alt="HTML Logo" />
+                        <img
+                          className="logo-img"
+                          src={ht}
+                          width="720"
+                          height="720"
+                          alt="HTML Logo"
+                        />
                         HTML
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.mar")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.w3schools.com/css"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img className="logo-img" src={cs} alt="CSS Logo" />
+                        <img
+                          className="logo-img"
+                          src={cs}
+                          width="1280"
+                          height="1280"
+                          alt="CSS Logo"
+                        />
                         CSS
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.sty")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.w3schools.com/js"
@@ -350,6 +372,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img"
                           src={js}
+                          width="1024"
+                          height="1024"
                           alt="Javascript Logo"
                         />
                         Javascript
@@ -358,21 +382,29 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.lan")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://sass-lang.com"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img className="logo-img" src={sa} alt="Sass Logo" />
+                        <img
+                          className="logo-img"
+                          src={sa}
+                          width="1280"
+                          height="960"
+                          alt="Sass Logo"
+                        />
                         Sass
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.styEx")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://tailwindcss.com/"
@@ -382,6 +414,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img"
                           src={tw}
+                          width="200"
+                          height="200"
                           alt="Tailwind Logo"
                         />
                         Tailwind CSS
@@ -390,7 +424,8 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.fra")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://getbootstrap.com"
@@ -400,6 +435,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img"
                           src={bo}
+                          width="768"
+                          height="768"
                           alt="Bootstrap Logo"
                         />
                         Bootstrap
@@ -447,12 +484,13 @@ const FeaturesTiles = ({
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">Back-end</h4>
+                  <p className="mt-0 mb-8 h4-para">Back-end</p>
                   <p className="m-0 text-sm">{t("dev.back")}</p>
                 </div>
                 <div className="modal-body-container">
                   <div className="modal-body-devContainer">
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://nodejs.org"
@@ -462,6 +500,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img-l"
                           src={no}
+                          width="128"
+                          height="78"
                           alt="Node.js Logo"
                         />
                         Node.js
@@ -470,7 +510,8 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.rue")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://expressjs.com"
@@ -480,6 +521,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img-invert-l"
                           src={ex}
+                          width="800"
+                          height="800"
                           alt="Express.js Logo"
                         />
                         Express.js
@@ -488,14 +531,21 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.fra")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.djangoproject.com"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img className="logo-img" src={dj} alt="Django Logo" />
+                        <img
+                          className="logo-img"
+                          src={dj}
+                          width="300"
+                          height="240"
+                          alt="Django Logo"
+                        />
                         Django
                       </div>
                       <div className="modal-body-lower">
@@ -545,26 +595,34 @@ const FeaturesTiles = ({
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">{t("modal.database")}</h4>
+                  <p className="mt-0 mb-8 h4-para">{t("modal.database")}</p>
                   <p className="m-0 text-sm">{t("dev.data")}</p>
                 </div>
                 <div className="modal-body-container">
                   <div className="modal-body-devContainer">
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.mongodb.com"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img className="logo-img" src={mo} alt="MongoDB Logo" />
+                        <img
+                          className="logo-img"
+                          src={mo}
+                          width="413"
+                          height="384"
+                          alt="MongoDB Logo"
+                        />
                         MongoDB
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.nos")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.postgresql.org"
@@ -574,6 +632,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img"
                           src={pg}
+                          width="256"
+                          height="256"
                           alt="PostgreSQL Logo"
                         />
                         PostgreSQL
@@ -582,7 +642,8 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.sql")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://firebase.google.com/docs/database"
@@ -592,6 +653,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img"
                           src={rd}
+                          width="200"
+                          height="200"
                           alt="Firebase Realtime Logo"
                         />
                         Realtime Database
@@ -600,21 +663,29 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.nos")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.mysql.com"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img className="logo-img-l" src={my} alt="MySQL Logo" />
+                        <img
+                          className="logo-img-l"
+                          src={my}
+                          width="3000"
+                          height="2000"
+                          alt="MySQL Logo"
+                        />
                         MySQL
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.sql")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://firebase.google.com/docs/firestore"
@@ -624,6 +695,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img"
                           src={fs}
+                          width="200"
+                          height="200"
                           alt="Cloud Firestore Logo"
                         />
                         Cloud Firestore
@@ -632,7 +705,8 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.nos")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.json.org"
@@ -642,6 +716,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img-invert"
                           src={jo}
+                          width="800"
+                          height="600"
                           alt="JSON Logo"
                         />
                         JSON
@@ -964,12 +1040,13 @@ const FeaturesTiles = ({
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">{t("modal.server")}</h4>
+                  <p className="mt-0 mb-8 h4-para">{t("modal.server")}</p>
                   <p className="m-0 text-sm">{t("dev.server")}</p>
                 </div>
                 <div className="modal-body-container">
                   <div className="modal-body-devContainer">
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://cloud.google.com"
@@ -979,6 +1056,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img"
                           src={gp}
+                          width="300"
+                          height="300"
                           alt="Google Cloud Platform Logo"
                         />
                         Google Cloud
@@ -987,7 +1066,8 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.csv")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://aws.amazon.com"
@@ -997,6 +1077,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img-l"
                           src={az}
+                          width="1416"
+                          height="551"
                           alt="Amazon Web Services Logo"
                         />
                         AWS
@@ -1005,7 +1087,8 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.csv")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://azure.microsoft.com"
@@ -1015,6 +1098,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img-l"
                           src={ma}
+                          width="3000"
+                          height="2000"
                           alt="Microsoft Azure Logo"
                         />
                         Microsoft Azure
@@ -1023,34 +1108,49 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.csv")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://httpd.apache.org"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img className="logo-img" src={ap} alt="Apache Logo" />
+                        <img
+                          className="logo-img"
+                          src={ap}
+                          width="128"
+                          height="226"
+                          alt="Apache Logo"
+                        />
                         Apache
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.wsv")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://www.nginx.com"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img className="logo-img-l" src={ng} alt="NGINX Logo" />
+                        <img
+                          className="logo-img-l"
+                          src={ng}
+                          width="64"
+                          height="64"
+                          alt="NGINX Logo"
+                        />
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.wsv")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://stripe.com"
@@ -1060,6 +1160,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img-xl"
                           src={st}
+                          width="520"
+                          height="300"
                           alt="Stripe Logo"
                         />
                       </div>
@@ -1067,21 +1169,29 @@ const FeaturesTiles = ({
                         <Badge variant="warning">{t("dev.psy")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://developers.shopify.com"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img className="logo-img" src={sh} alt="Shopify Logo" />
+                        <img
+                          className="logo-img"
+                          src={sh}
+                          width="220"
+                          height="230"
+                          alt="Shopify Logo"
+                        />
                         Shopify
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.ecm")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://developer.paypal.com"
@@ -1091,6 +1201,8 @@ const FeaturesTiles = ({
                         <img
                           className="logo-img-xl"
                           src={pp}
+                          width="225"
+                          height="225"
                           alt="PayPal Logo"
                         />
                       </div>
@@ -1149,12 +1261,13 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                   </div>
                 </div>
                 <div className="features-tiles-item-content">
-                  <h4 className="mt-0 mb-8">Mobile</h4>
+                  <p className="mt-0 mb-8 h4-para">Mobile</p>
                   <p className="m-0 text-sm">{t("dev.mobile")}</p>
                 </div>
                 <div className="modal-body-container">
                   <div className="modal-body-devContainer">
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://reactnative.dev"
@@ -1164,6 +1277,8 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                         <img
                           className="logo-img"
                           src={re}
+                          width="64"
+                          height="64"
                           alt="React Native Logo"
                         />
                         React Native
@@ -1172,7 +1287,8 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                         <Badge variant="warning">{t("dev.fra")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://flutter.dev"
@@ -1182,6 +1298,8 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                         <img
                           className="logo-img-xl"
                           src={fu}
+                          width="512"
+                          height="165"
                           alt="Flutter Logo"
                         />
                       </div>
@@ -1189,7 +1307,8 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                         <Badge variant="warning">{t("dev.fra")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://developer.android.com/studio"
@@ -1199,6 +1318,8 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                         <img
                           className="logo-img-l"
                           src={as}
+                          width="1200"
+                          height="1259"
                           alt="Android Studio Logo"
                         />
                         Android Studio
@@ -1207,14 +1328,21 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                         <Badge variant="warning">{t("dev.rud")}</Badge>
                       </div>
                     </a>
-                    <a data-aos="flip-right"
+                    <a
+                      data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
                       href="https://developer.apple.com/xcode"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img className="logo-img" src={xc} alt="Xcode Logo" />
+                        <img
+                          className="logo-img"
+                          src={xc}
+                          width="750"
+                          height="750"
+                          alt="Xcode Logo"
+                        />
                         Xcode
                       </div>
                       <div className="modal-body-lower">

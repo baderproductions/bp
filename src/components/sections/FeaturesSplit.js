@@ -4,9 +4,9 @@ import { SectionSplitProps } from "../../utils/SectionProps";
 import SectionHeader from "./partials/SectionHeader";
 import Image from "../elements/Image";
 import Button from "../elements/Button";
-import fl from "../../assets/images/fl.png";
-import im from "../../assets/images/im.png";
-import rv from "../../assets/images/rv.png";
+import fl from "../../assets/images/fl.webp";
+import im from "../../assets/images/im.webp";
+import rv from "../../assets/images/rv.webp";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
