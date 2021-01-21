@@ -21,6 +21,7 @@ import { useCookies } from "react-cookie";
 // Views
 import Home from "./views/Home";
 import Privacy from "./views/Privacy";
+import NotFound from './views/NotFound';
 
 // Google Analitics
 const tagManagerArgs = {
@@ -58,6 +59,7 @@ const App = () => {
           <Switch>
             <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
             <Route path="/privacy" component={Privacy} />
+            <Route path="*" component={NotFound} />
           </Switch>
         )}
       />
