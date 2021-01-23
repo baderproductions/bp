@@ -307,7 +307,7 @@ const FeaturesTiles = ({
                     >
                       <div className="modal-body-upper">
                         <img
-                          className="logo-img-l"
+                          className="logo-img"
                           src={re}
                           width="64"
                           height="64"
@@ -407,27 +407,6 @@ const FeaturesTiles = ({
                       data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
-                      href="https://tailwindcss.com/"
-                      className="modal-body-devItem"
-                    >
-                      <div className="modal-body-upper">
-                        <img
-                          className="logo-img"
-                          src={tw}
-                          width="200"
-                          height="200"
-                          alt="Tailwind Logo"
-                        />
-                        Tailwind CSS
-                      </div>
-                      <div className="modal-body-lower">
-                        <Badge variant="warning">{t("dev.fra")}</Badge>
-                      </div>
-                    </a>
-                    <a
-                      data-aos="flip-right"
-                      rel="noreferrer"
-                      target="_blank"
                       href="https://getbootstrap.com"
                       className="modal-body-devItem"
                     >
@@ -440,6 +419,27 @@ const FeaturesTiles = ({
                           alt="Bootstrap Logo"
                         />
                         Bootstrap
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.fra")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      data-aos="flip-right"
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://tailwindcss.com/"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img
+                          className="logo-img"
+                          src={tw}
+                          width="200"
+                          height="200"
+                          alt="Tailwind Logo"
+                        />
+                        Tailwind CSS
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.fra")}</Badge>
@@ -498,7 +498,7 @@ const FeaturesTiles = ({
                     >
                       <div className="modal-body-upper">
                         <img
-                          className="logo-img-l"
+                          className="logo-img"
                           src={no}
                           width="128"
                           height="78"
@@ -519,7 +519,7 @@ const FeaturesTiles = ({
                     >
                       <div className="modal-body-upper">
                         <img
-                          className="logo-img-invert-l"
+                          className="logo-img-invert"
                           src={ex}
                           width="800"
                           height="800"
@@ -672,7 +672,7 @@ const FeaturesTiles = ({
                     >
                       <div className="modal-body-upper">
                         <img
-                          className="logo-img-l"
+                          className="logo-img-ll"
                           src={my}
                           width="3000"
                           height="2000"
@@ -1075,7 +1075,7 @@ const FeaturesTiles = ({
                     >
                       <div className="modal-body-upper">
                         <img
-                          className="logo-img-l"
+                          className="logo-img"
                           src={az}
                           width="1416"
                           height="551"
@@ -1096,7 +1096,7 @@ const FeaturesTiles = ({
                     >
                       <div className="modal-body-upper">
                         <img
-                          className="logo-img-l"
+                          className="logo-img"
                           src={ma}
                           width="3000"
                           height="2000"
@@ -1316,7 +1316,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                     >
                       <div className="modal-body-upper">
                         <img
-                          className="logo-img-l"
+                          className="logo-img"
                           src={as}
                           width="1200"
                           height="1259"
