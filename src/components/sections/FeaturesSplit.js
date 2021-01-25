@@ -292,7 +292,7 @@ const FeaturesSplit = ({
                       rel="noreferrer"
                       target="_blank"
                       wideMobile
-                      href="https://spleeter.co.uk"
+                      href="https://inkthatquote.com/"
                       style={{ margin: "0 1rem" }}
                     >
                       Live App
