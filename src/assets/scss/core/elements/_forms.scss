@@ -95,7 +95,7 @@ textarea.form-input {
 .form-select {
   padding-right: ($form--padding-h - $button-form--border-width) * 2 + 16;
   background-image: inline-svg(
-    '<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 11.4L2.6 6 4 4.6l4 4 4-4L13.4 6 8 11.4z" fill="' +
+    '<svg viewBox="0 0 16 16" ><path d="M8 11.4L2.6 6 4 4.6l4 4 4-4L13.4 6 8 11.4z" fill="' +
       color-icon(select-arrow) + '" fill-rule="evenodd"/></svg>'
   );
   background-position: right ($form--padding-h - $button-form--border-width)
@@ -312,7 +312,7 @@ textarea.form-input {
       -webkit-appearance: none;
       background-color: color-bg(range-thumb);
       background-image: inline-svg(
-        '<svg width="12" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5v7L12 4zM0 4l4 3.5v-7z" fill="' +
+        '<svg width="12" height="8" ><path d="M8 .5v7L12 4zM0 4l4 3.5v-7z" fill="' +
           color-icon(range) + '" fill-rule="nonzero"/></svg>'
       );
       background-position: center;
@@ -327,7 +327,7 @@ textarea.form-input {
     &::-moz-range-thumb {
       background-color: color-bg(range-thumb);
       background-image: inline-svg(
-        '<svg width="12" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5v7L12 4zM0 4l4 3.5v-7z" fill="' +
+        '<svg width="12" height="8" ><path d="M8 .5v7L12 4zM0 4l4 3.5v-7z" fill="' +
           color-icon(range) + '" fill-rule="nonzero"/></svg>'
       );
       background-position: center;
@@ -343,7 +343,7 @@ textarea.form-input {
     &::-ms-thumb {
       background-color: color-bg(range-thumb);
       background-image: inline-svg(
-        '<svg width="12" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M8 .5v7L12 4zM0 4l4 3.5v-7z" fill="' +
+        '<svg width="12" height="8" ><path d="M8 .5v7L12 4zM0 4l4 3.5v-7z" fill="' +
           color-icon(range) + '" fill-rule="nonzero"/></svg>'
       );
       background-position: center;

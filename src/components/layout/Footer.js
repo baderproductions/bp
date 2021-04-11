@@ -38,7 +38,6 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
                   fill="#eceded"
                 >
                   <title>GitHub</title>
@@ -56,7 +55,6 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
                   fill="#eceded"
                 >
                   <title>Twitter</title>
@@ -74,7 +72,6 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
                   width="24"
                   height="24"
                   viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
                   fill="#eceded"
                 >
                   <title>LinkedIn</title>
@@ -99,7 +96,6 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
               width="24"
               height="24"
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
               fill="#000"
             >
               <title>{t("footer.top")}</title>

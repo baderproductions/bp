@@ -5,33 +5,33 @@ import SectionHeader from "./partials/SectionHeader";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import Badge from "react-bootstrap/Badge";
-import re from "../../assets/images/re.webp";
-import tw from "../../assets/images/tw.webp";
-import bo from "../../assets/images/bo.webp";
-import sa from "../../assets/images/sa.webp";
-import js from "../../assets/images/js.webp";
-import ht from "../../assets/images/ht.webp";
-import cs from "../../assets/images/cs.webp";
-import no from "../../assets/images/no.webp";
-import ex from "../../assets/images/ex.webp";
-import dj from "../../assets/images/dj.webp";
-import mo from "../../assets/images/mo.webp";
-import pg from "../../assets/images/pg.webp";
-import rd from "../../assets/images/rd.webp";
-import my from "../../assets/images/my.webp";
-import fs from "../../assets/images/fs.webp";
-import jo from "../../assets/images/jo.webp";
-import gp from "../../assets/images/gp.webp";
-import az from "../../assets/images/az.webp";
-import ma from "../../assets/images/ma.webp";
-import ap from "../../assets/images/ap.webp";
-import ng from "../../assets/images/ng.webp";
-import st from "../../assets/images/st.webp";
-import pp from "../../assets/images/pp.webp";
-import sh from "../../assets/images/sh.webp";
-import fu from "../../assets/images/fu.webp";
-import as from "../../assets/images/as.webp";
-import xc from "../../assets/images/xc.webp";
+import re from "../../assets/images/re.png";
+import tw from "../../assets/images/tw.png";
+import bo from "../../assets/images/bo.png";
+import sa from "../../assets/images/sa.png";
+import js from "../../assets/images/js.png";
+import ht from "../../assets/images/ht.png";
+import cs from "../../assets/images/cs.png";
+import no from "../../assets/images/no.png";
+import ex from "../../assets/images/ex.png";
+import dj from "../../assets/images/dj.png";
+import mo from "../../assets/images/mo.png";
+import pg from "../../assets/images/pg.png";
+import rd from "../../assets/images/rd.png";
+import my from "../../assets/images/my.png";
+import fs from "../../assets/images/fs.png";
+import jo from "../../assets/images/jo.png";
+import gp from "../../assets/images/gp.png";
+import az from "../../assets/images/az.png";
+import ma from "../../assets/images/ma.png";
+import ap from "../../assets/images/ap.png";
+import ng from "../../assets/images/ng.png";
+import st from "../../assets/images/st.png";
+import pp from "../../assets/images/pp.png";
+import sh from "../../assets/images/sh.png";
+import fu from "../../assets/images/fu.png";
+import as from "../../assets/images/as.png";
+import xc from "../../assets/images/xc.png";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -111,7 +111,6 @@ const FeaturesTiles = ({
                         version="1.1"
                         id="Capa_1"
                         fill="#000"
-                        xmlns="http://www.w3.org/2000/svg"
                         style={{
                           marginTop: 16.5,
                           marginLeft: 16.5,
@@ -306,7 +305,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={re}
                           width="64"
@@ -327,7 +326,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={ht}
                           width="720"
@@ -348,7 +347,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={cs}
                           width="1280"
@@ -369,7 +368,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={js}
                           width="1024"
@@ -390,7 +389,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={sa}
                           width="1280"
@@ -411,7 +410,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={bo}
                           width="768"
@@ -432,7 +431,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={tw}
                           width="200"
@@ -461,7 +460,6 @@ const FeaturesTiles = ({
                     >
                       <svg
                         version="1.0"
-                        xmlns="http://www.w3.org/2000/svg"
                         width="512.000000pt"
                         height="512.000000pt"
                         viewBox="0 0 142 142"
@@ -497,7 +495,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={no}
                           width="128"
@@ -518,7 +516,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img-invert"
                           src={ex}
                           width="800"
@@ -539,7 +537,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={dj}
                           width="300"
@@ -568,7 +566,6 @@ const FeaturesTiles = ({
                     >
                       <svg
                         version="1.0"
-                        xmlns="http://www.w3.org/2000/svg"
                         width="512.000000pt"
                         height="512.000000pt"
                         style={{
@@ -608,7 +605,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={mo}
                           width="413"
@@ -629,7 +626,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={pg}
                           width="256"
@@ -650,7 +647,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={rd}
                           width="200"
@@ -671,7 +668,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img-ll"
                           src={my}
                           width="3000"
@@ -692,7 +689,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={fs}
                           width="200"
@@ -713,7 +710,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img-invert"
                           src={jo}
                           width="800"
@@ -742,7 +739,6 @@ const FeaturesTiles = ({
                     >
                       <svg
                         version="1.0"
-                        xmlns="http://www.w3.org/2000/svg"
                         width="512.000000pt"
                         height="512.000000pt"
                         style={{
@@ -1053,7 +1049,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={gp}
                           width="300"
@@ -1074,7 +1070,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={az}
                           width="1416"
@@ -1095,7 +1091,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={ma}
                           width="3000"
@@ -1116,7 +1112,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={ap}
                           width="128"
@@ -1137,7 +1133,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img-l"
                           src={ng}
                           width="64"
@@ -1157,7 +1153,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img-xl"
                           src={st}
                           width="520"
@@ -1177,7 +1173,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={sh}
                           width="220"
@@ -1198,7 +1194,7 @@ const FeaturesTiles = ({
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img-xl"
                           src={pp}
                           width="225"
@@ -1226,7 +1222,6 @@ const FeaturesTiles = ({
                     >
                       <svg
                         version="1.0"
-                        xmlns="http://www.w3.org/2000/svg"
                         width="512.000000pt"
                         height="512.000000pt"
                         style={{
@@ -1274,7 +1269,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={re}
                           width="64"
@@ -1295,7 +1290,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img-xl"
                           src={fu}
                           width="512"
@@ -1315,7 +1310,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={as}
                           width="1200"
@@ -1336,7 +1331,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
-                        <img
+                        <img loading="lazy"
                           className="logo-img"
                           src={xc}
                           width="750"
