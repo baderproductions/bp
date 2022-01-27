@@ -112,7 +112,7 @@ const Hero = ({
           message: values.message,
         })
         .then((res) => {
-          if (res.data.success === "true") {
+          if (res.data.success === true) {
             resetForm({});
             setLoad(false);
             setSuccess(true);
