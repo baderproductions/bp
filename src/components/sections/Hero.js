@@ -95,7 +95,7 @@ const Hero = ({
     initialValues: {
       name: "",
       email: "",
-      msg: "",
+      message: "",
     },
     validationSchema: Yup.object({
       name: Yup.string().min(1).required(t("hero.requiredName")),
@@ -109,7 +109,7 @@ const Hero = ({
         .post(process.env.REACT_APP_EMAIL, {
           name: values.name,
           email: values.email,
-          msg: values.msg,
+          message: values.message,
         })
         .then((res) => {
           if (res.data.status === "true") {
@@ -739,7 +739,7 @@ const Hero = ({
 										placeholder={t("hero.msgPl")}
 										as="textarea"
 										rows={3}
-										{...formik.getFieldProps("msg")}
+										{...formik.getFieldProps("message")}
 									/>
 								</Form>
 								<div
