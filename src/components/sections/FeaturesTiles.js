@@ -5,33 +5,7 @@ import SectionHeader from "./partials/SectionHeader";
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 import Badge from "react-bootstrap/Badge";
-import re from "../../assets/images/re.png";
-import tw from "../../assets/images/tw.png";
-import bo from "../../assets/images/bo.png";
-import sa from "../../assets/images/sa.png";
-import js from "../../assets/images/js.png";
-import ht from "../../assets/images/ht.png";
-import cs from "../../assets/images/cs.png";
-import no from "../../assets/images/no.png";
-import ex from "../../assets/images/ex.png";
-import dj from "../../assets/images/dj.png";
-import mo from "../../assets/images/mo.png";
-import pg from "../../assets/images/pg.png";
-import rd from "../../assets/images/rd.png";
-import my from "../../assets/images/my.png";
-import fs from "../../assets/images/fs.png";
-import jo from "../../assets/images/jo.png";
-import gp from "../../assets/images/gp.png";
-import az from "../../assets/images/az.png";
-import ma from "../../assets/images/ma.png";
-import ap from "../../assets/images/ap.png";
-import ng from "../../assets/images/ng.png";
-import st from "../../assets/images/st.png";
-import pp from "../../assets/images/pp.png";
-import sh from "../../assets/images/sh.png";
-import fu from "../../assets/images/fu.png";
-import as from "../../assets/images/as.png";
-import xc from "../../assets/images/xc.png";
+import { addMediaPrefix } from "../../utils/utils";
 
 const propTypes = {
   ...SectionTilesProps.types,
@@ -307,7 +281,7 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={re}
+                          src={addMediaPrefix('re_9a3b26e8d0.png')}
                           width="64"
                           height="64"
                           alt="React Logo"
@@ -322,55 +296,13 @@ const FeaturesTiles = ({
                       data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
-                      href="https://www.w3schools.com/html"
-                      className="modal-body-devItem"
-                    >
-                      <div className="modal-body-upper">
-                        <img loading="lazy"
-                          className="logo-img"
-                          src={ht}
-                          width="720"
-                          height="720"
-                          alt="HTML Logo"
-                        />
-                        HTML
-                      </div>
-                      <div className="modal-body-lower">
-                        <Badge variant="warning">{t("dev.mar")}</Badge>
-                      </div>
-                    </a>
-                    <a
-                      data-aos="flip-right"
-                      rel="noreferrer"
-                      target="_blank"
-                      href="https://www.w3schools.com/css"
-                      className="modal-body-devItem"
-                    >
-                      <div className="modal-body-upper">
-                        <img loading="lazy"
-                          className="logo-img"
-                          src={cs}
-                          width="1280"
-                          height="1280"
-                          alt="CSS Logo"
-                        />
-                        CSS
-                      </div>
-                      <div className="modal-body-lower">
-                        <Badge variant="warning">{t("dev.sty")}</Badge>
-                      </div>
-                    </a>
-                    <a
-                      data-aos="flip-right"
-                      rel="noreferrer"
-                      target="_blank"
                       href="https://www.w3schools.com/js"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={js}
+                          src={addMediaPrefix('js_d38a68077b.png')}
                           width="1024"
                           height="1024"
                           alt="Javascript Logo"
@@ -385,42 +317,21 @@ const FeaturesTiles = ({
                       data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
-                      href="https://sass-lang.com"
+                      href="https://www.typescriptlang.org/"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={sa}
-                          width="1280"
-                          height="960"
-                          alt="Sass Logo"
-                        />
-                        Sass
-                      </div>
-                      <div className="modal-body-lower">
-                        <Badge variant="warning">{t("dev.styEx")}</Badge>
-                      </div>
-                    </a>
-                    <a
-                      data-aos="flip-right"
-                      rel="noreferrer"
-                      target="_blank"
-                      href="https://getbootstrap.com"
-                      className="modal-body-devItem"
-                    >
-                      <div className="modal-body-upper">
-                        <img loading="lazy"
-                          className="logo-img"
-                          src={bo}
+                          src={addMediaPrefix('ts_03566d99bc.png')}
                           width="768"
                           height="768"
-                          alt="Bootstrap Logo"
+                          alt="Typescript Logo"
                         />
-                        Bootstrap
+                        Typescript
                       </div>
                       <div className="modal-body-lower">
-                        <Badge variant="warning">{t("dev.fra")}</Badge>
+                        <Badge variant="warning">{t("dev.lan")}</Badge>
                       </div>
                     </a>
                     <a
@@ -433,7 +344,7 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={tw}
+                          src={addMediaPrefix('tw_891a4f7d36.png')}
                           width="200"
                           height="200"
                           alt="Tailwind Logo"
@@ -442,6 +353,186 @@ const FeaturesTiles = ({
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.fra")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      data-aos="flip-right"
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://sass-lang.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img loading="lazy"
+                          className="logo-img"
+                          src={addMediaPrefix('sa_d357f78acc.png')}
+                          width="1280"
+                          height="960"
+                          alt="Sass Logo"
+                        />
+                        Sass
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.styEx")}</Badge>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="tiles-items">
+              <div className="tiles-item-inner">
+                <div className="features-tiles-item-header">
+                  <div className="features-tiles-item-image mb-16">
+                    <div
+                      style={{
+                        width: 64,
+                        height: 64,
+                      }}
+                    >
+                      <svg
+                        version="1.0"
+                        width="512.000000pt"
+                        height="512.000000pt"
+                        style={{
+                          marginTop: 12,
+                          marginLeft: 12,
+                        }}
+                        fill="#000"
+                        viewBox="0 0 800.000000 800.000000"
+                        preserveAspectRatio="xMidYMid meet"
+                      >
+                        <g
+                          transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                          fill="#000"
+                          stroke="none"
+                        >
+                          <path
+                            d="M1550 5104 c-80 -21 -174 -78 -240 -144 -65 -65 -99 -118 -132 -206
+l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
+125 -109 221 -141 l75 -25 953 0 c1051 0 1010 -2 1131 63 70 37 171 132 209
+197 14 25 37 75 50 110 l23 65 3 2090 c2 1502 0 2109 -8 2157 -18 105 -69 199
+-153 282 -80 79 -144 118 -232 141 -87 22 -1941 22 -2025 -1z m1314 -333 c34
+-32 34 -70 0 -102 l-26 -24 -275 0 -275 0 -24 28 c-13 15 -24 36 -24 46 0 26
+36 69 63 74 12 3 138 4 279 3 l256 -1 26 -24z m-746 -1 c45 -42 15 -123 -46
+-123 -43 0 -72 28 -72 69 0 40 32 74 70 74 14 0 36 -9 48 -20z m1592 -2190 l0
+-1780 -1135 0 -1135 0 0 1780 0 1780 1135 0 1135 0 0 -1780z m-1065 -1974 c87
+-40 135 -115 135 -208 -1 -248 -337 -319 -441 -93 -24 52 -24 138 0 191 21 46
+91 111 136 123 55 17 118 12 170 -13z"
+                          />
+                        </g>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div className="features-tiles-item-content">
+                  <p className="mt-0 mb-8 h4-para">Mobile</p>
+                  <p className="m-0 text-sm">{t("dev.mobile")}</p>
+                </div>
+                <div className="modal-body-container">
+                  <div className="modal-body-devContainer">
+                    <a
+                      data-aos="flip-right"
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://reactnative.dev"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img loading="lazy"
+                          className="logo-img"
+                          src={addMediaPrefix('re_9a3b26e8d0.png')}
+                          width="64"
+                          height="64"
+                          alt="React Native Logo"
+                        />
+                        React Native
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.fra")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      data-aos="flip-right"
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://nativebase.io/"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img loading="lazy"
+                          className="logo-img"
+                          src={addMediaPrefix('nb_d1e34ca7cc.png')}
+                          width="64"
+                          height="64"
+                          alt="NativeBase Logo"
+                        />
+                        NativeBase
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.lib")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      data-aos="flip-right"
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://flutter.dev"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img loading="lazy"
+                          className="logo-img-xl"
+                          src={addMediaPrefix('fu_549b3ada19.png')}
+                          width="512"
+                          height="165"
+                          alt="Flutter Logo"
+                        />
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.fra")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      data-aos="flip-right"
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://developer.android.com/studio"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img loading="lazy"
+                          className="logo-img"
+                          src={addMediaPrefix('as_188ebbb7d8.png')}
+                          width="1200"
+                          height="1259"
+                          alt="Android Studio Logo"
+                        />
+                        Android Studio
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.rud")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      data-aos="flip-right"
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://developer.apple.com/xcode"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img loading="lazy"
+                          className="logo-img"
+                          src={addMediaPrefix('xc_f04eac9ddf.png')}
+                          width="750"
+                          height="750"
+                          alt="Xcode Logo"
+                        />
+                        Xcode
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.rud")}</Badge>
                       </div>
                     </a>
                   </div>
@@ -491,13 +582,34 @@ const FeaturesTiles = ({
                       data-aos="flip-right"
                       rel="noreferrer"
                       target="_blank"
+                      href="https://strapi.io/"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img loading="lazy"
+                          className="logo-img"
+                          src={addMediaPrefix('sr_d0a5f7a7c2.png')}
+                          width="300"
+                          height="240"
+                          alt="Strapi Logo"
+                        />
+                        Strapi
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.cms")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      data-aos="flip-right"
+                      rel="noreferrer"
+                      target="_blank"
                       href="https://nodejs.org"
                       className="modal-body-devItem"
                     >
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={no}
+                          src={addMediaPrefix('no_4dd42fce02.png')}
                           width="128"
                           height="78"
                           alt="Node.js Logo"
@@ -518,33 +630,12 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img-invert"
-                          src={ex}
+                          src={addMediaPrefix('ex_6465fb97ea.png')}
                           width="800"
                           height="800"
                           alt="Express.js Logo"
                         />
                         Express.js
-                      </div>
-                      <div className="modal-body-lower">
-                        <Badge variant="warning">{t("dev.fra")}</Badge>
-                      </div>
-                    </a>
-                    <a
-                      data-aos="flip-right"
-                      rel="noreferrer"
-                      target="_blank"
-                      href="https://www.djangoproject.com"
-                      className="modal-body-devItem"
-                    >
-                      <div className="modal-body-upper">
-                        <img loading="lazy"
-                          className="logo-img"
-                          src={dj}
-                          width="300"
-                          height="240"
-                          alt="Django Logo"
-                        />
-                        Django
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.fra")}</Badge>
@@ -607,7 +698,7 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={mo}
+                          src={addMediaPrefix('mo_0f9eb7e86d.png')}
                           width="413"
                           height="384"
                           alt="MongoDB Logo"
@@ -628,7 +719,7 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={pg}
+                          src={addMediaPrefix('pg_12440912b6.png')}
                           width="256"
                           height="256"
                           alt="PostgreSQL Logo"
@@ -649,7 +740,7 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={rd}
+                          src={addMediaPrefix('rd_84ca5967a4.png')}
                           width="200"
                           height="200"
                           alt="Firebase Realtime Logo"
@@ -670,7 +761,7 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img-ll"
-                          src={my}
+                          src={addMediaPrefix('my_8a4c2b0a0e.png')}
                           width="3000"
                           height="2000"
                           alt="MySQL Logo"
@@ -691,7 +782,7 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={fs}
+                          src={addMediaPrefix('fs_943b3e7be0.png')}
                           width="200"
                           height="200"
                           alt="Cloud Firestore Logo"
@@ -712,7 +803,7 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img-invert"
-                          src={jo}
+                          src={addMediaPrefix('jo_6d73e0e497.png')}
                           width="800"
                           height="600"
                           alt="JSON Logo"
@@ -1041,6 +1132,27 @@ const FeaturesTiles = ({
                 </div>
                 <div className="modal-body-container">
                   <div className="modal-body-devContainer">
+                  <a
+                      data-aos="flip-right"
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://aws.amazon.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img loading="lazy"
+                          className="logo-img"
+                          src={addMediaPrefix('no_4dd42fce02.png')}
+                          width="1416"
+                          height="551"
+                          alt="Amazon Web Services Logo"
+                        />
+                        AWS
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.csv")}</Badge>
+                      </div>
+                    </a>
                     <a
                       data-aos="flip-right"
                       rel="noreferrer"
@@ -1051,33 +1163,12 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={gp}
+                          src={addMediaPrefix('gp_bb47fe4018.png')}
                           width="300"
                           height="300"
                           alt="Google Cloud Platform Logo"
                         />
                         Google Cloud
-                      </div>
-                      <div className="modal-body-lower">
-                        <Badge variant="warning">{t("dev.csv")}</Badge>
-                      </div>
-                    </a>
-                    <a
-                      data-aos="flip-right"
-                      rel="noreferrer"
-                      target="_blank"
-                      href="https://aws.amazon.com"
-                      className="modal-body-devItem"
-                    >
-                      <div className="modal-body-upper">
-                        <img loading="lazy"
-                          className="logo-img"
-                          src={az}
-                          width="1416"
-                          height="551"
-                          alt="Amazon Web Services Logo"
-                        />
-                        AWS
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.csv")}</Badge>
@@ -1093,7 +1184,7 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={ma}
+                          src={addMediaPrefix('ma_7fa5e41d0e.png')}
                           width="3000"
                           height="2000"
                           alt="Microsoft Azure Logo"
@@ -1114,7 +1205,7 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={ap}
+                          src={addMediaPrefix('ap_bafaac9fc8.png')}
                           width="128"
                           height="226"
                           alt="Apache Logo"
@@ -1135,7 +1226,7 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img-l"
-                          src={ng}
+                          src={addMediaPrefix('ng_09229db348.png')}
                           width="64"
                           height="64"
                           alt="NGINX Logo"
@@ -1155,10 +1246,30 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img-xl"
-                          src={st}
+                          src={addMediaPrefix('st_29569dbb22.png')}
                           width="520"
                           height="300"
                           alt="Stripe Logo"
+                        />
+                      </div>
+                      <div className="modal-body-lower">
+                        <Badge variant="warning">{t("dev.psy")}</Badge>
+                      </div>
+                    </a>
+                    <a
+                      data-aos="flip-right"
+                      rel="noreferrer"
+                      target="_blank"
+                      href="https://developer.paypal.com"
+                      className="modal-body-devItem"
+                    >
+                      <div className="modal-body-upper">
+                        <img loading="lazy"
+                          className="logo-img-xl"
+                          src={addMediaPrefix('pp_a1daa2c4d7.png')}
+                          width="225"
+                          height="225"
+                          alt="PayPal Logo"
                         />
                       </div>
                       <div className="modal-body-lower">
@@ -1175,7 +1286,7 @@ const FeaturesTiles = ({
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={sh}
+                          src={addMediaPrefix('sh_c784aa32d2.png')}
                           width="220"
                           height="230"
                           alt="Shopify Logo"
@@ -1184,164 +1295,6 @@ const FeaturesTiles = ({
                       </div>
                       <div className="modal-body-lower">
                         <Badge variant="warning">{t("dev.ecm")}</Badge>
-                      </div>
-                    </a>
-                    <a
-                      data-aos="flip-right"
-                      rel="noreferrer"
-                      target="_blank"
-                      href="https://developer.paypal.com"
-                      className="modal-body-devItem"
-                    >
-                      <div className="modal-body-upper">
-                        <img loading="lazy"
-                          className="logo-img-xl"
-                          src={pp}
-                          width="225"
-                          height="225"
-                          alt="PayPal Logo"
-                        />
-                      </div>
-                      <div className="modal-body-lower">
-                        <Badge variant="warning">{t("dev.psy")}</Badge>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="tiles-items">
-              <div className="tiles-item-inner">
-                <div className="features-tiles-item-header">
-                  <div className="features-tiles-item-image mb-16">
-                    <div
-                      style={{
-                        width: 64,
-                        height: 64,
-                      }}
-                    >
-                      <svg
-                        version="1.0"
-                        width="512.000000pt"
-                        height="512.000000pt"
-                        style={{
-                          marginTop: 12,
-                          marginLeft: 12,
-                        }}
-                        fill="#000"
-                        viewBox="0 0 800.000000 800.000000"
-                        preserveAspectRatio="xMidYMid meet"
-                      >
-                        <g
-                          transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
-                          fill="#000"
-                          stroke="none"
-                        >
-                          <path
-                            d="M1550 5104 c-80 -21 -174 -78 -240 -144 -65 -65 -99 -118 -132 -206
-l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
-125 -109 221 -141 l75 -25 953 0 c1051 0 1010 -2 1131 63 70 37 171 132 209
-197 14 25 37 75 50 110 l23 65 3 2090 c2 1502 0 2109 -8 2157 -18 105 -69 199
--153 282 -80 79 -144 118 -232 141 -87 22 -1941 22 -2025 -1z m1314 -333 c34
--32 34 -70 0 -102 l-26 -24 -275 0 -275 0 -24 28 c-13 15 -24 36 -24 46 0 26
-36 69 63 74 12 3 138 4 279 3 l256 -1 26 -24z m-746 -1 c45 -42 15 -123 -46
--123 -43 0 -72 28 -72 69 0 40 32 74 70 74 14 0 36 -9 48 -20z m1592 -2190 l0
--1780 -1135 0 -1135 0 0 1780 0 1780 1135 0 1135 0 0 -1780z m-1065 -1974 c87
--40 135 -115 135 -208 -1 -248 -337 -319 -441 -93 -24 52 -24 138 0 191 21 46
-91 111 136 123 55 17 118 12 170 -13z"
-                          />
-                        </g>
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="features-tiles-item-content">
-                  <p className="mt-0 mb-8 h4-para">Mobile</p>
-                  <p className="m-0 text-sm">{t("dev.mobile")}</p>
-                </div>
-                <div className="modal-body-container">
-                  <div className="modal-body-devContainer">
-                    <a
-                      data-aos="flip-right"
-                      rel="noreferrer"
-                      target="_blank"
-                      href="https://reactnative.dev"
-                      className="modal-body-devItem"
-                    >
-                      <div className="modal-body-upper">
-                        <img loading="lazy"
-                          className="logo-img"
-                          src={re}
-                          width="64"
-                          height="64"
-                          alt="React Native Logo"
-                        />
-                        React Native
-                      </div>
-                      <div className="modal-body-lower">
-                        <Badge variant="warning">{t("dev.fra")}</Badge>
-                      </div>
-                    </a>
-                    <a
-                      data-aos="flip-right"
-                      rel="noreferrer"
-                      target="_blank"
-                      href="https://flutter.dev"
-                      className="modal-body-devItem"
-                    >
-                      <div className="modal-body-upper">
-                        <img loading="lazy"
-                          className="logo-img-xl"
-                          src={fu}
-                          width="512"
-                          height="165"
-                          alt="Flutter Logo"
-                        />
-                      </div>
-                      <div className="modal-body-lower">
-                        <Badge variant="warning">{t("dev.fra")}</Badge>
-                      </div>
-                    </a>
-                    <a
-                      data-aos="flip-right"
-                      rel="noreferrer"
-                      target="_blank"
-                      href="https://developer.android.com/studio"
-                      className="modal-body-devItem"
-                    >
-                      <div className="modal-body-upper">
-                        <img loading="lazy"
-                          className="logo-img"
-                          src={as}
-                          width="1200"
-                          height="1259"
-                          alt="Android Studio Logo"
-                        />
-                        Android Studio
-                      </div>
-                      <div className="modal-body-lower">
-                        <Badge variant="warning">{t("dev.rud")}</Badge>
-                      </div>
-                    </a>
-                    <a
-                      data-aos="flip-right"
-                      rel="noreferrer"
-                      target="_blank"
-                      href="https://developer.apple.com/xcode"
-                      className="modal-body-devItem"
-                    >
-                      <div className="modal-body-upper">
-                        <img loading="lazy"
-                          className="logo-img"
-                          src={xc}
-                          width="750"
-                          height="750"
-                          alt="Xcode Logo"
-                        />
-                        Xcode
-                      </div>
-                      <div className="modal-body-lower">
-                        <Badge variant="warning">{t("dev.rud")}</Badge>
                       </div>
                     </a>
                   </div>

@@ -293,7 +293,7 @@ const FeaturesSplit = ({
 												rel="noreferrer"
 												target="_blank"
 												wideMobile
-												href="https://inkthatquote.com/"
+												href={process.env.REACT_APP_IMDB_SCRAPER}
 												style={{ margin: "0 1rem" }}
 											>
 												Live App

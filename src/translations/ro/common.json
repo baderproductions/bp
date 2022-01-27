@@ -95,7 +95,8 @@
         "wsv": "Servere web",
         "psy": "Sisteme de plăţi",
         "ecm": "E-commerce",
-        "rud": "Medii de dezvoltare"
+        "rud": "Medii de dezvoltare",
+        "cms": "Headless CMS"
     },
     "work": {
         "sub": "Freelancing şi proiecte personale",

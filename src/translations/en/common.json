@@ -96,7 +96,8 @@
         "wsv": "Web server",
         "psy": "Payment system",
         "ecm": "E-commerce",
-        "rud": "Development environment"
+        "rud": "Development environment",
+        "cms": "Headless CMS"
     },
     "work": {
         "sub": "Freelancing and personal projects",
