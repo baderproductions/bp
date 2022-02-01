@@ -1142,7 +1142,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
                       <div className="modal-body-upper">
                         <img loading="lazy"
                           className="logo-img"
-                          src={addMediaPrefix('no_4dd42fce02.png')}
+                          src={addMediaPrefix('az_9bdbc26407.png')}
                           width="1416"
                           height="551"
                           alt="Amazon Web Services Logo"
