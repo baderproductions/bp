@@ -47,7 +47,7 @@ const Footer = ({ className, topOuterDivider, topDivider, ...props }) => {
             </li>
           </ul>
           <ul className="copyright">
-            <li>&copy; {currentYear}, BADERproductions.co.uk</li>
+            <li>&copy; {currentYear} • BADERproductions.co.uk</li>
           </ul>
         </div>
         <div
