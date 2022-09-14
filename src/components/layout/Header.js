@@ -120,11 +120,11 @@ const Header = ({
     dispatch(AppConfigActions.toggleAboutModal());
   };
 
-  const openContactModal = (e) => {
-    e.preventDefault();
-    document.getElementById("html").style.overflowY = "hidden";
-    dispatch(AppConfigActions.toggleContactModal());
-  };
+  // const openContactModal = (e) => {
+  //   e.preventDefault();
+  //   document.getElementById("html").style.overflowY = "hidden";
+  //   dispatch(AppConfigActions.toggleContactModal());
+  // };
 
   const handleSwitch = () => {
     if (cookies.lang === "ro") {
@@ -243,7 +243,7 @@ const Header = ({
                     </li>
                   </ul>
 
-                  {!hideSignin && (
+                  {/* {!hideSignin && (
                     <ul
                       style={{ margin: "0.5rem 0" }}
                       className="list-reset header-nav-right"
@@ -258,7 +258,7 @@ const Header = ({
                         </div>
                       </li>
                     </ul>
-                  )}
+                  )} */}
                 </div>
               </nav>
             </>
