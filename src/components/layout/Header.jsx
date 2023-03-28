@@ -129,11 +129,11 @@ const Header = ({
   const handleSwitch = () => {
     if (cookies.lang === "ro") {
       i18n.changeLanguage("en");
-      setCookie("lang", "en", { path: "/", maxAge: 31540000 });
+      setCookie("lang", "en", { path: "/", maxAge: 31540000, sameSite: true });
       setLang(false);
     } else {
       i18n.changeLanguage("ro");
-      setCookie("lang", "ro", { path: "/", maxAge: 31540000 });
+      setCookie("lang", "ro", { path: "/", maxAge: 31540000, sameSite: true });
       setLang(true);
     }
   };
@@ -195,7 +195,7 @@ const Header = ({
                                   height: "1rem",
                                   borderRadius: "100%",
                                 }}
-                                className="flag-icon flag-icon-gb"
+                                className="fi fi-gb"
                               />
                             }
                             checkedIcon={
@@ -207,7 +207,7 @@ const Header = ({
                                   height: "1rem",
                                   borderRadius: "100%",
                                 }}
-                                className="flag-icon flag-icon-ro"
+                                className="fi fi-ro"
                               />
                             }
                             color="default"

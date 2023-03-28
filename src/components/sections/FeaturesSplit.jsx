@@ -67,14 +67,106 @@ const FeaturesSplit = ({
   );
 
   const sectionHeader = {
-    title: "Work",
-    paragraph: t("work.sub"),
+    title: t("work.sub"),
+    paragraph: t("work.subBracket"),
+  };
+
+  const sectionHeaderSecond = {
+    title: "Professional Experience",
+    paragraph: "Frontend Developer",
   };
 
   return (
 			<section ref={workRef} {...props} className={outerClasses}>
 				<div className="container">
 					<div className={innerClasses}>
+						<SectionHeader data={sectionHeaderSecond} className="center-content" />
+						<div className={splitClasses}>
+							<div data-aos="fade-up-left" className="split-item">
+								<div className="split-item-content center-content-mobile">
+									<div className="text-xxs text-color-primary fw-600 tt-u mb-8">
+										Online Events Platform
+									</div>
+									<h3 className="mt-0 mb-12">{t("work.ovTitle")}</h3>
+									<p className="m-0">
+										<span style={{
+											display: "flex",
+											alignItems: "center",
+										}}>
+											<svg fill="transparent" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" style={{
+												width: "1rem",
+												height: "1rem",
+												marginRight: "0.5rem",
+											}}>
+												<path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+											</svg>
+											{t("work.ovEmployer")}
+										</span>
+										<p style={{
+											margin: "0.5rem 0",
+										}}>{t("work.ovDescription")}</p>
+									</p>
+								</div>
+								<div
+									className={classNames(
+										"split-item-image center-content-mobile",
+										imageFill && "split-item-image-fill"
+									)}
+									onMouseOver={() => setHover(true)}
+									onMouseLeave={() => setHover(false)}
+									style={{ cursor: "pointer" }}
+								>
+									<div
+										style={{
+											position: "absolute",
+											top: 0,
+											left: 0,
+											width: "100%",
+											height: "100%",
+											display: "flex",
+											flexDirection: "column",
+											justifyContent: "center",
+											alignItems: "center",
+											backgroundColor: isHovered ? "rgba(0,0,0,0.8)" : "transparent",
+											transition: "0.5s ease",
+										}}
+									>
+										<div
+											style={{
+												transform: `scale(${isHovered ? 1 : 0})`,
+												opacity: isHovered ? 1 : 0,
+												width: "100%",
+												padding: "0 1rem",
+												display: "flex",
+												flexDirection: "row",
+												justifyContent: "space-evenly",
+												alignItems: "center",
+												backgroundColor: "transparent",
+												transition: "0.5s ease",
+											}}
+										>
+											<Button
+												tag="a"
+												color="black"
+												rel="noreferrer"
+												target="_blank"
+												wideMobile
+												href="https://myonvent.com/"
+												style={{ margin: "0 1rem" }}
+											>
+												Website
+											</Button>
+										</div>
+									</div>
+									<Image
+										src="https://dlc4jqsejiyjs.cloudfront.net/ov.png"
+										alt="myOnvent"
+										width={528}
+										height={396}
+									/>
+								</div>
+							</div>
+						</div>
 						<SectionHeader data={sectionHeader} className="center-content" />
 						<div className={splitClasses}>
 							<div data-aos="fade-up-left" className="split-item">
@@ -287,17 +379,6 @@ const FeaturesSplit = ({
 												transition: "0.5s ease",
 											}}
 										>
-											<Button
-												tag="a"
-												color="black"
-												rel="noreferrer"
-												target="_blank"
-												wideMobile
-												href={process.env.REACT_APP_IMDB_SCRAPER}
-												style={{ margin: "0 1rem" }}
-											>
-												Live App
-											</Button>
 											<Button
 												tag="a"
 												color="black"

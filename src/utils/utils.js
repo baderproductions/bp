@@ -7,5 +7,5 @@
  * Returns URI formed with CDN + asset, e.g. 'https://s3.cdn.com/logo.png'
  */
 export const addMediaPrefix = asset => {
-    return `${process.env.REACT_APP_CDN}/${asset}`;
+    return `${import.meta.env.VITE_APP_CDN}/${asset}`;
 };

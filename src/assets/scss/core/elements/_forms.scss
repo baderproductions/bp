@@ -63,10 +63,10 @@ fieldset {
   @include font-size(input);
   @include font-weight(input);
   padding: (
-      (
+      calc((
           $button-form--height - get-line-height(input) -
             ($button-form--border-width * 2)
-        ) / 2
+        ) / 2)
     )
     ($form--padding-h - $button-form--border-width);
   height: $button-form--height;

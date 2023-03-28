@@ -50,6 +50,9 @@ const SectionHeader = ({
             {data.paragraph &&
               <p className="m-0">{data.paragraph}</p>
             }
+            {data.bracket &&
+              <p className="m-0" style={{fontSize: '15px'}}>{data.bracket}</p>
+            }
           </div>
         </div>
       }

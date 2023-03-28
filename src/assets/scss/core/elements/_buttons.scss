@@ -20,10 +20,10 @@
   display: inline-flex;
   @include font-size(button);
   padding: (
-      (
+      calc((
           $button-form--height - get-line-height(button) -
             ($button-form--border-width * 2)
-        ) / 2
+        ) / 2)
     )
     ($button--padding-h - $button-form--border-width);
   height: $button-form--height;
@@ -64,8 +64,8 @@
       position: absolute;
       width: get-line-height(button);
       height: get-line-height(button);
-      margin-left: -(get-line-height(button) / 2);
-      margin-top: -(get-line-height(button) / 2);
+      margin-left: -calc(get-line-height(button) / 2);
+      margin-top: -calc(get-line-height(button) / 2);
       top: 50%;
       left: 50%;
       border: $button-loading--thickness solid color(button-light);
@@ -93,10 +93,10 @@
 
 .button-sm {
   padding: (
-      (
+      calc((
           $button-form-sm--height - get-line-height(button) -
             ($button-form--border-width * 2)
-        ) / 2
+        ) / 2)
     )
     ($button-sm--padding-h - $button-form--border-width);
   height: $button-form-sm--height;
@@ -177,20 +177,20 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-right: -($button-group-padding / 2);
-  margin-left: -($button-group-padding / 2);
-  margin-top: -($button-group-padding / 2);
+  margin-right: -calc(($button-group-padding / 2));
+  margin-left: -calc(($button-group-padding / 2));
+  margin-top: -calc(($button-group-padding / 2));
 
   &:last-of-type {
-    margin-bottom: -($button-group-padding / 2);
+    margin-bottom: -calc(($button-group-padding / 2));
   }
 
   &:not(:last-of-type) {
-    margin-bottom: ($button-group-padding / 2);
+    margin-bottom: calc(($button-group-padding / 2));
   }
 
   > [class*="button"] {
-    margin: $button-group-padding / 2;
+    margin: calc($button-group-padding / 2);
   }
 }
 

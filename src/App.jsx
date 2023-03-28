@@ -8,7 +8,7 @@ import Aos from "aos";
 // import "~slick-carousel/slick/slick-theme.css";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../node_modules/flag-icon-css/sass/flag-icon.scss";
+import "../node_modules/flag-icons/css/flag-icons.min.css";
 // Redux
 import { Provider } from "react-redux";
 import { store } from "./redux/configureStore";
@@ -45,7 +45,7 @@ const App = () => {
   
   useEffect(() => {
     if (cookies.lang === undefined) {
-      setCookie("lang", "en", { path: "/", maxAge: 31540000 });
+      setCookie("lang", "en", { path: "/", maxAge: 31540000, sameSite: true });
     }
     document.body.classList.add("is-loaded");
     childRef.current.init();

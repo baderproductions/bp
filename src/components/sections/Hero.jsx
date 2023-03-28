@@ -106,7 +106,7 @@ const Hero = ({
 		onSubmit: (values, { setSubmitting, setErrors, setStatus, resetForm }) => {
 			setLoad(true);
 			axios
-				.post(process.env.REACT_APP_EMAIL, {
+				.post(import.meta.env.REACT_APP_EMAIL, {
 					name: values.name,
 					email: values.email,
 					message: values.message,
@@ -145,7 +145,7 @@ const Hero = ({
 				<div className={innerClasses}>
 					<div data-aos="zoom-in" className="hero-content container-xs">
 						<h1>
-							Kevin <span className="text-color-primary">Bader</span>
+							Bader <span className="text-color-primary">Kevin Brian</span>
 						</h1>
 						<div>
 							<p>
