@@ -33,7 +33,7 @@ TagManager.initialize(tagManagerArgs);
 
 Aos.init({
   delay: 100,
-  offset: 150,
+  offset: -1000,
   once: true,
   duration: 1000,
 });
