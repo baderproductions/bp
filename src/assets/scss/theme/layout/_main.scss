@@ -10,3 +10,12 @@
 ::-webkit-scrollbar-thumb:hover {
     background: #393d41; 
 }
+
+.icon-svg-wrapper {
+    justify-content: center;
+    @media (min-width: 641px) { justify-content: unset; }
+}
+
+.icon-svg-margin {
+    margin: 0 0.5rem 0 0 !important;
+}

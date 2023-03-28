@@ -177,16 +177,16 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-right: -calc(($button-group-padding / 2));
-  margin-left: -calc(($button-group-padding / 2));
-  margin-top: -calc(($button-group-padding / 2));
+  margin-right: -calc($button-group-padding / 2);
+  margin-left: -calc($button-group-padding / 2);
+  margin-top: -calc($button-group-padding / 2);
 
   &:last-of-type {
-    margin-bottom: -calc(($button-group-padding / 2));
+    margin-bottom: -calc($button-group-padding / 2);
   }
 
   &:not(:last-of-type) {
-    margin-bottom: calc(($button-group-padding / 2));
+    margin-bottom: calc($button-group-padding / 2);
   }
 
   > [class*="button"] {
