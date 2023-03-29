@@ -135,11 +135,11 @@
     .split-wrap {
       .split-item {
         .split-item-content {
-          width: ($container--width / 2) - $split-item-content--padding-h;
+          width: ($container--width / 2) - $split-item-content--padding-h !important;
         }
 
         .split-item-image {
-          min-width: ($container--width / 2) - $split-item-image--padding-h;
+          min-width: ($container--width / 2) - $split-item-image--padding-h !important;
         }
       }
     }
