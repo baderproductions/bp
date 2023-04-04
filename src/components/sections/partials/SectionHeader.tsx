@@ -23,14 +23,14 @@ const SectionHeader = ({
 	tag,
 	...props
 }: {
-  className?: string;
-  data: {
-    title?: string;
-    paragraph?: string;
-    bracket?: string;
-  };
-  children?: React.ReactNode;
-  tag?: string;
+	className?: string;
+	data: {
+		title?: string;
+		paragraph?: string;
+		bracket?: string;
+	};
+	children?: React.ReactNode;
+	tag?: string;
 }) => {
 
 	const classes = classNames(
@@ -54,8 +54,7 @@ const SectionHeader = ({
 					<Component
 						className={
 							classNames(
-								'mt-0 font-bold',
-								data.paragraph ? 'mb-16' : 'mb-0'
+								'mt-0 font-bold text-3xl'
 							) }>{data.title}</Component>
 					}
 					{data.paragraph &&

@@ -86,7 +86,7 @@ const FeaturesTiles = ({
 						<div className="tiles-items">
 							<div className="tiles-item-inner">
 								<div className="features-tiles-item-header">
-									<div className="features-tiles-item-image mb-16">
+									<div className="features-tiles-item-image mb-4">
 										<div
 											style={{
 												width: 64,
@@ -278,7 +278,7 @@ const FeaturesTiles = ({
 									</div>
 								</div>
 								<div className="features-tiles-item-content">
-									<p className="mt-0 mb-8 h4-para">Front-end</p>
+									<p className="mt-0 h4-para">Front-end</p>
 									<p className="m-0 text-sm text-bp-light-100">{t('dev.front')}</p>
 								</div>
 								<div className="modal-body-container">
@@ -400,7 +400,7 @@ const FeaturesTiles = ({
 						<div className="tiles-items">
 							<div className="tiles-item-inner">
 								<div className="features-tiles-item-header">
-									<div className="features-tiles-item-image mb-16">
+									<div className="features-tiles-item-image mb-4">
 										<div
 											style={{
 												width: 64,
@@ -443,7 +443,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
 									</div>
 								</div>
 								<div className="features-tiles-item-content">
-									<p className="mt-0 mb-8 h4-para">Mobile</p>
+									<p className="mt-0 h4-para">Mobile</p>
 									<p className="m-0 text-sm text-bp-light-100">{t('dev.mobile')}</p>
 								</div>
 								<div className="modal-body-container">
@@ -564,7 +564,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
 						<div className="tiles-items">
 							<div className="tiles-item-inner">
 								<div className="features-tiles-item-header">
-									<div className="features-tiles-item-image mb-16">
+									<div className="features-tiles-item-image mb-4">
 										<div
 											style={{
 												width: 64,
@@ -595,7 +595,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
 									</div>
 								</div>
 								<div className="features-tiles-item-content">
-									<p className="mt-0 mb-8 h4-para">Back-end</p>
+									<p className="mt-0 h4-para">Back-end</p>
 									<p className="m-0 text-sm text-bp-light-100">{t('dev.back')}</p>
 								</div>
 								<div className="modal-body-container">
@@ -673,7 +673,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
 						<div className="tiles-items">
 							<div className="tiles-item-inner">
 								<div className="features-tiles-item-header">
-									<div className="features-tiles-item-image mb-16">
+									<div className="features-tiles-item-image mb-4">
 										<div
 											style={{
 												width: 64,
@@ -710,7 +710,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
 									</div>
 								</div>
 								<div className="features-tiles-item-content">
-									<p className="mt-0 mb-8 h4-para">{t('modal.database')}</p>
+									<p className="mt-0 h4-para">{t('modal.database')}</p>
 									<p className="m-0 text-sm text-bp-light-100">{t('dev.data')}</p>
 								</div>
 								<div className="modal-body-container">
@@ -854,7 +854,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
 						<div className="tiles-items">
 							<div className="tiles-item-inner">
 								<div className="features-tiles-item-header">
-									<div className="features-tiles-item-image mb-16">
+									<div className="features-tiles-item-image mb-4">
 										<div
 											style={{
 												width: 64,
@@ -1342,7 +1342,7 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
 									</div>
 								</div>
 								<div className="features-tiles-item-content">
-									<p className="mt-0 mb-8 h4-para">{t('modal.server')}</p>
+									<p className="mt-0 h4-para">{t('modal.server')}</p>
 									<p className="m-0 text-sm text-bp-light-100">{t('dev.server')}</p>
 								</div>
 								<div className="modal-body-container">

@@ -78,7 +78,7 @@ const FeaturesSplit = ({
 
 	const sectionHeaderSecond = {
 		title: 'Professional Experience',
-		paragraph: 'Frontend Developer',
+		paragraph: 'Frontend / Mobile Developer',
 	};
 
 	return (
@@ -96,17 +96,17 @@ const FeaturesSplit = ({
 							data-aos="fade-up-left"
 							className="split-item">
 							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u mb-8">
+								<div className="text-xxs text-color-primary fw-600 tt-u">
 									Online Events Platform
 								</div>
-								<h3 className="mt-0 mb-12 font-bold">{t('work.ovTitle')}</h3>
+								<h3 className="mt-0 font-bold text-2xl">{t('work.ovTitle')}</h3>
 								<div className="m-0 text-bp-light-100">
 									<span
 										style={{
 											display: 'flex',
 											alignItems: 'center',
 										}}
-										className="icon-svg-wrapper">
+										className="icon-svg-wrapper text-sm mt-2">
 										<svg
 											fill="transparent"
 											viewBox="0 0 24 24"
@@ -201,17 +201,17 @@ const FeaturesSplit = ({
 							data-aos="fade-up-right"
 							className="split-item">
 							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u mb-8">
+								<div className="text-xxs text-color-primary fw-600 tt-u">
 									McDonald&apos;s WWC2022 Platform (Web / Mobile)
 								</div>
-								<h3 className="mt-0 mb-12 font-bold">McDonald&apos;s Corporation Worldwide Conference 2022</h3>
+								<h3 className="mt-0 font-bold text-2xl">McDonald&apos;s Corporation Worldwide Conference 2022</h3>
 								<div className="m-0 text-bp-light-100">
 									<span
 										style={{
 											display: 'flex',
 											alignItems: 'center',
 										}}
-										className="icon-svg-wrapper">
+										className="icon-svg-wrapper text-sm mt-2">
 										<svg
 											fill="transparent"
 											viewBox="0 0 24 24"
@@ -306,17 +306,17 @@ const FeaturesSplit = ({
 							data-aos="fade-up-left"
 							className="split-item">
 							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u mb-8">
+								<div className="text-xxs text-color-primary fw-600 tt-u">
 									UK Software Services Platform
 								</div>
-								<h3 className="mt-0 mb-12 font-bold">Deazy</h3>
+								<h3 className="mt-0 font-bold text-2xl">Deazy</h3>
 								<div className="m-0 text-bp-light-100">
 									<span
 										style={{
 											display: 'flex',
 											alignItems: 'center',
 										}}
-										className="icon-svg-wrapper">
+										className="icon-svg-wrapper text-sm mt-2">
 										<svg
 											fill="transparent"
 											viewBox="0 0 24 24"
@@ -411,17 +411,17 @@ const FeaturesSplit = ({
 							data-aos="fade-up-right"
 							className="split-item">
 							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u mb-8">
+								<div className="text-xxs text-color-primary fw-600 tt-u">
 									Online Healthcare Platform
 								</div>
-								<h3 className="mt-0 mb-12 font-bold">TUUNE</h3>
+								<h3 className="mt-0 font-bold text-2xl">TUUNE</h3>
 								<div className="m-0 text-bp-light-100">
 									<span
 										style={{
 											display: 'flex',
 											alignItems: 'center',
 										}}
-										className="icon-svg-wrapper">
+										className="icon-svg-wrapper text-sm mt-2">
 										<svg
 											fill="transparent"
 											viewBox="0 0 24 24"
@@ -521,10 +521,10 @@ const FeaturesSplit = ({
 							data-aos="fade-up-left"
 							className="split-item">
 							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u mb-8">
+								<div className="text-xxs text-color-primary fw-600 tt-u">
 									Head Chef SPA
 								</div>
-								<h3 className="mt-0 mb-12 font-bold">Raul Vidican</h3>
+								<h3 className="mt-0 font-bold text-2xl">Raul Vidican</h3>
 								<p className="m-0 text-bp-light-100">
 									{t('work.rv2')}
 									<br />
@@ -614,10 +614,10 @@ const FeaturesSplit = ({
 							data-aos="fade-up-right"
 							className="split-item">
 							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u mb-8">
+								<div className="text-xxs text-color-primary fw-600 tt-u">
 									React native Application (iOS / Android)
 								</div>
-								<h3 className="mt-0 mb-12 font-bold">Filelist App</h3>
+								<h3 className="mt-0 font-bold text-2xl">Filelist App</h3>
 								<p className="m-0 text-bp-light-100">
 									{t('work.fl1')}
 									<br />
@@ -707,10 +707,10 @@ const FeaturesSplit = ({
 							data-aos="fade-up-left"
 							className="split-item">
 							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u mb-8">
+								<div className="text-xxs text-color-primary fw-600 tt-u">
 									Node.js / Express API
 								</div>
-								<h3 className="mt-0 mb-12 font-bold">IMDB Scraper</h3>
+								<h3 className="mt-0 font-bold text-2xl">IMDB Scraper</h3>
 								<p className="m-0 text-bp-light-100">{t('work.im')}</p>
 							</div>
 							<div
