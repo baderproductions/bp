@@ -179,14 +179,14 @@ const FeaturesSplit = ({
 											Visit Platform
 										</Button>
 										{/* <Button
-												tag="button"
-												color="black"
-												wideMobile
-												onClick={() => navigate('/project/myonvent-online-events')}
-												style={{ margin: "0 1rem" }}
-											>
-												More Info
-											</Button> */}
+											tag="button"
+											color="black"
+											wideMobile
+											onClick={ () => navigate('/project/myonvent-online-events') }
+											style={{margin: '0 1rem',}}
+										>
+											More Info
+										</Button> */}
 									</div>
 								</div>
 								<Image

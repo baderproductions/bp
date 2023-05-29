@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect,} from 'react';
+import React, {useState, useRef, useEffect, useCallback,} from 'react';
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -15,7 +15,7 @@ const defaultProps = {
 	alt: undefined,
 };
 
-const Image = ({className, src, width, height, alt, ...props}: any) => {
+const Image = ({className, src, width, height, alt, ...props}: React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>) => {
 	const [loaded, setLoaded] = useState(false);
 
 	const image = useRef(null);
@@ -50,9 +50,7 @@ const Image = ({className, src, width, height, alt, ...props}: any) => {
 		}
 	};
 
-	function onLoad() {
-		setLoaded(true);
-	}
+	const onLoad = useCallback(() => setLoaded(true), []);
 
 	return (
 		<img
@@ -63,7 +61,6 @@ const Image = ({className, src, width, height, alt, ...props}: any) => {
 			width={ width }
 			height={ height }
 			alt={ alt }
-			// eslint-disable-next-line react/jsx-no-bind
 			onLoad={ onLoad }
 		/>
 	);
