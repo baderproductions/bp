@@ -309,28 +309,6 @@ const FeaturesTiles = ({
 											data-aos="flip-right"
 											rel="noreferrer"
 											target="_blank"
-											href="https://www.w3schools.com/js"
-											className="modal-body-devItem"
-										>
-											<div className="modal-body-upper">
-												<img
-													loading="lazy"
-													className="logo-img"
-													src={ addMediaPrefix('js_d38a68077b.png') }
-													width="1024"
-													height="1024"
-													alt="Javascript Logo"
-												/>
-												Javascript
-											</div>
-											<div className="modal-body-lower">
-												<Badge variant="warning">{t('dev.lan')}</Badge>
-											</div>
-										</a>
-										<a
-											data-aos="flip-right"
-											rel="noreferrer"
-											target="_blank"
 											href="https://www.typescriptlang.org/"
 											className="modal-body-devItem"
 										>

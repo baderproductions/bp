@@ -335,7 +335,7 @@ const FeaturesSplit = ({
 										{t('work.ovEmployer')}
 									</span>
 									<p className="my-2">
-										{t('work.ovDescription')}
+										{t('work.dzDescription')}
 									</p>
 								</div>
 							</div>
@@ -440,7 +440,7 @@ const FeaturesSplit = ({
 										{t('work.ovEmployer')}
 									</span>
 									<p className="my-2">
-										{t('work.mdDescription')}
+										{t('work.tuuDescription')}
 									</p>
 								</div>
 							</div>
