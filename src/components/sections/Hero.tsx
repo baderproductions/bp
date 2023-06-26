@@ -226,9 +226,6 @@ const Hero = ({
 											{t('modal.who3')}
 											<br />
 											<br />
-											{t('modal.who4')}
-											<br />
-											<br />
 											{t('modal.who5')}
 											<br />
 											<br />
