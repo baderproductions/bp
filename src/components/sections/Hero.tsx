@@ -179,7 +179,7 @@ const Hero = ({
 									rel="noreferrer"
 									target="_blank"
 									wideMobile
-									href="https://github.com/baderproductions"
+									href="https://github.com/ikevin127"
 								>
 									GitHub
 								</Button>
@@ -364,7 +364,7 @@ const Hero = ({
 											<a
 												rel="noreferrer"
 												target="_blank"
-												href="https://github.com/baderproductions/metin2verifyCont"
+												href="https://github.com/ikevin127/metin2verifyCont"
 											>
 												metin2verifyCont
 											</a>

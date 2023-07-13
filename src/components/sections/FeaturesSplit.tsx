@@ -586,7 +586,7 @@ const FeaturesSplit = ({
 											rel="noreferrer"
 											target="_blank"
 											wideMobile
-											href="https://github.com/baderproductions/rv-chef"
+											href="https://github.com/ikevin127/rv-chef"
 											style={{margin: '0 1rem',}}
 										>
 											GitHub
@@ -679,7 +679,7 @@ const FeaturesSplit = ({
 											rel="noreferrer"
 											target="_blank"
 											wideMobile
-											href="https://github.com/baderproductions/filelist-app"
+											href="https://github.com/ikevin127/filelist-app"
 											style={{margin: '0 1rem',}}
 										>
 											GitHub
@@ -757,7 +757,7 @@ const FeaturesSplit = ({
 											rel="noreferrer"
 											target="_blank"
 											wideMobile
-											href="https://github.com/baderproductions/imdb-scraper"
+											href="https://github.com/ikevin127/imdb-scraper"
 											style={{margin: '0 1rem',}}
 										>
 											GitHub
