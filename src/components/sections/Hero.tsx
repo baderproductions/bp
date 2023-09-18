@@ -155,7 +155,7 @@ const Hero = ({
 						data-aos="zoom-in"
 						className="hero-content container-xs">
 						<h1 className="text-4xl font-bold">
-							Bader <span className="text-color-primary">Kevin Brian</span>
+							Kevin Brian <span className="text-color-primary">Bader</span>
 						</h1>
 						<div>
 							<p className="text-bp-light-100 my-4">
