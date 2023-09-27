@@ -34,7 +34,7 @@ const Footer = ({className, topOuterDivider, topDivider, ...props}: any) => {
 							<a
 								rel="noreferrer"
 								target="_blank"
-								href="https://www.linkedin.com/in/kevin-brian-b-2137541a2"
+								href="https://www.linkedin.com/in/ikevin127"
 							>
 								<svg
 									width="24"
