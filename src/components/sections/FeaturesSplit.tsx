@@ -2,10 +2,9 @@
 import React, {useEffect, useRef, useState,} from 'react';
 import {useSelector,} from 'react-redux';
 import {useTranslation,} from 'react-i18next';
-// import {useNavigate,} from 'react-router-dom';
+import {useNavigate,} from 'react-router-dom';
 import SectionHeader from './partials/SectionHeader';
-import Button from '../elements/Button';
-import Image from '../elements/Image';
+import Project from '../../components/elements/Project';
 import classNames from 'classnames';
 
 const FeaturesSplit = ({
@@ -22,7 +21,7 @@ const FeaturesSplit = ({
 	imageFill,
 	...props
 }: any) => {
-	// const navigate = useNavigate();
+	const navigate = useNavigate();
 	const {t,} = useTranslation('common');
 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 	// @ts-ignore
@@ -78,8 +77,112 @@ const FeaturesSplit = ({
 
 	const sectionHeaderSecond = {
 		title: 'Professional Experience',
-		paragraph: 'Frontend / Mobile Developer',
+		paragraph: 'Frontend Developer',
 	};
+
+	const workProjects = [
+		{
+			aos: 'fade-up-left',
+			type: 'McDonald\'s WWC22 (Web & Mobile)',
+			title: 'McDonald\'s Corporation Worldwide Conference 2022',
+			employer: t('work.ovEmployer'),
+			description: t('work.mdDescription'),
+			onMouseOver: () => setHover7(true),
+			onMouseLeave: () => setHover7(false),
+			isHovered: isHovered7,
+			navigate: () => navigate('/project/mcd-wwc22-orlando'),
+			image: 'https://strapi-bp.s3.eu-central-1.amazonaws.com/mcd.png',
+			imageAlt: 'McDonald\'s WWC22 - Project',
+		},
+		{
+			aos: 'fade-up-right',
+			type: 'Online Events Platform',
+			title: t('work.ovTitle'),
+			employer: t('work.ovEmployer'),
+			description: t('work.ovDescription'),
+			onMouseOver: () => setHover4(true),
+			onMouseLeave: () => setHover4(false),
+			isHovered: isHovered4,
+			visitLink: 'https://myonvent.com',
+			navigate: () => navigate('/project/myonvent-online-events'),
+			image: 'https://dlc4jqsejiyjs.cloudfront.net/ov.png',
+			imageAlt: 'myOnvent - Project',
+		},
+		{
+			aos: 'fade-up-left',
+			type: 'UK Software Services Platform',
+			title: 'Deazy',
+			employer: t('work.ovEmployer'),
+			description: t('work.dzDescription'),
+			onMouseOver: () => setHover5(true),
+			onMouseLeave: () => setHover5(false),
+			isHovered: isHovered5,
+			visitLink: 'https://deazy.com',
+			navigate: () => navigate('/project/deazy-uk-marketplace'),
+			image: 'https://dlc4jqsejiyjs.cloudfront.net/dz.png',
+			imageAlt: 'Deazy - Project',
+		},
+		{
+			aos: 'fade-up-right',
+			type: 'Online Healthcare Platform',
+			title: 'TUUNE',
+			employer: t('work.ovEmployer'),
+			description: t('work.tuuDescription'),
+			onMouseOver: () => setHover6(true),
+			onMouseLeave: () => setHover6(false),
+			isHovered: isHovered6,
+			visitLink: 'https://tuune.com',
+			navigate: () => navigate('/project/tuune-healt-platform'),
+			image: 'https://dlc4jqsejiyjs.cloudfront.net/tu.png',
+			imageAlt: 'TUUNE - Project',
+		}
+	].map((project, index) => ({...project, index,}));
+
+	const selfProjects = [
+		{
+			aos: 'fade-up-left',
+			type: 'Single Page Website',
+			title: 'Head Chef - Raul Vidican',
+			employer: 'Self-Employed',
+			description: t('work.rv2') + '\n' + t('work.rv3'),
+			onMouseOver: () => setHover(true),
+			onMouseLeave: () => setHover(false),
+			isHovered: isHovered,
+			visitLink: 'https://raulvidican.com',
+			github: 'https://github.com/ikevin127/rv-chef',
+			navigate: () => navigate('/project/raul-vidican'),
+			image: 'https://dlc4jqsejiyjs.cloudfront.net/rv.jpg',
+			imageAlt: 'Head Chef - Raul Vidican - Project',
+		},
+		{
+			aos: 'fade-up-right',
+			type: 'React Native (iOS & Android)',
+			title: 'FileList',
+			employer: 'Self-Employed',
+			description: t('work.fl1') + '\n' + t('work.fl2'),
+			onMouseOver: () => setHover2(true),
+			onMouseLeave: () => setHover2(false),
+			isHovered: isHovered2,
+			playStore: 'https://play.google.com/store/apps/details?id=com.baderproductions.fl',
+			github: 'https://github.com/ikevin127/filelist-app',
+			navigate: () => navigate('/project/filelist-app'),
+			image: 'https://dlc4jqsejiyjs.cloudfront.net/fl.jpg',
+			imageAlt: 'FileList - Project',
+		},
+		{
+			aos: 'fade-up-left',
+			type: 'RESTful API',
+			title: 'IMDb Scraper',
+			employer: 'Self-Employed',
+			description: t('work.im'),
+			onMouseOver: () => setHover3(true),
+			onMouseLeave: () => setHover3(false),
+			isHovered: isHovered3,
+			github: 'https://github.com/ikevin127/imdb-scraper',
+			image: 'https://dlc4jqsejiyjs.cloudfront.net/im.jpg',
+			imageAlt: 'IMDb Scraper - Project',
+		}
+	].map((project, index) => ({...project, index,}));
 
 	return (
 		<section
@@ -92,695 +195,23 @@ const FeaturesSplit = ({
 						data={ sectionHeaderSecond }
 						className="center-content" />
 					<div className={ splitClasses }>
-						<div
-							data-aos="fade-up-left"
-							className="split-item">
-							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u">
-									Online Events Platform
-								</div>
-								<h3 className="mt-0 font-bold text-2xl">{t('work.ovTitle')}</h3>
-								<div className="m-0 text-bp-light-100">
-									<span
-										style={{
-											display: 'flex',
-											alignItems: 'center',
-										}}
-										className="icon-svg-wrapper text-sm mt-2">
-										<svg
-											fill="transparent"
-											viewBox="0 0 24 24"
-											strokeWidth="1.5"
-											stroke="currentColor"
-											style={{
-												width: '1rem',
-												height: '1rem',
-											}}
-											className="icon-svg-margin">
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
-										</svg>
-										{t('work.ovEmployer')}
-									</span>
-									<p className="my-2">
-										{t('work.ovDescription')}
-									</p>
-								</div>
-							</div>
-							<div
-								className={ classNames(
-									'split-item-image center-content-mobile',
-									imageFill && 'split-item-image-fill'
-								) }
-								onMouseOver={ () => setHover4(true) }
-								onMouseLeave={ () => setHover4(false) }
-								style={{cursor: 'pointer',}}
-							>
-								<div
-									style={{
-										position: 'absolute',
-										top: 0,
-										left: 0,
-										width: '100%',
-										height: '100%',
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-										backgroundColor: isHovered4 ? 'rgba(0,0,0,0.8)' : 'transparent',
-										transition: '0.5s ease',
-									}}
-								>
-									<div
-										style={{
-											transform: `scale(${isHovered4 ? 1 : 0})`,
-											opacity: isHovered4 ? 1 : 0,
-											width: '100%',
-											padding: '0 1rem',
-											display: 'flex',
-											flexDirection: 'row',
-											justifyContent: 'space-evenly',
-											alignItems: 'center',
-											backgroundColor: 'transparent',
-											transition: '0.5s ease',
-										}}
-									>
-										<Button
-											tag="a"
-											color="black"
-											rel="noreferrer"
-											target="_blank"
-											wideMobile
-											href="https://myonvent.com/"
-											style={{margin: '0 1rem',}}
-										>
-											Visit Platform
-										</Button>
-										{/* <Button
-											tag="button"
-											color="black"
-											wideMobile
-											onClick={ () => navigate('/project/myonvent-online-events') }
-											style={{margin: '0 1rem',}}
-										>
-											More Info
-										</Button> */}
-									</div>
-								</div>
-								<Image
-									src="https://dlc4jqsejiyjs.cloudfront.net/ov.png"
-									alt="myOnvent"
-									width={ 528 }
-									height={ 396 }
-								/>
-							</div>
-						</div>
-						<div
-							data-aos="fade-up-right"
-							className="split-item">
-							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u">
-									McDonald&apos;s WWC2022 Platform (Web / Mobile)
-								</div>
-								<h3 className="mt-0 font-bold text-2xl">McDonald&apos;s Corporation Worldwide Conference 2022</h3>
-								<div className="m-0 text-bp-light-100">
-									<span
-										style={{
-											display: 'flex',
-											alignItems: 'center',
-										}}
-										className="icon-svg-wrapper text-sm mt-2">
-										<svg
-											fill="transparent"
-											viewBox="0 0 24 24"
-											strokeWidth="1.5"
-											stroke="currentColor"
-											style={{
-												width: '1rem',
-												height: '1rem',
-											}}
-											className="icon-svg-margin">
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
-										</svg>
-										{t('work.ovEmployer')}
-									</span>
-									<p className="my-2">
-										{t('work.mdDescription')}
-									</p>
-								</div>
-							</div>
-							<div
-								className={ classNames(
-									'split-item-image center-content-mobile',
-									imageFill && 'split-item-image-fill'
-								) }
-								onMouseOver={ () => setHover7(true) }
-								onMouseLeave={ () => setHover7(false) }
-								style={{cursor: 'pointer',}}
-							>
-								<div
-									style={{
-										position: 'absolute',
-										top: 0,
-										left: 0,
-										width: '100%',
-										height: '100%',
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-										backgroundColor: isHovered7 ? 'rgba(0,0,0,0.8)' : 'transparent',
-										transition: '0.5s ease',
-									}}
-								>
-									<div
-										style={{
-											transform: `scale(${isHovered7 ? 1 : 0})`,
-											opacity: isHovered7 ? 1 : 0,
-											width: '100%',
-											padding: '0 1rem',
-											display: 'flex',
-											flexDirection: 'row',
-											justifyContent: 'space-evenly',
-											alignItems: 'center',
-											backgroundColor: 'transparent',
-											transition: '0.5s ease',
-										}}
-									>
-										<Button
-											tag="a"
-											color="black"
-											rel="noreferrer"
-											target="_blank"
-											wideMobile
-											href="https://corporate.mcdonalds.com/corpmcd/home.html"
-											style={{margin: '0 1rem',}}
-										>
-											Visit Platform
-										</Button>
-										{/* <Button
-												tag="button"
-												color="black"
-												wideMobile
-												onClick={() => navigate('/project/mcd-wwc22-orlando')}
-												style={{ margin: "0 1rem" }}
-											>
-												More Info
-											</Button> */}
-									</div>
-								</div>
-								<Image
-									src="https://dlc4jqsejiyjs.cloudfront.net/md.png"
-									alt="WWC2022"
-									width={ 528 }
-									height={ 396 }
-								/>
-							</div>
-						</div>
-						<div
-							data-aos="fade-up-left"
-							className="split-item">
-							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u">
-									UK Software Services Platform
-								</div>
-								<h3 className="mt-0 font-bold text-2xl">Deazy</h3>
-								<div className="m-0 text-bp-light-100">
-									<span
-										style={{
-											display: 'flex',
-											alignItems: 'center',
-										}}
-										className="icon-svg-wrapper text-sm mt-2">
-										<svg
-											fill="transparent"
-											viewBox="0 0 24 24"
-											strokeWidth="1.5"
-											stroke="currentColor"
-											style={{
-												width: '1rem',
-												height: '1rem',
-											}}
-											className="icon-svg-margin">
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
-										</svg>
-										{t('work.ovEmployer')}
-									</span>
-									<p className="my-2">
-										{t('work.dzDescription')}
-									</p>
-								</div>
-							</div>
-							<div
-								className={ classNames(
-									'split-item-image center-content-mobile',
-									imageFill && 'split-item-image-fill'
-								) }
-								onMouseOver={ () => setHover5(true) }
-								onMouseLeave={ () => setHover5(false) }
-								style={{cursor: 'pointer',}}
-							>
-								<div
-									style={{
-										position: 'absolute',
-										top: 0,
-										left: 0,
-										width: '100%',
-										height: '100%',
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-										backgroundColor: isHovered5 ? 'rgba(0,0,0,0.8)' : 'transparent',
-										transition: '0.5s ease',
-									}}
-								>
-									<div
-										style={{
-											transform: `scale(${isHovered5 ? 1 : 0})`,
-											opacity: isHovered5 ? 1 : 0,
-											width: '100%',
-											padding: '0 1rem',
-											display: 'flex',
-											flexDirection: 'row',
-											justifyContent: 'space-evenly',
-											alignItems: 'center',
-											backgroundColor: 'transparent',
-											transition: '0.5s ease',
-										}}
-									>
-										<Button
-											tag="a"
-											color="black"
-											rel="noreferrer"
-											target="_blank"
-											wideMobile
-											href="http://deazy.com"
-											style={{margin: '0 1rem',}}
-										>
-											Visit Platform
-										</Button>
-										{/* <Button
-												tag="button"
-												color="black"
-												wideMobile
-												onClick={() => navigate('/project/deazy-uk-marketplace')}
-												style={{ margin: "0 1rem" }}
-											>
-												More Info
-											</Button> */}
-									</div>
-								</div>
-								<Image
-									src="https://dlc4jqsejiyjs.cloudfront.net/dz.png"
-									alt="myOnvent"
-									width={ 528 }
-									height={ 396 }
-								/>
-							</div>
-						</div>
-						<div
-							data-aos="fade-up-right"
-							className="split-item">
-							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u">
-									Online Healthcare Platform
-								</div>
-								<h3 className="mt-0 font-bold text-2xl">TUUNE</h3>
-								<div className="m-0 text-bp-light-100">
-									<span
-										style={{
-											display: 'flex',
-											alignItems: 'center',
-										}}
-										className="icon-svg-wrapper text-sm mt-2">
-										<svg
-											fill="transparent"
-											viewBox="0 0 24 24"
-											strokeWidth="1.5"
-											stroke="currentColor"
-											style={{
-												width: '1rem',
-												height: '1rem',
-											}}
-											className="icon-svg-margin">
-											<path
-												strokeLinecap="round"
-												strokeLinejoin="round"
-												d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
-										</svg>
-										{t('work.ovEmployer')}
-									</span>
-									<p className="my-2">
-										{t('work.tuuDescription')}
-									</p>
-								</div>
-							</div>
-							<div
-								className={ classNames(
-									'split-item-image center-content-mobile',
-									imageFill && 'split-item-image-fill'
-								) }
-								onMouseOver={ () => setHover6(true) }
-								onMouseLeave={ () => setHover6(false) }
-								style={{cursor: 'pointer',}}
-							>
-								<div
-									style={{
-										position: 'absolute',
-										top: 0,
-										left: 0,
-										width: '100%',
-										height: '100%',
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-										backgroundColor: isHovered6 ? 'rgba(0,0,0,0.8)' : 'transparent',
-										transition: '0.5s ease',
-									}}
-								>
-									<div
-										style={{
-											transform: `scale(${isHovered6 ? 1 : 0})`,
-											opacity: isHovered6 ? 1 : 0,
-											width: '100%',
-											padding: '0 1rem',
-											display: 'flex',
-											flexDirection: 'row',
-											justifyContent: 'space-evenly',
-											alignItems: 'center',
-											backgroundColor: 'transparent',
-											transition: '0.5s ease',
-										}}
-									>
-										<Button
-											tag="a"
-											color="black"
-											rel="noreferrer"
-											target="_blank"
-											wideMobile
-											href="https://www.tuune.com"
-											style={{margin: '0 1rem',}}
-										>
-											Visit Platform
-										</Button>
-										{/* <Button
-												tag="button"
-												color="black"
-												wideMobile
-												onClick={() => navigate('/project/tuune-healt-platform')}
-												style={{ margin: "0 1rem" }}
-											>
-												More Info
-											</Button> */}
-									</div>
-								</div>
-								<Image
-									src="https://dlc4jqsejiyjs.cloudfront.net/tu.png"
-									alt="myOnvent"
-									width={ 528 }
-									height={ 396 }
-								/>
-							</div>
-						</div>
+						{workProjects?.map(project => (
+							<Project
+								key={ project.index }
+								project={ project }
+								imageFill={ imageFill } />
+						))}
 					</div>
 					<SectionHeader
 						data={ sectionHeader }
 						className="center-content" />
 					<div className={ splitClasses }>
-						<div
-							data-aos="fade-up-left"
-							className="split-item">
-							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u">
-									Head Chef SPA
-								</div>
-								<h3 className="mt-0 font-bold text-2xl">Raul Vidican</h3>
-								<p className="m-0 text-bp-light-100">
-									{t('work.rv2')}
-									<br />
-									{t('work.rv3')}
-								</p>
-							</div>
-							<div
-								className={ classNames(
-									'split-item-image center-content-mobile',
-									imageFill && 'split-item-image-fill'
-								) }
-								onMouseOver={ () => setHover(true) }
-								onMouseLeave={ () => setHover(false) }
-								style={{cursor: 'pointer',}}
-							>
-								<div
-									style={{
-										position: 'absolute',
-										top: 0,
-										left: 0,
-										width: '100%',
-										height: '100%',
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-										backgroundColor: isHovered ? 'rgba(0,0,0,0.8)' : 'transparent',
-										transition: '0.5s ease',
-									}}
-								>
-									<div
-										style={{
-											transform: `scale(${isHovered ? 1 : 0})`,
-											opacity: isHovered ? 1 : 0,
-											width: '100%',
-											padding: '0 1rem',
-											display: 'flex',
-											flexDirection: 'row',
-											justifyContent: 'space-evenly',
-											alignItems: 'center',
-											backgroundColor: 'transparent',
-											transition: '0.5s ease',
-										}}
-									>
-										<Button
-											tag="a"
-											color="black"
-											rel="noreferrer"
-											target="_blank"
-											wideMobile
-											href="https://raulvidican.ro"
-											style={{margin: '0 1rem',}}
-										>
-											Website
-										</Button>
-										<Button
-											tag="a"
-											color="black"
-											rel="noreferrer"
-											target="_blank"
-											wideMobile
-											href="https://github.com/ikevin127/rv-chef"
-											style={{margin: '0 1rem',}}
-										>
-											GitHub
-										</Button>
-										{/* <Button
-												tag="button"
-												color="black"
-												wideMobile
-												onClick={() => navigate('/project/chef-raul-vidican')}
-												style={{ margin: "0 1rem" }}
-											>
-												More Info
-											</Button> */}
-									</div>
-								</div>
-								<Image
-									src="https://dlc4jqsejiyjs.cloudfront.net/rv.jpg"
-									alt="Raul Vidican"
-									width={ 528 }
-									height={ 396 }
-								/>
-							</div>
-						</div>
-						<div
-							data-aos="fade-up-right"
-							className="split-item">
-							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u">
-									React native Application (iOS / Android)
-								</div>
-								<h3 className="mt-0 font-bold text-2xl">Filelist App</h3>
-								<p className="m-0 text-bp-light-100">
-									{t('work.fl1')}
-									<br />
-									{t('work.fl2')}
-								</p>
-							</div>
-							<div
-								className={ classNames(
-									'split-item-image center-content-mobile ',
-									imageFill && 'split-item-image-fill'
-								) }
-								onMouseOver={ () => setHover2(true) }
-								onMouseLeave={ () => setHover2(false) }
-								style={{cursor: 'pointer',}}
-							>
-								<div
-									style={{
-										position: 'absolute',
-										top: 0,
-										left: 0,
-										width: '100%',
-										height: '100%',
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-										backgroundColor: isHovered2 ? 'rgba(0,0,0,0.8)' : 'transparent',
-										transition: '0.5s ease',
-									}}
-								>
-									<div
-										style={{
-											transform: `scale(${isHovered2 ? 1 : 0})`,
-											opacity: isHovered2 ? 1 : 0,
-											width: '100%',
-											padding: '0 1rem',
-											display: 'flex',
-											flexDirection: 'row',
-											justifyContent: 'space-evenly',
-											alignItems: 'center',
-											backgroundColor: 'transparent',
-											transition: '0.5s ease',
-										}}
-									>
-										<Button
-											tag="a"
-											color="black"
-											rel="noreferrer"
-											target="_blank"
-											wideMobile
-											href="https://play.google.com/store/apps/details?id=com.baderproductions.fl"
-											style={{margin: '0 1rem',}}
-										>
-											Play Store
-										</Button>
-										<Button
-											tag="a"
-											color="black"
-											rel="noreferrer"
-											target="_blank"
-											wideMobile
-											href="https://github.com/ikevin127/filelist-app"
-											style={{margin: '0 1rem',}}
-										>
-											GitHub
-										</Button>
-										{/* <Button
-												tag="button"
-												color="black"
-												wideMobile
-												onClick={() => navigate('/project/filelist-app-rn')}
-												style={{ margin: "0 1rem" }}
-											>
-												More Info
-											</Button> */}
-									</div>
-								</div>
-								<Image
-									src="https://dlc4jqsejiyjs.cloudfront.net/fl.jpg"
-									alt="Filelist App"
-									width={ 528 }
-									height={ 396 }
-								/>
-							</div>
-						</div>
-						<div
-							data-aos="fade-up-left"
-							className="split-item">
-							<div className="split-item-content center-content-mobile">
-								<div className="text-xxs text-color-primary fw-600 tt-u">
-									Node.js / Express API
-								</div>
-								<h3 className="mt-0 font-bold text-2xl">IMDB Scraper</h3>
-								<p className="m-0 text-bp-light-100">{t('work.im')}</p>
-							</div>
-							<div
-								className={ classNames(
-									'split-item-image center-content-mobile',
-									imageFill && 'split-item-image-fill'
-								) }
-								onMouseOver={ () => setHover3(true) }
-								onMouseLeave={ () => setHover3(false) }
-								style={{cursor: 'pointer',}}
-							>
-								<div
-									style={{
-										position: 'absolute',
-										top: 0,
-										left: 0,
-										width: '100%',
-										height: '100%',
-										display: 'flex',
-										flexDirection: 'column',
-										justifyContent: 'center',
-										alignItems: 'center',
-										backgroundColor: isHovered3 ? 'rgba(0,0,0,0.8)' : 'transparent',
-										transition: '0.5s ease',
-									}}
-								>
-									<div
-										style={{
-											transform: `scale(${isHovered3 ? 1 : 0})`,
-											opacity: isHovered3 ? 1 : 0,
-											width: '100%',
-											padding: '0 1rem',
-											display: 'flex',
-											flexDirection: 'row',
-											justifyContent: 'space-evenly',
-											alignItems: 'center',
-											backgroundColor: 'transparent',
-											transition: '0.5s ease',
-										}}
-									>
-										<Button
-											tag="a"
-											color="black"
-											rel="noreferrer"
-											target="_blank"
-											wideMobile
-											href="https://github.com/ikevin127/imdb-scraper"
-											style={{margin: '0 1rem',}}
-										>
-											GitHub
-										</Button>
-										{/* <Button
-												tag="button"
-												color="black"
-												wideMobile
-												onClick={() => navigate('/project/imdb-scraper-api')}
-												style={{ margin: "0 1rem" }}
-											>
-												More Info
-											</Button> */}
-									</div>
-								</div>
-								<Image
-									src="https://dlc4jqsejiyjs.cloudfront.net/im.jpg"
-									alt="IMDb Scraper"
-									width={ 528 }
-									height={ 396 }
-								/>
-							</div>
-						</div>
+						{selfProjects.map(project => (
+							<Project
+								key={ project.index }
+								project={ project }
+								imageFill={ imageFill } />
+						))}
 					</div>
 				</div>
 			</div>
