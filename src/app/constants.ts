@@ -25,17 +25,17 @@ export const PROJECT_DATA = {
 	},
 	mcdwwc: {
 		images: [
-			'https://strapi-bp.s3.eu-central-1.amazonaws.com/hero.png',
-			'https://strapi-bp.s3.eu-central-1.amazonaws.com/footer.png',
-			'https://strapi-bp.s3.eu-central-1.amazonaws.com/mobile-menu.png',
-			'https://strapi-bp.s3.eu-central-1.amazonaws.com/login.png',
-			'https://strapi-bp.s3.eu-central-1.amazonaws.com/feed.png',
-			'https://strapi-bp.s3.eu-central-1.amazonaws.com/atConvention.png',
-			'https://strapi-bp.s3.eu-central-1.amazonaws.com/map.png',
-			'https://strapi-bp.s3.eu-central-1.amazonaws.com/agenda.png',
-			'https://strapi-bp.s3.eu-central-1.amazonaws.com/profile.png',
-			'https://strapi-bp.s3.eu-central-1.amazonaws.com/connections.png',
-			'https://strapi-bp.s3.eu-central-1.amazonaws.com/notifications.png'
+			'https://dcz9f0ikrgvev.cloudfront.net/hero.png',
+			'https://dcz9f0ikrgvev.cloudfront.net/footer.png',
+			'https://dcz9f0ikrgvev.cloudfront.net/mobile-menu.png',
+			'https://dcz9f0ikrgvev.cloudfront.net/login.png',
+			'https://dcz9f0ikrgvev.cloudfront.net/feed.png',
+			'https://dcz9f0ikrgvev.cloudfront.net/atConvention.png',
+			'https://dcz9f0ikrgvev.cloudfront.net/map.png',
+			'https://dcz9f0ikrgvev.cloudfront.net/agenda.png',
+			'https://dcz9f0ikrgvev.cloudfront.net/profile.png',
+			'https://dcz9f0ikrgvev.cloudfront.net/connections.png',
+			'https://dcz9f0ikrgvev.cloudfront.net/notifications.png'
 		],
 		type: 'McDonald\'s WWC22 (Web & Mobile)',
 		title: 'McDonald\'s Corporation Worldwide Conference 2022',

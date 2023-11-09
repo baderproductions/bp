@@ -91,7 +91,7 @@ const FeaturesSplit = ({
 			onMouseLeave: () => setHover7(false),
 			isHovered: isHovered7,
 			navigate: () => navigate('/project/mcd-wwc22-orlando'),
-			image: 'https://strapi-bp.s3.eu-central-1.amazonaws.com/mcd.png',
+			image: 'https://dcz9f0ikrgvev.cloudfront.net/mcd.png',
 			imageAlt: 'McDonald\'s WWC22 - Project',
 		},
 		{
