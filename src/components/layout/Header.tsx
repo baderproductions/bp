@@ -179,6 +179,7 @@ const Header = ({
 													title={ t('header.lang') }
 													className="text-bp-light-100"
 												>
+													{/* @ts-ignore */}
 													<AntSwitch
 														icon={
 															<span

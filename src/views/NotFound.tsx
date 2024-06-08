@@ -2,7 +2,7 @@ import React from 'react';
 import {useNavigate,} from 'react-router-dom';
 
 export default function NotFound() {
-	let interval: string | number | NodeJS.Timeout | undefined;
+	let interval: number | undefined;
 	const navigate = useNavigate();
 	const [time, setTime] = React.useState<string|number>(5);
 

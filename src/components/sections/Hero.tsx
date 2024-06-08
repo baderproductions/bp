@@ -201,6 +201,7 @@ const Hero = ({
 						show={ aboutModal }
 						// eslint-disable-next-line react/jsx-no-bind
 						handleClose={ closeAboutModal }>
+						{/* @ts-ignore */}
 						<bsModal.Header
 							style={{
 								borderBottom: '0.05rem solid #33363a',
@@ -746,6 +747,7 @@ const Hero = ({
 						show={ contactModal }
 						handleClose={ isLoading ? disableCloseContactModal : closeContactModal }
 					>
+						{/* @ts-ignore */}
 						<bsModal.Header
 							style={{
 								borderBottom: '0.05rem solid #33363a',
@@ -798,6 +800,7 @@ const Hero = ({
 								) : null}
 								{error ? <span className="text-err">{t('hero.error')}</span> : null}
 								{isLoading ? (
+									// @ts-ignore
 									<Spinner
 										className="text-spin"
 										size="sm"
