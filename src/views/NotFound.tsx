@@ -6,25 +6,27 @@ export default function NotFound() {
 	const navigate = useNavigate();
 	const [time, setTime] = React.useState<string|number>(5);
 
+	const updateCountdown = React.useCallback(() => {
+		let timeCount = Number(time);
+		if (timeCount <= 0) {
+			clearInterval(interval);
+			setTime(0);
+			navigate('/');
+		} else {
+			--timeCount;
+			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+			// @ts-ignore
+			setTime(timeCount);
+		}
+	}, [time]);
+
 	React.useEffect(() => {
 		const id = setInterval(() => updateCountdown(), 1000);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 		interval = id;
 		return () => clearInterval(interval);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-
-	const updateCountdown = () => {
-		if (time as number <= 0) {
-			clearInterval(interval);
-			setTime('∞');
-			navigate('/');
-		} else {
-			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-			// @ts-ignore
-			setTime(--time);
-		}
-	};
+	}, [updateCountdown]);
 
 	return (
 		<div
