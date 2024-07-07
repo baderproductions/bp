@@ -1,4 +1,3 @@
-
 /**
  * Adds prefix to S3 bucket assets and returns the resource URI
  * @param asset {String}

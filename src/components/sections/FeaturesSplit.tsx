@@ -6,6 +6,7 @@ import {useNavigate,} from 'react-router-dom';
 import SectionHeader from './partials/SectionHeader';
 import Project from '../../components/elements/Project';
 import classNames from 'classnames';
+import { addMediaPrefix } from '../../utils/utils';
 
 const FeaturesSplit = ({
 	className,
@@ -91,7 +92,7 @@ const FeaturesSplit = ({
 			onMouseLeave: () => setHover7(false),
 			isHovered: isHovered7,
 			navigate: () => navigate('/project/mcd-wwc22-orlando'),
-			image: 'https://dcz9f0ikrgvev.cloudfront.net/mcd.png',
+			image: addMediaPrefix('mcd.png'),
 			imageAlt: 'McDonald\'s WWC22 - Project',
 		},
 		{
@@ -105,7 +106,7 @@ const FeaturesSplit = ({
 			isHovered: isHovered4,
 			visitLink: 'https://myonvent.com',
 			navigate: () => navigate('/project/myonvent-online-events'),
-			image: 'https://dlc4jqsejiyjs.cloudfront.net/ov.png',
+			image: addMediaPrefix('ov.png'),
 			imageAlt: 'myOnvent - Project',
 		},
 		{
@@ -119,7 +120,7 @@ const FeaturesSplit = ({
 			isHovered: isHovered5,
 			visitLink: 'https://deazy.com',
 			navigate: () => navigate('/project/deazy-uk-marketplace'),
-			image: 'https://dlc4jqsejiyjs.cloudfront.net/dz.png',
+			image: addMediaPrefix('dz.png'),
 			imageAlt: 'Deazy - Project',
 		},
 		{
@@ -131,9 +132,9 @@ const FeaturesSplit = ({
 			onMouseOver: () => setHover6(true),
 			onMouseLeave: () => setHover6(false),
 			isHovered: isHovered6,
-			visitLink: 'https://tuune.com',
+			visitLink: 'https://app.tuune.com',
 			navigate: () => navigate('/project/tuune-healt-platform'),
-			image: 'https://dlc4jqsejiyjs.cloudfront.net/tu.png',
+			image: addMediaPrefix('tu.png'),
 			imageAlt: 'TUUNE - Project',
 		}
 	].map((project, index) => ({...project, index,}));
@@ -148,10 +149,10 @@ const FeaturesSplit = ({
 			onMouseOver: () => setHover(true),
 			onMouseLeave: () => setHover(false),
 			isHovered: isHovered,
-			visitLink: 'https://raulvidican.com',
+			visitLink: 'https://raulvidican.ro',
 			github: 'https://github.com/ikevin127/rv-chef',
 			navigate: () => navigate('/project/chef-raul-vidican'),
-			image: 'https://dlc4jqsejiyjs.cloudfront.net/rv.jpg',
+			image: addMediaPrefix('rv.jpg'),
 			imageAlt: 'Head Chef - Raul Vidican - Project',
 		},
 		{
@@ -166,7 +167,7 @@ const FeaturesSplit = ({
 			playStore: 'https://play.google.com/store/apps/details?id=com.baderproductions.fl',
 			github: 'https://github.com/ikevin127/filelist-app',
 			navigate: () => navigate('/project/filelist-app-rn'),
-			image: 'https://dlc4jqsejiyjs.cloudfront.net/fl.jpg',
+			image: addMediaPrefix('fl.jpg'),
 			imageAlt: 'FileList - Project',
 		},
 		{
@@ -179,7 +180,7 @@ const FeaturesSplit = ({
 			onMouseLeave: () => setHover3(false),
 			isHovered: isHovered3,
 			github: 'https://github.com/ikevin127/imdb-scraper',
-			image: 'https://dlc4jqsejiyjs.cloudfront.net/im.jpg',
+			image: addMediaPrefix('im.jpg'),
 			imageAlt: 'IMDb Scraper - Project',
 		}
 	].map((project, index) => ({...project, index,}));

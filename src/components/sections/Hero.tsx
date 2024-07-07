@@ -31,11 +31,6 @@ const Hero = ({
 	const [third, setThird] = useState(false);
 	const [forth, setForth] = useState(false);
 	const [fifth, setFifth] = useState(false);
-	// const [sixth, setSixth] = useState(false);
-	// const [seventh, setSeventh] = useState(false);
-	// const [eight, setEight] = useState(false);
-	// const [nine, setNine] = useState(false);
-	// const [ten, setTen] = useState(false);
 	const [isLoading, setLoad] = useState(false);
 	const [success, setSuccess] = useState(false);
 	const [error, setError] = useState(false);
@@ -46,7 +41,10 @@ const Hero = ({
 		appConfig: {
 			aboutModal: boolean;
 			contactModal: boolean;
-		}}>(state => state.appConfig);
+		}}>((state: { appConfig: {
+			aboutModal: boolean;
+			contactModal: boolean;
+		} }) => state.appConfig);
 
 	const outerClasses = classNames(
 		'hero section center-content',
@@ -75,11 +73,6 @@ const Hero = ({
 		setThird(false);
 		setForth(false);
 		setFifth(false);
-		// setSixth(false);
-		// setSeventh(false);
-		// setEight(false);
-		// setNine(false);
-		// setTen(false);
 	};
 
 	const closeContactModal = (e: Event) => {
@@ -105,13 +98,13 @@ const Hero = ({
 				.email(t('hero.emailValidation'))
 				.required(t('hero.requiredEmail')),
 		}),
-		onSubmit: (values, {setSubmitting, setErrors, setStatus, resetForm,}) => {
+		onSubmit: (values: { name: string; email: string; message: string; }, {resetForm,}: {resetForm: (arg: unknown) => void}) => {
 			setLoad(true);
 			axios
 				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 				// @ts-ignore
 				// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-				.post(import.meta.env.REACT_APP_EMAIL, {
+				.post(import.meta.env.VITE_APP_EMAIL, {
 					name: values.name,
 					email: values.email,
 					message: values.message,

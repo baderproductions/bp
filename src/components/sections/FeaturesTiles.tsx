@@ -474,27 +474,6 @@ l-23 -59 -3 -2095 c-2 -1488 0 -2114 8 -2160 17 -97 70 -200 143 -274 77 -78
 											data-aos="flip-right"
 											rel="noreferrer"
 											target="_blank"
-											href="https://flutter.dev"
-											className="modal-body-devItem"
-										>
-											<div className="modal-body-upper">
-												<img
-													loading="lazy"
-													className="logo-img-xl"
-													src={ addMediaPrefix('fu_549b3ada19.png') }
-													width="512"
-													height="165"
-													alt="Flutter Logo"
-												/>
-											</div>
-											<div className="modal-body-lower">
-												<Badge variant="warning">{t('dev.fra')}</Badge>
-											</div>
-										</a>
-										<a
-											data-aos="flip-right"
-											rel="noreferrer"
-											target="_blank"
 											href="https://developer.android.com/studio"
 											className="modal-body-devItem"
 										>

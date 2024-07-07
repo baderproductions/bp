@@ -1,3 +1,5 @@
+import { addMediaPrefix } from "../utils/utils";
+
 export const ROUTES = {
 	root: '/',
 	project: '/project/:slug',
@@ -16,7 +18,7 @@ export const PROJECTS = {
 
 export const PROJECT_DATA = {
 	myOnvent: {
-		images: ['https://dlc4jqsejiyjs.cloudfront.net/ov.png'],
+		images: [addMediaPrefix('ov.png')],
 		type: 'Online Events Platform',
 		title: 'myOnvent - Online Events',
 		client: 'GDM WEBMEDIA',
@@ -25,17 +27,17 @@ export const PROJECT_DATA = {
 	},
 	mcdwwc: {
 		images: [
-			'https://dcz9f0ikrgvev.cloudfront.net/hero.png',
-			'https://dcz9f0ikrgvev.cloudfront.net/footer.png',
-			'https://dcz9f0ikrgvev.cloudfront.net/mobile-menu.png',
-			'https://dcz9f0ikrgvev.cloudfront.net/login.png',
-			'https://dcz9f0ikrgvev.cloudfront.net/feed.png',
-			'https://dcz9f0ikrgvev.cloudfront.net/atConvention.png',
-			'https://dcz9f0ikrgvev.cloudfront.net/map.png',
-			'https://dcz9f0ikrgvev.cloudfront.net/agenda.png',
-			'https://dcz9f0ikrgvev.cloudfront.net/profile.png',
-			'https://dcz9f0ikrgvev.cloudfront.net/connections.png',
-			'https://dcz9f0ikrgvev.cloudfront.net/notifications.png'
+			addMediaPrefix('hero.png'),
+			addMediaPrefix('footer.png'),
+			addMediaPrefix('mobile-menu.png'),
+			addMediaPrefix('login.png'),
+			addMediaPrefix('feed.png'),
+			addMediaPrefix('atConvention.png'),
+			addMediaPrefix('map.png'),
+			addMediaPrefix('agenda.png'),
+			addMediaPrefix('profile.png'),
+			addMediaPrefix('connections.png'),
+			addMediaPrefix('notifications.png')
 		],
 		type: 'McDonald\'s WWC22 (Web & Mobile)',
 		title: 'McDonald\'s Corporation Worldwide Conference 2022',
@@ -44,7 +46,7 @@ export const PROJECT_DATA = {
 		data: [],
 	},
 	deazy: {
-		images: ['https://dlc4jqsejiyjs.cloudfront.net/dz.png'],
+		images: [addMediaPrefix('dz.png')],
 		type: 'UK Software Services Platform',
 		title: 'Deazy',
 		client: 'GDM WEBMEDIA',
@@ -52,7 +54,7 @@ export const PROJECT_DATA = {
 		data: [],
 	},
 	tuune: {
-		images: ['https://dlc4jqsejiyjs.cloudfront.net/tu.png'],
+		images: [addMediaPrefix('tu.png')],
 		type: 'Online Healthcare Platform',
 		title: 'TUUNE',
 		client: 'GDM WEBMEDIA',
@@ -60,7 +62,7 @@ export const PROJECT_DATA = {
 		data: [],
 	},
 	raulVidican: {
-		images: ['https://dlc4jqsejiyjs.cloudfront.net/rv.jpg'],
+		images: [addMediaPrefix('rv.jpg')],
 		type: 'Single Page Website',
 		title: 'Head Chef - Raul Vidican',
 		client: 'Self-Employed',
@@ -68,7 +70,7 @@ export const PROJECT_DATA = {
 		data: [],
 	},
 	filelist: {
-		images: ['https://dlc4jqsejiyjs.cloudfront.net/fl.jpg'],
+		images: [addMediaPrefix('fl.jpg')],
 		type: 'React Native (iOS & Android)',
 		title: 'FileList',
 		client: 'Self-Employed',
@@ -76,7 +78,7 @@ export const PROJECT_DATA = {
 		data: [],
 	},
 	imdbAPI: {
-		images: ['https://dlc4jqsejiyjs.cloudfront.net/im.jpg'],
+		images: [addMediaPrefix('im.jpg')],
 		type: 'RESTful API',
 		title: 'IMDb Scraper',
 		client: 'Self-Employed',
