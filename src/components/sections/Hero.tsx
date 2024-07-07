@@ -5,7 +5,7 @@ import Button from '../elements/Button';
 import Modal from '../elements/Modal';
 import Spinner from 'react-bootstrap/Spinner';
 import bsModal from 'react-bootstrap/Modal';
-import {useFormik,} from 'formik';
+import {FormikHelpers, useFormik,} from 'formik';
 import * as Yup from 'yup';
 import Form from 'react-bootstrap/Form';
 import axios, {AxiosResponse,} from 'axios';
@@ -98,7 +98,7 @@ const Hero = ({
 				.email(t('hero.emailValidation'))
 				.required(t('hero.requiredEmail')),
 		}),
-		onSubmit: (values: { name: string; email: string; message: string; }, {resetForm,}: {resetForm: (arg: unknown) => void}) => {
+		onSubmit: (values: { name: string; email: string; message: string; }, {resetForm,}: FormikHelpers<{ name: string; email: string; message: string; }>) => {
 			setLoad(true);
 			axios
 				// eslint-disable-next-line @typescript-eslint/ban-ts-comment
