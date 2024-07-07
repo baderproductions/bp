@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "prebuild": "node set-html-variables.js",
-    "build": "tsc && vite build",
+    "build": "node set-html-variables.js && tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
